@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/userCenter/common.css"/>
+<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/bcbox/jquery.bcbox.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/my.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<article class="docBody clearfix">
+    #set($listint=14)
+	#parse("/my/MyList.vm")
+    <div class="rightModule creditsBox">
+        <div class="creditsList">
+			<h2 class="tit">下级【<font color="red">$down</font>】返点设置</h2>
+        	<div style="padding:20px">
+				<strong>我的返点：</strong>
+				双色球（<font color="red">$commfind.Ssq</font>%） | 大乐透（<font color="red">$commfind.Dlt</font>%） | 排列5（<font color="red">$commfind.Pl5</font>%） | 福彩3D（<font color="red">$commfind.Fc3d</font>%） | 排列3（<font color="red">$commfind.Pl3</font>%）<br><br>
+				重庆时时彩（<font color="red">$commfind.Cqssc</font>%） | 江西时时彩（<font color="red">$commfind.Jxssc</font>%）<br><br>
+				山东11选5（<font color="red">$commfind.Sd11x5</font>%） | 江西11选5（<font color="red">$commfind.Jx11x5</font>%） | 广东11选5（<font color="red">$commfind.Gd11x5</font>%） | 重庆11选5（<font color="red">$commfind.Cq11x5</font>%）
+				<br><hr><br>
+				<strong>【<font color="red">$down</font>】的返点：</strong><br>
+				<input type="hidden" id="uid" value="$downid"/>
+				双色球：<input value="$commdown.Ssq" id="Ssq" style="width:40px"/>（最高<font id="hSsq" color="red">$commfind.Ssq</font>%）<br>
+				大乐透：<input value="$commdown.Dlt" id="Dlt" style="width:40px"/>（最高<font id="hDlt" color="red">$commfind.Dlt</font>%）<br>
+				排列5：<input value="$commdown.Pl5" id="Pl5" style="width:40px"/>（最高<font id="hPl5" color="red">$commfind.Pl5</font>%）<br>
+				福彩3D：<input value="$commdown.Fc3d" id="Fc3d" style="width:40px"/>（最高<font id="hFc3d" color="red">$commfind.Fc3d</font>%）<br>
+				排列3：<input value="$commdown.Pl3" id="Pl3" style="width:40px"/>（最高<font id="hPl3" color="red">$commfind.Pl3</font>%）<br>
+				重庆时时彩：<input value="$commdown.Cqssc" id="Cqssc" style="width:40px"/>（最高<font id="hCqssc" color="red">$commfind.Cqssc</font>%）<br>
+				江西时时彩：<input value="$commdown.Jxssc" id="Jxssc" style="width:40px"/>（最高<font id="hJxssc" color="red">$commfind.Jxssc</font>%）<br>
+				山东11选5：<input value="$commdown.Sd11x5" id="Sd11x5" style="width:40px"/>（最高<font id="hSd11x5" color="red">$commfind.Sd11x5</font>%）<br>
+				江西11选5：<input value="$commdown.Jx11x5" id="Jx11x5" style="width:40px"/>（最高<font id="hJx11x5" color="red">$commfind.Jx11x5</font>%）<br>
+				广东11选5：<input value="$commdown.Gd11x5" id="Gd11x5" style="width:40px"/>（最高<font id="hGd11x5" color="red">$commfind.Gd11x5</font>%）<br>
+				重庆11选5：<input value="$commdown.Cq11x5" id="Cq11x5" style="width:40px"/>（最高<font id="hCq11x5" color="red">$commfind.Cq11x5</font>%）<br><br>
+				<input type="button" id="set" value="修改"/>
+			</div>
+		</div>
+		#include("/my/MyHot.vm")
+	</div>
+</article>
+#include("/foot.vm")
+</body>
+<script>
+$(function(){
+	$('#set').click(function(){
+		if(confirm('确认修改？')){
+    		var id = Number($('#uid').val());
+    		var Ssq = Number($('#Ssq').val());
+    		var Dlt = Number($('#Dlt').val());
+    		var Pl5 = Number($('#Pl5').val());
+    		var Fc3d = Number($('#Fc3d').val());
+    		var Pl3 = Number($('#Pl3').val());
+    		var Cqssc = Number($('#Cqssc').val());
+    		var Jxssc = Number($('#Jxssc').val());
+    		var Sd11x5 = Number($('#Sd11x5').val());
+    		var Jx11x5 = Number($('#Jx11x5').val());
+    		var Gd11x5 = Number($('#Gd11x5').val());
+    		var Cq11x5 = Number($('#Cq11x5').val());
+			$.post('/my/Cps.jzh',{downid:id,Ssq:Ssq,Dlt:Dlt,Pl5:Pl5,Fc3d:Fc3d,Pl3:Pl3,Cqssc:Cqssc,Jxssc:Jxssc,
+				Sd11x5:Sd11x5,Jx11x5:Jx11x5,Gd11x5:Gd11x5,Cq11x5:Cq11x5,t:local.TimeLong()},function(data){
+				if(data=='0'){
+					alert('修改成功！');window.location.reload();
+				}else if(data=='1'){
+					alert('修改失败！');
+				}else if(data=='2'){
+					alert('您无权操作！');
+				}else if(data=='nologin'){
+					alert('由于您长时间未操作，请重新登录！');location.href='/login.html';
+				}else{
+					alert('网络错误，请重新操作！');
+				}
+			});
+		}
+	});
+});
+</script>
+</html>

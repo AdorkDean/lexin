@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="keywords" content="网购彩票,彩票代购,彩票投注,网上购彩,购彩大厅"/>
+<meta name="description" content="乐欣购彩大厅为您提供网购彩票、彩票代购、网上购彩、福利彩票网上投注、体育投注、胆拖投注等服务。是一个安全、稳定、信誉有保证的网上彩票投注站（投注网）。"/>
+<title>购彩大厅_网购彩票_彩票代购_彩票投注_网上购彩选乐欣彩票-乐欣彩票网</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/lotteryHall.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+</head>
+<body>
+#parse("/head.vm")
+<article id="docBody">
+     <h2 class="tit redTit">福彩、体彩</h2>
+     <ul class="allList qh clearfix">
+     	<li>
+        	<span class="cz_logo cz_ssq"></span>
+            <h3>双色球</h3>
+            <p>彩民最爱，<span class="c_ba2636">2元赢取1000万</span></p>
+            <div><span class="c_ba2636">彩民最爱，2元赢取1000万</span><br>每周二、四、日开奖</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Ssq.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Ssq.jzh">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+		<li class="">
+        	<span class="cz_logo cz_dlt"></span>
+            <h3>大乐透</h3>
+            <p>奖金最丰厚，3元赢1600万</p>
+			<div><span class="c_ba2636">单注最高奖金1600万元</span><br>每周一、三、六开奖</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Dlt.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Dlt.jzh">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+        <li class="">
+        	<span class="cz_logo cz_pl5"></span>
+            <h3>排列五</h3>
+            <p>天天开奖，2元赢10万</p>
+            <div><span class="c_ba2636">天天开奖，2元赢10万</span><br>每日20:30开奖</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Pl5.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Pl5.jzh">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+        <li class="">
+        	<span class="cz_logo cz_x3d"></span>
+            <h3>福彩3D</h3>
+            <p>简单3位数 轻松赢千元</p>
+            <div><span class="c_ba2636">简单3位数 轻松赢千元</span><br>每日20:30开奖</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Fc3d.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Fc3d.jzh">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+        <li>
+        	<span class="cz_logo cz_pl3"></span>
+            <h3>排列三</h3>
+            <p>天天开奖，3位数字赢千元</p>
+            <div><span class="c_ba2636">天天开奖，3位数字赢千元</span><br>每日20:30开奖</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Pl3.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Pl3.jzh">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+     </ul>
+     <h2 class="tit redTit">高频彩</h2>
+     <ul class="allList qh clearfix">
+		<li>
+        	<span class="cz_logo cz_ssc"></span>
+            <h3>重庆时时彩</h3>
+            <p>独有夜间版，每天120期</p>
+            <div><span class="c_ba2636">独有夜间版</span><br>每天120期，最高奖10万</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Cqssc.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Cqssc.jzh#awardDetail">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+        <li>
+        	<span class="cz_logo cz_ssc"></span>
+            <h3>江西时时彩</h3>
+            <p>10分钟一期，最高奖11.6万</p>
+            <div><span class="c_ba2636">返奖率59%</span><br>10分钟一期，最高奖11.6万</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Jxssc.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Jxssc.jzh#awardDetail">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+		<li>
+        	<span class="cz_logo cz_ssc"></span>
+            <h3>河内五分彩</h3>
+            <p>5分钟一期，24小时</p>
+            <div><span class="c_ba2636">5分钟一期</span><br>每天288期，最高奖11.6万</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Hnssc.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Hnssc.jzh#awardDetail">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+     	<li>
+        	<span class="cz_logo cz_d11"></span>
+            <h3>十一运夺金</h3>
+            <p><span class="c_ba2636">返奖率59%</span>，10分钟一期</p>
+            <div><span class="c_ba2636">返奖率59%</span><br>10分钟一期，每天78期</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Sd11x5.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Sd11x5.jzh#awardDetail">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+		<li>
+        	<span class="cz_logo cz_jxd11"></span>
+            <h3>江西11选5</h3>
+            <p>每天78期，任猜1-8个号都中奖</p>
+            <div>任选玩法&nbsp;中奖简单<br>10分钟一期，单注可中1170元</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Jx11x5.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Jx11x5.jzh#awardDetail">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+		<li>
+        	<span class="cz_logo cz_gdd11"></span>
+            <h3>广东11选5</h3>
+            <p>猜对1个号就中奖，每天84期</p>
+            <div>任选玩法&nbsp;中奖简单<br>每天84期，单注可中奖1170元</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Gd11x5.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Gd11x5.jzh#awardDetail">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+		<li>
+        	<span class="cz_logo cz_hljd11"></span>
+            <h3>重庆11选5</h3>
+            <p>每10分钟一期，全天85期</p>
+            <div>任选玩法&nbsp;中奖简单<br>每天85期，单注可中奖1170元</div>
+            <a target="_blank" class="buyNow" href="/lottery/Buy!Cq11x5.jzh"></a>
+            <div class="linkBox">
+              <a target="_blank" href="/lottery/Buy!Cq11x5.jzh#awardDetail">开奖公告</a>
+              <a target="_blank" href="/Trend.jzh">走势图</a>
+            </div>
+        </li>
+    </ul>
+</article>
+<script>
+$(function(){
+	$('ul.allList li').mouseover(function(){
+		$(this).addClass('hover');
+	}).mouseout(function(){
+		$(this).removeClass('hover');
+	});
+});
+</script>
+#include("/foot.vm")
+</body>
+</html>

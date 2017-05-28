@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/userCenter/common.css"/>
+<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/my.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<article class="docBody clearfix">
+	#set($listint=15)
+	#parse("/my/MyList.vm")
+    <div class="rightModule creditsBox">
+        <div class="creditsList">
+			<h2 class="tit">下级【$down】的购彩记录</h2>
+        	<div class="selectBox clearfix">
+				<span class="mcSelectBox">
+					<a class="grayBtn25" href="javascript:;">#if($date==2)三月以前#elseif($date==1)一月以前#else一周之内#end</a><i></i>
+                	<span class="optionList" style="display: none;">
+						<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=0&lot=$!lot&status=$status&ishm=$ishm">一周之内</a>
+						<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=1&lot=$!lot&status=$status&ishm=$ishm">一月以前</a>
+						<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=2&lot=$!lot&status=$status&ishm=$ishm">三月以前</a>
+                    </span>
+				</span>
+				<span class="mcSelectBox">
+					<a class="grayBtn25" href="javascript:;">#if($!lot)$lotname#else所有彩种#end</a><i></i>
+                	<ul class="optionList  clearfix" style="display: none;">
+                    	<li class="all"><a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=&status=$status&ishm=$ishm">所有彩种</a></li>
+                    	<li>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Ssq&status=$status&ishm=$ishm">双色球</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Dlt&status=$status&ishm=$ishm">大乐透</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Fc3d&status=$status&ishm=$ishm">福彩3D</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Pl3&status=$status&ishm=$ishm">排列三</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Pl5&status=$status&ishm=$ishm">排列五</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Qxc&status=$status&ishm=$ishm">七星彩</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Qlc&status=$status&ishm=$ishm">七乐彩</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Hd15x5&status=$status&ishm=$ishm">15选5</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Hcy&status=$status&ishm=$ishm">好彩一</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Hdljy&status=$status&ishm=$ishm">华东6+1</a>
+                        </li>
+                        <li>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Cqssc&status=$status&ishm=$ishm">重庆时时彩</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Jxssc&status=$status&ishm=$ishm">江西时时彩</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Sd11x5&status=$status&ishm=$ishm">十一运夺金</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Jx11x5&status=$status&ishm=$ishm">江西11选5</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Gd11x5&status=$status&ishm=$ishm">广东11选5</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Cq11x5&status=$status&ishm=$ishm">重庆11选5</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Jsk3&status=$status&ishm=$ishm">江苏快3</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Jlk3&status=$status&ishm=$ishm">吉林快3</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Gxk3&status=$status&ishm=$ishm">广西快3</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Ahk3&status=$status&ishm=$ishm">安徽快3</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Kl8&status=$status&ishm=$ishm">快乐8</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Dwzdy&status=$status&ishm=$ishm">动物总动员</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Xync&status=$status&ishm=$ishm">幸运农场</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Gdklsf&status=$status&ishm=$ishm">粤快乐十分</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Xysc&status=$status&ishm=$ishm">幸运赛车</a>
+							<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=Qyh&status=$status&ishm=$ishm">山东群英会</a>
+                        </li>
+                        <li>
+							竞彩
+        				</li>
+                    </ul>
+				</span>
+        		<span class="mcSelectBox btnAuto">
+                	<a class="grayBtn25" href="javascript:;">#if($ishm==0)自购#elseif($ishm==1)合买#else所有投注类型#end</a><i></i>
+                	<span class="optionList widthAuto" style="display:none;">
+                    	<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=$!lot&status=$status&ishm=-1">所有投注类型</a>
+						<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=$!lot&status=$status&ishm=0">自购</a>
+						<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=$!lot&status=$status&ishm=1">合买</a>
+                    </span>
+                </span>
+				<span class="mcSelectBox btnAuto">
+                	<a class="grayBtn25" href="javascript:;">#if($status==-2)所有订单状态#else<script>document.write(Show.BuyStatus('$status'))</script>#end</a><i></i>
+                	<span class="optionList widthAuto" style="display:none;">
+                    	<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=$!lot&status=-2&ishm=$ishm">所有订单状态</a>
+						<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=$!lot&status=-1&ishm=$ishm">未满员</a>
+						<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=$!lot&status=0&ishm=$ishm">进行中</a>
+						<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=$!lot&status=1&ishm=$ishm">已中奖</a>
+						<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=$!lot&status=2&ishm=$ishm">未中奖</a>
+						<a href="/my/Cps!ListBuy.jzh?downid=$downid&date=$date&lot=$!lot&status=3&ishm=$ishm">已完成</a>
+                    </span>
+                </span>
+            </div>
+    <table class="tableData">
+        <colgroup>
+            <col width="18%">
+            <col width="12%">
+            <col width="11%">
+            <col width="12%">
+            <col width="10%">
+            <col width="10%">
+            <col width="9%">
+            <col width="10%">
+            <col>
+        </colgroup>
+        <tbody><tr>
+            <th>认购时间</th>
+            <th>彩种</th>
+            <th>期号</th>
+            <th>发起人</th>
+            <th class="tr">方案金额(元)</th>
+            <th class="tr">我购买了(元)</th>
+            <th>状态</th>
+            <th>我的奖金(元)</th>
+            <th>操作</th>
+        </tr>
+		#if($order)
+			#foreach($str in $order)
+    		<tr>
+                <td><a target="_blank" href="/lottery/BuyLot.jzh?spm=$str.Buy_item">$str.Buyuser_time</a></td>
+                    <td>$str.Buy_lot</td>
+                    <td>$str.Buy_fqihao期</td>
+                    <td>$str.User_name</td>
+                    <td>$str.Buy_money元</td>
+                    <td><font color="#8B2500">$str.Buyuser_money元</font></td>
+                    <td>$str.Buy_status</td>
+                    <td><font color="#ba2636">$str.Buyuser_win元</font></td>
+                    <td><a target="_blank" href="/lottery/BuyLot.jzh?spm=$str.Buy_item">详情</a></td>
+    		</tr>
+			#end
+		#end
+    </tbody></table>
+	#if(!$order)
+    <div class="noData">
+    	<i class="ico_book"></i><strong>没有任何订单</strong>
+    </div>
+	#end
+	$page
+</div>
+#include("/my/MyHot.vm")
+</div>
+</article>
+#include("/foot.vm")
+</body>
+</html>

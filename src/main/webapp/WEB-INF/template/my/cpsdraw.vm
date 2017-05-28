@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/userCenter/common.css"/>
+<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/my.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<article class="docBody clearfix">
+    #set($listint=15)
+	#parse("/my/MyList.vm")
+    <div class="rightModule creditsBox">
+		<ul class="redTab">
+			<li><a href="/my/Cps.jzh" target="_self">推广中心</a></li>
+			<li class="active"><a href="/my/Cps!List.jzh" target="_self">客户列表</a></li>
+			<li>报表管理（暂缺）</li>
+		</ul>
+        <div class="creditsList">
+			<div class="jifenInfo">
+				查询总数：<em>${count}个</em>
+			</div>
+        	<div class="selectBox clearfix">
+				<span class="mcSelectBox">
+					<a class="grayBtn25" href="javascript:;">#if($date==-1)所有时间#elseif($date==1)一月以前#elseif($date==2)三月以前#else一周之内#end</a><i></i>
+                	<span class="optionList" style="display: none;">
+						<a class="active" href="/my/Cps!List.jzh?date=-1&cus=$cus">所有时间</a>
+						<a href="/my/Cps!List.jzh?date=0&cus=$cus">一周之内</a>
+						<a href="/my/Cps!List.jzh?date=1&cus=$cus">一月以前</a>
+						<a href="/my/Cps!List.jzh?date=2&cus=$cus">三月以前</a>
+                    </span>
+				</span>
+				<span class="mcSelectBox">
+                	<a class="grayBtn25" href="javascript:;">#if($cus==0)有余额#elseif($cus==1)无余额#else所有余额#end</a><i></i>
+                	<span class="optionList widthAuto" style="display:none;">
+                    	<a class="active" href="/my/Cps!List.jzh?date=$date&cus=-1">所有余额</a>
+						<a href="/my/Cps!List.jzh?date=$date&cus=0">有余额</a>
+						<a href="/my/Cps!List.jzh?date=$date&cus=1">无余额</a>
+                    </span>
+                </span>
+            </div>
+    <table class="tableData">
+        <colgroup>
+            <col width="14%">
+            <col width="18%">
+            <col width="18%">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+        </colgroup>
+        <tbody><tr>
+            <th>用户名</th>
+            <th>注册时间</th>
+            <th>登录时间</th>
+            <th class="tr">余额</th>
+            <th class="tr">红包</th>
+            <th class="tr">积分</th>
+            <th>查看订单</th>
+            <th>返点设置</th>
+        </tr>
+		#if($list)
+			#foreach($l in $list)
+    		<tr>
+                <td>$l.User_name</td>
+                <td>$!l.User_regtime</td>
+                <td>$!l.User_lgtime</td>
+                <td class="tr">$l.User_money 元</td>
+                <td class="tr">$l.User_red 元</td>
+                <td class="tr">$l.User_point</td>
+                <td><a target="_blank" href="/my/Cps!ListBuy.jzh?downid=$l.User_id">查看订单</a></td>
+                <td><a href="/my/Cps!Set.jzh?downid=$l.User_id">设置返点</a></td>
+    		</tr>
+			#end
+		#end
+    </tbody></table>
+	#if(!$list)
+    <div class="noData">
+    	<i class="ico_book"></i><strong>没有任何记录</strong>
+    </div>
+	#end
+	$page
+</div>
+#include("/my/MyHot.vm")
+</div>
+</article>
+#include("/foot.vm")
+</body>
+</html>

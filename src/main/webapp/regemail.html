@@ -1,0 +1,86 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="application-name" content="www.3moo.com"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>新用户注册</title>
+<link rel="canonical" href="http://www.3moo.com/reg"/>
+<link rel="stylesheet" href="/css/global.css"/>
+<link rel="stylesheet" href="/css/skin.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/placeholder.js"></script>
+<script src="/js/register.js"></script>
+<style type="text/css">.u-btn2,.tabBd .u-check{margin-left:2px}#regEmail,#regPhone{margin-bottom:20px}.m-ipt{margin-bottom:30px}.f-mb0{margin-bottom:0}.regFormSplit{width:390px;margin:10px 0 20px 2px;text-align:right}.newEmailIpt label,.newEmailIpt .u-ipt{width:188px}.newEmailIpt .u-ipt{margin-right:10px}.newEmailIpt .m-sel{float:left;margin-right:30px}.newEmailIpt .m-sel .selInput{width:177px}.newEmailIpt .m-sel .selInput .u-ipt{width:159px}.newEmailIpt .m-sel .selOptions{width:171px}#mailIfr iframe{height:330px;width:760px;margin:0 0 20px -115px;border:0}#emailSelect .u-ipt input{position:relative;left:-8px}</style>
+</head>
+<body class="s-caipiao">
+<noscript><div id="noScript"><div><h2>请开启浏览器的Javascript功能</h2><p>亲，没它我们玩不转啊！求您了，开启Javascript吧！<br/>不知道怎么开启Javascript？那就请<a href="http://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80Javascript%E5%8A%9F%E8%83%BD" rel="nofollow" target="_blank">猛击这里</a>！</p></div></div></noscript>
+<div class="g-doc">
+	<div class="g-hd"><div class="g-in">
+		<div class="m-logobar">
+			<h1><a href="/" target="_blank"><em>三木彩票网</em><img src="/images/logo.png" alt="三木彩票网" title="三木彩票网" /></a></h1><i>|</i>
+		    <div class="pdtLogo">新用户注册</div>
+		    <span>已有帐号？马上<a href="login.html" target="_blank">登录</a></span>
+		</div>
+    </div></div>
+    <div class="g-bd">
+    	<div class="g-in">
+            <!-- tab模块 -->
+        	<div class="m-tab">
+            	<div class="tabHd">
+                    <ul class="f-cbli">
+                        <li><a href="/regname.html">用户名帐号注册</a></li>
+                        <li class="z-on"><a href="javascript:void(0);">邮箱帐号注册</a></li>
+                        <li><a href="javascript:void(0);" onclick="javascript:alert('手机注册暂未开通！建议使用邮箱注册。');">手机帐号注册</a></li>
+                    </ul>
+                </div>
+                <div class="tabBd">
+                    <form id="regemail" method="post" action="/RegAction.jzh" autocomplete="off">
+                    	<div id="regEmail">
+                    		<input type="hidden" value="0" name="upid" id="upid"/>
+                        	<div class="m-ipt f-mb0">
+                                <div class="u-ipt"><div class="iptctn"><input type="text" name="username_r" id="email_name_r" value="" autocapitalize="off" myholder="常用邮箱地址" placeholder="常用邮箱地址"/></div></div>
+                                <p class="u-tips"><em>&nbsp;</em><span></span></p>
+                            </div>
+                            <div class="regFormSplit">
+                            	<a target="_blank" href="https://mail.qq.com/">没有邮箱？注册QQ邮箱</a>
+                            </div>
+                            <div class="m-ipt">
+                                <div class="u-ipt"><div class="iptctn"><input type="password" name="password" id="password" value="" autocapitalize="off" placeholder="设置密码" myholder="设置密码"/></div></div>
+                                <p class="u-tips"><em>&nbsp;</em><span></span></p>
+                            </div>
+                            <div class="m-ipt">
+                                <div class="u-ipt"><div class="iptctn"><input type="password" name="cpassword" id="re_password" value="" autocapitalize="off" placeholder="确认密码" myholder="确认密码"/></div></div>
+                                <p class="u-tips"><em>&nbsp;</em><span></span></p>
+                            </div>
+                            <div class="m-ipt m-ipt-code">
+                                <div class="u-ipt"><div class="iptctn"><input type="text" name="radomPass" id="usercheckcode" maxlength="5" autocapitalize="off" myholder="验证码" placeholder="验证码"/></div></div>
+                                <img id="checkCode" width="128" height="40" onclick="this.src='/images/image.jsp?'+Math.random();" src="/images/image.jsp" alt="验证码" title="验证码"/>
+                                <a href="javascript:void(0);" onclick="document.getElementById('checkCode').src='/images/image.jsp?'+Math.random();" class="u-btn u-btn-img u-btn-img-code"><span><em></em></span></a>
+                                <p class="u-tips"><em>&nbsp;</em><span></span></p>
+                            </div>
+                            <button type="button" class="u-btn2">立即注册</button>
+                        </div>
+						<span class="u-check"><input type="checkbox" onchange="Reg.AgreeChange();" name="agree" id="agree" checked="checked"/><label for="agree">我已经年满18岁并同意 <a href="" target="_blank">" 服务条款 "</a>。</label></span>
+                    </form>
+                    <div class="ieAlpha"></div>
+                </div>
+            </div>
+            <!-- \tab模块 -->
+        </div>
+    </div>
+    <div class="g-ft"><div class="g-in">
+		<div class="m-cp"><p><a href="" target="_blank">About NetEase</a>-<a href="" target="_blank">公司简介</a>-<a href="" target="_blank">联系方式</a>-<a href="" target="_blank">OAuth2.0认证</a>-<a href="" target="_blank">招聘信息</a>-<a href="" target="_blank">客户服务</a>-<a href="" target="_blank">相关法律</a>-<a href="" target="_blank">网络营销</a></p><p>乐欣彩票公司版权所有 &copy;1997-2014</p></div>
+    </div></div>
+</div>
+<script type="text/javascript">
+	var upid = local.GetID('id');
+	if(null!=upid){
+		$('#upid').val(upid);
+	}
+</script>
+</html>

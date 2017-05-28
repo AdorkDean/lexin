@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/userCenter/common.css"/>
+<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/my.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<article class="docBody clearfix">
+    #set($listint=2)
+	#parse("/my/MyList.vm")
+    <div class="rightModule">
+		<ul class="redTab">
+            <li><a href="/my/Detail.jzh" target="_self">资金明细</a></li>
+            <li><a href="/my/Rechange!RechDesc.jzh" target="_self">充值记录</a></li>
+            <li class="active"><a href="/my/Rechange!DrawDesc.jzh" target="_self">提款记录</a></li>
+            <li><a href="/my/Detail!Logs.jzh" target="_self">账户日志</a></li>
+    </ul>
+        <div class="orderDataBox grayBorder">
+        	<div class="selectBox clearfix">
+				<span class="mcSelectBox">
+					<a class="grayBtn25" href="javascript:;">#if($date==2)三月以前#elseif($date==1)一月以前#else一周之内#end</a><i></i>
+                	<span class="optionList" style="display: none;">
+						<a class="active" href="/my/Rechange!DrawDesc.jzh?date=0&status=$status">一周之内</a>
+						<a href="/my/Rechange!DrawDesc.jzh?date=1&status=$status">一月以前</a>
+						<a href="/my/Rechange!DrawDesc.jzh?date=2&status=$status">三月以前</a>
+                    </span>
+				</span>
+				<span class="mcSelectBox">
+                	<a class="grayBtn25" href="javascript:;">#if($status==-1)所有状态#else<script>document.write(Show.MyDrawStatu('$status'))</script>#end</a><i></i>
+                	<span class="optionList widthAuto" style="display:none;">
+                    	<a class="active" href="/my/Rechange!DrawDesc.jzh?date=$date&status=-1">所有状态</a>
+						<a href="/my/Rechange!DrawDesc.jzh?date=$date&status=0">申请中</a>
+						<a href="/my/Rechange!DrawDesc.jzh?date=$date&status=1">已成功</a>
+						<a href="/my/Rechange!DrawDesc.jzh?date=$date&status=2">用户取消</a>
+						<a href="/my/Rechange!DrawDesc.jzh?date=$date&status=3">拒绝提款</a>
+                    </span>
+                </span>
+            </div>
+    <table class="tableData">
+        <colgroup>
+            <col width="16%">
+            <col width="8%">
+            <col width="8%">
+            <col width="8%">
+            <col width="8%">
+            <col width="10%">
+            <col width="15%">
+            <col width="7%">
+            <col width="15%">
+            <col width="5%">
+        </colgroup>
+        <tbody><tr>
+            <th>时间</th>
+            <th class="tr">金额(元)</th>
+            <th class="tr">手续费(元)</th>
+            <th>持卡人</th>
+            <th>银行</th>
+            <th>卡号</th>
+            <th>订单编号</th>
+            <th>状态</th>
+            <th>备注</th>
+            <th>操作</th>
+        </tr>
+		#if($find)
+			#foreach($list in $find)
+    		<tr>
+                <td><a target="_blank" href="$list.Draw_item">$list.Draw_time</a></td>
+                <td class="tr"><font color="#BA2636">$list.Draw_money</font></td>
+                <td class="tr">
+				#if($list.Draw_surgery>0)
+					<font color="#1E50A2">$list.Draw_surgery</font>
+				#else
+					$list.Draw_surgery
+				#end
+				</td>
+                <td>$!list.User_realname</td>
+                <td>$!list.Banks_bank</td>
+				#set($zipint=$list.Banks_card.length() - 5)
+                <td>#set($zip=$list.Banks_card.substring($zipint,$list.Banks_card.length()))****$zip</td>
+                <td><a ids="$list.Pay_id" lei="$list.Draw_type" name="show" href="javascript:">$list.Draw_item</a></td>
+                <td><script>document.write(Show.MyDrawStatu('$list.Draw_status'))</script></td>
+                <td>#if($list.Draw_desc.length()>0)$list.Draw_desc#else--#end</td>
+                <td>#if($list.Draw_status==0)<a href="javascript:" name="qxtk" ids="$list.Draw_id">取消</a>#else--#end</td>
+    		</tr>
+			#end
+		#end
+    </tbody></table>
+	#if(!$find)
+    <div class="noData">
+    	<i class="ico_book"></i><strong>没有任何记录</strong>
+    </div>
+	#end
+	$page
+</div>
+#include("/my/MyHot.vm")
+</div>
+</article>
+#include("/foot.vm")
+</body>
+<script>
+$(function(){
+	$('a[name=qxtk]').click(function(){
+		if(confirm("是否取消?")){
+			var ids = $(this).attr('ids');
+			$.post('/my/Rechange.jzh',{ids:ids,t:local.TimeLong()},function(data){
+				if(data=='0'){
+					alert('取消成功！');window.location.reload();
+				}else if(data=='-1'){
+					alert('取消失败');
+				}else if(data=='1'){
+					alert('提款不存在，或无权限，或状态不是申请中');
+				}else if(data=='nologin'){
+					alert('由于您长时间未操作，请重新登录！');location.href='/login.html';
+				}else{
+					alert('操作错误！');
+				}
+			});
+		}
+	});
+	$('table.tableData a[name=show]').click(function(){
+		var ids = Number($(this).attr('ids'));
+		var lei = Number($(this).attr('lei'));
+		alert(ids+'-');
+	});
+});
+</script>
+</html>

@@ -1,0 +1,44 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content="3D,3D走势图,3D开奖结果,3D开奖,3D玩法"/> 
+<meta name="description" content="乐欣彩票3D在线购买,提供3D开奖时间3D开奖结果,3D走势图,3D玩法介绍,3D中奖规则等信息."/>
+<title>3D,3D走势图,3D玩法_乐欣彩票</title>
+<link rel="stylesheet" href="/css/lotteryBet/moreOperate.css"/>
+<link rel="stylesheet" href="/css/base2.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/lottery_new.css"/>
+<script>
+var Mon=[];
+Mon[112]=1000;
+Mon[114]=320;
+Mon[117]=160
+</script>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/bcbox/jquery.bcbox.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/lottery.js"></script>
+<script src="/js/lotsystem.js"></script>
+<script src="/js/lotterymode.js"></script>
+</head>
+<body>
+#parse("/head.vm")
+<!--主体 开始 -->
+<div class="main ssc clearfix">
+	<div style="height:300px;margin-left:100px;"><br><br><br><br><br><br>彩种已暂停销售！请等待开售时间。</div>
+</div>
+#include("/foot.vm")
+<script type="text/javascript">
+sys.getNowTime('Fc3d');
+Right.LotNews('51');//热门公告
+Right.LotOpen2('Fc3d');//最新开奖号码
+Right.LotZhong('Fc3d');//最新中奖
+$(function(){
+	$('ul.betway_tabs li:eq(0)').click();
+	Lot.Name='Fc3d';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/userCenter/common.css"/>
+<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+<link rel="stylesheet" href="/css/userCenter/bankLogo.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/my.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<article class="docBody clearfix">
+    #set($listint=11)
+	#parse("/my/MyList.vm")
+    <div class="rightModule">
+		<ul class="redTab">
+			<li><a href="/my/Rechange!BindCard.jzh" target="_self">绑定银行卡</a></li>
+			<li class="active"><a href="/my/Rechange!BindCard2.jzh" target="_self">绑定第三方支付</a></li>
+		</ul>
+        <div class="orderDataBox grayBorder">
+			<div id="infoWrap">
+				<span id="topFormInfo">请务必保持用户名和第三方支付账户真实姓名一致，否则无法正常提款，每个用户最多绑定5个第三方支付账户。</span>
+				<div id="infoBox">
+					<form id="PayForm" method="post" action="/my/Rechange!BindCard2.jzh">
+					<ul>
+						<li><label>真实姓名：</label><span class="txtHolder idHolder">$user.user_realname</span></li>
+						<li><label><i>*</i>选择类型：</label><select id="payse" name="payse"><option value="">选择类型</option><option value="0">支付宝</option><option value="1">财付通</option></select></li>
+						<li><label><i>*</i>账	号：</label><span class="mcInputBox"><span><input id="pays" maxlength="19" name="pays"></span></span><span class="txtInfo">输入您的第三方支付账户。</span></li>
+						<li><label><i>*</i>重复帐号：</label><span class="mcInputBox"><span><input id="pays2" maxlength="19" name="pays2"></span></span><span class="txtInfo">再次输入您的账户。</span></li>
+						<li><label><i>*</i>支付密码：</label><span class="mcInputBox"><span><input type="password" id="paypass" name="paypass"></span></span><span class="txtInfo">输入支付密码（未单独设置过的等同于登录密码）。</span></li>
+						<li><label>&nbsp;</label><a onclick="CheckBindPay();" href="javascript:" rel="submit" class="redBtn30 btnAuto">提交</a></li>
+    				</ul>
+					</form>
+				</div>
+				<div id="attentionInfo">
+					<h2>注意事项:</h2>
+            		<ol class="attention_list">
+            			<li>请务必持卡人姓名和真实姓名一致，这两个信息必须和身份证上的内容完全一致，否则无法领奖；目前以身份证号和彩票标识码作为兑奖凭证，护照、军官证、台胞证、香港身份证、社会保障卡、机动车驾驶证等均不能领奖；</li>
+            			<li>依据财政部《彩票发行与销售管理暂行规定》未满18岁不得购买彩票；</li>
+            			<li>购买彩票是个人行为，请保证以上信息是您个人的真实信息，不要使用公司或他人的信息！</li>
+            			<li>如确有修改身份证号和/或真实姓名的需要，请点击<a href="/identity/appealIn.html">身份信息修改申诉！</a></li>
+					</ol>
+				</div>
+    		</div>
+	</div>
+#include("/my/MyHot.vm")
+</div>
+</article>
+#include("/foot.vm")
+</body>
+<script>
+$(function(){
+	
+});
+</script>
+</html>

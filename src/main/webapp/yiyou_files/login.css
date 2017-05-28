@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font: 12px/1.8 Tahoma, Geneva, '\5B8B\4F53';
+    color: #333;
+    background: white;
+    overflow-x: hidden;
+	  background: url("img/banner-bg.png") repeat-x center top;
+}
+input, textarea, select {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    outline: none;
+    resize: none;
+}
+html:root body, html:root input, html:root button, html:root textarea, html:root select {
+    font-family: Tahoma, Geneva, '\5fae\8f6f\96c5\9ed1', '\5B8B\4F53';
+}
+form, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #224892;
+    outline: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a img {
+    border: none;
+}
+i, em {
+    font-style: normal;
+}
+b {
+    color: #F63;
+}
+button {
+    cursor: pointer;
+}
+button i {
+    display: none;
+}
+.clear{clear:both;}
+.cl:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .cl { zoom: 1; }
+
+.header{background:#fff;height: 120px;min-width: 980px;position: relative;z-index: 3;}
+.header .con{height: 120px;margin: auto;width: 1270px;position: relative;}
+.header .con .logo{position: absolute;top: 1px; left: 1px;width: 390px;margin-top: 31px;}
+
+.wrapper{  background: url("img/banner-1.png") no-repeat center -40px;}
+.wrapper .banner-show{position: relative;height: 760px;}
+.container{position: absolute;top: 280px;z-index: 2;width: 1000px;height: 0;margin: auto;left: 50%;margin-left: -500px;}
+.container .login-box{position:relative;background:rgba(255, 255, 255, 0.4) none repeat scroll 0 0;padding-top:60px;box-shadow:0px 0px 40px #208f92;border-radius:10px;margin:0 auto;width:580px;}
+.login-form{margin-left:100px;width: 400px;height: 400px;margin-top: 0; z-index: 2;position: relative;}
+.fc{background:url("img/fc.png") no-repeat center center;width: 370px;height: 390px;position:absolute;left:-175px; opacity:.8;bottom:0;z-index: 0;}
+.form-item{height: 60px;}
+.form-item-pwd,
+.form-item-code{margin-top: 17px;}
+.form-item .form-label{width: 90px;height: 45px;background: url("img/u-name.png") no-repeat left center;display: inline-block;text-indent: -9999px; float: left;}
+.form-item .form-label.form-label-pwd{background-image: url("img/u-password.png");}
+.form-item .form-label.form-label-code{background-image: url("img/u-code.png");}
+.form-item .form-input-box{width: 300px;height: 50px; float: left;background: url("img/input.png") no-repeat left center;}
+.form-item .form-input-box .form-input{height: 45px;padding: 3px 15px;width: 100%;border: none;background: none; width: 300px;font-size:16px;}
+.form-item .form-input-box.form-input-code-box {width: 180px;background-image: url("img/code-input.png");}
+.form-item.form-item-code .form-code-img{height: 30px;width: 100px;margin-top: 7px;margin-left: 10px; float: left;}
+.user-a{margin-top: 17px;}
+.form-item .user-an{float: left;}
+.form-item .user-an .user-an-i,
+.form-item .user-an a{font-size: 14px;color: #000;}
+.form-item .user-an.user-an-an{float: right;margin-right: 45px;}
+.form-item-sub{margin-top: 20px;}
+.form-item .form-sub-box{width: 230px;background-image: url("img/btn-hover.png");margin-left: 75px;}
+.form-item .form-sub-box:hover{background-image: url("img/btn-default.png");}
+
+.footer{clear: both;padding:25px 0; position: relative;margin-top: 20px;}
+.footer .copy-right{width: 980px;margin: auto;text-align: center;color: #999;}
+.footer .copy-right .cell{position: relative;height: 26px;line-height: 26px;}
+.footer .copy-right .cell a{color: #999;}

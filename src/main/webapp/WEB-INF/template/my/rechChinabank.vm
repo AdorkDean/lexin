@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/userCenter/common.css"/>
+<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+<link rel="stylesheet" href="/css/userCenter/bankLogo.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<article class="docBody clearfix">
+    #set($listint=3)
+	#parse("/my/MyList.vm")
+    <div class="rightModule">
+		<ul class="redTab">
+			#if($alipay=='0')<li#if($pay=='alipay') class="active"#end><a href="/my/Rechange.jzh?pay=alipay" target="_self">在线快充</a></li>#end
+			#if($tenpay=='0')<li#if($pay=='tenpay') class="active"#end><a href="/my/Rechange.jzh?pay=tenpay" target="_self">在线快充</a></li>#end
+			#if($chinabank=='0')<li#if($pay=='chinabank') class="active"#end><a href="/my/Rechange.jzh?pay=chinabank" target="_self">在线快充</a></li>#end
+			#if($yeepay=='0')<li#if($pay=='yeepay') class="active"#end><a href="/my/Rechange.jzh?pay=yeepay" target="_self">在线快充</a></li>#end
+			<li#if($pay!='alipay'&&$pay!='tenpay'&&$pay!='chinabank'&&$pay!='yeepay') class="active"#end><a href="/my/Rechange.jzh" target="_self">网银充值</a></li>
+			<li><a href="/my/Rechange!RechDesc.jzh" target="_self">充值记录</a></li>
+		</ul>
+        <div class="orderDataBox grayBorder">
+				<ul style="padding-bottom:0" class="pay_form">
+					<li style="margin-bottom:10px">
+						<div class="f_left">选择银行：</div>
+						<div class="f_right">
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<div id="bankCardSelectHand" class="selectBankBox inputs">
+												<span id="bankCardSelectBank"><span class="bankLogo b_0004"></span><em class="activeBorder"></em></span>
+												<span id="selectBankBtn" class="selectBankBtn"></span>
+											</div>
+										</td>
+										<td>
+											<span class="err" id="bankCode_err">&nbsp;</span>
+											<input type="hidden" value="0004" id="bankCode" name="bankCode">
+										</td>
+									</tr>
+								</tbody>
+							</table>  
+							<div class="bankCardSelectBox" style="display:none;" id="bankCardSelectBox">
+								<ul class="bankCardList">
+									<li bankid="1025" maxamount="true" bankcode="0001"><span class="bankLogo b_0001"></span><em class="activeBorder"></em></li>
+									<li bankid="103" maxamount="true" bankcode="0002"><span class="bankLogo b_0002"></span><em class="activeBorder"></em></li>
+									<li bankid="105" maxamount="true" bankcode="0004"><span class="bankLogo b_0004"></span><em class="activeBorder"></em></li>
+                                    <li bankid="308" maxamount="true" bankcode="0003"><span class="bankLogo b_0003"></span><em class="activeBorder"></em></li>
+                                    <li bankid="104" maxamount="true" bankcode="0009"><span class="bankLogo b_0009"></span><em class="activeBorder"></em></li>
+                                    <li bankid="301" maxamount="true" bankcode="0014"><span class="bankLogo b_0014"></span><em class="activeBorder"></em></li>
+                                    <li bankid="311" maxamount="true" bankcode="0016"><span class="bankLogo b_0016"></span><em class="activeBorder"></em></li>
+                                    <li bankid="309" maxamount="true" bankcode="0007"><span class="bankLogo b_0007"></span><em class="activeBorder"></em></li>
+                                    <li bankid="305" maxamount="true" bankcode="0013"><span class="bankLogo b_0013"></span><em class="activeBorder"></em></li>
+                                    <li bankid="306" maxamount="true" bankcode="0022"><span class="bankLogo b_0022"></span><em class="activeBorder"></em></li>
+                                    <li bankid="307" maxamount="true" bankcode="0077"><span class="bankLogo b_0077"></span><em class="activeBorder"></em></li>
+                                    <li bankid="314" maxamount="true" bankcode="0011"><span class="bankLogo b_0011"></span><em class="activeBorder"></em></li>
+                                    <li bankid="313" maxamount="true" bankcode="0005"><span class="bankLogo b_0005"></span><em class="activeBorder"></em></li>
+                                    <li bankid="312" maxamount="true" bankcode="0008"><span class="bankLogo b_0008"></span><em class="activeBorder"></em></li>
+                                    <li bankid="326" maxamount="true" bankcode="0024"><span class="bankLogo b_0024"></span><em class="activeBorder"></em></li>
+                                    <li bankid="316" maxamount="true" bankcode="0044"><span class="bankLogo b_0044"></span><em class="activeBorder"></em></li>
+                                    <li bankid="3230" maxamount="true" bankcode="0006"><span class="bankLogo b_0006"></span><em class="activeBorder"></em></li>
+                                    <li bankid="324" maxamount="true" bankcode="0110"><span class="bankLogo b_0110"></span><em class="activeBorder"></em></li>
+                                    <li bankid="302" maxamount="true" bankcode="0067"><span class="bankLogo b_0067"></span><em class="activeBorder"></em></li>
+                                    <li bankid="310" maxamount="true" bankcode="0015"><span class="bankLogo b_0015"></span><em class="activeBorder"></em></li>
+                                    <li bankid="342" maxamount="true" bankcode="0170"><span class="bankLogo b_0170"></span><em class="activeBorder"></em></li>
+                                    <li bankid="343" maxamount="true" bankcode="0018"><span class="bankLogo b_0018"></span><em class="activeBorder"></em></li>
+                                    <li bankid="335" maxamount="true" bankcode="0012"><span class="bankLogo b_0012"></span><em class="activeBorder"></em></li>
+                                    <li bankid="3341" maxamount="true" bankcode="0183"><span class="bankLogo b_0183"></span><em class="activeBorder"></em></li>
+                                    <li bankid="336" maxamount="true" bankcode="0093"><span class="bankLogo b_0093"></span><em class="activeBorder"></em></li>
+								</ul>
+								<div class="clear"></div>
+        					</div>	
+                    		<div style="line-height:14px;padding-top:10px;">
+                    			<span style="display: inline;"><em class="help_tip"></em>建议使用IE浏览器继续，以便正常使用网银。</span>
+                    		</div>
+      					</div>
+					</li>
+					<span id="payOnlineForm1box" style="display: block;">
+						<li>
+							<div class="f_left">充值金额：</div>
+                            <div class="f_right">
+								<span style="position:relative; display:inline-block">
+									<input type="text" onpaste="return false" autocomplete="off" maxlength="6" style="width:130px" id="amount" class="inputs" onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+								</span>
+								元 <span id="amount_err" class="err">&nbsp;</span>
+                         	</div>
+						</li>	
+					</span>
+	<!--开快捷提示信息 开始-->
+    <li style="display:block;" id="bankQuickBInfoBox">
+      <div class="f_left">&nbsp;</div>
+      <div class="f_right"><span class="quickPayOnline">即时到账，充值免收手续费，最小充值金额50元，最大金额1万元。</span></div>
+    </li>
+    <!--开快捷提示信息 结束-->
+    <li id="goPayOnlineBtnBox" class="btnLi" style="display: block;">
+      <div class="f_left">&nbsp;</div>
+      <div class="f_right"> 
+	  	<span class="btn1Box">
+        <button class="btn1" type="button" id="bankCardSumbit">确认,去银行页面充值</button>
+        </span> 
+		<div class="btnInfo">
+			<input type="checkbox" checked="checked" name="" value="" id="quickPayCheckBox"> 我同意<a href="" style="color:#2579A7" target="_blank">《乐欣宝服务协议》</a>
+		</div>
+	  </div>
+    </li>
+  </ul>
+<form action="/my/Send!ChinaBank.jzh" method="post" id="myform" target="_blank">
+	<input type="hidden" name="v_amount" id="v_money" value=""/>
+	<input type="hidden" name="v_pmode" id="v_bank" value="105"/>
+</form>
+<script>
+$('#bankCardSelectHand').click(function(){
+	if($('#selectBankBtn').hasClass('selectBankBtnOpen')){
+		$('#selectBankBtn').attr('class','selectBankBtn');
+		$('#bankCardSelectBox').hide();
+	}else{
+		$('#selectBankBtn').attr('class','selectBankBtnOpen');
+		$('#bankCardSelectBox').show();
+	}
+});
+$('.bankCardList li').click(function(){
+	var cl = $(this).find('span').attr('class');
+	$('#bankCardSelectBank span').attr('class',cl);
+	$('#bankCardSelectHand').click();
+	var bankid = $(this).attr('bankid');
+	$('#v_bank').val(bankid);
+});
+$('#amount').keyup(function(){
+	var m = $(this).val().replace(/\D/g,'');
+	$(this).val(m);
+	$('#v_money').val(m);
+});
+$('#bankCardSumbit').click(function(){
+	if($('#quickPayCheckBox').is(":checked")){
+		var mon = $('#v_money').val();
+		if(mon<50){
+			alert('最少需充值50元。');return;
+		}else if(mon>10000){
+			alert('单笔最多充值10000元。');return;
+		}
+		$("#myform").submit();
+	}else{
+		alert('您必须同意充值协议！');
+	}
+});
+</script>
+</div>
+#include("/my/MyHot.vm")
+</div>
+</article>
+#include("/foot.vm")
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+<meta name="msapplication-tap-highlight" content="no">
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<title></title>
+<link rel="stylesheet" href="/v3/css/base.css">
+<link rel="stylesheet" href="/v3/css/index.css?1223">
+<link rel="stylesheet" href="/v3/css/idangerous.swiper.css">
+<script src="/v3/js/plug/idangerous.swiper-2.0.min.js"></script>
+<script src="/v3/js/base/jquery.js"></script>
+<script src="/v3/js/base/baseAjax.js"></script>
+<script src="/common/branch.js"></script>
+<script>
+document.getElementsByTagName("title").item(0).innerHTML=proTitle+"体彩";
+</script>
+
+</head>
+
+<body>
+	<footer class="g-index_footer">
+		<ul class="m-index_ft ui-avc">
+			<li class="flex1 js-touch on">首页</li>
+			<li class="flex1 js-touch" onclick="window.location.href='lotteryinfo/kjxx.action'">开奖公告</li>
+			<li class="flex1 js-touch" onclick="window.location.href='select-jump.action?type=2'">我的彩票</li>
+		</ul>
+	</footer>
+	<div class="swiper-container">   
+		<div class="swiper-wrapper">
+		    <div style=" display:;" class="swiper-slide">
+				<img alt="" src="/v3/images/index/indexbanner01.png" style="width: 100%"/>
+		    </div>
+		</div> 
+		<div class="pagination"></div>
+	</div>
+	<script>
+		//轮循图片
+		function indeximage(){
+			baseAjax("get","/data/index/index_image.json",false,null,"json",function(data){
+				//var da = data.join("$").replace("\\","/");
+				var imgDate = data ;//eval("("+data+")");
+			    var htm ="<div class=\"swiper-wrapper\">" ;
+			    var imgurl ;
+				for(var i = 0 ; i < imgDate.length ; i++){
+					imgurl = imgDate[i].imgurl.replace("\\","/");;
+					htm = htm + "<div style=\" display:;\" class=\"swiper-slide\"><a href=\""+imgDate[i].ctxturl+"\"><img src=\""+imgurl+"\" style=\"width: 100%;height:100%;\"/></a></div>" ;
+				}
+				htm+="</div><div class=\"pagination\"></div>";
+				//htm+="</div>";
+				$(".swiper-container").html(htm);
+				//loadJs("/v3/js/plug/idangerous.swiper-2.0.min.js")
+				mySwiper = new Swiper('.swiper-container',{
+				    pagination: '.pagination',
+				    loop:true,
+				    grabCursor: true,
+				    autoplay : 6000,
+				    paginationClickable: true
+				  });
+			});
+		}   
+		indeximage();
+	</script>
+	<section id="ggshow" class="index_notice plr_16 ui-avc" style="display:none;">
+		<i class="i-speaker" onclick="toGongGao()"></i><a href="javascript:void(0);" id="ginfo"></a>
+	</section>
+
+	<section class="m-cz_list">
+		<ul class="cz_list_ul">
+			<li class="d-box bb_e1">
+				<div class="cz_box bb_e1 b-flex ui-avc" onclick="window.location.href='/trand/trand!lotIssue.action?lot=1'"> <!-- ontouch 触摸状态 -->
+					<i class="logo-1"></i>
+					<div class="cz_name">
+						<h2>大乐透</h2>
+						<p id="Txt_1"><em class=""></em></p>
+					</div>
+					<div id="Mk_1" class="i-award" style="display: none"></div>
+				</div>
+				<div class="cz_box bb_e1 b-flex ui-avc" onclick="window.location.href='/v3shtml/lotteryinfo/kjgg.html#?page=kjgg_jczq'">
+					<i class="logo-2"></i>
+					<div class="cz_name">
+						<h2>竞彩足球</h2>
+						<p id="Txt_9"></p>
+					</div>
+					<div id="Mk_9" class="i-award" style="display: none"></div>
+				</div>
+			</li>
+			<li class="d-box bb_e1">
+				<div id="hb11x5c" style="display: none" class="cz_box bb_e1 b-flex ui-avc" onclick="window.location.href='/v3shtml/trade/gpc/hb/11x5.shtml'">
+					<i class="logo-3"></i>
+					<div class="cz_name">
+						<h2>11选5</h2>
+						<p id="Txt_20"></p>
+						<span class="time-gpcp" id="11x5_time"></span>
+					</div>
+					<div id="Mk_20" class="i-award" style="display: none"></div>
+				</div>
+				
+				<div id="tj11x5c" style="display: none" class="cz_box bb_e1 b-flex ui-avc" onclick="window.location.href='/trand/trand!lotIssue.action?lot=21'">
+					<i class="logo-3"></i>
+					<div class="cz_name">
+						<h2>天津11选5</h2>
+						<p id="Txt_21"></p>
+						<span class="time-gpcp" id="tj11x5_time"></span>
+					</div>
+					<div id="Mk_21" class="i-award" style="display: none"></div>
+				</div>
+				<script>
+					if(proName =="hb"){
+						$("#hb11x5c").show();
+						$("#tj11x5c").hide();
+					} else {
+						$("#hb11x5c").hide();
+						$("#tj11x5c").show();
+					}
+				</script>
+				<div class="cz_box bb_e1 b-flex ui-avc" onclick="window.location.href='/v3shtml/lotteryinfo/kjgg.html#?page=kjgg_jclq'">
+					<i class="logo-4"></i>
+					<div class="cz_name">
+						<h2>竞彩篮球</h2>
+						<p id="Txt_10"><em class=""></em></p>
+					</div>
+					<div id="Mk_10" class="i-award" style="display: none"></div>
+				</div>
+				
+			</li>
+			<li class="d-box bb_e1">
+				<div class="cz_box bb_e1 b-flex ui-avc" onclick="window.location.href='/trand/trand!lotIssue.action?lot=2'">
+					<i class="logo-5"></i>
+					<div class="cz_name">
+						<h2>排列三</h2>
+						<p id="Txt_2"></p>
+					</div>
+					<div id="Mk_2" class="i-award" style="display: none"></div>
+				</div>
+				<div class="cz_box bb_e1 b-flex ui-avc" onclick="window.location.href='/trand/trand!lotIssue.action?lot=3'">
+					<i class="logo-6"></i>
+					<div class="cz_name">
+						<h2>排列五</h2>
+						<p id="Txt_3"></p>
+					</div>
+					<div id="Mk_3" class="i-award" style="display: none"></div>
+				</div>
+			</li>
+			<li class="d-box bb_e1">
+				<div class="cz_box bb_e1 b-flex ui-avc" onclick="window.location.href='/trand/trand!lotIssue.action?lot=4'">
+					<i class="logo-7"></i>
+					<div class="cz_name">
+						<h2>七星彩</h2>
+						<p id="Txt_4"></p>
+					</div>
+					<div id="Mk_4" class="i-award" style="display: none"></div>
+				</div>
+				<div class="cz_box bb_e1 b-flex ui-avc" onclick="window.location.href='/trand/trand!lotIssue.action?lot=6'">
+					<i class="logo-8"></i>
+					<div class="cz_name">
+						<h2>传统足彩</h2>
+						<p id="Txt_6_7_8"></p>
+					</div>
+					<div id="Mk_6_7_8" class="i-award" style="display: none"></div>
+				</div>
+			</li>
+			
+		</ul>
+	</section>
+	<section>
+    	<div class="indxe_bomtitle mlr_16"><i class="hot"></i>互动中心</div>
+        <ul class="hot_con ui-avc">
+            <li class="b-flex ui-avc" onclick="window.location.href='/v3shtml/trand/11x5recom/mart.html'">
+                <div class="left_pic 11x5"></div>
+                <div class="flex1 ml_6"><p class="fz_14">11选5推荐</p><em class="c_9 fz_10" id="omission_50_info"></em></div>
+            </li>
+            <li class="b-flex ui-avc" onclick="window.location.href='/newinfo/map/map!toMap.action'">
+                <div class="left_pic tzz"></div>
+                <div class="flex1 ml_6"><p class="fz_14 c_333">投注站</p><em class="c_9 fz_10">您身边的投注站</em></div>
+            </li>
+        </ul>
+    </section>
+<script>
+
+window.addEventListener("load", function(){
+	/* 延后加载logo图片CSS */
+	var head = document.getElementsByTagName('head')[0];
+    var css = document.createElement('link');
+    css.type = "text/css";
+    css.rel = "stylesheet";
+    css.href = "/v3/css/logo.css";
+    head.appendChild(css);
+}, false); 
+var gongGaoData=null ;
+var gongGaoIndex = 0 ;
+$(document).ready(function(){
+	//indeximage();
+	lot_state() ;
+	gongGao() ;
+	showGongGao();//第一次加载  ，后面定时
+	setInterval(showGongGao, 2000) ;
+	gp11x5Issue();
+	initZstDetail();
+}) ;
+
+
+//公告
+function gongGao(){
+	baseAjax("get","/data/index/gonggao.json",true,null,"text",function(data){
+		gongGaoData = eval("("+data+")");
+		gongGaoIndex = 0 ;
+		$("#ggshow").show();
+	}) ;
+}
+//显示公告
+function showGongGao(){
+	if(!(typeof gongGaoData =="undefined") && gongGaoData != null && gongGaoData != ""){
+		$("#ginfo").html(gongGaoData[gongGaoIndex].context);
+		$("#ginfo").attr("href","/html/lot/"+gongGaoData[gongGaoIndex].ctxturl);
+		if(gongGaoIndex < gongGaoData.length -1){
+			gongGaoIndex ++ ;
+		} else {
+			gongGaoIndex = 0 ;
+		}
+	}
+}
+//彩种标识
+function lot_state(){
+	baseAjax("get","/data/index/lot_state.json",true,null,"text",function(data){
+		var lot_state = eval("("+data+")");
+		for(var i = 0 ; i < lot_state.length ; i++){
+			showLotInfo(lot_state[i].lotCode , lot_state[i].context1 , lot_state[i].context2 , lot_state[i].mark1 , lot_state[i].mark2);
+		}
+	}) ;
+}
+//显示彩种标记信息
+function showLotInfo(lotCode , info1 , info2 , mark1 , mark2){
+	if(lotCode >= 6 && lotCode <=8){
+		if(lotCode == 8){
+			if(mark1 == "1"){
+		  		$("#Txt_6_7_8").html("<em class=\"red_boxf\">"+info1+"</em>") ;
+			}else{
+				$("#Txt_6_7_8").html("<em>"+info1+"</em>") ;
+			}
+			if(mark2 == "1"){
+				$("#Mk_6_7_8").html(info2).show();
+			} else {
+				$("#Mk_6_7_8").hide();
+			}
+		}
+	} else {
+		if(mark1 == "1"){
+	  		$("#Txt_"+lotCode).html("<em class=\"red_boxf\">"+info1+"</em>") ;
+		}else{
+			$("#Txt_"+lotCode).html("<em>"+info1+"</em>") ;
+		}
+		if(mark2 == "1"){
+			$("#Mk_"+lotCode).html(info2).show();
+		} else {
+			$("#Mk_"+lotCode).hide();
+		}
+	}
+}
+//重新加载js
+function loadJs(file) {
+    var head = $("head").remove("script[role='reload']");
+    $("<scri" + "pt>" + "</scr" + "ipt>").attr({ role: 'reload', src: file, type: 'text/javascript' }).appendTo(head);
+}
+
+//11x5_time
+
+function gp11x5Issue(){
+	if(proName =="hb"){
+		//timeCounter("11x5_time" , "/trade/gpc/hb11x5!getNowIssue.action");
+		//timeCounter("tj11x5_time" , "//trade/gpc/tj/tj11x5!getNowIssue.action");
+		 timeCounter("11x5_time" , false , function(){
+			var tp_time =-1;
+			baseAjax("get","/trade/gpc/hb11x5!getNowIssue.action?t="+new Date().getTime(),false,null,"text",function(data){
+		  		var lot_state = eval("("+data+")");
+				if(!(typeof lot_state=="undefined") && lot_state != null){
+					 tp_time = formatDate(lot_state.hct_stop , true) - formatDate(lot_state.currentSysDate , true) ;
+					 tp_time = tp_time / 1000 ;
+				} else {
+					tp_time =  -1 ;
+				};
+		  	});
+			return tp_time ;
+		}); 
+	} else {
+		timeCounter("tj11x5_time" , false , function(){
+			var tp_time =-1;
+			baseAjax("get","/trade/gpc/tj/tj11x5!getNowIssue.action?t="+new Date().getTime(),false,null,"text",function(data){
+		  		var lot_state = eval("("+data+")");
+				if(!(typeof lot_state=="undefined") && lot_state != null){
+					 tp_time = formatDate(lot_state.hct_stop , true) - formatDate(lot_state.currentSysDate , true) ;
+					 tp_time = tp_time / 1000 ;
+				} else {
+					tp_time =  -1 ;
+				};
+		  	});
+			return tp_time ;
+		});
+	}
+}
+
+function initZstDetail(count){
+	api_url = base_url+"/trand/trand!tj11x5.action?t="+new Date().getTime();
+	var issue_count=count||50;//默认拉取50条
+	var lot=21;	
+	var zst_detail = getDataForAPI({
+		"lot" : lot,
+		"issueCount":issue_count
+	});
+
+	var temp=0;
+	var tempNum=0;
+	zst_detail.max_omission=zst_detail.max_omission.split(',');
+	for (var i = zst_detail.max_omission.length - 1; i > 0; --i)
+    {
+        for (var j = 0; j < i; ++j)
+        {
+        	var omission=zst_detail.max_omission[j];
+        	var omission2=zst_detail.max_omission[j+1];
+            if (omission2 < omission)
+            {
+            	temp=omission;
+				tempNum=j+1;
+            }
+        }
+    }
+	$('#omission_50_info').html(tempNum+"号"+temp+"期未开");
+}
+</script>
+<script type="text/javascript" src="/v3/js/plug/stat_baidu.js"></script>
+<script type="text/javascript" src="/v3/js/trand/zepto.min.js"></script>
+<script type="text/javascript" src="/v3/js/trand/template.js"></script>
+<script type="text/javascript" src="/v3/js/trand/http.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/userCenter/common.css"/>
+<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+<link rel="stylesheet" href="/css/userCenter/bankLogo.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/my.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<article class="docBody clearfix">
+    #set($listint=11)
+	#parse("/my/MyList.vm")
+    <div class="rightModule">
+		<ul class="redTab">
+			<li class="active"><a href="/my/Rechange!BindCard.jzh" target="_self">绑定银行卡</a></li>
+			<li><a href="/my/Rechange!BindCard2.jzh" target="_self">绑定第三方支付</a></li>
+		</ul>
+        <div class="orderDataBox grayBorder">
+			<div id="infoWrap">
+				<span id="topFormInfo">请务必保持用户名和持卡人姓名一致，否则无法正常提款，每个用户最多绑定5张银行卡。</span>
+				<div id="infoBox">
+					<form id="userInfoForm" method="post" action="/my/Rechange!BindCard.jzh">
+						<ul>
+							<li><label>真实姓名：</label><span class="txtHolder idHolder">$user.user_realname</span></li>
+							<li><label><i>*</i>选择开户银行：</label><select id="bankse" name="bankse"><option value="">选择银行</option><option value="工商银行">工商银行</option><option value="农业银行">农业银行</option><option value="招商银行">招商银行</option><option value="建设银行">建设银行</option><option value="中国银行">中国银行</option>
+							<option value="交通银行">交通银行</option><option value="邮政储蓄">邮政储蓄</option><option value="光大银行">光大银行</option><option value="浦发银行">浦发银行</option><option value="广发银行">广发银行</option><option value="民生银行">民生银行</option><option value="兴业银行">兴业银行</option><option value="中信银行">中信银行</option><option value="北京商业银行">北京商业银行</option>
+							<option value="华夏银行">华夏银行</option><option value="平安银行">平安银行</option><option value="北京银行">北京银行</option><option value="宁波银行">宁波银行</option><option value="南京银行">南京银行</option><option value="渤海银行">渤海银行</option><option value="东亚银行">东亚银行</option><option value="深发展银行">深发展银行</option></select><span class="txtInfo">建议选择四大银行，否则提款可能会有延时。</span></li>
+							<li><label><i>*</i>银行开户省份：</label><select id="province" name="province"><option value="">选择</option></select> <select id="city" name="city"><option value="">选择</option></select><span class="txtInfo">必须选择银行卡所属省、市（区、县）。</span></li>
+							<li><label><i>*</i>开户支行名称：</label><span class="mcInputBox"><span><input id="cardadd" maxlength="30" name="cardadd"></span></span><span class="txtInfo">例如：重庆大渡口建设支行。</span></li>
+							<li><label><i>*</i>银行账号：</label><span class="mcInputBox"><span><input id="card" maxlength="19" name="card"></span></span><span class="txtInfo">输入您要绑定的银行卡号。</span></li>
+							<li><label><i>*</i>重复银行帐号：</label><span class="mcInputBox"><span><input id="card2" maxlength="19" name="card2"></span></span><span class="txtInfo">再次输入银行卡号。</span></li>
+							<li><label><i>*</i>支付密码：</label><span class="mcInputBox"><span><input type="password" id="paypass" name="paypass"></span></span><span class="txtInfo">输入支付密码（未单独设置过的等同于登录密码）。</span></li>
+    						<li><label>&nbsp;</label><a onclick="CheckBindCard();" href="javascript:" rel="submit" class="redBtn30 btnAuto">提交</a></li>
+    					</ul>
+    				</form>
+					<script src="/js/citys.js"></script>
+				</div>
+				<div id="attentionInfo">
+					<h2>注意事项:</h2>
+            		<ol class="attention_list">
+            			<li>请务必持卡人姓名和真实姓名一致，这两个信息必须和身份证上的内容完全一致，否则无法领奖；目前以身份证号和彩票标识码作为兑奖凭证，护照、军官证、台胞证、香港身份证、社会保障卡、机动车驾驶证等均不能领奖；</li>
+            			<li>依据财政部《彩票发行与销售管理暂行规定》未满18岁不得购买彩票；</li>
+            			<li>购买彩票是个人行为，请保证以上信息是您个人的真实信息，不要使用公司或他人的信息！</li>
+            			<li>如确有修改身份证号和/或真实姓名的需要，请点击<a href="/identity/appealIn.html">身份信息修改申诉！</a></li>
+					</ol>
+				</div>
+    		</div>
+	</div>
+#include("/my/MyHot.vm")
+</div>
+</article>
+#include("/foot.vm")
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>红包,优惠买彩票,红包领取_乐欣彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/coupon/coupon.css"/>
+<link rel="stylesheet" href="/css/coupon/buyRedBagCom.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/lotterymode.js"></script>
+</head>
+<body class="">
+#set($ind=7)
+#parse("/head.vm")
+<article class="mainWrap">
+	<div class="docBody clearfix">
+		<div class="buyMod1 clearfix" style="background:url(/img/coupon/2013102214TT43743721.jpg) center top no-repeat;">
+			<aside class="leftNav">
+				<ul>
+					<li class="active"><a href="/Reds.jzh">购买红包</a></li>
+					<li><a href="/my/Reds.jzh" target="_blank">我的红包</a></li>
+					<li><a href="/help/q/104.jsp" target="_blank">使用帮助</a></li>
+				</ul>
+			</aside>
+			<aside class="headInfo">红包不限制使用次数，建议购买大额红包，金额越高省得越多，可支付次数越多。&nbsp;<a href="/my/Reds.jzh" target="_blank">查看我的红包</a></aside>
+		</div>
+		<div class="redBagBody clearfix" id="redBagBody">
+		<form action="/sale/coupon_saleCoupon.html" method="post" id="ownBuyForm" onsubmit="return false">
+        <div class="ownDifine" id="ownBuyForm">
+            <h4 class="defineTit">自己定红包面额：</h4>
+            <ul class="clearfix">
+                <li><span class="couponValue">
+						<!--<input type="text" value="" id="defineInput" maxlength="6" autocomplete="off" /><i>输入你想要的红包面额</i>-->
+						暂无红包活动
+				</span></li>
+                <li class="tjPrice">抢购价：<span>--</span></li>
+                <li id="errorPro" class="errorPro"><i>折扣很低，面额随意，个性又划算</i></li>
+                <li class="buyBtn"><input type="button" class="qgBtn2" id="ownBtn"></li>
+            </ul>
+        </div>
+    </form>
+    <div class="cpQg">
+        <div class="buyTit clearfix">
+			<span class="couponTit">固定面额红包：</span>
+        </div>
+        <div class="couponList clearfix">
+            <ul class="clearfix">
+                <li>
+                    <div class="hb_bg2 addClick" rel="1" aid="201311couponActivityId"><span class="numWrap2"><em class="num_1"></em><em class="num_0"></em><em class="num_0"></em><i>元</i></span></div>
+                        <p class="priceSam1">立省：<del><i>¥</i><em>0.1</em></del></p>
+                        <p class="tePrice">特价：<span>¥</span><strong class="saleAmount">99.9</strong></p>
+                    <p class="t_c">
+                            <input type="button" class="btnQgGray" rel="1" value="立即抢购" aid="201311couponActivityId"><!-- btnQg-->
+                    </p>
+                </li>
+                <li>
+                    <div class="hb_bg2 addClick" rel="2" aid="201311couponActivityId">
+                    <span class="numWrap2">	<em class="num_3"></em><em class="num_0"></em><em class="num_2"></em><i>元</i></span></div>
+                        <p class="priceSam1">立省：<del><i>¥</i><em>2.1</em></del></p>
+                        <p class="tePrice">特价：<span>¥</span><strong class="saleAmount">299.9</strong></p>
+                    <p class="t_c">
+                            <input type="button" class="btnQgGray" rel="2" value="立即抢购" aid="201311couponActivityId">
+                    </p>
+                </li>
+                <li>
+                    <div class="hb_bg2 addClick" rel="3" aid="201311couponActivityId">
+                    <span class="numWrap3">	<em class="num_1"></em><em class="num_0"></em><em class="num_0"></em><em class="num_8"></em><i>元</i></span></div>
+                        <p class="priceSam1">立省：<del><i>¥</i><em>10</em></del></p>
+                        <p class="tePrice">特价：<span>¥</span><strong class="saleAmount">998</strong></p>
+                    <p class="t_c">
+                            <input type="button" class="btnQgGray" rel="3" value="立即抢购" aid="201311couponActivityId">
+                    </p>
+                </li>
+                <li>
+                    <div class="hb_bg2 addClick" rel="4" aid="201311couponActivityId">
+                    <span class="numWrap3">	<em class="num_1"></em><em class="num_0"></em><em class="num_1"></em><em class="num_1"></em><em class="num_8"></em><i>元</i></span></div>
+                        <p class="priceSam1">立省：<del><i>¥</i><em>120</em></del></p>
+                        <p class="tePrice">特价：<span>¥</span><strong class="saleAmount">9998</strong></p>
+                    <p class="t_c">
+                            <input type="button" class="btnQgGray" rel="4" value="立即抢购" aid="201311couponActivityId">
+                    </p>
+                </li>
+                <li class="cLast">
+                    <div class="hb_bg2 addClick" rel="5" aid="201311couponActivityId">
+                    <span class="numWrap3">	<em class="num_5"></em><em class="num_0"></em><em class="num_5"></em><em class="num_9"></em><em class="num_8"></em><i>元</i></span></div>
+                        <p class="priceSam1">立省：<del><i>¥</i><em>600</em></del></p>
+                        <p class="tePrice">特价：<span>¥</span><strong class="saleAmount">49998</strong></p>
+                    <p class="t_c">
+                            <input type="button" class="btnQgGray" rel="5" value="立即抢购" aid="201311couponActivityId">
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+		<div class="modLast clearfix padT10">
+			<div class="hbRule">
+				<h3>如何用红包买彩票中奖？</h3>
+				<ul>
+					<li>红包抢购成功后直接派发到您的乐欣彩票账户中，下单就能用，此页面购买的红包无需进行兑换。</li>
+                    <li>您可在“<a href="/my/Reds.jzh" target="_blank" >我的红包</a>”中查询红包详情。</li>
+                    <li>红包自购买之日起<em>永久有效</em>，购买的红包在乐欣彩票<em>和现金等值</em>！</li>
+                    <li>每笔订单只能用1个红包，红包剩余金额可再次使用，不限使用次数，购买大额红包，支付起来更加方便！</li>
+                    <li>红包只可在乐欣彩票购彩，不能提现，红包消费无积分。</li>
+				</ul>
+			</div>
+			<div class="hotCz">
+				<h3><span><a href="/Index!BuyHome.jzh" target="_blank">更多彩种&gt;&gt;</a></span>热门彩种推荐</h3>
+				<ul class="clearfix">
+					<li> <a href="/lottery/Buy!Ssq.jzh" target="_blank" hidefocus> <span class="czLogo icon_ssq">双色球</span><em class="emTit">双色球</em><br>彩民的最爱，每期销量过亿</a></li>
+					<li class="rowRight"> <a href="/lottery/Buy!Sd11x5.jzh" target="_blank" hidefocus> <span class="czLogo icon_d11">十一运夺金</span><em class="emTit">11选5</em><br>返奖率59%</a></li>
+					<li> <a href="/lottery/Buy!Dlt.jzh" target="_blank" hidefocus> <span class="czLogo icon_dlt">大乐透</span><em class="emTit">大乐透</em><br>奖金最丰厚，3元赢1600万</a></li>
+					<li class="rowRight"> <a href="/lottery/Buy!Jxssc.jzh" target="_blank" hidefocus> <span class="czLogo icon_ssc">新时时彩</span><em class="emTit">新时时彩</em><br>返奖率59%</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</article>
+#include("/foot.vm")
+</body>
+</html>

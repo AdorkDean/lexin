@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/order/orderCore.css"/>
+<link rel="stylesheet" href="/css/order/groupDetail.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<div class="docBody clearfix">
+<nav id="pathNav"><i>您的位置：</i><a href="/">乐欣彩票</a> &gt; <span>订单详情</span></nav>
+<section id="mainBody">
+	<header class="game_header clearfix">
+	<div class="headerBox">
+		<div class="clearfix titleBox">
+			<script>document.write(Show.LogoName('$buy.Buy_lot'))</script>
+			<div class="abstract"><span>发起时间：$buy.Buy_time</span><span>编号：$buy.Buy_item</span><strong class="gameperiod"><strong>期号：$buy.Buy_fqihao</strong></strong></div>
+		</div>
+	</div>
+	</header>
+    <div class="topWrap clearfix">
+        <div class="userInfoBox">
+            <div class="clearfix userInfo">
+                <img style="display:inline;float:left;margin:0 15px 0 10px;border:1px solid #C2C2C2;height:60px;width:60px;" src="/images/homepage/default.png"/>
+                <div class="userName">发起人<strong>$buy.User_name</strong></div>
+            </div>
+            <ul class="list clearfix">
+                <li><span class="textL">个人战绩：</span><script>document.write(Show.UserLevel('$buy.User_level'))</script><em>&nbsp;</em></li>
+                <li><span class="textL">中奖宣言：</span><strong>$!buy.User_word</strong></li>
+            </ul>
+        </div>
+        <div class="scheme">
+            <ul class="list">
+                <li>方案状态：<strong><script>document.write(Show.BuyStatus('$buy.Buy_status'))</script></strong></li>
+				<li>方案总额：<strong class="c_ba2636">$buy.Buy_money 元</strong></li>
+				<li>总&nbsp;&nbsp;注&nbsp;&nbsp;数：<strong>$buy.Buy_zhushu 注</strong></li>
+				<li>中奖金额：<strong>#if($buy.Buy_winmoney>0)<font class="c_ba2636">$buy.Buy_winmoney</font>#else$buy.Buy_winmoney#end 元</strong></li>
+				#if($buy.Buy_iscont==0)<li>追号设置：<strong>中奖撤单</strong></li>#elseif($buy.Buy_iscont==1)<li>追号设置：<strong>中奖继续</strong></li>#end
+            </ul>
+        </div>
+	</div>
+	<div id="numberDetail">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="user_table" id="gaopinNumberTable">
+	<thead>
+		<tr>
+			<td width="90%">投注号码</td>
+			<td width="10%">注数</td>
+		</tr>
+	</thead>
+	<tbody><script>document.write(Show.LotCode('$buy.Buy_code'))</script></tbody>
+</table>
+	</div>
+	<div class="number_user_wrap">
+		<ul class="number_user_tab clearfix" id="numberUserTab">
+			<li class="active"><a href="javascript:void(0);">期号详情</a></li>
+		</ul>
+		<!--选号详情 start -->
+		<div id="numberDetail">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="user_table" id="gaopinNumberTable">
+				<thead>
+					<tr><td width="10%">期号</td><td width="10%">金额</td><td width="10%">倍数</td><td width="10%">开奖号码</td><td width="15%">开奖时间</td><td width="10%">奖金</td><td width="10%">状态</td><td width="10%">操作</td></tr>
+				</thead>
+				<tbody>
+				#if($lot)
+					#foreach($l in $lot)
+                    <tr><td>$l.Buylot_qihao</td><td>￥$l.Buylot_money</td><td>$l.Buylot_multiple倍</td><td>#if($l.Buylot_haoma)$l.Buylot_haoma#else--#end</td><td>#if($l.Buylot_opentime)$l.Buylot_opentime#else--#end</td><td>￥#if($l.Buylot_winmon>0)<font class="c_ba2636">$l.Buylot_winmon</font>#else$l.Buylot_winmon#end</td><td><script>document.write(Show.LotStatus('$l.Buylot_status'))</script></td><td>#if($l.Buylot_status==0&&$buy.User_name==$user.User_name)<a href="javascript:" name="chedan" ids="$l.Buylot_id">撤单</a>#else--#end</td></tr>
+					#end
+				#end
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>
+</div>
+#include("/foot.vm")
+</body>
+<script>
+$(function(){
+	$('a[name=chedan]').click(function(){
+		if(confirm("是否撤单?")){
+			var ids = $(this).attr('ids');
+			$.post('/lottery/BuyLot!CheDan.jzh',{ids:ids,t:local.TimeLong()},function(data){
+				if(data=='0'){
+					alert('撤单成功！');window.location.reload();
+				}else if(data=='1'){
+					alert('订单不存在！');
+				}else if(data=='2'){
+					alert('您无权操作！');
+				}else if(data=='-1'){
+					alert('撤单失败！');
+				}else if(data=='nologin'){
+					alert('由于您长时间未操作，请重新登录！');location.href='/login.html';
+				}else{
+					alert('操作有误！');
+				}
+			});
+		}
+	});
+});
+</script>
+</html>

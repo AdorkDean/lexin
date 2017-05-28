@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/userCenter/common.css"/>
+<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+<link rel="stylesheet" href="/css/userCenter/subscription.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<article class="docBody clearfix">
+    #set($listint=13)
+	#parse("/my/MyList.vm")
+    <div class="rightModule">
+		<ul class="redTab">
+			<li><a href="/my/BaseInfo.jzh" target="_self">个人资料</a></li>
+			<li><a href="/my/BaseInfo!SetPwd.jzh" target="_self">修改密码</a></li>
+			<li><a href="/my/BaseInfo!SetPhone.jzh" target="_self">绑定手机</a></li>
+			<li><a href="/my/BaseInfo!SetEmail.jzh" target="_self">绑定邮箱</a></li>
+			<li class="active"><a href="/my/BaseInfo!Setting.jzh" target="_self">账户设置</a></li>
+		</ul>
+        <div class="orderDataBox grayBorder">
+			<div class="setWrap">
+				<h3 class="setLogo setLogo_xezf"></h3>
+				<div class="setContent">
+					<h4>小额支付（已开启）</h4>
+					<p>小额付款是方便用户而设置的一种快速付款方式，设置小额付款后，<span class="c_ba2636">在您每次认购或者跟单的时候无需输入支付密码，方便用户跟单和购买。</span></p>
+					<a class="cancelAct redBtn25" href="javascript:">已开启</a>
+					
+				</div>
+			</div>
+			<div class="setWrap">
+				<h3 class="setLogo setLogo_zddk"></h3>
+				<div class="setContent">
+					<h4>自动抵扣（已开启）</h4>
+					<p>当您提交订单的时候如果账户里还有红包，系统为您自动选择优先使用红包，避免了每次都要重复操作</p>
+					<span class="cancelAct redBtn25">已开启</span>
+				</div>
+			</div>
+</div>
+#include("/my/MyHot.vm")
+</div>
+</article>
+#include("/foot.vm")
+</body>
+</html>

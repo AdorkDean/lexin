@@ -1,0 +1,153 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/userCenter/common.css"/>
+<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+<link rel="stylesheet" href="/css/userCenter/bankLogo.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<article class="docBody clearfix">
+    #set($listint=4)
+	#parse("/my/MyList.vm")
+    <div class="rightModule">
+		<ul class="redTab">
+			<li class="active"><a href="/my/Rechange!Draw.jzh" target="_self">提款到银行卡</a></li>
+			<li><a href="/my/Rechange!Draw2.jzh" target="_self">第三方提款</a></li>
+			<li><a href="/my/Rechange!DrawDesc.jzh" target="_self">提款记录</a></li>
+		</ul>
+        <div class="orderDataBox grayBorder">
+				<ul class="pay_form">
+					#if($bank)
+					<li>
+						<div class="f_left">提现银行卡：</div>
+						<div style="position:relative;width:480px" class="f_right"><a class="addBankIcon" href="/my/Rechange!BindCard.jzh"></a>
+						<ul id="useBankList" class="quickSelectList">
+						#if($bank)
+							#foreach($list in $bank)
+							<li bankid="$list.Banks_id"><span class="bankLogo $list.Banks_class"></span><span class="weihaoText">${list.Banks_bank}(尾号#set($bbank=$list.Banks_card.substring(14,$list.Banks_card.length()))****$bbank)</span><span class="arr"></span></li>
+							#end
+						#end
+						</ul>
+						</div>
+					</li>
+					<li style="margin-top:10px">
+						<div class="f_left">预计到账时间：</div>
+						<div class="f_right">5-30分钟内到账</div>
+					</li>
+					#if($user.User_show>0)
+						<li style="margin-top:10px">
+							<div class="f_left">提现提示：</div>
+							<div class="f_right">您还需消费<font color="red">${user.User_show}</font>方可提款。如若强行提款，请联系客服。<br>（为了防止恶意套现，必须消费充值金额的100%方可提款。）</div>
+						</li>
+					#else
+						<li style="margin-top:10px">
+						<div class="f_left">提现金额：</div>
+						<div class="f_right">
+							<input type="text" onpaste="return false" autocomplete="off" id="amount" style="font-size:16px;font-weight:bold;color:#F60;font-family:Arial" class="inputs">&nbsp;&nbsp;元
+							<span class="err" id="amount_err">&nbsp;</span>
+							<div class="info">可提现金额 <strong id="limitAmount" style="color:#C5272B">$user.User_money</strong> 元（单笔提款不能超过20万元。）</div>
+						</div>
+					</li>
+					<li style="margin-top:10px">
+						<div class="f_left">支付密码：</div>
+						<div class="f_right">
+							<input type="password" onpaste="return false" autocomplete="off" id="paypass" style="width:145px;font-size:16px;font-weight:bold;" class="inputs">
+						</div>
+					</li>
+					<li style="margin-top:10px">
+						<div class="f_left">&nbsp;</div>
+						<div class="f_right"> 
+							<span class="btn1Box">
+								<button id="bankCardSumbit" type="button" class="btn1">提款</button>
+							</span> 
+							<div id="dongfangTip" style="font-size:12px;padding:0 10px;line-height:20px;margin-top:5px;margin-left:-10px;display:none"><span class="xiaotan"></span>由于银行系统原因，东方市的持卡用户暂需将开户地改为海口。</div>
+						</div>
+					</li>
+					#end
+					#else
+						<li>
+						<div class="f_left">提现银行卡：</div>
+						<div style="position:relative;width:480px" class="f_right">您还未添加银行卡  <a class="addBankIcon" href="/my/Rechange!BindCard.jzh"></a></div>
+						</li>
+					#end
+				</ul>
+	<div class="drawCashHelp">
+		<h4 class="actH4">使用说明：</h4>
+		<ul class="helpBottom">
+			<li>1、自2011年1月12日起，提现不再收取服务费，以下情况除外：凡使用过藏宝阁销售虚拟物品并获得收入的乐欣帐户，提现时将按每笔2元收取服务费。</li>
+			<li>2、如果提现银行卡信息有误将会导致提现不成功；提现不成功后提现金额将立即退回乐欣账户（若提现申请时已收取服务费，提现不成功退回资金时服务费将不予退回）。</li>
+			<li>3、提现限额： 单笔提现最小金额大于100元， 单笔提现最大金额50000元， 单日提现总金额上限为150000元。 每日最多3笔。</li>
+			<li>4、不支持提现到信用卡。</li>
+			<li>5、提现预计到帐时间：<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5-30分钟内：提现提交后5-30分钟内到账<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当日或次日（工作日）：提现提交后当日或下1工作日内到账，节假日顺延<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1-3个工作日：提现提交后的1-3个工作日之内到账，节假日顺延<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上时间为提现在银行处理无任何意外情况的预计到账时间，若您的提现超过时间未到账，请咨询乐欣客服<br>
+			</li>
+		</ul>
+	</div>
+</div>
+#include("/my/MyHot.vm")
+</div>
+</article>
+#include("/foot.vm")
+</body>
+<script>
+$(function(){
+	$('#useBankList>li').click(function(){
+		$('#useBankList>li').removeClass('active');
+		$(this).addClass('active');
+	});
+	$('#bankCardSumbit').click(function(){
+		var bankid = Number($('#useBankList>li.active').attr('bankid'));
+		var pass = $('#paypass').val();
+		var tmon = Math.floor($('#amount').val());
+		var amon = Math.floor($('#limitAmount').text());
+		if(bankid==0||isNaN(bankid)){
+			alert('请选择提款银行卡');return;
+		}else if(tmon==0){
+			alert('请输入提款金额。');return;
+		}else if(tmon>amon){
+			alert('您的余额'+amon+'元，不足以提款'+tmon+'元');return;
+		}else if(tmon>200000){
+			alert('单笔提款不能超过20万元。');return;
+		}else if(pass==''){
+			alert('支付密码不能为空');return;
+		}else if(tmon<100){
+			alert('提款金额至少100元');return;
+		}
+		$.post('/my/Rechange!Draw.jzh',{bankid:bankid,money:tmon,paypass:pass,t:local.TimeLong()},function(data){
+			if(data=='0'){
+				alert('提款成功');location.href='/my/Rechange!DrawDesc.jzh';
+			}else if(data=='1'){
+				alert('支付密码错误');
+			}else if(data=='2'){
+				alert('账户余额不足');
+			}else if(data=='-1'){
+				alert('银行账户出错，请联系网站技术。');
+			}
+		});
+	});
+	$('#amount').keyup(function(){
+		var amount = Math.ceil($('#amount').val());
+		var limitAmount = Math.floor($('#limitAmount').text());
+		if(amount>limitAmount){
+			amount=limitAmount;
+		}else if(isNaN(amount)){
+			amount=0;
+		}
+		$('#amount').val(amount);
+	});
+});
+</script>
+</html>

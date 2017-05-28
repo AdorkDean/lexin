@@ -1,0 +1,19 @@
+var Lot={
+	Namestr:'',//彩种名字
+	Name:'',//彩种编号
+	Pay:'',//玩法
+	Code:'',//投注的内容
+	Zhushu:0,//投注的注数
+	IsOpen:1,//是否销售 默认停售
+	Qihao:'-',//当前期号
+	Qihaos:'',//认购的期号列表
+	Beishu:'',//认购的倍数列表
+	AMoney:0,//总金额
+	HMyMon:0,//我认购金额
+	HMyBao:0,//保底金额
+	SelT:0,//0 本期 1常规 2倍投
+	BuyT:0,//0自购 1合买
+	Btpay:'',//倍投玩法
+	IsBuy:false,//是否在提交数据
+}
+<span class="loading"><img src="http://cdn.caipiao.163.com/caipiao/img/loading.gif">数据加载中...</span>

@@ -1,0 +1,44 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content="双色球机选,双色球复式,双色球在线机选"/> 
+<meta name="description" content="乐欣双色球代购平台为您提供双色球机选,双色球复式投注,双色球网上投注等双色球购买服务；通过双色球机选模拟器（又叫机选器或随机选号器）在线机选、胆拖投注"/>
+<title>双色球机选号码_双色球复式投注_双色球在线机选-乐欣彩票网</title>
+<link rel="stylesheet" href="/css/lotteryBet/moreOperate.css"/>
+<link rel="stylesheet" href="/css/base2.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/lottery_new.css"/>
+<script>
+var Mon=[];
+Mon[112]=1000;
+Mon[114]=320;
+Mon[117]=160
+</script>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/bcbox/jquery.bcbox.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/lottery.js"></script>
+<script src="/js/lotsystem.js"></script>
+<script src="/js/lotterymode.js"></script>
+</head>
+<body>
+#parse("/head.vm")
+<!--主体 开始 -->
+<div class="main ssc clearfix">
+	<div style="height:300px;margin-left:100px;"><br><br><br><br><br><br>彩种已暂停销售！请等待开售时间。</div>
+</div>
+#include("/foot.vm")
+<script type="text/javascript">
+sys.getNowTime('Ssq');
+Right.LotNews('51');//热门公告
+Right.LotOpen3('Ssq');//最新开奖号码
+Right.LotZhong('Ssq');//最新中奖
+$(function(){
+	$('ul.betway_tabs li:eq(0)').click();
+	Lot.Name='Ssq';
+});
+</script>
+</body>
+</html>

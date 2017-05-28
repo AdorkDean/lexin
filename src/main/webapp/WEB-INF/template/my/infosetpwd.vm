@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<title>我的彩票</title>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/userCenter/common.css"/>
+<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/my.js"></script>
+</head>
+<body class="">
+#parse("/head.vm")
+<article class="docBody clearfix">
+    #set($listint=10)
+	#parse("/my/MyList.vm")
+    <div class="rightModule">
+		<ul class="redTab">
+			<li><a href="/my/BaseInfo.jzh" target="_self">个人资料</a></li>
+			<li class="active"><a href="/my/BaseInfo!SetPwd.jzh" target="_self">修改密码</a></li>
+			<li><a href="/my/BaseInfo!SetPhone.jzh" target="_self">绑定手机</a></li>
+			<li><a href="/my/BaseInfo!SetEmail.jzh" target="_self">绑定邮箱</a></li>
+			<li><a href="/my/BaseInfo!Setting.jzh" target="_self">账户设置</a></li>
+		</ul>
+        <div class="orderDataBox grayBorder">
+			<div id="infoWrap">
+				<span id="topFormInfo">用户密码是用户账户通行的一种保护，登陆密码和支付密码请牢记并不得外泄。</span>
+				<div id="infoBox">
+					<form id="usersetpwd" method="post">
+						<ul>
+							<li><label>1、</label><span class="txtHolder idHolder">修改登录密码</span></li>
+							<li><label><i>*</i>原登录密码：</label><span class="mcInputBox"><span><input id="oldpass" type="password"/></span></span></li>
+							<li><label><i>*</i>新登录密码：</label><span class="mcInputBox"><span><input id="newpass" type="password"/></span></span></li>
+							<li><label><i>*</i>重复新密码：</label><span class="mcInputBox"><span><input id="newpass2" type="password"/></span></span></li>
+    						<li><label>&nbsp;</label><a href="javascript:" ref="submit" class="redBtn30 btnAuto">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">忘记登录密码</a></li>
+    					</ul>
+    				</form><br>
+					<form id="userpaypwd" method="post">
+						<ul>
+							<li><label>2、</label><span class="txtHolder idHolder">修改支付密码（新注册用户支付密码同登录密码）</span></li>
+							<li><label><i>*</i>原支付密码：</label><span class="mcInputBox"><span><input id="oldpay" type="password"/></span></span></li>
+							<li><label><i>*</i>新支付密码：</label><span class="mcInputBox"><span><input id="newpay" type="password"/></span></span></li>
+							<li><label><i>*</i>重复新密码：</label><span class="mcInputBox"><span><input id="newpay2" type="password"/></span></span></li>
+    						<li><label>&nbsp;</label><a href="javascript:" ref="submit" class="redBtn30 btnAuto">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">忘记支付密码</a></li>
+    					</ul>
+    				</form>
+				</div>
+				<div id="attentionInfo">
+					<h2>注意事项:</h2>
+            		<ol class="attention_list">
+            			<li>修改密码时，请务必两次密码要一致，否则密码修改失败。</li>
+            			<li>密码组合建议使用数字，英文和符号，避免密码设置过于简单。</li>
+            			<li>密码修改成功后，请务必牢记密码，如若忘记请点击密码找回。</li>
+					</ol>
+				</div>
+    		</div>
+</div>
+#include("/my/MyHot.vm")
+</div>
+</article>
+#include("/foot.vm")
+</body>
+</html>

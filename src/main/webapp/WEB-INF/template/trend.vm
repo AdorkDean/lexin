@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>彩票走势图,含双色球走势图,3D走势图,大乐透走势图等_乐欣彩票</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link rel="stylesheet" href="/css/base.css"/>
+<link rel="stylesheet" href="/css/core.css"/>
+<link rel="stylesheet" href="/css/chart990.css"/>
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/local.js"></script>
+<script src="/js/lotterymode.js"></script>
+</head>
+<body>
+#parse("/head.vm")
+<div class="zx_nav">
+	<!-- <dl class="zx_subnav clearfix">
+        <dt title="福彩" class="fc">福彩：</dt>
+        <dd class="zx-nav-fc">
+        	<a href="/trend/ssq_basic.html">双色球</a>
+        	<a href="/trend/x3d_basic.html">福彩3D</a>
+            <a href="/trend/qlc_basic.html">七乐彩</a>
+        </dd>
+        <dt title="体彩" class="tc">体彩：</dt>
+        <dd class="zx-nav-tc">
+        	<a href="/trend/dlt_basic.html">大乐透</a>
+			<a href="/trend/pl3_basic.html">排列三</a>
+			<a href="/trend/pl5_basic.html">排列五</a>
+			<a href="/trend/qxc_basic.html">七星彩</a>
+		</dd>
+        <dt title="高频" class="gpc">高频：</dt>
+        <dd class="zx-nav-gp">
+            <a href="/trend/d11_basic.html">11选5</a>
+            <a href="/trend/jxd11_basic.html">老11选5</a>
+            <a href="/trend/gdd11_basic.html">广东11选5</a>
+			<a href="/trend/hljd11_basic.html">好运11选5</a>
+            <a href="/trend/kuai3/">快3</a>
+            <a href="/trend/gxkuai3/">新快3</a>
+            <a href="/trend/oldkuai3/">老快3</a>
+            <a href="/trend/kuailepuke/">快乐扑克</a>
+        	<a href="/trend/jxssc/jiben-2xing.html">新时时彩</a>
+        	<a href="/trend/cqssc/jiben-2xing.html">老时时彩</a>
+        </dd>
+    </dl>-->
+  
+</div>
+<!--主体 开始-->
+<div class="main clearfix">
+	
+ <div class="chart_center">
+   <div id="ssq" class="chart_nav">
+      <h3 class="ssq_chart">
+      	<a href="http://zst.cjcp.com.cn/cjwssq/" target="_blank" title="双色球走势图" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjwssq/" target="_blank" title="双色球走势图">双色球走势图</a>
+      </h3>
+      <div class="nav_list ssqBgWrap">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssq/view/ssqlanqiuzonghe.html" title="双色球蓝球走势">蓝球走势<span class="hot"></span></a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssq/view/hong_zonghe.html" title="双色球开奖分布走势">开奖分布走势</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssq/view/ssqhongyiwei.html" title="双色球红球定位分析">红球定位分析走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssq/view/ssqhezhi.html" title="双色球红球和值">红球和值走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssq/view/ssqdaxiao.html" title="红球型态">红球型态走势图</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssq/view/ssqchusanyushu.html" title="双色球红球余数">红球余数走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssq/view/ssqhongerzhi1.html" title="双色球红球位和">红球位和走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssq/view/ssqhongweizhicha.html" title="双色球红球位差">红球位差走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssq/view/hong_yiweibj.html" title="定位号码比较">定位号码比较走势图<span class="new"></span></a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/tools/ssqtools/redirect-1.html" title="开奖对比">开奖对比<span class="hot"></span></a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/tools/ssqtools/redirect-3.html" title="胆拖工具">胆拖工具<span class="hot"></span></a></dd>
+		</dl>
+      </div>
+    </div>
+	<div id="dlt" class="chart_nav">
+       <h3 class="dlt_chart">
+      	<a href="http://zst.cjcp.com.cn/cjwdlt/" target="_blank" title="大乐透走势图" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjwdlt/" target="_blank" title="大乐透走势图">大乐透走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwdlt/view/dlteqyiwei.html" title="大乐透二区走势">二区走势走势图<span class="hot"></span></a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwdlt/view/dltyqzonghe.html" title="开奖分布">开奖分布走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwdlt/view/dltyqyiwei.html" title="大乐透一区定位分析">一区定位分析走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwdlt/view/dltyqhezhi.html" title="大乐透一区和值分析">一区和值分析走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwdlt/view/dltyqdaxiao.html" title="大乐透一区型态">一区型态走势图</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwdlt/view/dltyqcsy.html" title="大乐透一区余数">一区余数走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwdlt/view/dltyqyierweihe.html" title="大乐透一区位和">一区位和走势图<span class="new"></span></a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwdlt/view/dltyqyierweicha.html" title="大乐透一区位差">一区位差走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwdlt/view/dltyqyiweibj.html" title="大乐透定位号码比较">定位号码比较走势图</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/tools/filter/index-dlt.html" title="大乐透过滤缩水">过滤缩水</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltToolDlt/yl.html" title="大乐透遗漏分析">遗漏分析</a></dd>
+		</dl>
+      </div>
+    </div>
+    <div id="pl5" class="chart_nav">
+      <h3 class="plw_chart">
+      	<a href="http://zst.cjcp.com.cn/cjwpl5/" target="_blank" title="排列五走势图" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjwpl5/" target="_blank" title="排列五走势图">排列五走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl5/view/pl5_zst.html" title="排列五开奖号码">开奖号码走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl5/view/pl5_hezhi.html" title="排列五常用指标">常用指标走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl5/view/pl5_leixingjo.html" title="排列五型态走势图">型态走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl5/view/pl5_liangweihe-wqhz.html" title="排列五两数位和走势图">两数位和势图</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl5/view/pl5_danzhi-wqh.html" title="排列五两数和尾走势图">两数和尾走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl5/view/pl5_danzhi-wqc.html" title="排列五两数位差走势图">两数位差走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl5/view/pl5_szqjzh-danzh.html" title="排列五数字区间走势图">数字区间走势图</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltToolPl5/lt.html" title="排列五冷态搜索">冷态搜索</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltToolPl5/yl.html" title="排列五遗漏分析">遗漏分析</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/tools/filter/index-pl5.html" title="排列五过滤缩水">过滤缩水</a></dd>
+		</dl>
+      </div>
+    </div>
+    <div id="3d" class="chart_nav">
+      <h3 class="sd_chart">
+      	<a href="http://zst.cjcp.com.cn/cjw3d/" target="_blank" title="福彩3D走势图" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjw3d/" target="_blank" title="福彩3D走势图">福彩3D走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw3d/view/3d_danxuan.html" title="3D号码分布走势图">号码分布走势图<span class="hot"></span></a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw3d/view/3d_wannengma-wannengqm.html" title="3D万能组选复式">万能组选复式走势</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw3d/view/3d_hezhi.html" title="3D常用指标走势图">常用指标走势图<span class="new"></span></a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw3d/view/3d_liangweihe-bsh.html" title="3D两数位和">两数位和走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw3d/view/3d_weishu-bsc.html" title="3D两数位差">两数位差走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw3d/view/3d_2numzxblz-dx.html" title="3D型态分析">型态分析走势图</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw3d/view/3d_szqjzh-danzh.html" title="3D数字区间分布图">数字区间走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw3d/view/3d_xuandan.html" title="3D选胆杀号">选胆杀号走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw3d/view/3d_kaijiang.html" title="3D摆球顺序分布图">摆球顺序走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw3d/view/9gongge.html" title="3D九宫图">3D九宫图</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/tools/calculator/index-3d.html" title="3D倍投计算器">倍投计算器</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/tools/filter/index-3d.html" title="3D过滤缩水">过滤缩水</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool/yl.html" title="3D遗漏分析">遗漏分析</a></dd>
+		</dl>
+      </div>
+    </div>
+    <div id="pl3" class="chart_nav">
+      <h3 class="pls_chart">
+      	<a href="http://zst.cjcp.com.cn/cjwpl3/" target="_blank" title="排列三走势图" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjwpl3/" target="_blank" title="排列三走势图">排列三走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl3/view/pl3_danxuan.html" title="排列三号码分布走势图">号码分布走势图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl3/view/pl3_wannengma-wannengqm.html" title="排列三万能组选复式图">万能组选复式图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl3/view/9gongge.html" title="排列三九宫图">排列三九宫图</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl3/view/pl3_hezhi.html" title="排列三常用指标分布图">常用指标分布图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl3/view/pl3_liangweihe-bsh.html" title="排列三两数位和分布图">两数位和分布图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl3/view/pl3_weishu-bsc.html" title="排列三两数位差分布图">两数位差分布图</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwpl3/view/pl3_2numzxblz-dx.html" title="排列三型态分布图">型态分布图</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/tools/calculator/index-pl3.html" title="排列三倍投计算器">倍投计算器</a></dd><dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool/yl-pl3.html" title="排列三遗漏分析">遗漏分析</a></dd>
+		</dl>
+      </div>
+    </div>
+	<div id="ossc" class="chart_nav">
+      <h3 class="ssc_chart">
+      	<a href="http://zst.cjcp.com.cn/cjwssc/" target="_blank" title="重庆时时彩" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjwssc/" target="_blank" title="重庆时时彩">重庆时时彩走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssc/#1" title="重庆时时彩二星">重庆时时彩二星</a></dd>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssc/#2" title="重庆时时彩三星">重庆时时彩三星<span class="hot"></span></a></dd>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssc/#3" title="重庆时时彩四星">重庆时时彩四星</a></dd>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssc/#4" title="重庆时时彩五星">重庆时时彩五星<span class="new"></span></a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssc/view/ssc_9gongge-f_three-ssc.html" title="重庆时时彩九宫图">重庆时时彩九宫图</a></dd>
+            <dd><a target="_blank" href="http://tools.cjcp.com.cn/gl/ssc/" title="重庆时时彩过滤">重庆时时彩过滤</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/tools/filter/index-ssc3.html" title="过滤缩水">过滤缩水<span class="new"></span></a></dd>
+             <dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool/yl-ssc.html" title="遗漏分析">遗漏分析</a></dd>
+             <dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool/lt-ssc.html" title="冷态搜索">冷态搜索</a></dd>
+             <dd><a target="_blank" href="http://zst.cjcp.com.cn/tools/calculator/index-ssc_chongqing.html" title="倍投计算器">倍投计算器</a></dd>
+		</dl>
+      </div>
+    </div>
+    <div id="nssc" class="chart_nav">
+      <h3 class="ssc_chart">
+      	<a href="http://zst.cjcp.com.cn/cjwssc/index-jiangxissc.html" target="_blank" title="江西时彩走势图" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjwssc/index-jiangxissc.html" target="_blank" title="江西时彩走势图">江西时时彩走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssc/index-jiangxissc.html#1" title="江西时时彩二星">江西时时彩二星</a></dd>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssc/index-jiangxissc.html#2" title="江西时时彩三星">江西时时彩三星</a></dd>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssc/index-jiangxissc.html#3" title="江西时时彩四星">江西时时彩四星<span class="hot"></span></a></dd>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssc/index-jiangxissc.html#4" title="江西时时彩五星">江西时时彩五星</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjwssc/view/ssc_9gongge-f_three-jiangxissc.html" title="江西时时彩九宫图">江西时时彩九宫图</a></dd>
+            <dd><a target="_blank" href="http://tools.cjcp.com.cn/gl/ssc/jx.html" title="江西时时彩过滤">江西时时彩过滤</a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/tools/filter/index-sscjx3.html" title="过滤缩水">过滤缩水</a></dd>
+		</dl>
+      </div>
+    </div>
+    <div id="yyy" class="chart_nav">
+      <h3 class="sydyj_chart">
+      	<a href="http://zst.cjcp.com.cn/cjw11x5/index-11ydj.html" target="_blank" title="山东11选5走势图" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjw11x5/index-11ydj.html" target="_blank" title="山东11选5走势图">十一运夺金走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-11ydj.html#1" title="十一运夺金第一位">十一运夺金第一位<span class="hot"></span></a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-11ydj.html#2" title="十一运夺金前二位">十一运夺金前二位<span class="hot"></span></a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-11ydj.html#3" title="十一运夺金前三位">十一运夺金前三位</a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-11ydj.html#4" title="十一运夺金任选五">十一运夺金任选五<span class="hot"></span></a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool11x5/yl-sd.html" title="十一运夺金遗漏分析">十一运夺金遗漏分析</a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool11x5/lt-sd.html" title="十一运夺金冷态搜索">十一运夺金冷态搜索</a></dd>
+		</dl>
+      </div>
+    </div>
+    
+    <div id="jxd11" class="chart_nav">
+      <h3 class="jxd11_chart">
+      	<a href="http://zst.cjcp.com.cn/cjw11x5/index-11x5.html" target="_blank" title="江西11选5走势图" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjw11x5/index-11x5.html" target="_blank" title="江西11选5走势图">江西11选5走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-11x5.html#1" title="江西11选5第一位">江西11选5第一位<span class="hot"></span></a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-11x5.html#2" title="江西11选5前二位">江西11选5前二位<span class="hot"></span></a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-11x5.html#3" title="江西11选5前三位">江西11选5前三位</a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-11x5.html#4" title="江西11选5任选五">江西11选5任选五<span class="hot"></span></a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool11x5/yl.html" title="江西11选5遗漏分析">江西11选5遗漏分析</a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool11x5/lt.html" title="江西11选5冷态搜索">江西11选5冷态搜索</a></dd>
+		</dl>
+      </div>
+    </div>
+    
+    <div id="gdd11" class="chart_nav">
+      <h3 class="gdd11_chart">
+      	<a href="http://zst.cjcp.com.cn/cjw11x5/" target="_blank" title="广东11选5走势图" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjw11x5/" target="_blank" title="广东11选5走势图">广东11选5走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/#1" title="广东11选5第一位">广东11选5第一位<span class="hot"></span></a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/#2" title="广东11选5前二位">广东11选5前二位<span class="hot"></span></a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/#3" title="广东11选5前三位">广东11选5前三位</a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/#4" title="广东11选5任选五">广东11选5任选五<span class="hot"></span></a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool11x5/yl-gd.html" title="广东11选5遗漏分析">广东11选5遗漏分析</a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool11x5/lt-gd.html" title="广东11选5冷态搜索">广东11选5冷态搜索</a></dd>
+		</dl>
+      </div>
+    </div>
+    
+    <div id="hljd11" class="chart_nav">
+      <h3 class="hljd11_chart">
+      	<a href="http://zst.cjcp.com.cn/cjw11x5/index-cq11x5.html" target="_blank" title="重庆11选5走势图" class="typeImg"></a>
+        <a href="http://zst.cjcp.com.cn/cjw11x5/index-cq11x5.html" target="_blank" title="重庆11选5走势图">重庆11选5走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-cq11x5.html#1" title="重庆11选5第一位">重庆11选5第一位<span class="hot"></span></a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-cq11x5.html#2" title="重庆11选5前二位">重庆11选5前二位<span class="hot"></span></a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-cq11x5.html#3" title="重庆11选5前三位">重庆11选5前三位</a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/cjw11x5/index-cq11x5.html#4" title="重庆11选5任选五">重庆11选5任选五<span class="hot"></span></a></dd>
+		</dl><dl>
+            <dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool11x5/yl-cq.html" title="重庆11选5遗漏分析">重庆11选5遗漏分析</a></dd>
+			<dd><a target="_blank" href="http://zst.cjcp.com.cn/yllt/ylltTool11x5/lt-cq.html" title="重庆11选5冷态搜索">重庆11选5冷态搜索</a></dd>
+		</dl>
+      </div>
+    </div>
+	<!--<div id="qlc" class="chart_nav">
+      <h3 class="ql_chart">
+		<a href="/trend/qlc_basic.html" target="_blank" title="七乐彩走势图" class="typeImg"></a>
+        <a href="/trend/qlc_basic.html" target="_blank" title="七乐彩走势图">七乐彩走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dt>号码走势：</dt>
+            <dd><a target="_blank" href="/trend/qlc_basic.html" title="七乐彩基本走势图">基本走势图</a></dd><dd><a target="_blank" href="/trend/qlc_threeZone.html" title="七乐彩三分区走势图">三分区走势图</a></dd><dd><a target="_blank" href="/trend/qlc_fiveZone.html" title="七乐彩五分区走势图">五分区走势图</a></dd><dd><a target="_blank" href="/trend/qlc_continueTrend.html" title="七乐彩连号分布图">连号走势图</a></dd><dd><a target="_blank" href="/trend/qlc_sum.html" title="七乐彩和值走势图">和值走势图</a></dd>
+		</dl>
+		<dl>
+            <dt>形态分布：</dt>
+            <dd><a target="_blank" href="/trend/qlc_dx.html" title="七乐彩大小号码分布图">大小号码走势图</a></dd><dd><a target="_blank" href="/trend/qlc_jo.html" title="七乐彩奇偶号码分布图">奇偶号码走势图</a></dd><dd><a target="_blank" href="/trend/qlc_zh.html" title="七乐彩质合号码分布图">质合号码走势图<span class="new"></span></a></dd><dd><a target="_blank" href="/trend/qlc_divide3.html" title="七乐彩012路号码分布图">012路号码走势图</a></dd>
+		</dl>
+		<dl>
+            <dt>统计分析：</dt>
+            <dd><a target="_blank" href="/trend/qlc_history.html" title="七乐彩历史同期查询">历史同期查询</a></dd>
+		</dl>
+      </div>
+    </div> -->
+    <!--<div id="qxc" class="chart_nav">
+      <h3 class="qxc_chart">
+      	<a href="/trend/qxc_basic.html" target="_blank" title="七星彩走势图" class="typeImg"></a>
+        <a href="/trend/qxc_basic.html" target="_blank" title="七星彩走势图">七星彩走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dt>号码走势：</dt>
+            <dd><a target="_blank" href="/trend/qxc_basic.html" title="七星彩基本走势图">基本走势图</a></dd><dd><a target="_blank" href="/trend/qxc_sum.html" title="七星彩和值走势图">和值走势图</a></dd><dd><a target="_blank" href="/trend/qxc_span.html" title="七星彩跨度走势图">跨度走势图</a></dd>
+		</dl>
+		<dl>
+            <dt>形态走势：</dt>
+            <dd><a target="_blank" href="/trend/qxc_dx.html" title="七星彩大小形态走势图">大小形态走势图</a></dd><dd><a target="_blank" href="/trend/qxc_jo.html" title="七星彩奇偶形态走势图">奇偶形态走势图</a></dd><dd><a target="_blank" href="/trend/qxc_zh.html" title="七星彩质合形态走势图">质合形态走势图</a></dd>
+		</dl>
+		<dl>
+            <dt>定位走势：</dt>
+            <dd><a target="_blank" href="/trend/qxc_trend1.html" title="七星彩第一位走势图">第一位走势图</a></dd><dd><a target="_blank" href="/trend/qxc_trend2.html" title="七星彩奇偶号码分布图">第二位走势图</a></dd><dd><a target="_blank" href="/trend/qxc_trend3.html" title="七星彩第三位走势图">第三位走势图</a></dd><dd><a target="_blank" href="/trend/qxc_trend4.html" title="七星彩第四位走势图">第四位走势图</a></dd><dd><a target="_blank" href="/trend/qxc_trend5.html" title="七星彩第五位走势图">第五位走势图</a></dd><dd><a target="_blank" href="/trend/qxc_trend6.html" title="七星彩第六位走势图">第六位走势图</a></dd><dd><a target="_blank" href="/trend/qxc_trend7.html" title="七星彩第七位走势图">第七位走势图</a></dd>
+		</dl>
+      </div>
+    </div>-->
+    <!--
+    <div class="chart_nav" id="kuai3">
+      <h3 class="kuai3_chart">
+      	<a class="typeImg" title="快3走势图" target="_blank" href="/trend/kuai3/"></a>
+        <a title="快3走势图" target="_blank" href="/trend/kuai3/">快3走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dt>号码走势：</dt>
+            <dd><a title="快3基本走势图" href="/trend/kuai3/" target="_blank">基本走势图<span class="hot"></span></a></dd><dd><a title="快3组合走势图" href="/trend/kuai3/zuhe.html" target="_blank">组合走势图</a></dd><dd><a title="快3三不同走势图" href="/trend/kuai3/sbth.html" target="_blank">三不同号走势图<span class="new"></span></a></dd>
+		</dl>
+		<dl>
+            <dt>和值走势：</dt>
+            <dd><a title="快3和值走势图" href="/trend/kuai3/hezhi.html" target="_blank">和值走势图<span class="new"></span></a></dd>
+		</dl>
+		<dl>
+            <dt>形态走势：</dt>
+            <dd><a title="快3形态走势图" href="/trend/kuai3/xingtai.html" target="_blank">形态走势图<span class="new"></span></a></dd>
+            <dd><a title="快3跨度走势图" href="/trend/kuai3/KuaDu.html" target="_blank">跨度走势图<span class="new"></span></a></dd>
+            <dd><a title="快3012路走势图" href="/trend/kuai3/road012.html" target="_blank">012路走势图<span class="new"></span></a></dd>
+            <dd><a title="快3奇偶走势图" href="/trend/kuai3/JiOu.html" target="_blank">奇偶走势图</a></dd>
+            <dd><a title="快3质合走势图" href="/trend/kuai3/ZhiHe.html" target="_blank">质合走势图</a></dd>
+		</dl>
+      </div>
+    </div>
+    <div class="chart_nav" id="gxkuai3">
+      <h3 class="kuai3_chart">
+      	<a class="typeImg" title="新快3走势图" target="_blank" href="/trend/gxkuai3/"></a>
+        <a title="新快3走势图" target="_blank" href="/trend/gxkuai3/">新快3走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dt>号码走势：</dt>
+            <dd><a title="新快3基本走势图" href="/trend/gxkuai3/index.html" target="_blank">基本走势图<span class="hot"></span></a></dd><dd><a title="新快3组合走势图" href="/trend/gxkuai3/zuhe.html" target="_blank">组合走势图</a></dd><dd><a title="新快3三不同走势图" href="/trend/gxkuai3/sbth.html" target="_blank">三不同号走势图<span class="new"></span></a></dd>
+		</dl>
+		<dl>
+            <dt>和值走势：</dt>
+            <dd><a title="新快3和值走势图" href="/trend/gxkuai3/hezhi.html" target="_blank">和值走势图<span class="new"></span></a></dd>
+		</dl>
+		<dl>
+            <dt>形态走势：</dt>
+            <dd><a title="新快3形态走势图" href="/trend/gxkuai3/xingtai.html" target="_blank">形态走势图<span class="new"></span></a></dd>
+		    <dd><a title="新快3跨度走势图" href="/trend/gxkuai3/KuaDu.html" target="_blank">跨度走势图<span class="new"></span></a></dd>
+            <dd><a title="新快3012路走势图" href="/trend/gxkuai3/road012.html" target="_blank">012路走势图<span class="new"></span></a></dd>
+            <dd><a title="新快3奇偶走势图" href="/trend/gxkuai3/JiOu.html" target="_blank">奇偶走势图</a></dd>
+            <dd><a title="新快3质合走势图" href="/trend/gxkuai3/ZhiHe.html" target="_blank">质合走势图</a></dd>
+		</dl>
+      </div>
+    </div>
+      <div class="chart_nav" id="oldkuai3">
+      <h3 class="kuai3_chart">
+      	<a class="typeImg" title="老快3走势图" target="_blank" href="/trend/oldkuai3/"></a>
+        <a title="老快3走势图" target="_blank" href="/trend/oldkuai3/">老快3走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dt>号码走势：</dt>
+            <dd><a title="老快3基本走势图" href="/trend/oldkuai3/" target="_blank">基本走势图<span class="hot"></span></a></dd><dd><a title="老快3组合走势图" href="/trend/oldkuai3/zuhe.html" target="_blank">组合走势图</a></dd><dd><a title="快3三不同走势图" href="/trend/oldkuai3/sbth.html" target="_blank">三不同号走势图<span class="new"></span></a></dd>
+		</dl>
+		<dl>
+            <dt>和值走势：</dt>
+            <dd><a title="老快3和值走势图" href="/trend/oldkuai3/hezhi.html" target="_blank">和值走势图<span class="new"></span></a></dd>
+		</dl>
+		<dl>
+            <dt>形态走势：</dt>
+            <dd><a title="老快3形态走势图" href="/trend/oldkuai3/xingtai.html" target="_blank">形态走势图<span class="new"></span></a></dd>
+			<dd><a title="老快3跨度走势图" href="/trend/oldkuai3/KuaDu.html" target="_blank">跨度走势图<span class="new"></span></a></dd>
+            <dd><a title="老快3012路走势图" href="/trend/oldkuai3/road012.html" target="_blank">012路走势图<span class="new"></span></a></dd>
+            <dd><a title="老快3奇偶走势图" href="/trend/oldkuai3/JiOu.html" target="_blank">奇偶走势图</a></dd>
+            <dd><a title="老快3质合走势图" href="/trend/oldkuai3/ZhiHe.html" target="_blank">质合走势图</a></dd>
+		</dl>
+      </div>
+    </div>
+    <div class="chart_nav" id="klpk">
+      <h3 class="klpk_chart">
+      	<a class="typeImg" title="快乐扑克走势图" target="_blank" href="/trend/kuailepuke/"></a>
+        <a title="快乐扑克走势图" target="_blank" href="/trend/kuailepuke/">快乐扑克走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dt>号码走势：</dt>
+            <dd><a title="快乐扑克基本走势图" href="/trend/kuailepuke/" target="_blank">基本走势图<span class="hot"></span></a></dd>
+            <dd><a title="快乐扑克组合走势图" href="/trend/kuailepuke/huase.html" target="_blank">花色走势图<span class="new"></span></a></dd>
+		</dl>
+		<dl>
+            <dt>形态走势：</dt>
+            <dd><a title="快乐扑克012路走势图" href="/trend/kuailepuke/lu-012.html" target="_blank">012路走势图</a></dd>
+            <dd><a title="快乐扑克跨度走势图" href="/trend/kuailepuke/kuadu.html" target="_blank">跨度走势图</a></dd>
+            <dd><a title="快乐扑克对子走势图" href="/trend/kuailepuke/duizi.html" target="_blank">对子走势图<span class="hot"></span></a></dd>
+		</dl>
+      </div>
+    </div>
+     <div class="chart_nav" id="kuai2">
+      <h3 class="kuai2_chart">
+      	<a class="typeImg" title="快2走势图" target="_blank" href="/trend/gdkuai2/"></a>
+        <a title="快2走势图" target="_blank" href="/trend/gdkuai2/">快2走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dt>号码走势：</dt>
+            <dd><a title="快2基本走势图" href="/trend/gdkuai2/" target="_blank">基本走势图<span class="hot"></span></a></dd>
+		</dl>
+		<dl>
+            <dt>和值走势：</dt>
+            <dd><a title="快2和值走势图" href="/trend/gdkuai2/hezhi.html" target="_blank">和值走势图<span class="new"></span></a></dd>
+            <dd><a title="快2和尾走势图" href="/trend/gdkuai2/hewei.html" target="_blank">和尾走势图</a></dd>
+		</dl>
+		<dl>
+            <dt>形态走势：</dt>
+            <dd><a title="快2形态走势图" href="/trend/gdkuai2/xingtai.html" target="_blank">形态走势图<span class="new"></span></a></dd>
+		</dl>
+		<dl>
+            <dt>跨度走势：</dt>
+            <dd><a title="快2形态走势图" href="/trend/gdkuai2/kuadu.html" target="_blank">跨度走势图</a></dd>
+		</dl>
+      </div>
+    </div> 
+     
+    <div id="sfc" class="chart_nav">
+      <h3 class="sfc_chart">
+      	<a href="/trend/sfc_all_sumary.html" target="_blank" title="胜负彩走势图" class="typeImg"></a>
+        <a href="/trend/sfc_all_sumary.html" target="_blank" title="胜负彩走势图">胜负彩走势图</a>
+      </h3>
+      <div class="nav_list">
+		<dl>
+            <dt>号码走势：</dt>
+            <dd><a target="_blank" href="/trend/sfc_all_sumary.html" title="胜负彩综合分布图">综合分布图</a></dd><dd><a target="_blank" href="/trend/sfc_trend_basic310.html" title="胜负彩310走势图">310走势图</a></dd><dd><a target="_blank" href="/trend/sfc_trend_trendResult.html" title="胜负彩赛果走势图">赛果走势图</a></dd><dd><a target="_blank" href="/trend/sfc_trend_trendContinue.html" title="胜负彩连号走势图">连号走势图</a></dd><dd><a target="_blank" href="/trend/sfc_trend_trendSum.html" title="胜负彩和值走势图">和值走势图</a></dd>
+		</dl>
+		<dl>
+            <dt>统计分析：</dt>
+            <dd><a target="_blank" href="/trend/sfc_all_gameResult.html" title="胜负彩赛果统计">赛果统计</a></dd><dd><a target="_blank" href="/trend/sfc_all_continueCount.html" title="胜负彩连号统计">连号统计</a></dd><dd><a target="_blank" href="/trend/sfc_trend_trendAnalyse.html" title="胜负彩和值分析">和值分析</a></dd>
+		</dl>
+      </div>
+    </div>-->
+    </div>
+</div>
+<div class="clear"></div>
+#include("/foot.vm")
+</body>
+</html>
