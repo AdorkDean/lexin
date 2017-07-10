@@ -242,14 +242,14 @@ public class CountMoney
 			}
 			return zs;
 		}
-		if (type.equals(PlayType.T318) || type.equals(PlayType.T319))
+		if (type.equals(PlayType.T318) || type.equals(PlayType.T319) || type.equals(PlayType.T301))
 		{
 			int l0 = split[0].replace("-", "").length();
 			int l1 = split[1].replace("-", "").length();
 			int l2 = split[2].replace("-", "").length();
 			int l3 = split[3].replace("-", "").length();
 			int l4 = split[4].replace("-", "").length();
-			if (type.equals(PlayType.T318))
+			if (type.equals(PlayType.T318) || type.equals(PlayType.T301))
 				zs = l0 + l1 + l2 + l3 + l4;
 			else
 			if (type.equals(PlayType.T319))
