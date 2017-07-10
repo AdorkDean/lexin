@@ -725,7 +725,7 @@ var Base={
 		}else if('302'==p||'305'==p){
 			$('#box_shi,#box_ge').show();
 		}else if('301'==p){
-			$('#box_ge').show();
+            $('#box_wan,#box_qian,#box_bai,#box_shi,#box_ge').show();
 		}else if('304'==p||'307'==p||'310'==p||'311'==p||'313'==p||'314'==p||'114'==p||'117'==p){
 			if('304'==p){
 				$('#box_zuxuan ul:eq(0)').attr('val',7);
@@ -835,8 +835,18 @@ var Base={
 				re+=",";
 			});
 		}else if('301'==l){//一星直选
-			re+='-,-,-,-,';
-			re+=$("#box_ge").find('ul.fs_red_area li.'+Base.Ball+' span').text()+',';
+			// re+='-,-,-,-,';
+			// re+=$("#box_ge").find('ul.fs_red_area li.'+Base.Ball+' span').text()+',';
+            $("#box_wan,#box_qian,#box_bai,#box_shi,#box_ge").find("ul.fs_red_area").each(function(index){
+                temp =$(this).find('li.'+Base.Ball+' span').text();
+                if('318'==l||'319'==l){//任选
+                    if(temp.length<=0){
+                        temp='-';
+                    }
+                }
+                re+=temp;
+                re+=",";
+            });
 		}else if('314'==l||'310'==l||'311'==l||'313'==l||'307'==l||'304'==l||'114'==l||'117'==l){//直选组合，组三，组六，包胆,组选
 			$("#box_zuxuan").find('ul.fs_red_area li.'+Base.Ball+' span').each(function(index){
 				temp =$(this).text();
@@ -1012,7 +1022,7 @@ var Base={
 		}else if('307'==t){//二组包胆
 			zs = arr.length*10;
 			return zs;
-		}else if('318'==t){//任选一
+		}else if('318'==t || '301'==t){//任选一
 			for (var i=0; i<arr.length; i++){
 				zs += arr[i].replace('-','').length;
 			}
