@@ -839,11 +839,9 @@ var Base={
 			// re+=$("#box_ge").find('ul.fs_red_area li.'+Base.Ball+' span').text()+',';
             $("#box_wan,#box_qian,#box_bai,#box_shi,#box_ge").find("ul.fs_red_area").each(function(index){
                 temp =$(this).find('li.'+Base.Ball+' span').text();
-                if('318'==l||'319'==l){//任选
-                    if(temp.length<=0){
-                        temp='-';
-                    }
-                }
+                if(temp.length<=0){
+					temp='-';
+				}
                 re+=temp;
                 re+=",";
             });
