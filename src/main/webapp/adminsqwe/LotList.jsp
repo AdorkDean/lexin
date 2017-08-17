@@ -15,7 +15,7 @@
 		<caption>期号（录入号码&出票&撤单&开奖）</caption>
 		<tr>
 			<td><form action="/admin/AdminLot!LotList.jzh" method="get">彩种:<select name="lot"><option value="">全部</option><option value="Ssq">双色球</option><option value="Dlt">大乐透</option><option value="Pl5">排列5</option><option value="Fc3d">福彩3D</option><option value="Pl3">排列3</option><option value="Cqssc">重庆时时彩</option><option value="Jxssc">江西时时彩</option><option value="Hnssc">河内五分彩</option><option value="Ynssc">印尼五分彩</option>
-			<option value="Sd11x5">山东11选5</option><option value="Jx11x5">江西11选5</option><option value="Gd11x5">广东11选5</option><option value="Cq11x5">重庆11选5</option></select> | 期号：<input style="width:100px" name="qihao" type="text" value="${qihao}"/> 
+			<option value="Sd11x5">山东11选5</option><option value="Jx11x5">江西11选5</option><option value="Gd11x5">广东11选5</option><option value="Cq11x5">重庆11选5</option></select> | 期号：<input style="width:100px" name="qihao" type="text" value="${qihao}"/>
 			| 是否存在开奖号码：<select name="havehm"><option value="-1">全部</option><option value="0">无号码</option><option value="1">有号码</option></select>
 			| 是否已开奖：<select name="isopen"><option value="-1">全部</option><option value="0">未开奖</option><option value="1">已开奖</option></select> | <input type="submit" value="搜索"/></form></td>
 		</tr>

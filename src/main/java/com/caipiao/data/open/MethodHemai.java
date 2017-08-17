@@ -1,5 +1,6 @@
 package com.caipiao.data.open;
 
+import com.caipiao.data.service.RobotService;
 import com.caipiao.entity.Bc_buyuser;
 import com.caipiao.entity.Bc_user;
 import com.caipiao.entity.out.HemaiEntity;
@@ -28,6 +29,7 @@ public class MethodHemai
 	static Bc_buyIntface dao = new BuyIntfaceImpl();
 	static Bc_buylotIntface lotdao = new BuylotIntfaceImpl();
 	static Bc_buyuserIntface userdao = new BuyuserIntfaceImpl();
+	static RobotService robotService = new RobotService();
 
 	public void Instance()
 	{
@@ -61,6 +63,11 @@ public class MethodHemai
 		return HeimaiOne(find);
 	}
 
+	/**
+	 * 机器人凑单阶段
+	 * @param en
+	 * @return
+	 */
 	public boolean HeimaiOne(HemaiEntity en)
 	{
 		boolean result = false;
@@ -72,18 +79,93 @@ public class MethodHemai
 			Bc_user find = UserStatic.find(user_id);
 			double baodi = en.getBuy_baodi();
 			double have = en.getBuy_have();
-			if (baodi >= have) {
-				updateBuyStatus(ids, 0);
-				updateLotStatus(buy_item, 0);
-				if (baodi - have > 0.0D) {
+			if (baodi >= have) {//保底资金大于剩余资金的情况下
+
+				updateBuyStatus(ids, 0);//将buy记录状态改为0 同时剩余资金归0
+				updateLotStatus(buy_item, 0);//将buylot状态改为0
+
+				if (baodi - have > 0.0D) {//将保底多的钱返回给客户
 					UserStatic.DongToMon(find, baodi - have, buy_item, 7, "保底返还");
 				}
-				if (have > 0.0D)
+				if (have > 0.0D)//将剩余的资金自动购买下单
 					AddHemai(buy_item, user_id, find.getUser_name(), have, "");
 			}
 			else {
-				updateBuyStatus(ids, 3);
-				updateLotStatus(buy_item, 4);
+				//这个地方为了提高收益，这里采用机器人满足订单。
+				//先机器人将剩余自己下单
+				boolean isSuccess = robotService.robotBuy(buy_item,have - baodi);
+				if(isSuccess){
+					//将用户的保底进行下单 进行再次凑单
+					if(baodi > 0.0D){
+						AddHemai(buy_item, user_id, find.getUser_name(), baodi, "保底凑单");
+					}
+					updateBuyStatus(ids, 0);//将buy记录状态改为0 同时剩余资金归0
+					updateLotStatus(buy_item, 0);//将buylot状态改为0
+
+				}else {
+					updateBuyStatus(ids, 3);//取消订单 status = 3
+					updateLotStatus(buy_item, 4);//bc_buylot = 4
+					if (baodi > 0.0D) {
+						UserStatic.DongToMon(find, baodi, buy_item, 7, "保底返还");
+					}
+					List<Bc_buyuser> findUser = userdao.findByItem(buy_item);
+					if (findUser != null) {
+						for (Bc_buyuser u : findUser) {
+							int userid = u.getUser_id();
+							double buyuser_money = u.getBuyuser_money();
+							Bc_user findu = UserStatic.find(userid);
+							UserStatic.DongToMon(findu, buyuser_money, buy_item, 8, "未满撤单");
+						}
+					}
+				}
+			}
+
+			// TODO: 2017/7/20    这里什么意思没明白
+			OutEntity fqh = lotdao.findEntityOne(buy_item, en.getBuy_fqihao());
+			if (fqh != null) {
+				int buylot_status = fqh.getBuylot_status();
+				if (buylot_status == 0) {
+					new MethodOut().OutOne(fqh);
+				}
+			}
+			result = true;
+		}
+		return result;
+	}
+
+	/**
+	 * 非机器人逻辑
+	 * @param buy_item
+	 * @param user_id
+	 * @param user_name
+	 * @param buymoney
+	 * @param auto_item
+	 * @return
+	 */
+	/*public boolean HeimaiOne(HemaiEntity en)
+	{
+		boolean result = false;
+		int buy_status = en.getBuy_status();
+		if (-1 == buy_status) {
+			String buy_item = en.getBuy_item();
+			int ids = en.getBuy_id();
+			int user_id = en.getUser_id();
+			Bc_user find = UserStatic.find(user_id);
+			double baodi = en.getBuy_baodi();
+			double have = en.getBuy_have();
+			if (baodi >= have) {//保底资金大于剩余资金的情况下
+				updateBuyStatus(ids, 0);//将buy记录状态改为0 同时剩余资金归0
+				updateLotStatus(buy_item, 0);//将buylot状态改为0
+				if (baodi - have > 0.0D) {//将保底多的钱返回给客户
+					UserStatic.DongToMon(find, baodi - have, buy_item, 7, "保底返还");
+				}
+				if (have > 0.0D)//将剩余的资金自动购买下单
+					AddHemai(buy_item, user_id, find.getUser_name(), have, "");
+			}
+			else {
+
+				updateBuyStatus(ids, 3);//取消订单 status = 3
+				updateLotStatus(buy_item, 4);//bc_buylot = 4
 				if (baodi > 0.0D) {
 					UserStatic.DongToMon(find, baodi, buy_item, 7, "保底返还");
 				}
@@ -109,6 +191,7 @@ public class MethodHemai
 		}
 		return result;
 	}
+	*/
 
 	public boolean AddHemai(String buy_item, int user_id, String user_name, double buymoney, String auto_item)
 	{

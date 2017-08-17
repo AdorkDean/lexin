@@ -13,8 +13,10 @@ public class VelocityHelper
 	static Logger logger = Logger.getLogger(VelocityHelper.class);
 
 	static Properties properties = new Properties();
-	static String path = VelocityHelper.class.getResource("/").toString().replaceAll("^file:/", "").replace("classes/", "") + "template/";
-
+	//windows 系统
+//	static String path = VelocityHelper.class.getResource("/").toString().replaceAll("^file:/", "").replace("classes/", "") + "template/";
+	// mac 系统
+	static String path = VelocityHelper.class.getClassLoader().getResource("/").toString().replaceAll("^file:", "").replace("classes/", "") + "template/";
 	VelocityContext context = new VelocityContext();
 	VelocityEngine velocityEngine = new VelocityEngine();
 

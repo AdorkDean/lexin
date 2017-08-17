@@ -40,6 +40,11 @@ public class BuyLotService {
             return "-1";
         }
 
+        //验证倍数不能为负数
+        if(verifyBeishuFushu(beishu)){
+            return "-1";
+        }
+
 
         String times = TimeUtil.getToday("yyyy-MM-dd HH:mm:ss");
         int zhushu = CountMoney.getAllZhushu(code, lot);
@@ -118,6 +123,27 @@ public class BuyLotService {
             result = "1";
         }
         return result;
+    }
+
+    private boolean verifyBeishuFushu(int[] beishu) {
+
+        boolean isFushu = false;
+
+        for (int i : beishu) {
+            if(i < 0){
+                isFushu = true;
+                break;
+            }
+        }
+        return isFushu;
+    }
+
+    public static void main(String[] args) {
+        BuyLotService buyLotService = new BuyLotService();
+        int[] i = {1,2,3,4,7};
+        boolean a = buyLotService.verifyBeishuFushu(i);
+        System.out.println(a);
+
     }
 
     private boolean verifyDanTuo(String code) {

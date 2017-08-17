@@ -39,6 +39,7 @@
 		<option value="0" <c:if test="${find.user_type == 0 }"> selected="selected" </c:if> >普通</option>
 		<option value="1" <c:if test="${find.user_type == 1 }"> selected="selected" </c:if>>代理</option>
 		<option value="2" <c:if test="${find.user_type == 2 }"> selected="selected" </c:if>>测试</option>
+		<option value="3" <c:if test="${find.user_type == 3 }"> selected="selected" </c:if>>机器人</option>
 		<option value="7" <c:if test="${find.user_type == 7 }"> selected="selected" </c:if>>客服</option>
 		<option value="8" <c:if test="${find.user_type == 8 }"> selected="selected" </c:if>>财务</option>
 		<option value="9" <c:if test="${find.user_type == 9 }"> selected="selected" </c:if>>超级</option>

@@ -110,12 +110,20 @@ local={
 		var PicTotal = 5;// 当前图片总数
 		var CurrentIndex;// 当前鼠标点击图片索引
 		var ToDisplayPicNumber = 0;// 自动播放时的图片索引
-		$('#cpIndexAdBox div.ctrol a').mouseover(function(){
+		$('#cpIndexAdBox div.ctrol a').mouseover(function(){//短小的滚动图
 			CurrentIndex = $(this).index();
 			$(this).parent().children().removeClass("active");
 			$(this).addClass("active");
 			$('#cpIndexAdBox .adList').animate({left:'-'+CurrentIndex*510+'px'},200);
 		});
+		//$('#cpIndexAdBox div.ctrol a').mouseover(function(){
+		//	CurrentIndex = $(this).index();
+		//	$(this).parent().children().removeClass("active");
+		//	$(this).addClass("active");
+		//	var width_baner = $('#cpIndexAdBox > .adList > li > a > img').width();
+		//	console.log(width_baner);
+		//	$('#cpIndexAdBox .adList').animate({left:'-'+CurrentIndex*width_baner+'px'},200);
+		//});
 		var p=function(){
 			$('#cpIndexAdBox div.ctrol a').eq(ToDisplayPicNumber).trigger("mouseover");
 			ToDisplayPicNumber = (ToDisplayPicNumber + 1) % PicTotal;

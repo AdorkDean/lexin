@@ -420,7 +420,7 @@ public class AddCaiqiService
 		for (int i = 0; i < num; i++)
 		{
 			String enday = TimeUtil.LongToString(TimeUtil.StringToLong(beday, "yyyy-MM-dd") + 0x5265c00L, "yyyy-MM-dd");
-			add(lot, (new StringBuilder(String.valueOf(qihaos))).toString(), (new StringBuilder(String.valueOf(beday))).append(" 20:40:00").toString(), (new StringBuilder(String.valueOf(enday))).append(" 20:40:00").toString());
+			add(lot, (new StringBuilder(String.valueOf(qihaos))).toString(), (new StringBuilder(String.valueOf(beday))).append(" 20:00:00").toString(), (new StringBuilder(String.valueOf(enday))).append(" 20:00:00").toString());
 			qihaos++;
 			beday = enday;
 		}
@@ -450,7 +450,7 @@ public class AddCaiqiService
 		for (int i = 0; i < num; i++)
 		{
 			String enday = TimeUtil.LongToString(TimeUtil.StringToLong(beday, "yyyy-MM-dd") + 0x5265c00L, "yyyy-MM-dd");
-			add(lot, (new StringBuilder(String.valueOf(qihaos))).toString(), (new StringBuilder(String.valueOf(beday))).append(" 21:20:00").toString(), (new StringBuilder(String.valueOf(enday))).append(" 21:20:00").toString());
+			add(lot, (new StringBuilder(String.valueOf(qihaos))).toString(), (new StringBuilder(String.valueOf(beday))).append(" 21:00:00").toString(), (new StringBuilder(String.valueOf(enday))).append(" 21:00:00").toString());
 			qihaos++;
 			beday = enday;
 		}

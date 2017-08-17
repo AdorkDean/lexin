@@ -9,11 +9,15 @@ import com.caipiao.data.open.OpenThread;
 import com.caipiao.entity.Bc_buy;
 import com.caipiao.entity.Bc_lottery;
 import com.caipiao.entity.Bc_user;
+import com.caipiao.intface.Bc_buyIntface;
+import com.caipiao.intfaceImpl.BuyIntfaceImpl;
+import com.caipiao.service.systeminit.LogsStatic;
 import com.caipiao.service.systeminit.UserStatic;
 import com.caipiao.utils.LotEmun;
 import com.caipiao.utils.TimeUtil;
 import com.caipiao.utils.TryStatic;
 import com.caipiao.utils.UserSession;
+import com.sysbcjzh.utils.IPUtils;
 import com.sysbcjzh.utils.IndexAction;
 import com.sysbcjzh.utils.PageUtils;
 import com.sysbcjzh.utils.StringUtils;
@@ -33,10 +37,12 @@ public class AdminLot extends IndexAction
 
 	private static final long serialVersionUID = 1L;
 	AdminLotService service;
+	Bc_buyIntface buydao;
 
 	public AdminLot()
 	{
 		service = new AdminLotService();
+		buydao = new BuyIntfaceImpl();
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -152,6 +158,51 @@ public class AdminLot extends IndexAction
 					out.write("0");
 				else
 					out.write("1");
+			} else
+			{
+				out.write("err");
+			}
+		} else
+		{
+			out.write("nologin");
+		}
+		out.flush();
+		out.close();
+	}
+
+	public void UpdateBuycodeInHmPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException
+	{
+		PrintWriter out = response.getWriter();
+		String admin = UserSession.getAdmin(request);
+
+		if (admin != null && admin.equals("admin"))
+		{
+
+			String i = request.getParameter("i");
+			String buy_code = request.getParameter("h");
+			int ids = TryStatic.StrToInt(i);
+			if (ids > 0 && StringUtils.isNotBlank(buy_code))
+			{
+
+				Bc_buy bc_buy = buydao.find(ids);
+
+				int buy_status = bc_buy.getBuy_status();
+				if(bc_buy != null && bc_buy.getBuy_ishm() == 1 && (buy_status == -1 || buy_status == 0) ){
+
+					boolean upHmLot = service.UpHmLotBuyCode(ids, buy_code);
+					if (upHmLot){
+						System.out.println(IPUtils.GetIP(request) + " ," + admin + "改订单"+ids+"号码"+bc_buy.getBuy_code()+"为" + buy_code);
+						LogsStatic.AddLogs(-1,admin,-1,-1, IPUtils.GetIP(request),admin + "改订单"+ids+"号码"+bc_buy.getBuy_code()+"为" + buy_code);
+						out.write("0");
+					}else
+						out.write("1");
+
+				}else{
+					out.write("err");
+				}
+
+
 			} else
 			{
 				out.write("err");

@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>中彩网</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/lotterymode.js"></script>
+    <script src="/js/placeholder.js"></script>
+</head>
+<body>#parse('/head.vm')
+
+<section style="width: 100%; margin-top: -1px;">
+    <!--首页logo-->
+    <div id="promotion">
+        <div class="clearfix">
+            <div id="cpIndexAdBox" style="  float: left;    height: 250px;    width:100%;">
+                <ul class="adList" style="left: 0px;">
+                    <li><a target="_blank" href="my/Rechange.jzh?pay=alipay"><img src="/ad/img/adindex1.jpg" height="250px" style="width:100%"></a></li>
+                    <li><a target="_blank" href="/Groupbuy.jzh"><img src="/ad/img/adindex2.jpg" height="250px" style="width:100%"></a></li>
+                    <li><a target="_blank" href="/my/Rechange!Draw.jzh"><img src="/ad/img/adindex3.jpg" height="250px" style="width:100%;"></a></li>
+                    <li><a target="_blank" href="/Index.jzh"><img src="/ad/img/adindex4.jpg" height="250px" style="width:100%"></a></li>
+                    <li><a target="_blank" href="/lottery/Buy!Cqssc.jzh"><img src="/ad/img/adindex5.jpg" height="250px" style="width:100%;"></a></li>
+                </ul>
+                <div class="ctrol">
+                    <a target="_blank" href="#" class="active">1</a>
+                    <a target="_blank" href="#" class="">2</a>
+                    <a target="_blank" href="#" class="">3</a>
+                    <a target="_blank" href="#" class="">4</a>
+                    <a target="_blank" href="#" class="">5</a>
+                </div>
+            </div>
+            <script>local.ScrollImg();</script>
+
+        </div>
+    </div><!--滚动logo结束-->
+
+</section>
+
+<article class="docBody clearfix">
+    <section class="siderBox">
+
+        <!--首页logo-->
+        <div id="promotion">
+            <div class="clearfix" style="margin-top:10px;">
+
+                <script>local.ScrollImg();</script>
+                <div class="promotionText">
+                    <ul id="topInfoTab" class="grayTitle">
+                        <li class="active">公告</li>
+                        <li>新闻</li>
+                        <li class="end">帮助</li>
+                    </ul>
+                    <div id="topNotice" class="promotion_con">
+                        <ul class="promotion_list">
+                            <li>暂无公告</li>
+                        </ul>
+                    </div>
+                    <div style="display:none" id="topForecast" class="promotion_con">
+                        <ul class="promotion_list">
+                            <li>暂无新闻</li>
+                        </ul>
+                    </div>
+                    <div style="display:none" id="tophelp" class="promotion_con">
+                        <ul class="promotion_list">
+                            <!--<li>·<a title="帮助" target="_blank" href="">帮助</a></li>-->
+                            <li>·<a target="_blank" class="c_ba2636" title="如何充值" href="/help/q/202.jsp">我想在网站代购，如何充值？</a></li>
+                            <li>·<a target="_blank" class="c_ba2636" title="如何领奖" href="/help/q/402.jsp">中奖之后奖金在哪里查收？</a></li>
+                            <li>·<a target="_blank" title="如何提现" href="/help/q/203.jsp">中奖之后如何提现？</a></li>
+                            <li>·<a target="_blank" title="积分兑现" href="/help/q/103.jsp">什么是彩票积分？</a></li>
+                            <li>·<a target="_blank" class="c_ba2636" title="账户安全" href="/help/q/401.jsp">关于本站用户的隐私保护？</a></li>
+                            <li>·<a target="_blank" title="付款遇到问题" href="/help/q/201.jsp">付款遇到问题怎么办？</a></li>
+                        </ul>
+                    </div><script>Mode.News();</script>
+                    <p class="helplinks"><a target="_blank" href="/help/mode_questions.jsp">新手入门</a><a target="_blank" href="/help/q/401.jsp">安全保障</a><a target="_blank" href="/help/q/402.jsp">领奖指南</a></p>
+                </div>
+            </div>
+        </div><!--滚动logo结束-->
+
+
+        <!--开奖号码开始-->
+        <div id="awardLists">
+            <dl id="awardListTab" class="grayTitle clearfix">
+                <dt><a target="_blank" href="/Index!Award.jzh">开奖公告</a></dt>
+                <dd class="active">高频彩</dd>
+                <dd class="">数字彩</dd>
+                <dd class="end"><a href="/Index!Award.jzh">更多&gt;&gt;</a></dd>
+            </dl>
+            <ul id="awardList01" class="awardList_con" style="display:block;"></ul>
+            <ul id="awardList02" class="awardList_con" style="display:none;"></ul>
+            <script>Mode.Open();</script>
+        </div><!--开奖号码结束-->
+        <!--排行榜开始-->
+        <div id="rankingList">
+            <dl id="ranksTab" class="grayTitle clearfix">
+                <dd class="active">合买红人榜</dd>
+                <dd class="end">总排行榜</dd>
+            </dl>
+            <div class="ranking_con">
+                <table id="ownerRanks" class="ranking_table" style="display:table;">
+                    <colgroup><col width=""><col width="35%"><col width="35%"><col width="15%"></colgroup>
+                    <tbody></tbody>
+                </table>
+                <table style="display:none;" id="totalRanks" class="ranking_table">
+                    <colgroup><col width=""><col width="35%"><col width="35%"><col width="15%"></colgroup>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <script>Mode.PHB();</script>
+        </div><!--排行榜结束-->
+        <!--彩票走势图-->
+        <div id="analysisTool">
+            <h2 class="grayTitle"><a target="_blank" href="/Trend.jzh">彩票走势图</a></h2>
+            <dl class="chartList clearfix">
+                <dt><a target="_blank" href="/Trend.jzh">彩票走势图</a></dt>
+                <dd class="separator clearfix">
+                    <span>数字彩：</span><br>
+                    <span><a href="/Trend.jzh" target="_blank">双色球</a></span>
+                    <span><a href="/Trend.jzh" target="_blank">福彩3D</a></span>
+                    <span><a href="/Trend.jzh" target="_blank">大乐透</a></span>
+                    <span><a href="/Trend.jzh" target="_blank">排列三</a></span>
+                </dd>
+                <dd>
+                    <span>高频彩：</span><br>
+                    <span><a href="/Trend.jzh" target="_blank">重庆时时彩</a></span>
+                    <span><a href="/Trend.jzh" target="_blank">江西时时彩</a></span>
+                    <span><a href="/Trend.jzh" target="_blank">广东11选5</a></span>
+                    <span><a href="/Trend.jzh" target="_blank">江西11选5</a></span>
+                    <span><a href="/Trend.jzh" target="_blank">十一运夺金</a></span>
+                </dd>
+            </dl>
+        </div><!--走势图结束-->
+    </section>
+    <section class="maincontent">
+
+        <!--快速投注开始-->
+        <div id="quickbuyBox">
+            <div class="quickbuy_title">
+                <h2><a href="/Index!BuyHome.jzh">购买彩票</a></h2>
+                <span class="moreLinks">
+			<a class="luck_lottery" href="/Index!BuyHome.jzh" target="_blank"><i></i>快速购彩</a>
+			<a class="mobileBet" href="javascript:" onclick="alert('暂未开通，敬请期待。');"><i></i>手机购彩</a>
+			<a class="redPacket" href="/Reds.jzh" target="_blank"><i></i>抢购红包</a>
+			<a class="followBuy" href="/Groupbuy.jzh" target="_blank"><i></i>合买</a>
+		</span>
+            </div>
+            <div class="quickbuy_con clearfix">
+                <div class="bettingBox">
+                    <div class="bet_title">
+                        <h3>热&nbsp;&nbsp;门：</h3>
+                        <ul class="quickbuy_menu">
+                            <li class="active"><a href="/lottery/Buy!Ssq.jzh">双色球</a></li>
+                            <li><a href="/lottery/Buy!Dlt.jzh">大乐透</a></li>
+                            <li><a href="/lottery/Buy!Fc3d.jzh">福彩3D</a></li>
+                        </ul>
+                    </div>
+                    <dl class="gpcBet_con">
+                        <dd>
+                            <div class="clearfix">
+                                <h3 class="czLogo icon_ssq"><a title="双色球" href="/lottery/Buy!Ssq.jzh"></a></h3>
+                                <div class="gpc_main">
+                                    <p class="gpc_title"><a href="/lottery/Buy!Ssq.jzh"><strong>双色球</strong>&nbsp;&nbsp;每注2元，最高可中<span class="c_ba2636">1000</span>万</a></p>
+                                    <p class="gpc_con"><a href="/lottery/Buy!Ssq.jzh">每周<span class="c_ba2636">二</span>、<span class="c_ba2636">四</span>、<span class="c_ba2636">日</span>晚上21:30开奖</a></p>
+                                </div>
+                                <div class="gpc_betBtn"><a title="立即投注" class="btnSubmint" href="/lottery/Buy!Ssq.jzh"></a></div>
+                            </div>
+                        </dd>
+                        <dd class="hide">
+                            <div class="clearfix">
+                                <h3 class="czLogo icon_dlt"><a title="大乐透" href="/lottery/Buy!Dlt.jzh"></a></h3>
+                                <div class="gpc_main">
+                                    <p class="gpc_title"><a href="/lottery/Buy!Dlt.jzh"><strong>大乐透</strong>&nbsp;&nbsp;每注2元，最高可中<span class="c_ba2636">1000</span>万</a></p>
+                                    <p class="gpc_con"><a href="/lottery/Buy!Dlt.jzh">每周<span class="c_ba2636">一</span>、<span class="c_ba2636">三</span>、<span class="c_ba2636">六</span>晚上21:30开奖</a></p>
+                                </div>
+                                <div class="gpc_betBtn"><a title="立即投注" class="btnSubmint" href="/lottery/Buy!Dlt.jzh"></a></div>
+                            </div>
+                        </dd>
+                        <dd class="hide">
+                            <div class="clearfix">
+                                <h3 class="czLogo icon_x3d"><a title="福彩3D" href="/lottery/Buy!Fc3d.jzh"></a></h3>
+                                <div class="gpc_main">
+                                    <p class="gpc_title"><a href="/lottery/Buy!Fc3d.jzh"><strong>福彩3D</strong>&nbsp;&nbsp;<span class="c_ba2636">2元</span>赢取<span class="c_ba2636">1000元</span></a></p>
+                                    <p class="gpc_con"><a href="/lottery/Buy!Fc3d.jzh">每天晚上20点30分开奖，天天开奖</a></p>
+                                </div>
+                                <div class="gpc_betBtn"><a title="立即投注" class="btnSubmint" href="/lottery/Buy!Fc3d.jzh"></a></div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="bet_title">
+                        <h3>高频彩：</h3>
+                        <ul class="quickbuy_menu">
+                            <li class="active"><a href="/lottery/Buy!Cqssc.jzh">重庆时时彩</a></li>
+                            <li><a href="/lottery/Buy!Sd11x5.jzh">十一运夺金</a></li>
+                            <li><a href="/lottery/Buy!Jxssc.jzh">江西时时彩</a></li>
+                        </ul>
+                    </div>
+                    <dl class="gpcBet_con">
+                        <dd id="quickBetD11">
+                            <div class="clearfix">
+                                <h3 class="czLogo icon_ssc"><a title="重庆时时彩" href="/lottery/Buy!Cqssc.jzh"></a></h3>
+                                <div class="gpc_main">
+                                    <p class="gpc_title"><a href="/lottery/Buy!Cqssc.jzh"><strong>重庆时时彩</strong>&nbsp;&nbsp;每天<strong class="gpc_period">120</strong>期</a><span class="retimeBlock">白天10分钟，晚上5分钟</span></p>
+                                    <p class="gpc_con"><a href="/lottery/Buy!Cqssc.jzh">独有夜间版，返奖率<span class="c_ba2636">59%</span></a></p>
+                                </div>
+                                <div class="gpc_betBtn"><a title="立即投注" class="btnSubmint" href="/lottery/Buy!Cqssc.jzh"></a></div>
+                            </div>
+                        </dd>
+                        <dd class="hide" id="quickBetK3">
+                            <div class="clearfix">
+                                <h3 class="czLogo icon_d11"><a title="十一运夺金" href="/lottery/Buy!Sd11x5.jzh"></a></h3>
+                                <div class="gpc_main">
+                                    <p class="gpc_title"><a href="/lottery/Buy!Sd11x5.jzh"><strong>十一运夺金</strong>&nbsp;&nbsp;</a><span class="retimeBlock">每天开奖<span class="c_ba2636">78</span>次</span></p>
+                                    <p class="gpc_con"><a href="/lottery/Buy!Sd11x5.jzh"><span class="c_ba2636">最容易</span>中奖，<span class="c_ba2636">10分钟</span>一期</a></p>
+                                </div>
+                                <div class="gpc_betBtn"><a title="立即投注" class="btnSubmint" href="/lottery/Buy!Sd11x5.jzh"></a></div>
+                            </div>
+                        </dd>
+                        <dd class="hide" id="quickBetJXSSC">
+                            <div class="clearfix">
+                                <h3 class="czLogo icon_jxssc"><a title="江西时时彩" href="/lottery/Buy!Jxssc.jzh"></a></h3>
+                                <div class="gpc_main">
+                                    <p class="gpc_title"><a href="/lottery/Buy!Jxssc.jzh"><strong>江西时时彩</strong>&nbsp;&nbsp;每天<strong class="gpc_period">&nbsp;84&nbsp;</strong>期</a><span class="retimeBlock">玩法多样</span></p>
+                                    <p class="gpc_con"><a href="/lottery/Buy!Jxssc.jzh"><span class="c_ba2636">10分钟</span>一期，最高奖<span class="c_ba2636">11.6万</span></a></p>
+                                </div>
+                                <div class="gpc_betBtn"><a title="立即投注" class="btnSubmint" href="/lottery/Buy!Jxssc.jzh"></a></div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="bet_title">
+                        <h3>数字彩：</h3>
+                        <ul class="quickbuy_menu">
+                            <li class="active"><a href="/lottery/Buy!Pl3.jzh">排列三</a></li>
+                            <li><a href="/lottery/Buy!Fc3d.jzh">福彩3D</a></li>
+                            <li><a href="/lottery/Buy!Ssq.jzh">双色球</a></li>
+                        </ul>
+                    </div>
+                    <dl class="gpcBet_con">
+                        <dd id="quickBetD11">
+                            <div class="clearfix">
+                                <h3 class="czLogo icon_pl3"><a title="排列三" href="/lottery/Buy!Pl3.jzh"></a></h3>
+                                <div class="gpc_main">
+                                    <p class="gpc_title"><a href="/lottery/Buy!Pl3.jzh"><strong>排列三</strong>&nbsp;&nbsp;每日开奖</a> <span class="retimeBlock">2元赢取1000元</span></p>
+                                    <p class="gpc_con"><a href="/lottery/Buy!Pl3.jzh">每天晚上<span class="c_ba2636">20点30分</span>开奖，天天开奖。</a></p>
+                                </div>
+                                <div class="gpc_betBtn">
+                                    <a title="立即投注" class="btnSubmint" href="/lottery/Buy!Pl3.jzh"></a>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd class="hide">
+                            <div class="clearfix">
+                                <h3 class="czLogo icon_x3d"><a title="福彩3D" href="/lottery/Buy!Fc3d.jzh"></a></h3>
+                                <div class="gpc_main">
+                                    <p class="gpc_title"><a href="/lottery/Buy!Fc3d.jzh"><strong>福彩3D</strong>&nbsp;&nbsp;<span class="c_ba2636">2元</span>赢取<span class="c_ba2636">1000元</span></a></p>
+                                    <p class="gpc_con"><a href="/lottery/Buy!Fc3d.jzh">每天晚上20点30分开奖，天天开奖</a></p>
+                                </div>
+                                <div class="gpc_betBtn"><a title="立即投注" class="btnSubmint" href="/lottery/Buy!Fc3d.jzh"></a></div>
+                            </div>
+                        </dd>
+                        <dd class="hide">
+                            <div class="clearfix">
+                                <h3 class="czLogo icon_ssq"><a title="双色球" href="/lottery/Buy!Ssq.jzh"></a></h3>
+                                <div class="gpc_main">
+                                    <p class="gpc_title"><a href="/lottery/Buy!Ssq.jzh"><strong>双色球</strong>&nbsp;&nbsp;每注2元，最高可中<span class="c_ba2636">1000</span>万</a></p>
+                                    <p class="gpc_con"><a href="/lottery/Buy!Ssq.jzh">每周<span class="c_ba2636">二</span>、<span class="c_ba2636">四</span>、<span class="c_ba2636">日</span>晚上21:30开奖</a></p>
+                                </div>
+                                <div class="gpc_betBtn"><a title="立即投注" class="btnSubmint" href="/lottery/Buy!Ssq.jzh"></a></div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <script>
+                        $('.quickbuy_menu li').mouseover(function(){
+                            $(this).parent().children().removeClass("active");
+                            $(this).addClass("active");
+                            var ind = $(this).index();
+                            var s = $(this).parent().parent().next();
+                            s.find('dd').hide();
+                            s.find('dd:eq('+ind+')').show();
+                        })
+                    </script>
+                </div>
+                <div class="betinfoBox">
+                    <h3><strong>购彩技巧攻略</strong><a target="_blank" href="/News.jzh">更多</a></h3>
+                    <ul class="betinfo_list" id="Gonglue">
+                        <li class="clearfix">·暂无攻略</li>
+                    </ul><script>Mode.Gonglue();</script>
+                    <h3><strong>最新中奖</strong><a href="javascript:">全部</a></h3>
+                    <div class="latestWin_con">
+                        <ul class="latestWin_list" id="NewWin">
+                            <li class="odd"><span class="czname">暂无中奖</span><span class="winner"></span> <span class="awards"></span></li>
+                        </ul><script>Mode.NewWin();</script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 中部广告 -->
+        <div style="clear:both" id="advertCenter"><a target="_blank" href="/ad/img/adindexcenter.html"><img src="/ad/img/adindexcenter.jpg"></a></div>
+        <!-- 中部广告结束-->
+        <div id="groupBuy">
+            <div class="group_title">
+                <ul id="groupbuyTab" class="group_menu">
+                    <li class="active" rel="all">合买推荐</li>
+                    <li rel="Ssq" class="">双色球</li>
+                    <li rel="Dlt" class="">大乐透</li>
+                    <li rel="Fc3d" class="">福彩3D</li>
+                    <li rel="Cqssc" class="">重庆时时彩</li>
+                    <li rel="Jxssc" class="">江西时时彩</li>
+                    <li rel="Sd11x5">十一运夺金</li>
+                    <li rel="Gd11x5">广东11选5</li>
+                </ul>
+                <div class="MoreLinks">
+                    <div class="linkBox"><a rel="nofollow" target="_blank" href="/Groupbuy.jzh">合买大厅&gt;&gt;</a> </div>
+                </div>
+            </div>
+            <div id="groupbuyRecom" class="group_con" style="display:block;">
+                <table class="group_buy">
+                    <colgroup>
+                        <col width="5%"><col width="11%"><col width="13%"><col><col width="13%"><col width="11%"><col width="9%"><col width="11%"><col width="16%">
+                    </colgroup>
+                    <tbody></tbody>
+                </table><script>Mode.HM()</script>
+            </div>
+        </div><!--合买结束-->
+    </section>
+</article>
+	#include("/foot.vm")
+</body>
+</html>

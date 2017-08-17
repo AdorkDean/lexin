@@ -141,26 +141,7 @@ public class MethodOpen
 					batchBeans.add(hmBean2);
 				}
 
-				if (money.doubleValue() > 0.0D) {
-					buydao.itemadd(buyitem, money.doubleValue());
-					int buy_iscont = en.getBuy_iscont();
-					if (buy_iscont == 0) {
-						List<OutEntity> list = lotdao.findOutList(buyitem, 0);
-						if (list != null) {
-							MethodOut out = new MethodOut();
-							for (OutEntity o : list) {
-								out.CheOen(o);
-							}
-						}
-						List<OutEntity> list2 = lotdao.findOutList(buyitem, 1);
-						if (list2 != null) {
-							MethodOut out = new MethodOut();
-							for (OutEntity o : list2) {
-								out.CheOen(o);
-							}
-						}
-					}
-				}
+				processBuyIscont(en, buyitem, money);
 				CheckBuyStatus(buyitem, money.doubleValue());
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -192,18 +173,18 @@ public class MethodOpen
 			hmBean2.addBatchParameter(new Object[] { Double.valueOf(xiaofei), Double.valueOf(xiaofei), Double.valueOf(xiaofei), Double.valueOf(xiaofei), lot, Integer.valueOf(userid) });
 	}
 
-	public void Open(OpenEntity en)
+	public void Open(OpenEntity openEntity)
 	{
 		String opentime = TimeUtil.getToday("yyyy-MM-dd HH:mm:ss");
-		String qihao = en.getBuylot_qihao();
-		int buy_status = en.getBuylot_status();
-		String haoma = en.getBuylot_haoma();
-		String buyitem = en.getBuy_item();
+		String qihao = openEntity.getBuylot_qihao();
+		int buy_status = openEntity.getBuylot_status();
+		String haoma = openEntity.getBuylot_haoma();
+		String buyitem = openEntity.getBuy_item();
 		if ((1 == buy_status) && (StringUtils.isNotBlank(haoma)) && (!LockList.itemlock.contains(buyitem))) {
 			LockList.itemlock.add(buyitem);
 			try {
-				int buylot_id = en.getBuylot_id();
-				HashMap getWinMoney = MethodOpenCode.GetWinMoney(en.getBuylot_lot(), en.getBuy_code(), en.getBuylot_multiple(), haoma);
+				int buylot_id = openEntity.getBuylot_id();
+				HashMap getWinMoney = MethodOpenCode.GetWinMoney(openEntity.getBuylot_lot(), openEntity.getBuy_code(), openEntity.getBuylot_multiple(), haoma);
 				Double money = (Double)getWinMoney.get("money");
 				Double point = (Double)getWinMoney.get("point");
 
@@ -214,15 +195,16 @@ public class MethodOpen
 				Iterator localIterator;
 				Bc_buyuser user;
 				if (userlist != null) {
-					double allmoney = en.getBuy_money();
-					double lotmoney = en.getBuylot_money();
-					for (localIterator = userlist.iterator(); localIterator.hasNext(); ) { user = (Bc_buyuser)localIterator.next();
+					double allmoney = openEntity.getBuy_money();
+					double lotmoney = openEntity.getBuylot_money();
+					for (localIterator = userlist.iterator(); localIterator.hasNext(); ) {
+						user = (Bc_buyuser)localIterator.next();
 
 						int userid = user.getUser_id();
 						double usermon = user.getBuyuser_money();
 						double lotmoneys = lotmoney * 100.0D / allmoney * usermon / 100.0D;
 
-						CommInstance.InitComm(userid, en.getBuylot_lot(), lotmoney * 100.0D / allmoney * usermon / 100.0D, buyitem, qihao);
+						CommInstance.InitComm(userid, openEntity.getBuylot_lot(), lotmoney * 100.0D / allmoney * usermon / 100.0D, buyitem, qihao);
 						double winmon = 0.0D;
 						if (money.doubleValue() > 0.0D) {
 							double mon = money.doubleValue() * 100.0D / allmoney * usermon / 100.0D;
@@ -231,30 +213,12 @@ public class MethodOpen
 							userdao.addWin(user.getBuyuser_id(), mon);
 							winmon = mon;
 						}
-						phbdao.update(userid, en.getBuylot_lot(), winmon, lotmoneys, en.getBuy_ishm());
+						phbdao.update(userid, openEntity.getBuylot_lot(), winmon, lotmoneys, openEntity.getBuy_ishm());
 					}
 				}
+				//TODO 处理下iscont的业务  但是iscont 是什么意思没明白
+				processBuyIscont(openEntity, buyitem, money);
 
-				if (money.doubleValue() > 0.0D) {
-					buydao.itemadd(buyitem, money.doubleValue());
-					int buy_iscont = en.getBuy_iscont();
-					if (buy_iscont == 0) {
-						List<OutEntity> list = lotdao.findOutList(buyitem, 0);
-						if (list != null) {
-							MethodOut out = new MethodOut();
-							for (OutEntity o : list) {
-								out.CheOen(o);
-							}
-						}
-						List<OutEntity> list2 = lotdao.findOutList(buyitem, 1);
-						if (list2 != null) {
-							MethodOut out = new MethodOut();
-							for (OutEntity o : list2) {
-								out.CheOen(o);
-							}
-						}
-					}
-				}
 				CheckBuyStatus(buyitem, money.doubleValue());
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -263,8 +227,31 @@ public class MethodOpen
 				LockList.itemlock.remove(buyitem);
 			}
 		} else {
-			System.out.println("订单" + en.getBuy_item() + "第" + qihao + "期不是等待开奖或者开奖号码不存在，开奖失败！");
+			System.out.println("订单" + openEntity.getBuy_item() + "第" + qihao + "期不是等待开奖或者开奖号码不存在，开奖失败！");
 		}
+	}
+
+	private void processBuyIscont(OpenEntity openEntity, String buyitem, Double money) {
+		if (money.doubleValue() > 0.0D) {
+            buydao.itemadd(buyitem, money.doubleValue());
+            int buy_iscont = openEntity.getBuy_iscont();
+            if (buy_iscont == 0) {
+                List<OutEntity> list = lotdao.findOutList(buyitem, 0);
+                if (list != null) {
+                    MethodOut out = new MethodOut();
+                    for (OutEntity o : list) {
+                        out.CheOen(o);
+                    }
+                }
+                List<OutEntity> list2 = lotdao.findOutList(buyitem, 1);
+                if (list2 != null) {
+                    MethodOut out = new MethodOut();
+                    for (OutEntity o : list2) {
+                        out.CheOen(o);
+                    }
+                }
+            }
+        }
 	}
 
 	public void CheckBuyStatus(String item, double win)

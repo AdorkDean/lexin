@@ -7,8 +7,6 @@ import com.caipiao.intfaceImpl.LotteryIntfaceImpl;
 import com.sysbcjzh.utils.StringUtils;
 import java.util.*;
 
-// Referenced classes of package com.caipiao.data.open:
-//			OpenThread
 
 public class OpenService
 {
@@ -41,6 +39,11 @@ public class OpenService
 		}
 	}
 
+	/**
+	 * 修改彩票状态为1 开奖状态
+	 * @param lot
+	 * @param qihao
+	 */
 	private void UpLotteryStatus(String lot, String qihao)
 	{
 		HashMap map = new HashMap();

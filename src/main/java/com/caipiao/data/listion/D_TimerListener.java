@@ -26,7 +26,9 @@ public class D_TimerListener
 			QuartzManager.addJob("hemai", hemai, hemai.time);
 			QuartzManager.addJob("out", out, out.time);
 			QuartzManager.addJob("day", day, day.time);
-			QuartzManager.addJob("month", month, month.time); } catch (Exception localException) {
+			QuartzManager.addJob("month", month, month.time);
+		} catch (Exception localException) {
+			System.out.println("【系统启动异常】" + localException.getMessage());
 		}
 	}
 
