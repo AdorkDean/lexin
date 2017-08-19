@@ -11,8 +11,7 @@ import com.sysbcjzh.utils.StringUtils;
 import java.util.*;
 
 public class UserIntfaceImpl
-	implements Bc_userIntface
-{
+	implements Bc_userIntface {
 
 	Mysql dao;
 
@@ -328,5 +327,15 @@ public class UserIntfaceImpl
 			list.add((new StringBuilder(String.valueOf(etime))).append(" 24:00:00").toString());
 		}
 		return dao.getCount(sql, list.toArray());
+	}
+
+	@Override
+	public List<Bc_user> findListForTestUser(){
+		String sql = "select * from bc_user where User_type = 3";
+
+		List<Bc_user> finds = dao.finds(sql, Bc_user.class, new Object[0]);
+
+		return finds;
+
 	}
 }

@@ -59,4 +59,6 @@ public interface Bc_userIntface
 	public abstract List findInlist(int i, int j, String s, String s1, int k, int l);
 
 	public abstract int findInlistCount(int i, int j, String s, String s1);
+
+	List<Bc_user> findListForTestUser();
 }

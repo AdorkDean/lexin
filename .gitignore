@@ -1,7 +1,8 @@
 target/
 lexin.iml
-mysql.xml
 lottery.iml
+mysql.xml
+.idea/
 velocity.log
 .idea
 .DS_Store

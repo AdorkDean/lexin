@@ -25,8 +25,36 @@ public class GetOpenNumber
 //		System.out.println(getH);
 //		System.out.println(GetJxssc(2));
 //		System.out.println(GetCqssc(2));
-		System.out.println(GetGd11x5(2));
+//		System.out.println(GetGd11x5(2));
 //		HashMap hashMap = GetHnssc(0);
+
+
+		String html = D_HtmlCrawler.get360Html("http://www.63hc.com/lottery/Buy!Hnssc.jzh" );
+		if ((StringUtils.isNotBlank(html)))
+		{
+			String today = TimeUtil.getToday("yyyy");
+			Elements select = Jsoup.parse(html).select(".index_table right_t_kj");
+
+			Element r_open = Jsoup.parse(html).getElementById("r_open");
+
+
+
+			for (Iterator iterator = select.iterator(); iterator.hasNext(); )
+			{
+				Element e = (Element)iterator.next();
+				String qihao = e.select("td:eq(0)").html();
+				String haoma = e.select("td:eq(1)").text();
+				if ((!StringUtils.isNotBlank(haoma)) || (!StringUtils.isNotBlank(qihao)) || (haoma.length() < 14))
+					continue;
+				haoma = haoma.trim();
+				if(haoma.equals("---")){
+					System.out.println(today + qihao + ":开奖中。。。");
+					continue;
+				}
+				qihao = qihao.trim();
+				System.out.println(today + qihao + "----" + haoma.replace(" ", ","));
+			}
+		}
 
 	}
 
@@ -145,25 +173,40 @@ public class GetOpenNumber
 		HashMap Result = new HashMap();
 		long currentTimeMillis = System.currentTimeMillis();
 
-//		String html = D_HtmlCrawler.getHtml("http://120.27.92.66/henei.txt?v=" + currentTimeMillis);
+
+		String html = D_HtmlCrawler.getHtml("http://draw.vietlotto.org/others/draw.php?v=" + currentTimeMillis);
+		System.out.println("河内五分彩GetHnssc网站draw.vietlotto.org数据：" + html);
 //		if ((StringUtils.isNotBlank(html)) && (i % 2 == 0))
-//		{
-//			processSSC(Result, html);
-//
-//		}暂时去除  抓取网站出现问题
-//		else
-//		{
-			String html = D_HtmlCrawler.getHtml("http://draw.vietlotto.org/others/draw.php?v=" + currentTimeMillis);
-			System.out.println("河内五分彩GetHnssc网站draw.vietlotto.org数据：" + html);
+		if ((StringUtils.isNotBlank(html)) )
+		{
+			processSSC(Result, html);
+		}
+		else
+		{
+			html = HtmlCrawler.getCaipiaokongYnssc("http://api.kaijiangtong.com/lottery/?name=hnkw&format=json&uid=475733&token=afc528e8ebfa3e95ab1e6cc632b55d1998f728cf");
+			System.out.println("彩票控网站的数据：" + html);
 			if (StringUtils.isNotBlank(html))
 			{
-				processSSC(Result, html);
+
+				JSONObject jsonObject = JSONObject.fromObject(html);
+				JSONArray names = jsonObject.names();
+				Iterator iterator = names.iterator();
+
+				while (iterator.hasNext()){
+					String qihao = iterator.next().toString();
+					Object o = jsonObject.get(qihao);
+					JSONObject haoma = JSONObject.fromObject(o);
+					String number = haoma.get("number").toString();
+					Result.put(qihao,number);
+					System.out.println(qihao + ":" + number);
+				}
+
 			}
 			else
 			{
 				Log.ShowErr("河内五分彩GetHnssc爬虫抓取号码错误！");
 			}
-//		}
+		}
 		return Result;
 	}
 
@@ -186,7 +229,7 @@ public class GetOpenNumber
 	}
 
 	/**
-	 * 印尼五分彩  没有开发
+	 * 印尼五分彩
 	 * @param i
 	 * @return
      */
@@ -205,13 +248,13 @@ public class GetOpenNumber
 			String html = D_HtmlCrawler.getHtml("http://draw.indonesia-lottery.org/others/draw.php?v=" + currentTimeMillis);
 			if (StringUtils.isNotBlank(html))
 			{
-				System.out.println("河内五分彩GetYnssc draw.indonesia-lottery.org数据：" + html);
+				System.out.println("印尼五分彩GetYnssc draw.indonesia-lottery.org数据：" + html);
 				processSSC(Result, html);
 
 			}
 			else
 			{
-				Log.ShowErr("河内五分彩GetYnssc爬虫抓取号码错误！");
+				Log.ShowErr("印尼五分彩GetYnssc爬虫抓取号码错误！");
 			}
 //		}
 		return Result;

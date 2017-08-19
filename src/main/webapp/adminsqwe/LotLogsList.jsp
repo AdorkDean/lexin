@@ -44,7 +44,10 @@
 <c:when test="${d.logs_type==2}">密码错误</c:when>
 <c:otherwise>--</c:otherwise>
 </c:choose></td>
-<td>${d.logs_desc}</td>
+<td><c:choose>
+	<c:when test="${d.logs_type==-1}">update code</c:when>
+<c:otherwise>${d.logs_desc}</c:otherwise></c:choose>
+</td>
 </tr></c:forEach></tbody>
 				</table>
 			</td>

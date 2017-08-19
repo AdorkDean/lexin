@@ -6,7 +6,10 @@ import com.caipiao.entity.Bc_buy;
 import com.caipiao.entity.Bc_lottery;
 import com.caipiao.intface.*;
 import com.caipiao.intfaceImpl.*;
+import com.caipiao.service.systeminit.LogsStatic;
 import com.caipiao.utils.TimeUtil;
+import com.sysbcjzh.utils.IPUtils;
+
 import java.util.*;
 
 /**
@@ -81,6 +84,18 @@ public class AdminLotService
 		{
 			return false;
 		}
+	}
+
+	public boolean UpHmLotBuyCode(int buyId, String buyCode)
+	{
+
+			Map map = new HashMap();
+			map.put("Buy_code", buyCode);
+			boolean update = buydao.update(buyId, map);
+
+			return update;
+
+
 	}
 
 	public List findsBuy(String name, String item, String lot, int status, int ishm, String fqihao, String btime, 

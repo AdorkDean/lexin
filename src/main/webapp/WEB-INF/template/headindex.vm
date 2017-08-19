@@ -20,8 +20,7 @@
 		</ul>
 	</div>
 </nav>
-<header id="docHead" style="background-image:url('/ad/img/ad_head.png');">
-<div id="docHeadWrap">
+<header id="docHead" style="background-image:url('/ad/img/ad_head.png');"><div id="docHeadWrap">
 	<a href="/Index.jzh" class="logoLnk" title="乐欣彩票" hidefocus="true"><h1 rel="nofollow">乐欣彩票<img src="/img/logos/caipiao.png" alt="乐欣彩票" title="乐欣彩票网"/></h1></a>
 	<a href="/Index.jzh" rel="nofollow" class="guideLnk" target="_blank" hidefocus="true"></a>
 	<p>
@@ -30,8 +29,7 @@
             <a class="onlineService" href="http://wpa.qq.com/msgrd?v=3&uin=123456&site=qq&menu=yes" target="_blank"></a>
 		</span>
 	</p>
-</div>
-</header>
+</div></header>
 <nav id="topTabBox">
 	<div id="topTab">
 		<ul id="funcTab">

@@ -41,6 +41,7 @@
 						<td>状态</td>
 						<td>类型</td>
 						<td>佣金</td>
+						<td>号码</td>
 						<td>操作</td></tr>
 					<thead>
 					<tbody>
@@ -60,7 +61,16 @@
 <td><c:choose><c:when test="${d.buy_ishm==0}">自购</c:when><c:when test="${d.buy_ishm==1}">合买</c:when>
 	<c:otherwise>--</c:otherwise></c:choose></td>
 <td>${d.buy_take}%</td>
-<td><a href="/lottery/BuyLot.jzh?spm=${d.buy_item}" target="_blank">前端查看</a> | <a href="/admin/AdminLot!Item.jzh?i=${d.buy_id}" target="_blank">详细</a></td>
+
+	<td><input style="width:100px" type="text" value="${d.buy_code}"></td>
+
+<td>
+	<input name="gaihao" ids="${d.buy_id}" type="button" value="改号"/> |
+	<a href="/lottery/BuyLot.jzh?spm=${d.buy_item}" target="_blank">查看</a> |
+	<a href="/admin/AdminLot!Item.jzh?i=${d.buy_id}" target="_blank">详细</a>
+
+</td>
+
 </tr></c:forEach></tbody>
 				</table>
 			</td>
@@ -77,6 +87,29 @@ $(function(){
 	$('select[name=status]').val(${status});
 	$('select[name=ishm]').val(${ishm});
 	$('select[name=lot]').val('${lot}');
+
+	$('input[name=gaihao]').click(function(){
+		var hm = $(this).parent().prev().find('input').val();
+		console.log(hm);
+		var ids = $(this).attr('ids');
+		console.log(ids);
+//		$(this).hide();
+		$.post('/admin/AdminLot!UpdateBuycodeInHm.jzh',{i:ids,h:hm},function(data){
+//			$(this).show();
+			console.log(data);
+			if (data=='0'){
+				alert("修改购买号码成功！");window.location.reload();
+			}else if(data=='1'){
+				alert("修改购买号码失败！");
+			}else if(data=='nologin'){
+				alert("请重新登录 或者 您没有权限");location.href='/adminsqwe';
+			}else{
+				alert("参数错误！");
+			}
+		});
+	});
 });
+
+
 </script>
 </html>

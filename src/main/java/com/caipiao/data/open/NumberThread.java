@@ -37,15 +37,11 @@ public class NumberThread extends Thread
 				new CrawlerJsk3().Instance();
 			} else if (!"Jlk3".equals(this.Lot_name)) {
 				if ("Gxk3".equals(this.Lot_name)) {
-					new CrawlerGxk3().Instance(); break label624;
+					new CrawlerGxk3().Instance();break label624;
 				}if ("Ahk3".equals(this.Lot_name)) {
-					new CrawlerAhk3().Instance(); break label624;
-				}if ((!"Kl8".equals(this.Lot_name)) &&
-						(!"Dwzdy".equals(this.Lot_name)) &&
-						(!"Xync".equals(this.Lot_name)) &&
-						(!"Gdklsf".equals(this.Lot_name)) &&
-						(!"Xysc".equals(this.Lot_name)) &&
-						(!"Qyh".equals(this.Lot_name)))
+					new CrawlerAhk3().Instance();break label624;
+				}if ((!"Kl8".equals(this.Lot_name)) && (!"Dwzdy".equals(this.Lot_name)) && (!"Xync".equals(this.Lot_name)) &&
+						(!"Gdklsf".equals(this.Lot_name)) && (!"Xysc".equals(this.Lot_name)) && (!"Qyh".equals(this.Lot_name)))
 				{
 					if ("Ssq".equals(this.Lot_name)) {
 						new CrawlerSsq().Instance(); break label624;
@@ -57,12 +53,10 @@ public class NumberThread extends Thread
 						new CrawlerPl5().Instance(); break label624;
 					}if ("Pl3".equals(this.Lot_name)) {
 						new CrawlerPl3().Instance(); break label624;
-					}if ((!"Qxc".equals(this.Lot_name)) &&
-							(!"Qlc".equals(this.Lot_name)) &&
-							(!"Hd15x5".equals(this.Lot_name)) &&
-							(!"Hcy".equals(this.Lot_name)) &&
-							(!"Hdljy".equals(this.Lot_name)) &&
-							("Hnssc".equals(this.Lot_name)))
+					}if ("Ynssc".equals(this.Lot_name)) {
+						new CrawlerYnssc().Instance(); break label624;//新加的印尼时时彩
+					}if ((!"Qxc".equals(this.Lot_name)) && (!"Qlc".equals(this.Lot_name)) && (!"Hd15x5".equals(this.Lot_name)) &&
+							(!"Hcy".equals(this.Lot_name)) && (!"Hdljy".equals(this.Lot_name)) && ("Hnssc".equals(this.Lot_name)))
 						new CrawlerHnssc().Instance();
 				}
 			} } finally {
