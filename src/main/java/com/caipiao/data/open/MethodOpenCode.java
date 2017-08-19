@@ -279,8 +279,16 @@ public class MethodOpenCode {
                         i++;
                     win = tryMoney * (double) Comb(i, 2);
                 } else if (PlayType.T301.equals(type)) {
+                    if (h0)
+                        win += tryMoney;
+                    if (h1)
+                        win += tryMoney;
+                    if (h2)
+                        win += tryMoney;
+                    if (h3)
+                        win += tryMoney;
                     if (h4)
-                        win = tryMoney;
+                        win += tryMoney;
                 } else if (PlayType.T302.equals(type) && h3 && h4)
                     win = tryMoney;
             }
@@ -730,5 +738,11 @@ public class MethodOpenCode {
 
     static {
         moneyset = SystemSet.money;
+    }
+
+    public static void main(String[] args) {
+        MethodOpenCode open = new MethodOpenCode();
+        HashMap hnssc = open.OpenOneSsc("301:5,5,7,2,6:5", "Hnssc", "5,5,7,2,6");
+        System.out.println(hnssc.get("money"));
     }
 }
