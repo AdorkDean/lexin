@@ -287,10 +287,10 @@ public class AddCaiqiService
 		String replace = day.replace("-", "");
 		String lot = LotEmun.Sd11x5.name;
 		boolean flag = false;
-		Bc_lottery find = dao.find(lot, (new StringBuilder(String.valueOf(replace))).append("78").toString());
+		Bc_lottery find = dao.find(lot, (new StringBuilder(String.valueOf(replace))).append("88").toString());
 		if (find == null)
 		{
-			for (int i = 1; i < 79; i++)
+			for (int i = 1; i < 88; i++)
 			{
 				String qihao;
 				if (i < 10)
@@ -298,7 +298,7 @@ public class AddCaiqiService
 				else
 					qihao = (new StringBuilder(String.valueOf(replace))).append(i).toString();
 				if (i == 1)
-					add(lot, qihao, (new StringBuilder(String.valueOf(old))).append(" 21:55:00").toString(), (new StringBuilder(String.valueOf(day))).append(" ").append(CaiqiTime.Sd11x5[i - 1]).toString());
+					add(lot, qihao, (new StringBuilder(String.valueOf(old))).append(" 22:55:20").toString(), (new StringBuilder(String.valueOf(day))).append(" ").append(CaiqiTime.Sd11x5[i - 1]).toString());
 				else
 					add(lot, qihao, (new StringBuilder(String.valueOf(day))).append(" ").append(CaiqiTime.Sd11x5[i - 2]).toString(), (new StringBuilder(String.valueOf(day))).append(" ").append(CaiqiTime.Sd11x5[i - 1]).toString());
 			}

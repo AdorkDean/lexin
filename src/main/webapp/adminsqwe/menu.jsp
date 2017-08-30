@@ -89,6 +89,8 @@
           <TD><A class=menuChild href="/admin/AdminCaiwu!Draw.jzh" target=main>提款明细</A></TD></TR>
         <TR height=20><TD align=middle width=30><IMG height=9 src="images/menu_icon.gif" width=9></TD>
           <TD><A class=menuChild href="/admin/AdminLot.jzh?status=1" target=main>中奖订单查询</A></TD></TR>
+          <TR height=20><TD align=middle width=30><IMG height=9 src="images/menu_icon.gif" width=9></TD>
+            <TD><A class=menuChild href="/admin/AdminCaiwu!achievement.jzh" target=main>业绩统计</A></TD></TR>
         <TR height=4><TD colSpan=2></TD></TR></TABLE>
       <TABLE cellSpacing=0 cellPadding=0 width=150 border=0><TR height=22><TD style="PADDING-LEFT: 30px" background=images/menu_bt.jpg>
 		<A class=menuParent onclick=expand(4) href="javascript:void(0);">内容管理</A></TD></TR>

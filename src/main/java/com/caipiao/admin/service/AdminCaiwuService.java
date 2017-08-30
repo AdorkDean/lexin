@@ -1,8 +1,11 @@
 package com.caipiao.admin.service;
 
 import com.caipiao.entity.Bc_draw;
+import com.caipiao.entity.out.Achievement;
+import com.caipiao.intface.BcCaiwuIntface;
 import com.caipiao.intface.Bc_drawIntface;
 import com.caipiao.intface.Bc_rechIntface;
+import com.caipiao.intfaceImpl.BcCaiwuIntfaceImpl;
 import com.caipiao.intfaceImpl.DrawIntfaceImpl;
 import com.caipiao.intfaceImpl.RechIntfaceImpl;
 import com.caipiao.service.systeminit.UserStatic;
@@ -18,6 +21,8 @@ public class AdminCaiwuService
 
 	Bc_rechIntface rechdao;
 	Bc_drawIntface drawdao;
+
+	private BcCaiwuIntface caiwudao = new BcCaiwuIntfaceImpl();
 
 	public AdminCaiwuService()
 	{
@@ -46,6 +51,7 @@ public class AdminCaiwuService
 	{
 		return drawdao.findscount(user_id, btime, etime, type, utype, status);
 	}
+
 
 	public boolean DrawUpdate(int draw_id, String douser, int type, String msg)
 	{
@@ -93,8 +99,23 @@ public class AdminCaiwuService
 		}
 	}
 
-	public int findNowDraw()
-	{
-		return drawdao.findNowDraw();
+	public int findNowDraw() {
+		return this.drawdao.findNowDraw();
+	}
+
+	public List<String> findAllAgent() {
+		return this.caiwudao.findsAllAgent();
+	}
+
+	public List<Achievement> findsData(String username, String agent, String btime, String etime, int current, int pageSize) {
+		return this.caiwudao.findsAchievementByPage(username, agent, btime, etime, current, pageSize);
+	}
+
+	public int findsDataCount(String username, String agent, String btime, String etime) {
+		return this.caiwudao.findsAchievementByPageCount(username, agent, btime, etime);
+	}
+
+	public Achievement findsDataTotal(String username, String agent, String btime, String etime) {
+		return this.caiwudao.findsAchievementByTotal(username, agent, btime, etime);
 	}
 }

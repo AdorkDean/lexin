@@ -4,6 +4,7 @@ package com.caipiao.admin;
 import com.caipiao.admin.service.AdminCaiwuService;
 import com.caipiao.admin.service.AdminUserService;
 import com.caipiao.entity.Bc_user;
+import com.caipiao.entity.out.Achievement;
 import com.caipiao.service.systeminit.UserStatic;
 import com.caipiao.utils.TryStatic;
 import com.caipiao.utils.UserSession;
@@ -321,6 +322,46 @@ public class AdminCaiwu extends IndexAction
 		{
 			out.write("nologin");
 		}
+		out.flush();
+		out.close();
+	}
+
+	public void achievementGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String admin = UserSession.getAdmin(request);
+		if(admin != null) {
+			try {
+				String e = request.getParameter("username");
+				String agent = request.getParameter("agent");
+				String btime = request.getParameter("btime");
+				String etime = request.getParameter("etime");
+				e = e == null?"":e;
+				agent = agent == null?"":agent;
+				btime = btime == null?"":btime;
+				etime = etime == null?"":etime;
+				String p = request.getParameter("p");
+				int page = TryStatic.StrToInt(p, 1);
+				byte limit = 30;
+				String url = "/admin/AdminCaiwu!achievement.jzh?username=" + e + "&agent=" + agent + "&btime=" + btime + "&etime=" + etime + "&";
+				int count = this.caiwu.findsDataCount(e, agent, btime, etime);
+				List list = this.caiwu.findsData(e, agent, btime, etime, (page - 1) * limit, page * limit);
+				Achievement achie = this.caiwu.findsDataTotal(e, agent, btime, etime);
+				String pageHtml = PageUtils.Page(count, page, limit, url);
+				request.setAttribute("page", pageHtml);
+				request.setAttribute("list", list);
+				request.setAttribute("achie", achie);
+				request.setAttribute("username", e);
+				request.setAttribute("agent", agent);
+				request.setAttribute("btime", btime);
+				request.setAttribute("etime", etime);
+				request.getRequestDispatcher("/adminsqwe/achievement.jsp").forward(request, response);
+			} catch (Exception var17) {
+				out.print("系统出现未知错误, 请联系管理员!");
+			}
+		} else {
+			out.print(UserSession.loginadminstr);
+		}
+
 		out.flush();
 		out.close();
 	}
