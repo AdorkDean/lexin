@@ -31,6 +31,14 @@ public class BuyLotService {
 
     public String Buy(Bc_user useren, String lot, Double money, Double buymon, Double bao, String code, int ishm, int take, int isopen, String[] qihao, int[] beishu, int iscont) {
         String result = "0";
+        //验证期号是否重复
+        boolean isRepeat = isRepeatQihao(qihao);
+        if(isRepeat){
+            System.out.println(useren.getUser_name() + "购买追号 期号重复了，可以考虑禁号");
+            return "-1";
+        }
+
+        //验证期号是否已经过期
         boolean checkBuy = NowQihao.CheckBuy(lot, qihao);
         if (!checkBuy) {
             return "-1";
@@ -125,6 +133,28 @@ public class BuyLotService {
         return result;
     }
 
+    private boolean isRepeatQihao(String[] qihao) {
+
+        boolean isRepeat = false;
+
+        if(qihao != null && qihao.length > 1){
+            for (int i = 0; i < qihao.length; i++) {
+                for (int j = i+ 1; j < qihao.length; j++) {
+
+                    if(qihao[i].equals(qihao[j])){
+                        System.out.println(qihao[i] + " 期号重复了");
+                        isRepeat = true;
+                        break;
+
+                    }
+                }
+            }
+        }
+
+        return isRepeat;
+    }
+
+
     private boolean verifyBeishuFushu(int[] beishu) {
 
         boolean isFushu = false;
@@ -143,6 +173,11 @@ public class BuyLotService {
         int[] i = {1,2,3,4,7};
         boolean a = buyLotService.verifyBeishuFushu(i);
         System.out.println(a);
+
+        String[] qihao = new String[]{"1,2","2,3,4","4,5","1,2"};
+        boolean repeatQihao = buyLotService.isRepeatQihao(qihao);
+        System.out.println("repeat ---------");
+        System.out.println(repeatQihao);
 
     }
 

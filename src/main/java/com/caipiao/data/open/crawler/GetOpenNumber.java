@@ -24,37 +24,37 @@ public class GetOpenNumber
 //		HashMap getH = GetGd11x5(2);
 //		System.out.println(getH);
 //		System.out.println(GetJxssc(2));
-//		System.out.println(GetCqssc(2));
+		System.out.println(GetCqssc(2));
 //		System.out.println(GetGd11x5(2));
 //		HashMap hashMap = GetHnssc(0);
 
 
-		String html = D_HtmlCrawler.get360Html("http://www.63hc.com/lottery/Buy!Hnssc.jzh" );
-		if ((StringUtils.isNotBlank(html)))
-		{
-			String today = TimeUtil.getToday("yyyy");
-			Elements select = Jsoup.parse(html).select(".index_table right_t_kj");
-
-			Element r_open = Jsoup.parse(html).getElementById("r_open");
-
-
-
-			for (Iterator iterator = select.iterator(); iterator.hasNext(); )
-			{
-				Element e = (Element)iterator.next();
-				String qihao = e.select("td:eq(0)").html();
-				String haoma = e.select("td:eq(1)").text();
-				if ((!StringUtils.isNotBlank(haoma)) || (!StringUtils.isNotBlank(qihao)) || (haoma.length() < 14))
-					continue;
-				haoma = haoma.trim();
-				if(haoma.equals("---")){
-					System.out.println(today + qihao + ":开奖中。。。");
-					continue;
-				}
-				qihao = qihao.trim();
-				System.out.println(today + qihao + "----" + haoma.replace(" ", ","));
-			}
-		}
+//		String html = D_HtmlCrawler.get360Html("http://www.63hc.com/lottery/Buy!Hnssc.jzh" );
+//		if ((StringUtils.isNotBlank(html)))
+//		{
+//			String today = TimeUtil.getToday("yyyy");
+//			Elements select = Jsoup.parse(html).select(".index_table right_t_kj");
+//
+//			Element r_open = Jsoup.parse(html).getElementById("r_open");
+//
+//
+//
+//			for (Iterator iterator = select.iterator(); iterator.hasNext(); )
+//			{
+//				Element e = (Element)iterator.next();
+//				String qihao = e.select("td:eq(0)").html();
+//				String haoma = e.select("td:eq(1)").text();
+//				if ((!StringUtils.isNotBlank(haoma)) || (!StringUtils.isNotBlank(qihao)) || (haoma.length() < 14))
+//					continue;
+//				haoma = haoma.trim();
+//				if(haoma.equals("---")){
+//					System.out.println(today + qihao + ":开奖中。。。");
+//					continue;
+//				}
+//				qihao = qihao.trim();
+//				System.out.println(today + qihao + "----" + haoma.replace(" ", ","));
+//			}
+//		}
 
 	}
 
@@ -68,6 +68,18 @@ public class GetOpenNumber
 	{
 		HashMap Result = new HashMap();
 		long currentTimeMillis = System.currentTimeMillis();
+
+		String html_caipiaokong = HtmlCrawler.getCaipiaokongYnssc("http://api.kaijiangtong.com/lottery/?name=cqssc&format=json&uid=475733&token=afc528e8ebfa3e95ab1e6cc632b55d1998f728cf");
+		System.out.println("彩票控网站重庆时时彩的数据：" + html_caipiaokong);
+		if (StringUtils.isNotBlank(html_caipiaokong))
+		{
+
+			processCaipiaokongData(Result, html_caipiaokong);
+
+			return Result;
+
+		}
+
 
 		String html = HtmlCrawler.getWangyi163Html("http://caipiao.163.com/award/getAwardNumberInfo.html?gameEn=ssc&periodNum=10&cache=" + currentTimeMillis);
 		if (StringUtils.isNotBlank(html))
@@ -94,22 +106,26 @@ public class GetOpenNumber
 				}
 
 			}
-//			html = D_HtmlCrawler.getHtml("http://cailele.jiuding360.com/icaiw.asp?v=" + currentTimeMillis);
-//			if(StringUtils.isNotBlank(html)){
-//				for (Matcher matcher = Pattern.compile("<tr>(.+?)</tr>").matcher(html); matcher.find(); )
-//				{
-//					String finds = matcher.group();
-//					Matcher qihao = Pattern.compile("[0-9]{9}").matcher(finds);
-//					Matcher haoma = Pattern.compile("[0-9]{1},[0-9]{1},[0-9]{1},[0-9]{1},[0-9]{1}").matcher(finds);
-//					if ((qihao.find()) && (haoma.find()))
-//						Result.put("20" + qihao.group(), haoma.group());
-//				}
-//			}
 			else {
 				Log.ShowErr("重庆时时彩爬虫抓取号码错误！");
 			}
 		}
 		return Result;
+	}
+
+	private static void processCaipiaokongData(HashMap result, String html_caipiaokong) {
+		JSONObject jsonObject = JSONObject.fromObject(html_caipiaokong);
+		JSONArray names = jsonObject.names();
+		Iterator iterator = names.iterator();
+
+		while (iterator.hasNext()){
+            String qihao = iterator.next().toString();
+            Object o = jsonObject.get(qihao);
+            JSONObject haoma = JSONObject.fromObject(o);
+            String number = haoma.get("number").toString();
+            result.put(qihao,number);
+            System.out.println(qihao + ":" + number);
+        }
 	}
 
 	/**
@@ -164,7 +180,7 @@ public class GetOpenNumber
 	}
 
 	/**
-	 * 河内时时彩
+	 * 河内五分彩
 	 * @param i
 	 * @return
      */
@@ -173,34 +189,22 @@ public class GetOpenNumber
 		HashMap Result = new HashMap();
 		long currentTimeMillis = System.currentTimeMillis();
 
-
-		String html = D_HtmlCrawler.getHtml("http://draw.vietlotto.org/others/draw.php?v=" + currentTimeMillis);
-		System.out.println("河内五分彩GetHnssc网站draw.vietlotto.org数据：" + html);
-//		if ((StringUtils.isNotBlank(html)) && (i % 2 == 0))
-		if ((StringUtils.isNotBlank(html)) )
+		String html = HtmlCrawler.getCaipiaokongYnssc("http://api.kaijiangtong.com/lottery/?name=hnkw&format=json&uid=475733&token=afc528e8ebfa3e95ab1e6cc632b55d1998f728cf");
+		System.out.println("彩票控网站河内五分彩的数据：" + html);
+		if (StringUtils.isNotBlank(html))
 		{
-			processSSC(Result, html);
+
+			processCaipiaokongData(Result, html);
+
 		}
+
 		else
 		{
-			html = HtmlCrawler.getCaipiaokongYnssc("http://api.kaijiangtong.com/lottery/?name=hnkw&format=json&uid=475733&token=afc528e8ebfa3e95ab1e6cc632b55d1998f728cf");
-			System.out.println("彩票控网站的数据：" + html);
-			if (StringUtils.isNotBlank(html))
+			html = D_HtmlCrawler.getHtml("http://draw.vietlotto.org/others/draw.php?v=" + currentTimeMillis);
+			System.out.println("河内五分彩GetHnssc网站draw.vietlotto.org数据：" + html);
+			if ((StringUtils.isNotBlank(html)) )
 			{
-
-				JSONObject jsonObject = JSONObject.fromObject(html);
-				JSONArray names = jsonObject.names();
-				Iterator iterator = names.iterator();
-
-				while (iterator.hasNext()){
-					String qihao = iterator.next().toString();
-					Object o = jsonObject.get(qihao);
-					JSONObject haoma = JSONObject.fromObject(o);
-					String number = haoma.get("number").toString();
-					Result.put(qihao,number);
-					System.out.println(qihao + ":" + number);
-				}
-
+				processSSC(Result, html);
 			}
 			else
 			{
