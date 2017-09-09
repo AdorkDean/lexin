@@ -5,6 +5,9 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
+/**
+ * 撤单job
+ */
 public class TaskOut
 		implements Job
 {

@@ -245,7 +245,7 @@ Show={
 			case 'Dlt':r='<span class="cz_logo cz_dlt"></span><h1>大乐透</h1>';break;
 			case 'Pl5':r='<span class="cz_logo cz_pl5"></span><h1>排列五</h1>';break;
 			case 'Fc3d':r='<span class="cz_logo cz_x3d"></span><h1>福彩3D</h1>';break;
-			case 'Pl3':r='<span class="cz_logo cz_pl3"></span><h1>排列三</h1>';break;
+			case 'Pl3':r='<span class="cz_logo cz_pl3"></span><h1>排列三</h1>';break;CheckBuy
 			case 'Cqssc':r='<span class="cz_logo cz_ssc"></span><h1>重庆时时彩</h1>';break;
 			case 'Jsk3':r='<span class="cz_logo cz_kuai3"></span><h1>江苏快3</h1>';break;
 			case 'Jxssc':r='<span class="cz_logo cz_jxssc"></span><h1>江西时时彩</h1>';break;

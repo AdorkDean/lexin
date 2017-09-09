@@ -2,6 +2,7 @@ package com.caipiao.data.open.crawler;
 
 import com.caipiao.utils.CharSetUtil;
 import com.caipiao.utils.Log;
+import com.caipiao.utils.SystemSet;
 import com.caipiao.utils.TimeUtil;
 import com.sysbcjzh.utils.StringUtils;
 import net.sf.json.JSONArray;
@@ -24,9 +25,9 @@ public class GetOpenNumber
 //		HashMap getH = GetGd11x5(2);
 //		System.out.println(getH);
 //		System.out.println(GetJxssc(2));
-		System.out.println(GetCqssc(2));
+//		System.out.println(GetCqssc(2));
 //		System.out.println(GetGd11x5(2));
-//		HashMap hashMap = GetHnssc(0);
+		HashMap hashMap = GetHnssc(0);
 
 
 //		String html = D_HtmlCrawler.get360Html("http://www.63hc.com/lottery/Buy!Hnssc.jzh" );
@@ -69,8 +70,12 @@ public class GetOpenNumber
 		HashMap Result = new HashMap();
 		long currentTimeMillis = System.currentTimeMillis();
 
-		String html_caipiaokong = HtmlCrawler.getCaipiaokongYnssc("http://api.kaijiangtong.com/lottery/?name=cqssc&format=json&uid=475733&token=afc528e8ebfa3e95ab1e6cc632b55d1998f728cf");
-		System.out.println("彩票控网站重庆时时彩的数据：" + html_caipiaokong);
+
+
+		String cpk_cqssc = SystemSet.crawler.getProperty("cpk_cqssc");
+
+		String html_caipiaokong = HtmlCrawler.getCaipiaokongData(cpk_cqssc);
+		Log.ShowInfo("彩票控网站重庆时时彩的数据：" + html_caipiaokong);
 		if (StringUtils.isNotBlank(html_caipiaokong))
 		{
 
@@ -111,6 +116,25 @@ public class GetOpenNumber
 			}
 		}
 		return Result;
+	}
+
+	private static void processKaicaiwangData(HashMap result, String html_kcw) {
+
+		JSONObject jsonObject = JSONObject.fromObject(html_kcw);
+		JSONArray data = jsonObject.getJSONArray("data");
+
+		Iterator iterator = data.iterator();
+		while(iterator.hasNext()){
+			JSONObject next = (JSONObject)iterator.next();
+			String expect = next.get("expect").toString();
+			String opencode = next.get("opencode").toString();
+
+			System.out.println(expect);
+			System.out.println(opencode);
+			result.put(expect,opencode);
+
+		}
+
 	}
 
 	private static void processCaipiaokongData(HashMap result, String html_caipiaokong) {
@@ -189,8 +213,22 @@ public class GetOpenNumber
 		HashMap Result = new HashMap();
 		long currentTimeMillis = System.currentTimeMillis();
 
-		String html = HtmlCrawler.getCaipiaokongYnssc("http://api.kaijiangtong.com/lottery/?name=hnkw&format=json&uid=475733&token=afc528e8ebfa3e95ab1e6cc632b55d1998f728cf");
-		System.out.println("彩票控网站河内五分彩的数据：" + html);
+		//开彩网优先
+		String kcw_hnssc = SystemSet.crawler.getProperty("kcw_hnssc");
+		String html_kcw = HtmlCrawler.getKaicaiwangData(kcw_hnssc);
+		Log.ShowInfo("开采网站五分彩的数据：" + html_kcw);
+		if (StringUtils.isNotBlank(html_kcw))
+		{
+
+			processKaicaiwangData(Result, html_kcw);
+
+			return Result;
+
+		}
+
+		String cpk_hnssc = SystemSet.crawler.getProperty("cpk_hnssc");
+		String html = HtmlCrawler.getCaipiaokongData(cpk_hnssc);
+		Log.ShowInfo("彩票控网站河内五分彩的数据：" + html);
 		if (StringUtils.isNotBlank(html))
 		{
 

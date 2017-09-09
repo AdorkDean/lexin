@@ -16,6 +16,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 撤单业务
+ */
 public class MethodOut
 {
 	static final int no_out = 0;

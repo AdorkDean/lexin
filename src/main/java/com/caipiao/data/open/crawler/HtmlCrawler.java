@@ -1,8 +1,10 @@
 package com.caipiao.data.open.crawler;
 
+import com.caipiao.utils.Log;
 import com.caipiao.utils.http.HttpSender;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -41,7 +43,7 @@ public class HtmlCrawler {
 //        System.out.println(html);
 
         String url = "http://api.kaijiangtong.com/lottery/?name=hnkw&format=json&uid=475733&token=afc528e8ebfa3e95ab1e6cc632b55d1998f728cf";
-        String content = HtmlCrawler.getCaipiaokongYnssc(url);
+        String content = HtmlCrawler.getCaipiaokongData(url);
         System.out.println(content);
 
 //        HashMap result = new HashMap();
@@ -94,10 +96,15 @@ public class HtmlCrawler {
     }
 
 
-    public static String getCaipiaokongYnssc(String url)  {
+    public static String getCaipiaokongData(String url)  {
+
+        if(StringUtils.isEmpty(url)){
+            return null;
+        }
+
         try {
             Thread.sleep(1000 * 5);
-            System.out.println("休息5秒，以便符合彩票控网站的规则");
+            Log.ShowInfo("休息5秒，以便符合彩票控网站的规则");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -131,5 +138,44 @@ public class HtmlCrawler {
     }
 
 
+    public static String getKaicaiwangData(String url) {
+        if(StringUtils.isEmpty(url)){
+            return null;
+        }
 
+        try {
+            Thread.sleep(1000 * 3);
+            Log.ShowInfo("休息3秒，以便符合开采网站的规则");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        String html = null;
+        CloseableHttpClient httpClient =HttpClients.createDefault();
+        HttpGet httpget = new HttpGet(url);
+        httpget.setHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)");
+        httpget.setHeader("Content-Type", "text/javascript; charset=UTF-8");
+        try {
+            HttpResponse responce = httpClient.execute(httpget);
+            int resStatu = responce.getStatusLine().getStatusCode();
+            if (resStatu == 200) {
+
+                HttpEntity entity = responce.getEntity();
+                if (entity != null)
+                    html = EntityUtils.toString(entity);
+            }
+
+        }catch (Exception e) {
+            System.out.println("异常描述"+ e.getMessage());
+            System.out.println("访问开采网站【" + url + "】出现异常!");
+        } finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                System.out.println("关闭连接失败");
+            }
+        }
+        System.out.println("访问开彩网站【" + url + "】抓取号码成功!");
+        return html;
+
+    }
 }
