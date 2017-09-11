@@ -1,9 +1,9 @@
 
-//    PlayType.java
-
 package com.caipiao.utils;
 
-
+/**
+ * 玩法
+ */
 public class PlayType
 {
 
