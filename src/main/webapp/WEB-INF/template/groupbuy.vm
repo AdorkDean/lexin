@@ -31,7 +31,9 @@
 				<li#if($lot=='Pl3') class="active"#end><a href="/Groupbuy.jzh?lot=Pl3">排列三<span class="iconKjToday"></span></a></li>		
 			</ul>
 			<h3>高频彩</h3>
-			<ul class="ulMode1">		
+			<ul class="ulMode1">
+                <li#if($lot=='Ynssc') class="active"#end><a href="/Groupbuy.jzh?lot=Ynssc">印尼五分彩<span class="iconNew"></span></a></li>
+                <li#if($lot=='Hnssc') class="active"#end><a href="/Groupbuy.jzh?lot=Hnssc">河内五分彩<span class="iconNew"></span></a></li>
 				<li#if($lot=='Cqssc') class="active"#end><a href="/Groupbuy.jzh?lot=Cqssc">重庆时时彩<!-- span class="iconNew"></span--></a></li>
 				<li#if($lot=='Jxssc') class="active"#end><a href="/Groupbuy.jzh?lot=Jxssc">江西时时彩</a></li>
 				<li#if($lot=='Sd11x5') class="active"#end><a href="/Groupbuy.jzh?lot=Sd11x5">十一运夺金</a></li>

@@ -57,11 +57,11 @@ public class MethodOpenCode {
         HashMap result = new HashMap();
         double win = 0.0D;
         double winPoint = 0.0D;
-        String split[] = thecode.split(":");
+        String split[] = thecode.split(":");//玩法：号码1,号码2：注数
         String type = split[0]; //玩法
         String code = split[1]; //购买的号码
         double tryMoney = getTryMoney(lot, type);//获取某彩种某玩法的规定底层奖金
-        String hms[] = haoma.split(",");
+        String hms[] = haoma.split(",");//开奖号码串
         if (LotEmun.Cqssc.name.equals(lot) || LotEmun.Jxssc.name.equals(lot) || LotEmun.Hnssc.name.equals(lot)
                 || LotEmun.Ynssc.name.equals(lot)) {
 
@@ -384,14 +384,30 @@ public class MethodOpenCode {
         return win;
     }
 
-    private static double processSscWinMoney(String lot, double win, String[] split, String type, String code, double tryMoney, String[] hms) {
-        String buyhm[] = code.split(",");
-        boolean bz = hms[2].equals(hms[3]) && hms[2].equals(hms[4]);//豹子
-        boolean zl = !hms[2].equals(hms[3]) && !hms[2].equals(hms[4]) && !hms[4].equals(hms[3]);
-        boolean dz = hms[3].equals(hms[4]);
-        if (PlayType.T300.equals(type)) {//买单双猜大小
-            Integer hz3 = Integer.valueOf(hms[3]);
-            Integer hz4 = Integer.valueOf(hms[4]);
+    /**
+     * 处理时时彩中奖金额
+     * @param lotType 彩种类型
+     * @param win 中奖金额
+     * @param buyCodeAndPlayType 购买的玩法  {玩法：号码1,号码2：注数}
+     * @param playType 玩法
+     * @param buyCode 购买的号码
+     * @param tryMoney 预定中奖金额
+     * @param openHaomas 开奖号码
+     * @return
+     */
+    private static double processSscWinMoney(String lotType, double win, String[] buyCodeAndPlayType, String playType,
+                                             String buyCode, double tryMoney, String[] openHaomas) {
+        String buyhm[] = buyCode.split(",");
+        boolean baozi = openHaomas[2].equals(openHaomas[3]) && openHaomas[2].equals(openHaomas[4]);//豹子
+        boolean zuliu = !openHaomas[2].equals(openHaomas[3]) && !openHaomas[2].equals(openHaomas[4])
+                && !openHaomas[4].equals(openHaomas[3]);//组六
+        boolean zusan = openHaomas[3].equals(openHaomas[4]);//组三，组三俗称对子。
+        //9 5 4 1 4	组三	小单	小双
+        //9 5 4 1 4	组六	组六	组三	小单	小双
+
+        if (PlayType.T300.equals(playType)) {//买单双猜大小
+            Integer hz3 = Integer.valueOf(openHaomas[3]);
+            Integer hz4 = Integer.valueOf(openHaomas[4]);
             String dx3 = hz3.intValue() <= 4 ? "小" : "大";
             String sd3 = hz3.intValue() % 2 != 0 ? "单" : "双";
             String dx4 = hz4.intValue() <= 4 ? "小" : "大";
@@ -411,14 +427,14 @@ public class MethodOpenCode {
             if (bs4)
                 tbei2++;
             win = (double) (tbei1 * tbei2) * tryMoney;
-        } else if (PlayType.T303.equals(type) || PlayType.T306.equals(type) || PlayType.T309.equals(type) || PlayType.T312.equals(type)) {
-            Integer hz2 = Integer.valueOf(hms[2]);
-            Integer hz3 = Integer.valueOf(hms[3]);
-            Integer hz4 = Integer.valueOf(hms[4]);
+        } else if (PlayType.T303.equals(playType) || PlayType.T306.equals(playType) || PlayType.T309.equals(playType) || PlayType.T312.equals(playType)) {
+            Integer hz2 = Integer.valueOf(openHaomas[2]);
+            Integer hz3 = Integer.valueOf(openHaomas[3]);
+            Integer hz4 = Integer.valueOf(openHaomas[4]);
             String r = "";
-            if (PlayType.T303.equals(type) || PlayType.T306.equals(type))
+            if (PlayType.T303.equals(playType) || PlayType.T306.equals(playType))
                 r = String.valueOf(hz3.intValue() + hz4.intValue());
-            else if (PlayType.T309.equals(type) || PlayType.T312.equals(type))
+            else if (PlayType.T309.equals(playType) || PlayType.T312.equals(playType))
                 r = String.valueOf(hz2.intValue() + hz3.intValue() + hz4.intValue());
             String as3[];
             int l2 = (as3 = buyhm).length;
@@ -427,107 +443,107 @@ public class MethodOpenCode {
                 boolean equals = r.equals(str);
                 if (!equals)
                     continue;
-                if (PlayType.T303.equals(type))
-                    tryMoney = getTryMoney(lot, PlayType.T302);
-                else if (PlayType.T306.equals(type)) {
-                    if (dz)
-                        tryMoney = getTryMoney(lot, PlayType.T302);
+                if (PlayType.T303.equals(playType))
+                    tryMoney = getTryMoney(lotType, PlayType.T302);
+                else if (PlayType.T306.equals(playType)) {
+                    if (zusan)
+                        tryMoney = getTryMoney(lotType, PlayType.T302);
                     else
-                        tryMoney = getTryMoney(lot, PlayType.T304);
-                } else if (PlayType.T309.equals(type))
-                    tryMoney = getTryMoney(lot, PlayType.T308);
-                else if (PlayType.T312.equals(type))
-                    if (bz)
-                        tryMoney = getTryMoney(lot, PlayType.T308);
-                    else if (zl)
-                        tryMoney = getTryMoney(lot, PlayType.T311);
+                        tryMoney = getTryMoney(lotType, PlayType.T304);
+                } else if (PlayType.T309.equals(playType))
+                    tryMoney = getTryMoney(lotType, PlayType.T308);
+                else if (PlayType.T312.equals(playType))
+                    if (baozi)
+                        tryMoney = getTryMoney(lotType, PlayType.T308);
+                    else if (zuliu)
+                        tryMoney = getTryMoney(lotType, PlayType.T311);
                     else
-                        tryMoney = getTryMoney(lot, PlayType.T310);
+                        tryMoney = getTryMoney(lotType, PlayType.T310);
                 win = tryMoney;
                 break;
             }
 
-        } else if (PlayType.T304.equals(type) || PlayType.T305.equals(type) || PlayType.T314.equals(type) || PlayType.T310.equals(type) || PlayType.T311.equals(type) || PlayType.T322.equals(type)) {
-            boolean h2 = code.contains(hms[2]);
-            boolean h3 = code.contains(hms[3]);
-            boolean h4 = code.contains(hms[4]);
-            if (PlayType.T304.equals(type)) {
-                if (!dz && h3 && h4)
+        } else if (PlayType.T304.equals(playType) || PlayType.T305.equals(playType) || PlayType.T314.equals(playType) || PlayType.T310.equals(playType) || PlayType.T311.equals(playType) || PlayType.T322.equals(playType)) {
+            boolean h2 = buyCode.contains(openHaomas[2]);
+            boolean h3 = buyCode.contains(openHaomas[3]);
+            boolean h4 = buyCode.contains(openHaomas[4]);
+            if (PlayType.T304.equals(playType)) {
+                if (!zusan && h3 && h4)
                     win = tryMoney;
-            } else if (PlayType.T305.equals(type)) {
-                h3 = buyhm[3].contains(hms[3]);
-                h4 = buyhm[4].contains(hms[4]);
-                boolean h3T = buyhm[3].contains(hms[4]);
-                boolean h4T = buyhm[4].contains(hms[3]);
+            } else if (PlayType.T305.equals(playType)) {
+                h3 = buyhm[3].contains(openHaomas[3]);
+                h4 = buyhm[4].contains(openHaomas[4]);
+                boolean h3T = buyhm[3].contains(openHaomas[4]);
+                boolean h4T = buyhm[4].contains(openHaomas[3]);
                 if (h3 && h4 || h3T && h4T)
-                    if (dz)
-                        win = getTryMoney(lot, PlayType.T302);
+                    if (zusan)
+                        win = getTryMoney(lotType, PlayType.T302);
                     else
-                        win = getTryMoney(lot, PlayType.T304);
-            } else if (PlayType.T310.equals(type)) {
-                if (!zl && !bz && h2 && h3 && h4)
+                        win = getTryMoney(lotType, PlayType.T304);
+            } else if (PlayType.T310.equals(playType)) {
+                if (!zuliu && !baozi && h2 && h3 && h4)
                     win = tryMoney;
-            } else if (PlayType.T322.equals(type)) {
-                if (!bz && !zl) {
-                    String split2[] = split[1].split(",");
+            } else if (PlayType.T322.equals(playType)) {
+                if (!baozi && !zuliu) {
+                    String split2[] = buyCodeAndPlayType[1].split(",");
                     String temp = split2[0];
                     String temp2 = split2[1];
-                    String htmep = hms[2];
-                    String htmep2 = hms[3];
+                    String htmep = openHaomas[2];
+                    String htmep2 = openHaomas[3];
                     if (split2[1].equals(split2[2])) {
                         temp = split2[1];
                         temp2 = split2[0];
                     } else if (split2[0].equals(split2[1]))
                         temp2 = split2[2];
-                    if (hms[3].equals(hms[4])) {
-                        htmep = hms[3];
-                        htmep2 = hms[2];
-                    } else if (hms[2].equals(hms[3]))
-                        htmep2 = hms[4];
+                    if (openHaomas[3].equals(openHaomas[4])) {
+                        htmep = openHaomas[3];
+                        htmep2 = openHaomas[2];
+                    } else if (openHaomas[2].equals(openHaomas[3]))
+                        htmep2 = openHaomas[4];
                     if (temp.equals(htmep) && temp2.equals(htmep2))
-                        win = getTryMoney(lot, PlayType.T310);
+                        win = getTryMoney(lotType, PlayType.T310);
                 }
-            } else if ((PlayType.T314.equals(type) || PlayType.T311.equals(type)) && zl && h2 && h3 && h4) {
-                if (PlayType.T314.equals(type))
-                    tryMoney = getTryMoney(lot, PlayType.T308);
+            } else if ((PlayType.T314.equals(playType) || PlayType.T311.equals(playType)) && zuliu && h2 && h3 && h4) {
+                if (PlayType.T314.equals(playType))
+                    tryMoney = getTryMoney(lotType, PlayType.T308);
                 win = tryMoney;
             }
-        } else if (PlayType.T307.equals(type) || PlayType.T313.equals(type)) {
+        } else if (PlayType.T307.equals(playType) || PlayType.T313.equals(playType)) {
             String as[];
             int k = (as = buyhm).length;
             for (int j = 0; j < k; j++) {
                 String bh = as[j];
-                if (PlayType.T307.equals(type)) {
-                    if (bh.equals(hms[3]) || bh.equals(hms[4]))
-                        if (dz)
-                            win += getTryMoney(lot, PlayType.T302);
+                if (PlayType.T307.equals(playType)) {
+                    if (bh.equals(openHaomas[3]) || bh.equals(openHaomas[4]))
+                        if (zusan)
+                            win += getTryMoney(lotType, PlayType.T302);
                         else
-                            win += getTryMoney(lot, PlayType.T304);
-                } else if (PlayType.T313.equals(type) && (bh.equals(hms[2]) || bh.equals(hms[3]) || bh.equals(hms[4])))
-                    if (bz)
-                        win += getTryMoney(lot, PlayType.T308);
-                    else if (zl)
-                        win += getTryMoney(lot, PlayType.T311);
+                            win += getTryMoney(lotType, PlayType.T304);
+                } else if (PlayType.T313.equals(playType) && (bh.equals(openHaomas[2]) || bh.equals(openHaomas[3]) || bh.equals(openHaomas[4])))
+                    if (baozi)
+                        win += getTryMoney(lotType, PlayType.T308);
+                    else if (zuliu)
+                        win += getTryMoney(lotType, PlayType.T311);
                     else
-                        win += getTryMoney(lot, PlayType.T310);
+                        win += getTryMoney(lotType, PlayType.T310);
             }
 
-        } else if (PlayType.T320.equals(type) || PlayType.T321.equals(type)) {
-            buyhm = code.split("\\$");
-            if (PlayType.T320.equals(type) && !zl && !bz) {
-                String h01 = hms[2];
-                String h02 = hms[3];
-                if (hms[2].equals(hms[3]))
-                    h02 = hms[4];
+        } else if (PlayType.T320.equals(playType) || PlayType.T321.equals(playType)) {
+            buyhm = buyCode.split("\\$");
+            if (PlayType.T320.equals(playType) && !zuliu && !baozi) {
+                String h01 = openHaomas[2];
+                String h02 = openHaomas[3];
+                if (openHaomas[2].equals(openHaomas[3]))
+                    h02 = openHaomas[4];
                 boolean h0 = buyhm[0].equals(h01);
                 boolean h1 = buyhm[0].equals(h02);
                 boolean ot0 = buyhm[1].contains(h01);
                 boolean ot1 = buyhm[1].contains(h02);
                 if (h0 && ot1 || h1 && ot0)
-                    win = getTryMoney(lot, PlayType.T310);
-            } else if (PlayType.T321.equals(type) && zl) {
+                    win = getTryMoney(lotType, PlayType.T310);
+            } else if (PlayType.T321.equals(playType) && zuliu) {
                 String splitd[] = buyhm[0].split(",");
-                String haos = (new StringBuilder(String.valueOf(hms[2]))).append(hms[3]).append(hms[4]).toString();
+                String haos = (new StringBuilder(String.valueOf(openHaomas[2]))).append(openHaomas[3]).append(openHaomas[4]).toString();
                 boolean zhong = true;
                 String as1[];
                 int l1 = (as1 = splitd).length;
@@ -554,36 +570,36 @@ public class MethodOpenCode {
 
                 }
                 if (zhong)
-                    win = getTryMoney(lot, PlayType.T311);
+                    win = getTryMoney(lotType, PlayType.T311);
             }
         } else {
-            boolean h0 = buyhm[0].contains(hms[0]);
-            boolean h1 = buyhm[1].contains(hms[1]);
-            boolean h2 = buyhm[2].contains(hms[2]);
-            boolean h3 = buyhm[3].contains(hms[3]);
-            boolean h4 = buyhm[4].contains(hms[4]);
-            if (PlayType.T308.equals(type)) {
+            boolean h0 = buyhm[0].contains(openHaomas[0]);
+            boolean h1 = buyhm[1].contains(openHaomas[1]);
+            boolean h2 = buyhm[2].contains(openHaomas[2]);
+            boolean h3 = buyhm[3].contains(openHaomas[3]);
+            boolean h4 = buyhm[4].contains(openHaomas[4]);
+            if (PlayType.T308.equals(playType)) {
                 if (h2 && h3 && h4)
                     win = tryMoney;
-            } else if (PlayType.T315.equals(type)) {
+            } else if (PlayType.T315.equals(playType)) {
                 if (h1 && h2 && h3 && h4)
                     win = tryMoney;
                 if (h1 && h2 && h3 || h2 && h3 && h4)
-                    win += getTryMoney(lot, (new StringBuilder(String.valueOf(PlayType.T315))).append("1").toString());
-            } else if (PlayType.T316.equals(type) || PlayType.T317.equals(type)) {
+                    win += getTryMoney(lotType, (new StringBuilder(String.valueOf(PlayType.T315))).append("1").toString());
+            } else if (PlayType.T316.equals(playType) || PlayType.T317.equals(playType)) {
                 if (h0 && h1 && h2 && h3 && h4)
                     win = tryMoney;
-                if (PlayType.T317.equals(type)) {
+                if (PlayType.T317.equals(playType)) {
                     if (h0 && h1 && h2)
-                        win += getTryMoney(lot, (new StringBuilder(String.valueOf(PlayType.T317))).append("1").toString());
+                        win += getTryMoney(lotType, (new StringBuilder(String.valueOf(PlayType.T317))).append("1").toString());
                     if (h4 && h3 && h2)
-                        win += getTryMoney(lot, (new StringBuilder(String.valueOf(PlayType.T317))).append("1").toString());
+                        win += getTryMoney(lotType, (new StringBuilder(String.valueOf(PlayType.T317))).append("1").toString());
                     if (h0 && h1)
-                        win += getTryMoney(lot, (new StringBuilder(String.valueOf(PlayType.T317))).append("2").toString());
+                        win += getTryMoney(lotType, (new StringBuilder(String.valueOf(PlayType.T317))).append("2").toString());
                     if (h3 && h4)
-                        win += getTryMoney(lot, (new StringBuilder(String.valueOf(PlayType.T317))).append("2").toString());
+                        win += getTryMoney(lotType, (new StringBuilder(String.valueOf(PlayType.T317))).append("2").toString());
                 }
-            } else if (PlayType.T318.equals(type)) {
+            } else if (PlayType.T318.equals(playType)) {
                 if (h0)
                     win += tryMoney;
                 if (h1)
@@ -594,7 +610,7 @@ public class MethodOpenCode {
                     win += tryMoney;
                 if (h4)
                     win += tryMoney;
-            } else if (PlayType.T319.equals(type)) {
+            } else if (PlayType.T319.equals(playType)) {
                 int i = 0;
                 if (h0)
                     i++;
@@ -607,7 +623,7 @@ public class MethodOpenCode {
                 if (h4)
                     i++;
                 win = tryMoney * (double) Comb(i, 2);
-            } else if (PlayType.T301.equals(type)) {
+            } else if (PlayType.T301.equals(playType)) {
                 if (h0)
                     win += tryMoney;
                 if (h1)
@@ -618,7 +634,7 @@ public class MethodOpenCode {
                     win += tryMoney;
                 if (h4)
                     win += tryMoney;
-            } else if (PlayType.T302.equals(type) && h3 && h4)
+            } else if (PlayType.T302.equals(playType) && h3 && h4)
                 win = tryMoney;
         }
         return win;

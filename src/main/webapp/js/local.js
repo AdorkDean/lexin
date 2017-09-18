@@ -110,20 +110,20 @@ local={
 		var PicTotal = 5;// 当前图片总数
 		var CurrentIndex;// 当前鼠标点击图片索引
 		var ToDisplayPicNumber = 0;// 自动播放时的图片索引
-		$('#cpIndexAdBox div.ctrol a').mouseover(function(){//短小的滚动图
+		// $('#cpIndexAdBox div.ctrol a').mouseover(function(){//短小的滚动图
+		// 	CurrentIndex = $(this).index();
+		// 	$(this).parent().children().removeClass("active");
+		// 	$(this).addClass("active");
+		// 	$('#cpIndexAdBox .adList').animate({left:'-'+CurrentIndex*510+'px'},200);
+		// });
+		$('#cpIndexAdBox div.ctrol a').mouseover(function(){
 			CurrentIndex = $(this).index();
 			$(this).parent().children().removeClass("active");
 			$(this).addClass("active");
-			$('#cpIndexAdBox .adList').animate({left:'-'+CurrentIndex*510+'px'},200);
+			var width_baner = $('#cpIndexAdBox > .adList > li > a > img').width();
+			console.log(width_baner);
+			$('#cpIndexAdBox .adList').animate({left:'-'+CurrentIndex*width_baner+'px'},200);
 		});
-		//$('#cpIndexAdBox div.ctrol a').mouseover(function(){
-		//	CurrentIndex = $(this).index();
-		//	$(this).parent().children().removeClass("active");
-		//	$(this).addClass("active");
-		//	var width_baner = $('#cpIndexAdBox > .adList > li > a > img').width();
-		//	console.log(width_baner);
-		//	$('#cpIndexAdBox .adList').animate({left:'-'+CurrentIndex*width_baner+'px'},200);
-		//});
 		var p=function(){
 			$('#cpIndexAdBox div.ctrol a').eq(ToDisplayPicNumber).trigger("mouseover");
 			ToDisplayPicNumber = (ToDisplayPicNumber + 1) % PicTotal;
@@ -250,6 +250,7 @@ Show={
 			case 'Jsk3':r='<span class="cz_logo cz_kuai3"></span><h1>江苏快3</h1>';break;
 			case 'Jxssc':r='<span class="cz_logo cz_jxssc"></span><h1>江西时时彩</h1>';break;
 			case 'Hnssc':r='<span class="cz_logo cz_jxssc"></span><h1>河内五分彩</h1>';break;
+			case 'Ynssc':r='<span class="cz_logo cz_jxssc"></span><h1>印尼五分彩</h1>';break;
 			case 'Sd11x5':r='<span class="cz_logo cz_d11"></span><h1>十一运夺金</h1>';break;
 			case 'Jx11x5':r='<span class="cz_logo cz_jxd11"></span><h1>江西11选5</h1>';break;
 			case 'Gd11x5':r='<span class="cz_logo cz_gdd11"></span><h1>广东11选5</h1>';break;
