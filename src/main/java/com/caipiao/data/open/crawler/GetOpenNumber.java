@@ -69,7 +69,18 @@ public class GetOpenNumber
 	{
 		HashMap Result = new HashMap();
 		long currentTimeMillis = System.currentTimeMillis();
+		//开彩网优先
+			String kcw_hnssc = SystemSet.crawler.getProperty("kcw_cqssc");
+			String html_kcw = HtmlCrawler.getKaicaiwangData(kcw_hnssc);
+			Log.ShowInfo("开采网站时时彩的数据：" + html_kcw);
+			if (StringUtils.isNotBlank(html_kcw))
+			{
 
+				processKaicaiwangData(Result, html_kcw);
+
+				return Result;
+
+		}
 
 
 		String cpk_cqssc = SystemSet.crawler.getProperty("cpk_cqssc");
@@ -405,6 +416,20 @@ public class GetOpenNumber
 	{
 		HashMap Result = new HashMap();
 		long currentTimeMillis = System.currentTimeMillis();
+
+		//开彩网优先
+		String kcw_gd11x5 = SystemSet.crawler.getProperty("kcw_gd11x5");
+		String html_kcw = HtmlCrawler.getKaicaiwangData(kcw_gd11x5);
+		Log.ShowInfo("开采网站广东11选5的数据：" + html_kcw);
+		if (StringUtils.isNotBlank(html_kcw))
+		{
+
+			processKaicaiwangData(Result, html_kcw);
+
+			return Result;
+
+		}
+
 		String html = HtmlCrawler.getWangyi163Html("http://caipiao.163.com/award/getAwardNumberInfo.html?gameEn=gdd11&periodNum=10&cache=" + System.currentTimeMillis());
 		if (StringUtils.isNotBlank(html))
 		{
