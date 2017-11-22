@@ -1,9 +1,9 @@
 <aside class="sider">
-	<div class="sider_con">
-		<div class="wybInfor">
-			<div class="userName"><strong class="fs14">$user.User_name</strong></div>
-			<p>余额：<font color="#ba2636">$user.User_money</font> [ <a href="/my/Detail.jzh">明细</a> ]</p>
-			<div class="btnBox">
+    <div class="sider_con">
+        <div class="wybInfor">
+            <div class="userName"><strong class="fs14">$user.User_name</strong></div>
+            <p>余额：<font color="#ba2636">$user.User_money</font> [ <a href="/my/Detail.jzh">明细</a> ]</p>
+            <div class="btnBox">
                 <a href="/my/Rechange.jzh" class="redBtn25">充值</a>
                 <a href="/my/Rechange!Draw.jzh" class="grayBtn25">提现</a>
             </div>
@@ -11,9 +11,10 @@
         <ul class="leftManu">
             <li #if($listint==0)class="active"#end><a href="/my/Index.jzh" target="_self">我的彩票</a><i>&gt;</i></li>
             <li #if($listint==1)class="active"#end><a href="/my/Index!Desc.jzh" target="_self">购彩记录</a><i>&gt;</i></li>
-			<li #if($listint==2)class="active"#end><a href="/my/Detail.jzh" target="_self">账户明细</a><i>&gt;</i></li>
+            <li #if($listint==2)class="active"#end><a href="/my/Detail.jzh" target="_self">账户明细</a><i>&gt;</i></li>
             <li #if($listint==3)class="active"#end><a href="/my/Rechange.jzh" target="_self">我要充值</a><i>&gt;</i></li>
-            <li #if($listint==4)class="active"#end><a href="/my/Rechange!Draw.jzh" target="_self">我要提现</a><i>&gt;</i></li>
+            <li #if($listint==4)class="active"#end><a href="/my/Rechange!Draw.jzh" target="_self">我要提现</a><i>&gt;</i>
+            </li>
         </ul>
         <ul class="otherManu clearfix">
             <li #if($listint==8)class="active"#end><a href="/my/Message.jzh" target="_self">消息中心</a></li>
@@ -23,18 +24,18 @@
             <li #if($listint==12)class="active"#end><a href="/my/BaseInfo!SetPhone.jzh" target="_self">绑定手机</a></li>
             <li #if($listint==13)class="active"#end><a href="/my/BaseInfo!Setting.jzh" target="_self">账户设置</a></li>
         </ul>
-		#if($user.User_type==1)
-		<ul class="otherManu clearfix">
-            <li #if($listint==14)class="active"#end><a href="/my/Cps.jzh" target="_self">推广中心</a></li>
-            <li #if($listint==15)class="active"#end><a href="/my/Cps!List.jzh" target="_self">客户列表</a></li>
-			<li #if($listint==16)class="active"#end><a href="/my/Cps!Rech.jzh" target="_self">客户充值</a></li>
-			<li #if($listint==17)class="active"#end><a href="/my/Cps!Draw.jzh" target="_self">客户提现</a></li>
-        </ul>
-		#end
-	</div>
-	<div class="popuImg">
-		<a target="_blank" href="/ad/myleftfoot.html">
-			<img width="230" height="90" alt="" src="/ad/img/myleftfoot.jpg">
-		</a>
-	</div>
+        #if($user.User_type==1)
+            <ul class="otherManu clearfix">
+                <li #if($listint==14)class="active"#end><a href="/my/Cps.jzh" target="_self">推广中心</a></li>
+                <li #if($listint==15)class="active"#end><a href="/my/Cps!List.jzh" target="_self">客户列表</a></li>
+                <li #if($listint==16)class="active"#end><a href="/my/Cps!Rech.jzh" target="_self">客户充值</a></li>
+                <li #if($listint==17)class="active"#end><a href="/my/Cps!Draw.jzh" target="_self">客户提现</a></li>
+            </ul>
+        #end
+    </div>
+    <div class="popuImg">
+        <a target="_blank" href="/ad/myleftfoot.html">
+            <img width="230" height="90" alt="" src="/ad/img/myleftfoot.jpg">
+        </a>
+    </div>
 </aside>

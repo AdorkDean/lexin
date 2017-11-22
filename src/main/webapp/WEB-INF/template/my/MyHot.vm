@@ -1,25 +1,25 @@
 <section class="grayBorder mt10">
-	<h2 class="tit">热门彩种</h2>
-	<ul class="clearfix hotLott">
-		<li class="hot_ssq">
-	    	<a title="老时时彩" target="_blank" href="/lottery/Buy!Cqssc.jzh">老时时彩</a>
-			<i class="redBtn25">立即投注</i>
-		</li>
-		<li class="hot_dlt">
-	    	<a title="新时时彩" target="_blank" href="/lottery/Buy!Jxssc.jzh">新时时彩</a>
-			<i class="redBtn25">立即投注</i>
-		</li>
-		<li class="hot_kuai3">
-			<a title="十一运夺金" target="_blank" href="/lottery/Buy!Sd11x5.jzh">十一运夺金</a>
-			<i class="redBtn25">立即投注</i>
-		</li>
-		<li class="hot_jczq">
-			<a title="江西11选5" target="_blank" href="/lottery/Buy!Jx11x5.jzh">江西11选5</a>
-			<i class="redBtn25">立即投注</i>
-		</li>
-		<li class="hot_d11">
-	    	<a title="广东11选5" target="_blank" href="/lottery/Buy!Gd11x5.jzh">广东11选5</a>
-			<i class="redBtn25">立即投注</i>
-		</li>
+    <h2 class="tit">热门彩种</h2>
+    <ul class="clearfix hotLott">
+        <li class="hot_ssq">
+            <a title="老时时彩" target="_blank" href="/lottery/Buy!Cqssc.jzh">老时时彩</a>
+            <i class="redBtn25">立即投注</i>
+        </li>
+        <li class="hot_dlt">
+            <a title="新时时彩" target="_blank" href="/lottery/Buy!Jxssc.jzh">新时时彩</a>
+            <i class="redBtn25">立即投注</i>
+        </li>
+        <li class="hot_kuai3">
+            <a title="十一运夺金" target="_blank" href="/lottery/Buy!Sd11x5.jzh">十一运夺金</a>
+            <i class="redBtn25">立即投注</i>
+        </li>
+        <li class="hot_jczq">
+            <a title="江西11选5" target="_blank" href="/lottery/Buy!Jx11x5.jzh">江西11选5</a>
+            <i class="redBtn25">立即投注</i>
+        </li>
+        <li class="hot_d11">
+            <a title="广东11选5" target="_blank" href="/lottery/Buy!Gd11x5.jzh">广东11选5</a>
+            <i class="redBtn25">立即投注</i>
+        </li>
     </ul>
 </section>

@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" 
-	xmlns="http://java.sun.com/xml/ns/javaee" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-	<servlet>
-    	<description>This is the description of my J2EE component</description>
-    	<display-name>This is the display name of my J2EE component</display-name>
-    	<servlet-name>ActionServlet</servlet-name>
-    	<servlet-class>com.sysbcjzh.utils.ActionServlet</servlet-class>
-    	<init-param>
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>ActionServlet</servlet-name>
+        <servlet-class>com.sysbcjzh.utils.ActionServlet</servlet-class>
+        <init-param>
             <param-name>404</param-name>
             <param-value>error.html</param-value>
-	    </init-param>
-    	<init-param>
+        </init-param>
+        <init-param>
             <param-name>/</param-name>
             <param-value>com.caipiao.servlet</param-value>
-	    </init-param>
-	    <init-param>
+        </init-param>
+        <init-param>
             <param-name>admin</param-name>
             <param-value>com.caipiao.admin</param-value>
-	    </init-param>
-	    <init-param>
+        </init-param>
+        <init-param>
             <param-name>my</param-name>
             <param-value>com.caipiao.servlet.my</param-value>
-	    </init-param>
-	    <init-param>
+        </init-param>
+        <init-param>
             <param-name>lottery</param-name>
             <param-value>com.caipiao.servlet.lottery</param-value>
-	    </init-param>
-	    <init-param>
+        </init-param>
+        <init-param>
             <param-name>activity</param-name>
             <param-value>com.caipiao.activity.servlet</param-value>
-	    </init-param>
-	</servlet>
+        </init-param>
+    </servlet>
 
-	<servlet-mapping>
-    	<servlet-name>ActionServlet</servlet-name>
-    	<url-pattern>*.jzh</url-pattern>
-  	</servlet-mapping>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
-	<listener>
-    	<listener-class>com.caipiao.data.listion.D_TimerListener</listener-class>
-	</listener>
-	<!-- <listener>
-    	<listener-class>com.caipiao.data.listion.OnlineUserListener</listener-class>
-	</listener> -->
-	
+    <servlet-mapping>
+        <servlet-name>ActionServlet</servlet-name>
+        <url-pattern>*.jzh</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <listener>
+        <listener-class>com.caipiao.data.listion.D_TimerListener</listener-class>
+    </listener>
+    <!-- <listener>
+        <listener-class>com.caipiao.data.listion.OnlineUserListener</listener-class>
+    </listener> -->
+
 </web-app>

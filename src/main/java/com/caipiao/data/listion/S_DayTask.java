@@ -6,13 +6,12 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
 public class S_DayTask
-		implements Job
-{
-	public String time = "59 59 23 * * ?";
+        implements Job {
+    public String time = "59 59 23 * * ?";
 
-	public void execute(JobExecutionContext arg0) throws JobExecutionException {
-		System.out.println("每日更新任务开始");
-		System.out.println("每日更新任务开始");
-		DMService.DayInstance();
-	}
+    public void execute(JobExecutionContext arg0) throws JobExecutionException {
+        System.out.println("每日更新任务开始");
+        System.out.println("每日更新任务开始");
+        DMService.DayInstance();
+    }
 }

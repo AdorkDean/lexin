@@ -1,639 +1,639 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>彩票定制跟单_彩票跟单</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/hall/followhall.css"/>
-<link rel="stylesheet" href="/css/hall/com.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/lotterymode.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>彩票定制跟单_彩票跟单</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/hall/followhall.css"/>
+    <link rel="stylesheet" href="/css/hall/com.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/lotterymode.js"></script>
 </head>
-<body >
-#set($ind=5)
-#parse("/head.vm")
+<body>
+    #set($ind=5)
+    #parse("/head.vm")
 <article class="hallWrap">
-	<div style="height:300px;margin-left:100px;"><br><br><br><br><br><br>因个别发起人利用佣金，定制功能暂时关闭。</div>
-	<!--<div class="siderLeft">
-	<h3 class="titLeft"><a class="titFollow" href="/followhall/" hidefocus>定制跟单首页</a></h3>
-	<div class="czBody">
-		<h3>数字彩</h3>
-		<ul class="ulMode1">
-			<li ><a href="/followhall/ssq/">双色球 </a><span class="iconKjToday"></span></li>
-			<li ><a href="/followhall/dlt/">大乐透 </a></li>
-		</ul>
-		<h3>竞技彩</h3>
-		<ul class="ulMode1">
-			<li ><a href="/followhall/jczq/">竞彩足球</a></li>
-			<li ><a href="/followhall/football_dc/">足球单场</a></li>
-			<li ><a href="/followhall/football_sfc/">胜负彩</a></li>
-			<li ><a href="/followhall/football_9/">任选九</a></li>
-		</ul>
-	</div>
-	<div class="phbInfo">
-		<ul class="phbCut clearfix">
-			<li>发单排行榜</li>
-			<li style="display:none;" class="liEnd">跟单排行榜</li>
-		</ul>
-		<div class="phbTwrap">
-			<table width="100%">
-				<tbody>
-					<tr>
-						<th width="43%">用户名</th>
-						<th width="37%">中奖金额</th>
-						<th>跟单</th>
-					</tr>
-					<tr>
-						<td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B">足彩超级高...</a></td>
-						<td class="c_ba2636">3699万元</td>
-						<td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B">定制</a></td>
-					</tr>
-					<tr>
-						<td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F">川西平原</a></td>
-						<td class="c_ba2636">1170万元</td>
-						<td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F">定制</a></td>
-					</tr>
-					<tr>
-						<td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E9%98%BF%E5%9C%9F%E8%B4%A2%E4%B8%BB">阿土财主</a></td>
-						<td class="c_ba2636">679万元</td>
-						<td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E9%98%BF%E5%9C%9F%E8%B4%A2%E4%B8%BB">定制</a></td>
-					</tr>
-					<tr>
-						<td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E6%A3%AE%E6%9E%97%E8%BD%BB%E9%AA%91%E5%85%B5">森林轻骑兵</a></td>
-						<td class="c_ba2636">420万元</td>
-						<td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E6%A3%AE%E6%9E%97%E8%BD%BB%E9%AA%91%E5%85%B5">定制</a></td>
-					</tr>
-					<tr>
-						<td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E5%BE%90%E8%80%8D%E5%8C%97%E5%8D%95">足彩徐耍北...</a></td>
-						<td class="c_ba2636">401万元</td>
-						<td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E5%BE%90%E8%80%8D%E5%8C%97%E5%8D%95">定制</a></td>
-					</tr>
-					<tr>
-						<td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E6%88%91%E5%92%8C%E4%BD%A0%E5%B7%A5%E4%BD%9C%E5%AE%A4">我和你工作...</a></td>
-						<td class="c_ba2636">192万元</td>
-						<td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E6%88%91%E5%92%8C%E4%BD%A0%E5%B7%A5%E4%BD%9C%E5%AE%A4">定制</a></td>
-					</tr>
-					<tr>
-						<td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E9%98%B3%E5%85%89%E6%99%AE%E6%B5%8B">阳光普测</a></td>
-						<td class="c_ba2636">180万元</td>
-						<td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E9%98%B3%E5%85%89%E6%99%AE%E6%B5%8B">定制</a></td>
-					</tr>
-					<tr>
-						<td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E8%8D%89%E9%9D%92%E6%A0%91%E8%8C%82">草青树茂</a></td>
-						<td class="c_ba2636">174万元</td>
-						<td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E8%8D%89%E9%9D%92%E6%A0%91%E8%8C%82">定制</a></td>
-					</tr>
-					<tr>
-						<td><a target="_blank" href="/homepage/homepage_index.html?nickName=jetguojiefeng">jetgu...</a></td>
-						<td class="c_ba2636">151万元</td>
-						<td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=jetguojiefeng">定制</a></td>
-					</tr>
-					<tr>
-						<td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E8%87%B3%E8%AF%9A%E6%84%9F%E9%80%9A">至诚感通</a></td>
-						<td class="c_ba2636">110万元</td>
-						<td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E8%87%B3%E8%AF%9A%E6%84%9F%E9%80%9A">定制</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="modBody">
-		<h3>定制跟单帮助</h3>
-		<ul>
-			<li><a target="_blank" href="">如何定制跟单？</a></li>
-			<li><a target="_blank" href="">使用定制跟单要注意什么？</a></li>
-			<li><a target="_blank" href="">定制跟单的常见问题？</a></li>
-			<li><a target="_blank" href="">如何吸引更多人定制自己？</a></li>
-		</ul>
-	</div>
-	<div class="ggPlace">
-		<div class="js-adContainer" data-adUrl="">
-			
-		</div>
-	</div>
+    <div style="height:300px;margin-left:100px;"><br><br><br><br><br><br>因个别发起人利用佣金，定制功能暂时关闭。</div>
+    <!--<div class="siderLeft">
+    <h3 class="titLeft"><a class="titFollow" href="/followhall/" hidefocus>定制跟单首页</a></h3>
+    <div class="czBody">
+        <h3>数字彩</h3>
+        <ul class="ulMode1">
+            <li ><a href="/followhall/ssq/">双色球 </a><span class="iconKjToday"></span></li>
+            <li ><a href="/followhall/dlt/">大乐透 </a></li>
+        </ul>
+        <h3>竞技彩</h3>
+        <ul class="ulMode1">
+            <li ><a href="/followhall/jczq/">竞彩足球</a></li>
+            <li ><a href="/followhall/football_dc/">足球单场</a></li>
+            <li ><a href="/followhall/football_sfc/">胜负彩</a></li>
+            <li ><a href="/followhall/football_9/">任选九</a></li>
+        </ul>
+    </div>
+    <div class="phbInfo">
+        <ul class="phbCut clearfix">
+            <li>发单排行榜</li>
+            <li style="display:none;" class="liEnd">跟单排行榜</li>
+        </ul>
+        <div class="phbTwrap">
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <th width="43%">用户名</th>
+                        <th width="37%">中奖金额</th>
+                        <th>跟单</th>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B">足彩超级高...</a></td>
+                        <td class="c_ba2636">3699万元</td>
+                        <td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B">定制</a></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F">川西平原</a></td>
+                        <td class="c_ba2636">1170万元</td>
+                        <td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F">定制</a></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E9%98%BF%E5%9C%9F%E8%B4%A2%E4%B8%BB">阿土财主</a></td>
+                        <td class="c_ba2636">679万元</td>
+                        <td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E9%98%BF%E5%9C%9F%E8%B4%A2%E4%B8%BB">定制</a></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E6%A3%AE%E6%9E%97%E8%BD%BB%E9%AA%91%E5%85%B5">森林轻骑兵</a></td>
+                        <td class="c_ba2636">420万元</td>
+                        <td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E6%A3%AE%E6%9E%97%E8%BD%BB%E9%AA%91%E5%85%B5">定制</a></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E5%BE%90%E8%80%8D%E5%8C%97%E5%8D%95">足彩徐耍北...</a></td>
+                        <td class="c_ba2636">401万元</td>
+                        <td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E5%BE%90%E8%80%8D%E5%8C%97%E5%8D%95">定制</a></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E6%88%91%E5%92%8C%E4%BD%A0%E5%B7%A5%E4%BD%9C%E5%AE%A4">我和你工作...</a></td>
+                        <td class="c_ba2636">192万元</td>
+                        <td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E6%88%91%E5%92%8C%E4%BD%A0%E5%B7%A5%E4%BD%9C%E5%AE%A4">定制</a></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E9%98%B3%E5%85%89%E6%99%AE%E6%B5%8B">阳光普测</a></td>
+                        <td class="c_ba2636">180万元</td>
+                        <td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E9%98%B3%E5%85%89%E6%99%AE%E6%B5%8B">定制</a></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E8%8D%89%E9%9D%92%E6%A0%91%E8%8C%82">草青树茂</a></td>
+                        <td class="c_ba2636">174万元</td>
+                        <td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E8%8D%89%E9%9D%92%E6%A0%91%E8%8C%82">定制</a></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="/homepage/homepage_index.html?nickName=jetguojiefeng">jetgu...</a></td>
+                        <td class="c_ba2636">151万元</td>
+                        <td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=jetguojiefeng">定制</a></td>
+                    </tr>
+                    <tr>
+                        <td><a target="_blank" href="/homepage/homepage_index.html?nickName=%E8%87%B3%E8%AF%9A%E6%84%9F%E9%80%9A">至诚感通</a></td>
+                        <td class="c_ba2636">110万元</td>
+                        <td><a target="_blank" class="c_1e50a2" href="/homepage/homepage_autofollow.html?nickName=%E8%87%B3%E8%AF%9A%E6%84%9F%E9%80%9A">定制</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modBody">
+        <h3>定制跟单帮助</h3>
+        <ul>
+            <li><a target="_blank" href="">如何定制跟单？</a></li>
+            <li><a target="_blank" href="">使用定制跟单要注意什么？</a></li>
+            <li><a target="_blank" href="">定制跟单的常见问题？</a></li>
+            <li><a target="_blank" href="">如何吸引更多人定制自己？</a></li>
+        </ul>
+    </div>
+    <div class="ggPlace">
+        <div class="js-adContainer" data-adUrl="">
+
+        </div>
+    </div>
 </div>
-	<div class="sallRight">
-		<div class="searchMod">
-			<div class="searchBody">
-				<h1>
-					<i>定制跟单</i>|<a href="/help/10/0727/15/6CK135DP00754IHO.html" target="_blank">帮助?</a>
-				</h1>
-				<p id="nickNameSearchBox"><input type="text" name="searchNickName" value="" />
-				<a href="/followhall/" class="btnSearch white">搜索</a>
-				<input type="hidden" id="currentNickName" value=""/>
-				<a href="/my/order_autofollow.html?gameId=" target="_blank" class="btnFollow">我的定制跟单</a></p>
-			</div>
-		</div>
-		<div class="followList">
-			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="followTable">
-				<tbody>
-					<tr>
-						<th width="5%">序号</th>
-						<th width="11%">发起人</th>
-						<th width="8%">彩种</th>
-						<th width="11%">战绩</th>
-						<th width="7%"><a href="/followhall/?pageNum=1&orderBy=sumBonus&sortType=desc" >总奖金<span class="arrowDown"></span></a></th>
-						<th width="12%"><a href="/followhall/?pageNum=1&orderBy=recentBonus&sortType=desc" >近100笔奖金<span class="arrowDown"></span></a></th>
-						<th width="9%"><a href="/followhall/?pageNum=1&orderBy=prizeInterval&sortType=desc" title="中奖间隔是指近100笔订单中中奖订单之间的间隔，如间隔为7，则该用户平均7笔订单就会中奖1次" >中奖间隔<span class="arrowDown"></span></a></th>
-						<th width="7%"><a href="/followhall/?pageNum=1&orderBy=followers&sortType=asc" class="active">已定制<span class="arrowDown"></span></a></th>
-						<th width="8%">每次认购</th>
-						<th width="10%">定制次数</th>
-						<th width="12%">操作</th>
-					</tr>
-					<tr bgcolor="#f6f6f6" rel="川西平原">
-						<td>1</td>
-						<td><a title="川西平原" href="/homepage/homepage_index.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F" target="_blank">川西平原</a></td>
-						<td>双色球</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F&gameId=2010032416YX00000001" class="aCursor">	
-	<em class="gains_imgs sun_lv1"></em>
-	
-	
-	
-	
-	
-	
-	
+    <div class="sallRight">
+        <div class="searchMod">
+            <div class="searchBody">
+                <h1>
+                    <i>定制跟单</i>|<a href="/help/10/0727/15/6CK135DP00754IHO.html" target="_blank">帮助?</a>
+                </h1>
+                <p id="nickNameSearchBox"><input type="text" name="searchNickName" value="" />
+                <a href="/followhall/" class="btnSearch white">搜索</a>
+                <input type="hidden" id="currentNickName" value=""/>
+                <a href="/my/order_autofollow.html?gameId=" target="_blank" class="btnFollow">我的定制跟单</a></p>
+            </div>
+        </div>
+        <div class="followList">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0" class="followTable">
+                <tbody>
+                    <tr>
+                        <th width="5%">序号</th>
+                        <th width="11%">发起人</th>
+                        <th width="8%">彩种</th>
+                        <th width="11%">战绩</th>
+                        <th width="7%"><a href="/followhall/?pageNum=1&orderBy=sumBonus&sortType=desc" >总奖金<span class="arrowDown"></span></a></th>
+                        <th width="12%"><a href="/followhall/?pageNum=1&orderBy=recentBonus&sortType=desc" >近100笔奖金<span class="arrowDown"></span></a></th>
+                        <th width="9%"><a href="/followhall/?pageNum=1&orderBy=prizeInterval&sortType=desc" title="中奖间隔是指近100笔订单中中奖订单之间的间隔，如间隔为7，则该用户平均7笔订单就会中奖1次" >中奖间隔<span class="arrowDown"></span></a></th>
+                        <th width="7%"><a href="/followhall/?pageNum=1&orderBy=followers&sortType=asc" class="active">已定制<span class="arrowDown"></span></a></th>
+                        <th width="8%">每次认购</th>
+                        <th width="10%">定制次数</th>
+                        <th width="12%">操作</th>
+                    </tr>
+                    <tr bgcolor="#f6f6f6" rel="川西平原">
+                        <td>1</td>
+                        <td><a title="川西平原" href="/homepage/homepage_index.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F" target="_blank">川西平原</a></td>
+                        <td>双色球</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F&gameId=2010032416YX00000001" class="aCursor">
+    <em class="gains_imgs sun_lv1"></em>
+
+
+
+
+
+
+
 </a></td>
-						<td>1168万</td>
-						<td class="c_ba2636">11670</td>
-						<td>2.3次</td>
-						<td>1,879</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr  rel="足彩超级高手">
-						<td>2</td>
-						<td><a title="足彩超级高手" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B" target="_blank">足彩超级高手</a></td>
-						<td>胜负彩</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&gameId=2010102511YX17929658" class="aCursor">	<em class="gains_imgs crown_lv1"></em>
-	<em class="gains_imgs sun_lv1"></em>
-	<em class="gains_imgs moon_lv1"></em>
-	<em class="gains_imgs star_lv1"></em>
-	
-	
-	
-	
-	
+                        <td>1168万</td>
+                        <td class="c_ba2636">11670</td>
+                        <td>2.3次</td>
+                        <td>1,879</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr  rel="足彩超级高手">
+                        <td>2</td>
+                        <td><a title="足彩超级高手" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B" target="_blank">足彩超级高手</a></td>
+                        <td>胜负彩</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&gameId=2010102511YX17929658" class="aCursor">	<em class="gains_imgs crown_lv1"></em>
+    <em class="gains_imgs sun_lv1"></em>
+    <em class="gains_imgs moon_lv1"></em>
+    <em class="gains_imgs star_lv1"></em>
+
+
+
+
+
 </a></td>
-						<td>624万</td>
-						<td class="c_ba2636">604万</td>
-						<td>2.1次</td>
-						<td>798</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010102511YX17929658" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&f=hall#game2010102511YX17929658" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr bgcolor="#f6f6f6" rel="足彩超级高手">
-						<td>3</td>
-						<td><a title="足彩超级高手" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B" target="_blank">足彩超级高手</a></td>
-						<td>任选九</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&gameId=2010102511YX17930039" class="aCursor">	<em class="gains_imgs crown_lv1"></em>
-	<em class="gains_imgs sun_lv1"></em>
-	<em class="gains_imgs moon_lv7"></em>
-	<em class="gains_imgs star_lv6"></em>
-	
-	
-	
-	
-	
+                        <td>624万</td>
+                        <td class="c_ba2636">604万</td>
+                        <td>2.1次</td>
+                        <td>798</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010102511YX17929658" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&f=hall#game2010102511YX17929658" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr bgcolor="#f6f6f6" rel="足彩超级高手">
+                        <td>3</td>
+                        <td><a title="足彩超级高手" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B" target="_blank">足彩超级高手</a></td>
+                        <td>任选九</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&gameId=2010102511YX17930039" class="aCursor">	<em class="gains_imgs crown_lv1"></em>
+    <em class="gains_imgs sun_lv1"></em>
+    <em class="gains_imgs moon_lv7"></em>
+    <em class="gains_imgs star_lv6"></em>
+
+
+
+
+
 </a></td>
-						<td>371万</td>
-						<td class="c_ba2636">252万</td>
-						<td>2.4次</td>
-						<td>306</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010102511YX17930039" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&f=hall#game2010102511YX17930039" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr  rel="阿土财主">
-						<td>4</td>
-						<td><a title="阿土财主" href="/homepage/homepage_index.html?nickName=%E9%98%BF%E5%9C%9F%E8%B4%A2%E4%B8%BB" target="_blank">阿土财主</a></td>
-						<td>竞彩足球胜平负</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E9%98%BF%E5%9C%9F%E8%B4%A2%E4%B8%BB&gameId=jczq" class="aCursor">	<em class="gains_imgs crown_lv1"></em>
-	<em class="gains_imgs sun_lv5"></em>
-	<em class="gains_imgs moon_lv4"></em>
-	<em class="gains_imgs star_lv4"></em>
-	
-	
-	
-	
-	<em class="gains_imgs gray_star_lv6"></em>
+                        <td>371万</td>
+                        <td class="c_ba2636">252万</td>
+                        <td>2.4次</td>
+                        <td>306</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010102511YX17930039" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&f=hall#game2010102511YX17930039" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr  rel="阿土财主">
+                        <td>4</td>
+                        <td><a title="阿土财主" href="/homepage/homepage_index.html?nickName=%E9%98%BF%E5%9C%9F%E8%B4%A2%E4%B8%BB" target="_blank">阿土财主</a></td>
+                        <td>竞彩足球胜平负</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E9%98%BF%E5%9C%9F%E8%B4%A2%E4%B8%BB&gameId=jczq" class="aCursor">	<em class="gains_imgs crown_lv1"></em>
+    <em class="gains_imgs sun_lv5"></em>
+    <em class="gains_imgs moon_lv4"></em>
+    <em class="gains_imgs star_lv4"></em>
+
+
+
+
+    <em class="gains_imgs gray_star_lv6"></em>
 </a></td>
-						<td>604万</td>
-						<td class="c_ba2636">36万</td>
-						<td>3.7次</td>
-						<td>207</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2011111521YX00602001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E9%98%BF%E5%9C%9F%E8%B4%A2%E4%B8%BB&f=hall#game2011111521YX00602001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr bgcolor="#f6f6f6" rel="天际翱翔">
-						<td>5</td>
-						<td><a title="天际翱翔" href="/homepage/homepage_index.html?nickName=%E5%A4%A9%E9%99%85%E7%BF%B1%E7%BF%94" target="_blank">天际翱翔</a></td>
-						<td>双色球</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%A4%A9%E9%99%85%E7%BF%B1%E7%BF%94&gameId=2010032416YX00000001" class="aCursor">	
-	<em class="gains_imgs sun_lv1"></em>
-	
-	
-	
-	
-	
-	
-	
+                        <td>604万</td>
+                        <td class="c_ba2636">36万</td>
+                        <td>3.7次</td>
+                        <td>207</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2011111521YX00602001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E9%98%BF%E5%9C%9F%E8%B4%A2%E4%B8%BB&f=hall#game2011111521YX00602001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr bgcolor="#f6f6f6" rel="天际翱翔">
+                        <td>5</td>
+                        <td><a title="天际翱翔" href="/homepage/homepage_index.html?nickName=%E5%A4%A9%E9%99%85%E7%BF%B1%E7%BF%94" target="_blank">天际翱翔</a></td>
+                        <td>双色球</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%A4%A9%E9%99%85%E7%BF%B1%E7%BF%94&gameId=2010032416YX00000001" class="aCursor">
+    <em class="gains_imgs sun_lv1"></em>
+
+
+
+
+
+
+
 </a></td>
-						<td>869万</td>
-						<td class="c_ba2636">38345</td>
-						<td>1.9次</td>
-						<td>89</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%A4%A9%E9%99%85%E7%BF%B1%E7%BF%94&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr  rel="小白老总">
-						<td>6</td>
-						<td><a title="小白老总" href="/homepage/homepage_index.html?nickName=%E5%B0%8F%E7%99%BD%E8%80%81%E6%80%BB" target="_blank">小白老总</a></td>
-						<td>双色球</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%B0%8F%E7%99%BD%E8%80%81%E6%80%BB&gameId=2010032416YX00000001" class="aCursor">	
-	
-	<em class="gains_imgs moon_lv1"></em>
-	<em class="gains_imgs star_lv5"></em>
-	
-	
-	
-	
-	
+                        <td>869万</td>
+                        <td class="c_ba2636">38345</td>
+                        <td>1.9次</td>
+                        <td>89</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%A4%A9%E9%99%85%E7%BF%B1%E7%BF%94&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr  rel="小白老总">
+                        <td>6</td>
+                        <td><a title="小白老总" href="/homepage/homepage_index.html?nickName=%E5%B0%8F%E7%99%BD%E8%80%81%E6%80%BB" target="_blank">小白老总</a></td>
+                        <td>双色球</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%B0%8F%E7%99%BD%E8%80%81%E6%80%BB&gameId=2010032416YX00000001" class="aCursor">
+
+    <em class="gains_imgs moon_lv1"></em>
+    <em class="gains_imgs star_lv5"></em>
+
+
+
+
+
 </a></td>
-						<td>40万</td>
-						<td class="c_ba2636">18万</td>
-						<td>1.3次</td>
-						<td>86</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%B0%8F%E7%99%BD%E8%80%81%E6%80%BB&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr bgcolor="#f6f6f6" rel="LEO117">
-						<td>7</td>
-						<td><a title="LEO117" href="/homepage/homepage_index.html?nickName=LEO117" target="_blank">LEO117</a></td>
-						<td>双色球</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=LEO117&gameId=2010032416YX00000001" class="aCursor">	
-	
-	
-	<em class="gains_imgs star_lv4"></em>
-	
-	
-	
-	
-	<em class="gains_imgs gray_star_lv2"></em>
+                        <td>40万</td>
+                        <td class="c_ba2636">18万</td>
+                        <td>1.3次</td>
+                        <td>86</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%B0%8F%E7%99%BD%E8%80%81%E6%80%BB&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr bgcolor="#f6f6f6" rel="LEO117">
+                        <td>7</td>
+                        <td><a title="LEO117" href="/homepage/homepage_index.html?nickName=LEO117" target="_blank">LEO117</a></td>
+                        <td>双色球</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=LEO117&gameId=2010032416YX00000001" class="aCursor">
+
+
+    <em class="gains_imgs star_lv4"></em>
+
+
+
+
+    <em class="gains_imgs gray_star_lv2"></em>
 </a></td>
-						<td>62万</td>
-						<td class="c_ba2636">33万</td>
-						<td>1.4次</td>
-						<td>81</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=LEO117&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr  rel="川西平原">
-						<td>8</td>
-						<td><a title="川西平原" href="/homepage/homepage_index.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F" target="_blank">川西平原</a></td>
-						<td>大乐透</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F&gameId=2010071317YX00244457" class="aCursor">	
-	
-	
-	
-	
-	
-	
-	
-	
+                        <td>62万</td>
+                        <td class="c_ba2636">33万</td>
+                        <td>1.4次</td>
+                        <td>81</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=LEO117&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr  rel="川西平原">
+                        <td>8</td>
+                        <td><a title="川西平原" href="/homepage/homepage_index.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F" target="_blank">川西平原</a></td>
+                        <td>大乐透</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F&gameId=2010071317YX00244457" class="aCursor">
+
+
+
+
+
+
+
+
 </a></td>
-						<td>21286</td>
-						<td class="c_ba2636">1865</td>
-						<td>8.3次</td>
-						<td>58</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010071317YX00244457" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F&f=hall#game2010071317YX00244457" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr bgcolor="#f6f6f6" rel="足彩超级高手">
-						<td>9</td>
-						<td><a title="足彩超级高手" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B" target="_blank">足彩超级高手</a></td>
-						<td>单场胜平负</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&gameId=football_dc" class="aCursor">	<em class="gains_imgs crown_lv3"></em>
-	<em class="gains_imgs sun_lv1"></em>
-	<em class="gains_imgs moon_lv3"></em>
-	<em class="gains_imgs star_lv9"></em>
-	
-	
-	
-	
-	<em class="gains_imgs gray_star_lv1"></em>
+                        <td>21286</td>
+                        <td class="c_ba2636">1865</td>
+                        <td>8.3次</td>
+                        <td>58</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010071317YX00244457" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%B7%9D%E8%A5%BF%E5%B9%B3%E5%8E%9F&f=hall#game2010071317YX00244457" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr bgcolor="#f6f6f6" rel="足彩超级高手">
+                        <td>9</td>
+                        <td><a title="足彩超级高手" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B" target="_blank">足彩超级高手</a></td>
+                        <td>单场胜平负</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&gameId=football_dc" class="aCursor">	<em class="gains_imgs crown_lv3"></em>
+    <em class="gains_imgs sun_lv1"></em>
+    <em class="gains_imgs moon_lv3"></em>
+    <em class="gains_imgs star_lv9"></em>
+
+
+
+
+    <em class="gains_imgs gray_star_lv1"></em>
 </a></td>
-						<td>2304万</td>
-						<td class="c_ba2636">20228</td>
-						<td>25次</td>
-						<td>17</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010110218YX22859517" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&f=hall#game2010110218YX22859517" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr  rel="本儿彩">
-						<td>10</td>
-						<td><a title="本儿彩" href="/homepage/homepage_index.html?nickName=%E6%9C%AC%E5%84%BF%E5%BD%A9" target="_blank">本儿彩</a></td>
-						<td>双色球</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E6%9C%AC%E5%84%BF%E5%BD%A9&gameId=2010032416YX00000001" class="aCursor">	
-	
-	
-	
-	
-	
-	
-	
-	
+                        <td>2304万</td>
+                        <td class="c_ba2636">20228</td>
+                        <td>25次</td>
+                        <td>17</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010110218YX22859517" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E8%B6%85%E7%BA%A7%E9%AB%98%E6%89%8B&f=hall#game2010110218YX22859517" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr  rel="本儿彩">
+                        <td>10</td>
+                        <td><a title="本儿彩" href="/homepage/homepage_index.html?nickName=%E6%9C%AC%E5%84%BF%E5%BD%A9" target="_blank">本儿彩</a></td>
+                        <td>双色球</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E6%9C%AC%E5%84%BF%E5%BD%A9&gameId=2010032416YX00000001" class="aCursor">
+
+
+
+
+
+
+
+
 </a></td>
-						<td>7935</td>
-						<td class="c_ba2636">2320</td>
-						<td>1.2次</td>
-						<td>12</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E6%9C%AC%E5%84%BF%E5%BD%A9&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr bgcolor="#f6f6f6" rel="out蠻">
-						<td>11</td>
-						<td><a title="out蠻" href="/homepage/homepage_index.html?nickName=out%E8%A0%BB" target="_blank">out蠻</a></td>
-						<td>双色球</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=out%E8%A0%BB&gameId=2010032416YX00000001" class="aCursor">	
-	
-	<em class="gains_imgs moon_lv1"></em>
-	<em class="gains_imgs star_lv1"></em>
-	
-	
-	
-	
-	
+                        <td>7935</td>
+                        <td class="c_ba2636">2320</td>
+                        <td>1.2次</td>
+                        <td>12</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E6%9C%AC%E5%84%BF%E5%BD%A9&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr bgcolor="#f6f6f6" rel="out蠻">
+                        <td>11</td>
+                        <td><a title="out蠻" href="/homepage/homepage_index.html?nickName=out%E8%A0%BB" target="_blank">out蠻</a></td>
+                        <td>双色球</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=out%E8%A0%BB&gameId=2010032416YX00000001" class="aCursor">
+
+    <em class="gains_imgs moon_lv1"></em>
+    <em class="gains_imgs star_lv1"></em>
+
+
+
+
+
 </a></td>
-						<td>45万</td>
-						<td class="c_ba2636">59765</td>
-						<td>1次</td>
-						<td>9</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=out%E8%A0%BB&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr  rel="草青树茂">
-						<td>12</td>
-						<td><a title="草青树茂" href="/homepage/homepage_index.html?nickName=%E8%8D%89%E9%9D%92%E6%A0%91%E8%8C%82" target="_blank">草青树茂</a></td>
-						<td>双色球</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%8D%89%E9%9D%92%E6%A0%91%E8%8C%82&gameId=2010032416YX00000001" class="aCursor">	
-	
-	<em class="gains_imgs moon_lv1"></em>
-	<em class="gains_imgs star_lv4"></em>
-	
-	
-	
-	
-	
+                        <td>45万</td>
+                        <td class="c_ba2636">59765</td>
+                        <td>1次</td>
+                        <td>9</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=out%E8%A0%BB&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr  rel="草青树茂">
+                        <td>12</td>
+                        <td><a title="草青树茂" href="/homepage/homepage_index.html?nickName=%E8%8D%89%E9%9D%92%E6%A0%91%E8%8C%82" target="_blank">草青树茂</a></td>
+                        <td>双色球</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%8D%89%E9%9D%92%E6%A0%91%E8%8C%82&gameId=2010032416YX00000001" class="aCursor">
+
+    <em class="gains_imgs moon_lv1"></em>
+    <em class="gains_imgs star_lv4"></em>
+
+
+
+
+
 </a></td>
-						<td>47万</td>
-						<td class="c_ba2636">10060</td>
-						<td>5.3次</td>
-						<td>9</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%8D%89%E9%9D%92%E6%A0%91%E8%8C%82&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr bgcolor="#f6f6f6" rel="太阳的风">
-						<td>13</td>
-						<td><a title="太阳的风" href="/homepage/homepage_index.html?nickName=%E5%A4%AA%E9%98%B3%E7%9A%84%E9%A3%8E" target="_blank">太阳的风</a></td>
-						<td>竞彩足球胜平负</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%A4%AA%E9%98%B3%E7%9A%84%E9%A3%8E&gameId=jczq" class="aCursor">	
-	<em class="gains_imgs sun_lv1"></em>
-	<em class="gains_imgs moon_lv8"></em>
-	<em class="gains_imgs star_lv7"></em>
-	
-	
-	
-	
-	<em class="gains_imgs gray_star_lv1"></em>
+                        <td>47万</td>
+                        <td class="c_ba2636">10060</td>
+                        <td>5.3次</td>
+                        <td>9</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%8D%89%E9%9D%92%E6%A0%91%E8%8C%82&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr bgcolor="#f6f6f6" rel="太阳的风">
+                        <td>13</td>
+                        <td><a title="太阳的风" href="/homepage/homepage_index.html?nickName=%E5%A4%AA%E9%98%B3%E7%9A%84%E9%A3%8E" target="_blank">太阳的风</a></td>
+                        <td>竞彩足球胜平负</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%A4%AA%E9%98%B3%E7%9A%84%E9%A3%8E&gameId=jczq" class="aCursor">
+    <em class="gains_imgs sun_lv1"></em>
+    <em class="gains_imgs moon_lv8"></em>
+    <em class="gains_imgs star_lv7"></em>
+
+
+
+
+    <em class="gains_imgs gray_star_lv1"></em>
 </a></td>
-						<td>75万</td>
-						<td class="c_ba2636">18万</td>
-						<td>10次</td>
-						<td>9</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2011111521YX00602001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%A4%AA%E9%98%B3%E7%9A%84%E9%A3%8E&f=hall#game2011111521YX00602001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr  rel="out蠻">
-						<td>14</td>
-						<td><a title="out蠻" href="/homepage/homepage_index.html?nickName=out%E8%A0%BB" target="_blank">out蠻</a></td>
-						<td>大乐透</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=out%E8%A0%BB&gameId=2010071317YX00244457" class="aCursor">	
-	
-	<em class="gains_imgs moon_lv1"></em>
-	<em class="gains_imgs star_lv2"></em>
-	
-	
-	
-	
-	
+                        <td>75万</td>
+                        <td class="c_ba2636">18万</td>
+                        <td>10次</td>
+                        <td>9</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2011111521YX00602001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%A4%AA%E9%98%B3%E7%9A%84%E9%A3%8E&f=hall#game2011111521YX00602001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr  rel="out蠻">
+                        <td>14</td>
+                        <td><a title="out蠻" href="/homepage/homepage_index.html?nickName=out%E8%A0%BB" target="_blank">out蠻</a></td>
+                        <td>大乐透</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=out%E8%A0%BB&gameId=2010071317YX00244457" class="aCursor">
+
+    <em class="gains_imgs moon_lv1"></em>
+    <em class="gains_imgs star_lv2"></em>
+
+
+
+
+
 </a></td>
-						<td>15万</td>
-						<td class="c_ba2636">36195</td>
-						<td>1.5次</td>
-						<td>8</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010071317YX00244457" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=out%E8%A0%BB&f=hall#game2010071317YX00244457" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr bgcolor="#f6f6f6" rel="博乐堂主">
-						<td>15</td>
-						<td><a title="博乐堂主" href="/homepage/homepage_index.html?nickName=%E5%8D%9A%E4%B9%90%E5%A0%82%E4%B8%BB" target="_blank">博乐堂主</a></td>
-						<td>竞彩足球胜平负</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%8D%9A%E4%B9%90%E5%A0%82%E4%B8%BB&gameId=jczq" class="aCursor">	
-	
-	
-	<em class="gains_imgs star_lv3"></em>
-	
-	
-	
-	
-	<em class="gains_imgs gray_star_lv1"></em>
+                        <td>15万</td>
+                        <td class="c_ba2636">36195</td>
+                        <td>1.5次</td>
+                        <td>8</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010071317YX00244457" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=out%E8%A0%BB&f=hall#game2010071317YX00244457" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr bgcolor="#f6f6f6" rel="博乐堂主">
+                        <td>15</td>
+                        <td><a title="博乐堂主" href="/homepage/homepage_index.html?nickName=%E5%8D%9A%E4%B9%90%E5%A0%82%E4%B8%BB" target="_blank">博乐堂主</a></td>
+                        <td>竞彩足球胜平负</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E5%8D%9A%E4%B9%90%E5%A0%82%E4%B8%BB&gameId=jczq" class="aCursor">
+
+
+    <em class="gains_imgs star_lv3"></em>
+
+
+
+
+    <em class="gains_imgs gray_star_lv1"></em>
 </a></td>
-						<td>98913</td>
-						<td class="c_ba2636">1644</td>
-						<td>5.9次</td>
-						<td>8</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2011111521YX00602001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%8D%9A%E4%B9%90%E5%A0%82%E4%B8%BB&f=hall#game2011111521YX00602001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr  rel="重庆阿鹏">
-						<td>16</td>
-						<td><a title="重庆阿鹏" href="/homepage/homepage_index.html?nickName=%E9%87%8D%E5%BA%86%E9%98%BF%E9%B9%8F" target="_blank">重庆阿鹏</a></td>
-						<td>双色球</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E9%87%8D%E5%BA%86%E9%98%BF%E9%B9%8F&gameId=2010032416YX00000001" class="aCursor">	
-	
-	<em class="gains_imgs moon_lv1"></em>
-	
-	
-	
-	
-	
-	
+                        <td>98913</td>
+                        <td class="c_ba2636">1644</td>
+                        <td>5.9次</td>
+                        <td>8</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2011111521YX00602001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E5%8D%9A%E4%B9%90%E5%A0%82%E4%B8%BB&f=hall#game2011111521YX00602001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr  rel="重庆阿鹏">
+                        <td>16</td>
+                        <td><a title="重庆阿鹏" href="/homepage/homepage_index.html?nickName=%E9%87%8D%E5%BA%86%E9%98%BF%E9%B9%8F" target="_blank">重庆阿鹏</a></td>
+                        <td>双色球</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E9%87%8D%E5%BA%86%E9%98%BF%E9%B9%8F&gameId=2010032416YX00000001" class="aCursor">
+
+    <em class="gains_imgs moon_lv1"></em>
+
+
+
+
+
+
 </a></td>
-						<td>36万</td>
-						<td class="c_ba2636">18605</td>
-						<td>5.6次</td>
-						<td>8</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E9%87%8D%E5%BA%86%E9%98%BF%E9%B9%8F&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr bgcolor="#f6f6f6" rel="足彩徐耍北单">
-						<td>17</td>
-						<td><a title="足彩徐耍北单" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E5%BE%90%E8%80%8D%E5%8C%97%E5%8D%95" target="_blank">足彩徐耍北单</a></td>
-						<td>单场胜平负</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%B6%B3%E5%BD%A9%E5%BE%90%E8%80%8D%E5%8C%97%E5%8D%95&gameId=football_dc" class="aCursor">	
-	<em class="gains_imgs sun_lv8"></em>
-	<em class="gains_imgs moon_lv5"></em>
-	
-	
-	
-	
-	
-	
+                        <td>36万</td>
+                        <td class="c_ba2636">18605</td>
+                        <td>5.6次</td>
+                        <td>8</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E9%87%8D%E5%BA%86%E9%98%BF%E9%B9%8F&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr bgcolor="#f6f6f6" rel="足彩徐耍北单">
+                        <td>17</td>
+                        <td><a title="足彩徐耍北单" href="/homepage/homepage_index.html?nickName=%E8%B6%B3%E5%BD%A9%E5%BE%90%E8%80%8D%E5%8C%97%E5%8D%95" target="_blank">足彩徐耍北单</a></td>
+                        <td>单场胜平负</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%B6%B3%E5%BD%A9%E5%BE%90%E8%80%8D%E5%8C%97%E5%8D%95&gameId=football_dc" class="aCursor">
+    <em class="gains_imgs sun_lv8"></em>
+    <em class="gains_imgs moon_lv5"></em>
+
+
+
+
+
+
 </a></td>
-						<td>401万</td>
-						<td class="c_ba2636">25712</td>
-						<td>12.5次</td>
-						<td>7</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010110218YX22859517" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E5%BE%90%E8%80%8D%E5%8C%97%E5%8D%95&f=hall#game2010110218YX22859517" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr  rel="玩彩精灵">
-						<td>18</td>
-						<td><a title="玩彩精灵" href="/homepage/homepage_index.html?nickName=%E7%8E%A9%E5%BD%A9%E7%B2%BE%E7%81%B5" target="_blank">玩彩精灵</a></td>
-						<td>竞彩足球胜平负</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E7%8E%A9%E5%BD%A9%E7%B2%BE%E7%81%B5&gameId=jczq" class="aCursor">	
-	
-	<em class="gains_imgs moon_lv1"></em>
-	<em class="gains_imgs star_lv3"></em>
-	
-	
-	
-	
-	
+                        <td>401万</td>
+                        <td class="c_ba2636">25712</td>
+                        <td>12.5次</td>
+                        <td>7</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010110218YX22859517" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%B6%B3%E5%BD%A9%E5%BE%90%E8%80%8D%E5%8C%97%E5%8D%95&f=hall#game2010110218YX22859517" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr  rel="玩彩精灵">
+                        <td>18</td>
+                        <td><a title="玩彩精灵" href="/homepage/homepage_index.html?nickName=%E7%8E%A9%E5%BD%A9%E7%B2%BE%E7%81%B5" target="_blank">玩彩精灵</a></td>
+                        <td>竞彩足球胜平负</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E7%8E%A9%E5%BD%A9%E7%B2%BE%E7%81%B5&gameId=jczq" class="aCursor">
+
+    <em class="gains_imgs moon_lv1"></em>
+    <em class="gains_imgs star_lv3"></em>
+
+
+
+
+
 </a></td>
-						<td>11万</td>
-						<td class="c_ba2636">7718</td>
-						<td>4.5次</td>
-						<td>7</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2011111521YX00602001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E7%8E%A9%E5%BD%A9%E7%B2%BE%E7%81%B5&f=hall#game2011111521YX00602001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr bgcolor="#f6f6f6" rel="糖三藏">
-						<td>19</td>
-						<td><a title="糖三藏" href="/homepage/homepage_index.html?nickName=%E7%B3%96%E4%B8%89%E8%97%8F" target="_blank">糖三藏</a></td>
-						<td>双色球</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E7%B3%96%E4%B8%89%E8%97%8F&gameId=2010032416YX00000001" class="aCursor">	
-	
-	
-	
-	
-	
-	
-	
-	
+                        <td>11万</td>
+                        <td class="c_ba2636">7718</td>
+                        <td>4.5次</td>
+                        <td>7</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2011111521YX00602001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E7%8E%A9%E5%BD%A9%E7%B2%BE%E7%81%B5&f=hall#game2011111521YX00602001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr bgcolor="#f6f6f6" rel="糖三藏">
+                        <td>19</td>
+                        <td><a title="糖三藏" href="/homepage/homepage_index.html?nickName=%E7%B3%96%E4%B8%89%E8%97%8F" target="_blank">糖三藏</a></td>
+                        <td>双色球</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E7%B3%96%E4%B8%89%E8%97%8F&gameId=2010032416YX00000001" class="aCursor">
+
+
+
+
+
+
+
+
 </a></td>
-						<td>2480</td>
-						<td class="c_ba2636">205</td>
-						<td>5.6次</td>
-						<td>7</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E7%B3%96%E4%B8%89%E8%97%8F&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-					<tr  rel="警POLICE察">
-						<td>20</td>
-						<td><a title="警POLICE察" href="/homepage/homepage_index.html?nickName=%E8%AD%A6POLICE%E5%AF%9F" target="_blank">警POLICE察</a></td>
-						<td>双色球</td>
-						<td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%AD%A6POLICE%E5%AF%9F&gameId=2010032416YX00000001" class="aCursor">	
-	
-	
-	<em class="gains_imgs star_lv2"></em>
-	
-	
-	
-	
-	
+                        <td>2480</td>
+                        <td class="c_ba2636">205</td>
+                        <td>5.6次</td>
+                        <td>7</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E7%B3%96%E4%B8%89%E8%97%8F&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                    <tr  rel="警POLICE察">
+                        <td>20</td>
+                        <td><a title="警POLICE察" href="/homepage/homepage_index.html?nickName=%E8%AD%A6POLICE%E5%AF%9F" target="_blank">警POLICE察</a></td>
+                        <td>双色球</td>
+                        <td><a target="_blank" href="/homepage/performance_detail.html?nickName=%E8%AD%A6POLICE%E5%AF%9F&gameId=2010032416YX00000001" class="aCursor">
+
+
+    <em class="gains_imgs star_lv2"></em>
+
+
+
+
+
 </a></td>
-						<td>80930</td>
-						<td class="c_ba2636">34175</td>
-						<td>1.7次</td>
-						<td>6</td>
-						<td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
-						<td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
-						<td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%AD%A6POLICE%E5%AF%9F&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
-														</td>
-					</tr>
-				</tbody>
-			</table>
-	<div class="splitPages2"
-	>
-		<span class="prevPage">上一页<i></i></span>
-		 
-			<span>1</span><a href="/followhall/?pageNum=2&amp;orderBy=followers&amp;sortType=desc">2</a><a href="/followhall/?pageNum=3&amp;orderBy=followers&amp;sortType=desc">3</a><a href="/followhall/?pageNum=4&amp;orderBy=followers&amp;sortType=desc">4</a><a href="/followhall/?pageNum=5&amp;orderBy=followers&amp;sortType=desc">5</a><a href="/followhall/?pageNum=6&amp;orderBy=followers&amp;sortType=desc">6</a><a href="/followhall/?pageNum=7&amp;orderBy=followers&amp;sortType=desc">7</a><a href="/followhall/?pageNum=8&amp;orderBy=followers&amp;sortType=desc">8</a><em>...</em><a href="/followhall/?pageNum=19&amp;orderBy=followers&amp;sortType=desc">19</a>
-				<a class="nextPage" href="/followhall/?pageNum=2&amp;orderBy=followers&amp;sortType=desc">下一页<i></i></a>
+                        <td>80930</td>
+                        <td class="c_ba2636">34175</td>
+                        <td>1.7次</td>
+                        <td>6</td>
+                        <td class="tLeft"><span class="input1Wrap"><input type="text" class="inputMoney" value="最少1" maxlength="8" minnum="1"/></span>元</td>
+                        <td class="tLeft"><span class="input2Wrap"><input type="text" class="inputTimes" value="最多999" maxnum="999"/></span>次</td>
+                        <td><a href="#2010032416YX00000001" class="btnDz white">定制</a><a href="/homepage/homepage_autofollow.html?nickName=%E8%AD%A6POLICE%E5%AF%9F&f=hall#game2010032416YX00000001" target="_blank" class="btnHigh">高级</a>
+                                                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    <div class="splitPages2"
+    >
+        <span class="prevPage">上一页<i></i></span>
+
+            <span>1</span><a href="/followhall/?pageNum=2&amp;orderBy=followers&amp;sortType=desc">2</a><a href="/followhall/?pageNum=3&amp;orderBy=followers&amp;sortType=desc">3</a><a href="/followhall/?pageNum=4&amp;orderBy=followers&amp;sortType=desc">4</a><a href="/followhall/?pageNum=5&amp;orderBy=followers&amp;sortType=desc">5</a><a href="/followhall/?pageNum=6&amp;orderBy=followers&amp;sortType=desc">6</a><a href="/followhall/?pageNum=7&amp;orderBy=followers&amp;sortType=desc">7</a><a href="/followhall/?pageNum=8&amp;orderBy=followers&amp;sortType=desc">8</a><em>...</em><a href="/followhall/?pageNum=19&amp;orderBy=followers&amp;sortType=desc">19</a>
+                <a class="nextPage" href="/followhall/?pageNum=2&amp;orderBy=followers&amp;sortType=desc">下一页<i></i></a>
         <span class="jumptoTip">到第</span><input class="jumptoTxt" tmpl="/followhall/?pageNum={p}&amp;orderBy=followers&amp;sortType=desc" type="text" value="1" maxPage="19"/><span class="jumptoTip">页</span><a class="jumptoBtn" href="javascript:;">确定</a>
-		<script>
-		(function(window,$){
-			var dd = function( input, jump ){
-				var n = $.trim(input.value).replace(/\D/g, ""), max = $(input).attr("maxPage");
-				n = +n > +max ? max : n;
-				if( n != input.value )input.value = n;
-				if( n && jump ) window.location.href = $(input).attr("tmpl").replace(/{p}/g, n);
-				if( !n && jump ) input.select();
-			};
-			if( !window.initPageAction ){
-				$(document).delegate(".jumptoTxt", "keyup", function(e){ dd(this, e.keyCode == 13);	})
-					.delegate(".jumptoBtn", "click", function(){var input = $(this).parent().find(".jumptoTxt");dd(input[0], true);	});
-				window.initPageAction = true;
-			}
-		})(window,jQuery);
-		</script>
-	</div>
-		</div>
-	</div>-->
+        <script>
+        (function(window,$){
+            var dd = function( input, jump ){
+                var n = $.trim(input.value).replace(/\D/g, ""), max = $(input).attr("maxPage");
+                n = +n > +max ? max : n;
+                if( n != input.value )input.value = n;
+                if( n && jump ) window.location.href = $(input).attr("tmpl").replace(/{p}/g, n);
+                if( !n && jump ) input.select();
+            };
+            if( !window.initPageAction ){
+                $(document).delegate(".jumptoTxt", "keyup", function(e){ dd(this, e.keyCode == 13);	})
+                    .delegate(".jumptoBtn", "click", function(){var input = $(this).parent().find(".jumptoTxt");dd(input[0], true);	});
+                window.initPageAction = true;
+            }
+        })(window,jQuery);
+        </script>
+    </div>
+        </div>
+    </div>-->
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

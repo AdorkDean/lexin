@@ -1,65 +1,96 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>我的彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/userCenter/common.css"/>
-<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/IdCard-Validate.js"></script>
-<script src="/js/my.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>我的彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/userCenter/common.css"/>
+    <link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/IdCard-Validate.js"></script>
+    <script src="/js/my.js"></script>
 </head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <article class="docBody clearfix">
     #set($listint=9)
-	#parse("/my/MyList.vm")
+    #parse("/my/MyList.vm")
     <div class="rightModule">
-		<ul class="redTab">
-			<li class="active"><a href="/my/BaseInfo.jzh" target="_self">个人资料</a></li>
-			<li><a href="/my/BaseInfo!SetPwd.jzh" target="_self">修改密码</a></li>
-			<li><a href="/my/BaseInfo!SetPhone.jzh" target="_self">绑定手机</a></li>
-			<li><a href="/my/BaseInfo!SetEmail.jzh" target="_self">绑定邮箱</a></li>
-			<li><a href="/my/BaseInfo!Setting.jzh" target="_self">账户设置</a></li>
-		</ul>
+        <ul class="redTab">
+            <li class="active"><a href="/my/BaseInfo.jzh" target="_self">个人资料</a></li>
+            <li><a href="/my/BaseInfo!SetPwd.jzh" target="_self">修改密码</a></li>
+            <li><a href="/my/BaseInfo!SetPhone.jzh" target="_self">绑定手机</a></li>
+            <li><a href="/my/BaseInfo!SetEmail.jzh" target="_self">绑定邮箱</a></li>
+            <li><a href="/my/BaseInfo!Setting.jzh" target="_self">账户设置</a></li>
+        </ul>
         <div class="orderDataBox grayBorder">
-			<div id="infoWrap">
-				<span id="topFormInfo">真实姓名和身份证是领取大奖的重要核对依据，请填写真实信息，填写后不可修改！可只填真实姓名和身份证。</span>
-				<div id="infoBox">
-					<form id="userInfoForm" method="post">
-						<ul>
-							<li><label><i>*</i>真实姓名：</label>#if($user.User_realname.length()>0)<input id="realname" type="hidden" value="$user.User_realname"/><span class="txtHolder idHolder">$user.User_realname</span>#else<span class="mcInputBox"><input id="realname" maxlength="10" name="realname"></span><span id="realnametip" class="uu-tips"><em>&nbsp;</em><span></span></span>#end</li>
-							<li><label><i>*</i>身份证号：</label>#if($user.User_zip.length()>0)<input id="realzip" type="hidden" value="$user.User_zip"/><span class="txtHolder idHolder">#set($zip=$user.User_zip.substring(14,$user.User_zip.length()))**************$zip</span>#else<span class="mcInputBox"><input id="realzip" maxlength="19" name="realzip"></span><span id="realziptip" class="uu-tips"><em>&nbsp;</em><span></span></span>#end</li>
-							<li><label><i></i>生日：</label>#if($user.User_birth.length()>0)<span class="txtHolder idHolder">$user.User_birth</span>#else<span class="mcInputBox"><input id="birth" maxlength="10" name="birth"></span>#end</li>
-							<li><label><i></i>住址：</label>#if($user.User_liveadd.length()>0)<span class="txtHolder idHolder">$user.User_liveadd</span>#else<span class="mcInputBox"><input id="address" maxlength="30" name="address"></span>#end</li>
-							<li><label><i></i>QQ：</label>#if($user.User_qq.length()>0)<input id="qq" type="hidden" value="$user.User_qq"/><span class="txtHolder idHolder">$user.User_qq</span><span id="qqtip" class="uu-tips"><em>&nbsp;</em><span></span></span>#else<span class="mcInputBox"><input id="qq"  maxlength="12" name="qq"></span><span id="qqtip" class="uu-tips"><em>&nbsp;</em><span></span></span>#end</li>
-							<li><label><i></i>密码问题：</label>#if($user.User_aqasking.length()>0)<span class="txtHolder idHolder">$user.User_aqasking</span>#else<span class="mcInputBox"><input id="ask" maxlength="25" name="ask"></span>#end</li>
-							<li><label><i></i>答案：</label>#if($user.User_aqanswer.length()>0)<span class="txtHolder idHolder">*******</span>#else<span class="mcInputBox"><input id="ans" maxlength="10" name="ans"></span>#end</li>
-							<li><label><i></i>购彩宣言：</label><span><textarea maxlength="25" id="word" readonly="readonly" disabled="disabled">乐欣彩票，中奖福地，彩民天堂！</textarea></span><span class="uu-tips"><em>&nbsp;</em><span></span></span></li>
-    						<li><label>&nbsp;</label><a onclick="InfoSub();" href="javascript:" class="redBtn30 btnAuto">提交</a></li>
-    					</ul>
-    				</form>
-				</div>
-				<div id="attentionInfo">
-					<h2>注意事项:</h2>
-            		<ol class="attention_list">
-            			<li>请务必如实填写"真实姓名"和"身份证号"，这两个信息必须和身份证上的内容完全一致，否则无法领奖；目前以身份证号和彩票标识码作为兑奖凭证，护照、军官证、台胞证、香港身份证、社会保障卡、机动车驾驶证等均不能领奖；</li>
-            			<li>依据财政部《彩票发行与销售管理暂行规定》未满18岁不得购买彩票；</li>
-            			<li>购买彩票是个人行为，请保证以上信息是您个人的真实信息，不要使用公司或他人的信息！</li>
-            			<li>如确有修改身份证号和/或真实姓名的需要，请联系客服申诉</a></li>
-					</ol>
-				</div>
-    		</div>
-		</div>
-#include("/my/MyHot.vm")
-</div>
+            <div id="infoWrap">
+                <span id="topFormInfo">真实姓名和身份证是领取大奖的重要核对依据，请填写真实信息，填写后不可修改！可只填真实姓名和身份证。</span>
+                <div id="infoBox">
+                    <form id="userInfoForm" method="post">
+                        <ul>
+                            <li><label><i>*</i>真实姓名：</label>#if($user.User_realname.length()>0)<input id="realname"
+                                                                                                      type="hidden"
+                                                                                                      value="$user.User_realname"/><span
+                                    class="txtHolder idHolder">$user.User_realname</span>#else<span
+                                    class="mcInputBox"><input id="realname" maxlength="10" name="realname"></span><span
+                                    id="realnametip" class="uu-tips"><em>&nbsp;</em><span></span></span>#end</li>
+                            <li><label><i>*</i>身份证号：</label>#if($user.User_zip.length()>0)<input id="realzip"
+                                                                                                 type="hidden"
+                                                                                                 value="$user.User_zip"/><span
+                                    class="txtHolder idHolder">#set($zip=$user.User_zip.substring(14,$user.User_zip.length()))
+                                **************$zip</span>#else<span class="mcInputBox"><input id="realzip"
+                                                                                              maxlength="19"
+                                                                                              name="realzip"></span><span
+                                    id="realziptip" class="uu-tips"><em>&nbsp;</em><span></span></span>#end</li>
+                            <li><label><i></i>生日：</label>#if($user.User_birth.length()>0)<span
+                                    class="txtHolder idHolder">$user.User_birth</span>#else<span
+                                    class="mcInputBox"><input id="birth" maxlength="10" name="birth"></span>#end</li>
+                            <li><label><i></i>住址：</label>#if($user.User_liveadd.length()>0)<span
+                                    class="txtHolder idHolder">$user.User_liveadd</span>#else<span
+                                    class="mcInputBox"><input id="address" maxlength="30" name="address"></span>#end
+                            </li>
+                            <li><label><i></i>QQ：</label>#if($user.User_qq.length()>0)<input id="qq" type="hidden"
+                                                                                             value="$user.User_qq"/><span
+                                    class="txtHolder idHolder">$user.User_qq</span><span id="qqtip" class="uu-tips"><em>&nbsp;</em><span></span></span>#else
+                                <span class="mcInputBox"><input id="qq" maxlength="12" name="qq"></span><span id="qqtip"
+                                                                                                              class="uu-tips"><em>&nbsp;</em><span></span></span>#end
+                            </li>
+                            <li><label><i></i>密码问题：</label>#if($user.User_aqasking.length()>0)<span
+                                    class="txtHolder idHolder">$user.User_aqasking</span>#else<span
+                                    class="mcInputBox"><input id="ask" maxlength="25" name="ask"></span>#end</li>
+                            <li><label><i></i>答案：</label>#if($user.User_aqanswer.length()>0)<span
+                                    class="txtHolder idHolder">*******</span>#else<span class="mcInputBox"><input
+                                    id="ans" maxlength="10" name="ans"></span>#end</li>
+                            <li><label><i></i>购彩宣言：</label><span><textarea maxlength="25" id="word" readonly="readonly"
+                                                                           disabled="disabled">乐欣彩票，中奖福地，彩民天堂！</textarea></span><span
+                                    class="uu-tips"><em>&nbsp;</em><span></span></span></li>
+                            <li><label>&nbsp;</label><a onclick="InfoSub();" href="javascript:"
+                                                        class="redBtn30 btnAuto">提交</a></li>
+                        </ul>
+                    </form>
+                </div>
+                <div id="attentionInfo">
+                    <h2>注意事项:</h2>
+                    <ol class="attention_list">
+                        <li>
+                            请务必如实填写"真实姓名"和"身份证号"，这两个信息必须和身份证上的内容完全一致，否则无法领奖；目前以身份证号和彩票标识码作为兑奖凭证，护照、军官证、台胞证、香港身份证、社会保障卡、机动车驾驶证等均不能领奖；
+                        </li>
+                        <li>依据财政部《彩票发行与销售管理暂行规定》未满18岁不得购买彩票；</li>
+                        <li>购买彩票是个人行为，请保证以上信息是您个人的真实信息，不要使用公司或他人的信息！</li>
+                        <li>如确有修改身份证号和/或真实姓名的需要，请联系客服申诉</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        #include("/my/MyHot.vm")
+    </div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

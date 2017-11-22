@@ -1,4 +1,3 @@
-
 //    Prize.java
 
 package com.caipiao.servlet;
@@ -10,22 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class Prize extends IndexAction
-{
+public class Prize extends IndexAction {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public Prize()
-	{
-	}
+    public Prize() {
+    }
 
-	public void doGet(HttpServletRequest httpservletrequest, HttpServletResponse httpservletresponse)
-		throws ServletException, IOException
-	{
-	}
+    public void doGet(HttpServletRequest httpservletrequest, HttpServletResponse httpservletresponse)
+            throws ServletException, IOException {
+    }
 
-	public void doPost(HttpServletRequest httpservletrequest, HttpServletResponse httpservletresponse)
-		throws ServletException, IOException
-	{
-	}
+    public void doPost(HttpServletRequest httpservletrequest, HttpServletResponse httpservletresponse)
+            throws ServletException, IOException {
+    }
 }

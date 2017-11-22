@@ -1,48 +1,55 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>我的彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/userCenter/common.css"/>
-<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/bcbox/jquery.bcbox.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/my.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>我的彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/userCenter/common.css"/>
+    <link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/bcbox/jquery.bcbox.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/my.js"></script>
 </head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <article class="docBody clearfix">
     #set($listint=14)
-	#parse("/my/MyList.vm")
+    #parse("/my/MyList.vm")
     <div class="rightModule">
-		<ul class="redTab">
-			<li class="active"><a href="/my/Cps.jzh" target="_self">推广中心</a></li>
-			<li><a href="/my/Cps!List.jzh" target="_self">客户列表</a></li>
-			<li>报表管理（暂缺）</li>
-		</ul>
+        <ul class="redTab">
+            <li class="active"><a href="/my/Cps.jzh" target="_self">推广中心</a></li>
+            <li><a href="/my/Cps!List.jzh" target="_self">客户列表</a></li>
+            <li>报表管理（暂缺）</li>
+        </ul>
         <div class="orderDataBox grayBorder">
-        	<div style="padding:20px">
-				<strong id="t_url"></strong><br><br>
-				<strong>返点列表：</strong>
-				双色球（<font color="red">$comm.Ssq</font>%） | 大乐透（<font color="red">$comm.Dlt</font>%） | 排列5（<font color="red">$comm.Pl5</font>%） | 福彩3D（<font color="red">$comm.Fc3d</font>%） | 排列3（<font color="red">$comm.Pl3</font>%）<br><br>
-				重庆时时彩（<font color="red">$comm.Cqssc</font>%） | 江西时时彩（<font color="red">$comm.Jxssc</font>%）<br><br>
-				山东11选5（<font color="red">$comm.Sd11x5</font>%） | 江西11选5（<font color="red">$comm.Jx11x5</font>%） | 广东11选5（<font color="red">$comm.Gd11x5</font>%） | 重庆11选5（<font color="red">$comm.Cq11x5</font>%）
-			</div>
-		</div>
-		#include("/my/MyHot.vm")
-	</div>
+            <div style="padding:20px">
+                <strong id="t_url"></strong><br><br>
+                <strong>返点列表：</strong>
+                双色球（<font color="red">$comm.Ssq</font>%） | 大乐透（<font color="red">$comm.Dlt</font>%） | 排列5（<font
+                    color="red">$comm.Pl5</font>%） | 福彩3D（<font color="red">$comm.Fc3d</font>%） | 排列3（<font
+                    color="red">$comm.Pl3</font>%）<br><br>
+                重庆时时彩（<font color="red">$comm.Cqssc</font>%） | 江西时时彩（<font color="red">$comm.Jxssc</font>%）<br><br>
+                山东11选5（<font color="red">$comm.Sd11x5</font>%） | 江西11选5（<font color="red">$comm.Jx11x5</font>%） |
+                广东11选5（<font color="red">$comm.Gd11x5</font>%） | 重庆11选5（<font color="red">$comm.Cq11x5</font>%）
+            </div>
+        </div>
+        #include("/my/MyHot.vm")
+    </div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 <script>
-$(function(){
-	$('#t_url').html('推广链接：<a href="/regname.html?p='+$user.User_id+'" target="_blank">'+window.location.host+'/regname.html?p='+$user.User_id+'</a>');
-});
+    $(function () {
+        $('#t_url').html('推广链接：<a href="/regname.html?p='+$user.User_id+
+        '" target="_blank">' + window.location.host + '/regname.html?p='+$user.User_id+
+        '</a>'
+        )
+        ;
+    });
 </script>
 </html>

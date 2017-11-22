@@ -1,68 +1,83 @@
-<noscript><div id="noScript"><div><h2>请开启浏览器的Javascript功能</h2><p>亲，没它我们玩不转啊！求您了，开启Javascript吧！<br/>不知道怎么开启Javascript？那就请<a href="http://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80Javascript%E5%8A%9F%E8%83%BD" rel="nofollow" target="_blank">猛击这里</a>！</p></div></div></noscript>
+<noscript>
+    <div id="noScript">
+        <div><h2>请开启浏览器的Javascript功能</h2>
+            <p>亲，没它我们玩不转啊！求您了，开启Javascript吧！<br/>不知道怎么开启Javascript？那就请<a
+                    href="http://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80Javascript%E5%8A%9F%E8%83%BD"
+                    rel="nofollow" target="_blank">猛击这里</a>！</p></div>
+    </div>
+</noscript>
 <nav id="topNav">
-	<div id="topNavWrap">
-		<div id="topNavLeft"><script>local.NavInit("$!user.user_name","$!user.User_money")</script></div>
-		<ul id="topNavRight">
-			<li><a href="/Index.jzh" target="_blank">首页</a>&nbsp;&nbsp;|</li>
-			<li><a href="/Index!BuyHome.jzh" target="_blank">购彩中心</a>&nbsp;&nbsp;|</li>
-			<li><a href="/Index!Award.jzh" target="_blank">全国开奖</a>&nbsp;&nbsp;|</li>
-			<li><div class="mcDropMenuBox">
-				<a target="_top" class="topNavHolder" href="/my/Index.jzh" rel="nofollow">我的彩票<i></i></a><b class="holderLine">|</b>
-				<div class="mcDropMenu">
-					<a href="/my/Index!Desc.jzh" rel="nofollow">我的订单</a>
-					<a href="/my/Message.jzh" rel="nofollow">消息中心</a>
-					<a href="/my/BaseInfo.jzh" rel="nofollow">个人资料</a>
-					<!--<a href="/Welfare.jzh" rel="nofollow">公益活动</a>-->
-				</div>
-			</div></li>
+    <div id="topNavWrap">
+        <div id="topNavLeft">
+            <script>local.NavInit("$!user.user_name", "$!user.User_money")</script>
+        </div>
+        <ul id="topNavRight">
+            <li><a href="/Index.jzh" target="_blank">首页</a>&nbsp;&nbsp;|</li>
+            <li><a href="/Index!BuyHome.jzh" target="_blank">购彩中心</a>&nbsp;&nbsp;|</li>
+            <li><a href="/Index!Award.jzh" target="_blank">全国开奖</a>&nbsp;&nbsp;|</li>
+            <li>
+                <div class="mcDropMenuBox">
+                    <a target="_top" class="topNavHolder" href="/my/Index.jzh" rel="nofollow">我的彩票<i></i></a><b
+                        class="holderLine">|</b>
+                    <div class="mcDropMenu">
+                        <a href="/my/Index!Desc.jzh" rel="nofollow">我的订单</a>
+                        <a href="/my/Message.jzh" rel="nofollow">消息中心</a>
+                        <a href="/my/BaseInfo.jzh" rel="nofollow">个人资料</a>
+                        <!--<a href="/Welfare.jzh" rel="nofollow">公益活动</a>-->
+                    </div>
+                </div>
+            </li>
             <li><a target="_blank" href="/News.jzh">资讯</a>&nbsp;&nbsp;|</li>
-			<li><a target="_blank" href="/help/">帮助中心</a></li>
-		</ul>
-	</div>
+            <li><a target="_blank" href="/help/">帮助中心</a></li>
+        </ul>
+    </div>
 </nav>
-<header id="docHead" style="background-image:url('/ad/img/ad_head.png');"><div id="docHeadWrap">
-	<a href="/Index.jzh" class="logoLnk" title="乐欣彩票" hidefocus="true"><h1 rel="nofollow">乐欣彩票<img src="/img/logos/caipiao.png" alt="乐欣彩票" title="乐欣彩票网"/></h1></a>
-	<a href="/Index.jzh" rel="nofollow" class="guideLnk" target="_blank" hidefocus="true"></a>
-	<p>
+<header id="docHead" style="background-image:url('/ad/img/ad_head.png');">
+    <div id="docHeadWrap">
+        <a href="/Index.jzh" class="logoLnk" title="乐欣彩票" hidefocus="true"><h1 rel="nofollow">乐欣彩票<img
+                src="/img/logos/caipiao.png" alt="乐欣彩票" title="乐欣彩票网"/></h1></a>
+        <a href="/Index.jzh" rel="nofollow" class="guideLnk" target="_blank" hidefocus="true"></a>
+        <p>
 		<span class="serviceTel">
 			<span class="serviceTel_tel"><span>客服QQ</span><br/><strong>123456</strong></span>
             <a class="onlineService" href="http://wpa.qq.com/msgrd?v=3&uin=123456&site=qq&menu=yes" target="_blank"></a>
 		</span>
-	</p>
-</div></header>
+        </p>
+    </div>
+</header>
 <nav id="topTabBox">
-	<div id="topTab">
-		<ul id="funcTab">
-			<li id="lotteryListEntry" class="noSubList">
-				<a class="topNavHolder" hidefocus="true" rel="nofollow">选择彩种<i></i></a>
-			</li>
-			<li><a href="/Index.jzh">首页</a>|</li>
-			<li><a href="/Index!BuyHome.jzh" title="彩票购彩中心">购彩中心</a>|</li>
-			<li><a href="/Groupbuy.jzh" title="合买大厅">合买大厅</a>|</li>
-			<li><a href="/Index!Award.jzh" title="中国彩票开奖">彩票开奖<i></i></a>|
+    <div id="topTab">
+        <ul id="funcTab">
+            <li id="lotteryListEntry" class="noSubList">
+                <a class="topNavHolder" hidefocus="true" rel="nofollow">选择彩种<i></i></a>
+            </li>
+            <li><a href="/Index.jzh">首页</a>|</li>
+            <li><a href="/Index!BuyHome.jzh" title="彩票购彩中心">购彩中心</a>|</li>
+            <li><a href="/Groupbuy.jzh" title="合买大厅">合买大厅</a>|</li>
+            <li><a href="/Index!Award.jzh" title="中国彩票开奖">彩票开奖<i></i></a>|
                 <div class="mcDropMenu">
                     <a href="/Index!Award.jzh">开奖公告</a>
                     <a href="/Prize.jzh">大奖排行</a>
                 </div>
-			</li>
-			<li><a href="/Trend.jzh" title="福彩体彩走势图">走势图</a>|</li>
-			<li #if($ind==6)class="active"#end><a href="/News.jzh" title="彩票资讯">彩票资讯</a>|</li>
-			<li><a href="/help/" title="帮助中心">帮助中心</a>|</li>
-			<li><a href="/my/Index.jzh" title="我的彩票">我的彩票</a></li>
-		</ul>
-	</div>
+            </li>
+            <li><a href="/Trend.jzh" title="福彩体彩走势图">走势图</a>|</li>
+            <li #if($ind==6)class="active"#end><a href="/News.jzh" title="彩票资讯">彩票资讯</a>|</li>
+            <li><a href="/help/" title="帮助中心">帮助中心</a>|</li>
+            <li><a href="/my/Index.jzh" title="我的彩票">我的彩票</a></li>
+        </ul>
+    </div>
 </nav>
 <script type="text/javascript">
-$(function(){
-	$('div.mcDropMenuBox').mouseover(function(){
-		$(this).addClass('dropMenuBoxActive');
-	}).mouseout(function(){
-		$(this).removeClass('dropMenuBoxActive');
-	});
-	$('.wordsNum2,.wordsNum4,').mouseover(function(){
-		$(this).addClass('hover');
-	}).mouseout(function(){
-		$(this).removeClass('hover');
-	});
-});
+    $(function () {
+        $('div.mcDropMenuBox').mouseover(function () {
+            $(this).addClass('dropMenuBoxActive');
+        }).mouseout(function () {
+            $(this).removeClass('dropMenuBoxActive');
+        });
+        $('.wordsNum2,.wordsNum4,').mouseover(function () {
+            $(this).addClass('hover');
+        }).mouseout(function () {
+            $(this).removeClass('hover');
+        });
+    });
 </script>

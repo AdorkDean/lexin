@@ -1,45 +1,47 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content="彩票积分,乐欣彩票积分"/>
-<meta name="description" content="乐欣彩票积分乐园专区为您提供积分兑换和抽奖等功能。购买乐欣福利彩票、体育彩票就送积分，积分可兑换彩票红包或者参与抽奖。"/>
-<title>积分商城_乐欣彩票网</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/jifen/main.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/lotterymode.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="彩票积分,乐欣彩票积分"/>
+    <meta name="description" content="乐欣彩票积分乐园专区为您提供积分兑换和抽奖等功能。购买乐欣福利彩票、体育彩票就送积分，积分可兑换彩票红包或者参与抽奖。"/>
+    <title>积分商城_乐欣彩票网</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/jifen/main.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/lotterymode.js"></script>
 </head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <!-- 积分兑换和抽奖 页面 -->
 <article class="jfWrap clearfix">
-	<nav id="pathNav"><i>您的位置：</i><a href="/">乐欣彩票</a> &gt; <h1>积分商城</h1></nav>
+    <nav id="pathNav"><i>您的位置：</i><a href="/">乐欣彩票</a> &gt; <h1>积分商城</h1></nav>
     <div class="promotion clearfix">
-    	<div class="promoImg clearfix">
-        	<a class="img1" href="/ad/adhead.html" target="_blank"><img alt="" src="/img/jifen/img1.jpg"></a>
+        <div class="promoImg clearfix">
+            <a class="img1" href="/ad/adhead.html" target="_blank"><img alt="" src="/img/jifen/img1.jpg"></a>
             <a class="img2" href="/Index!BuyHome.jzh" target="_blank"><img alt="" src="/img/jifen/img2.jpg"></a>
             <a class="img3" href="/Groupbuy.jzh" target="_blank"><img alt="" src="/img/jifen/img3.jpg"></a>
         </div>
         <div class="jifenInfor">
-        	<div class="jfLoginBox">
-				#if($user.user_id>0)
-            	<div>欢迎您：<a href="/my/Index.jzh">$user.user_name</a> 当前积分：<span class="c_ba2636"><strong id="all_jf">$user.user_point</strong>分</span></div>
-                <div>请输入您要兑换的积分</div>
-				<input autocomplete="off" style="ime-mode: disabled; color: rgb(155, 155, 155);" class="group_input" id="jfnum">
-				<a class="buy_btn" id="buyjf" href="javascript:;">兑换</a>（必须是100的整数倍 100积分=1元）
-				<div class="linkBox"><a target="_blank" href="/my/Point.jzh">积分明细</a></div>
-				#else
-            	<strong class="c_333">登陆可查积分</strong>
-                <div>登陆后可查看积分<br />还可以用积分兑换礼品</div>
-                <a onclick="local.login()" href="javascript:void(0);" class="loginBtn">登 录</a>
-				#end
+            <div class="jfLoginBox">
+                #if($user.user_id>0)
+                    <div>欢迎您：<a href="/my/Index.jzh">$user.user_name</a> 当前积分：<span class="c_ba2636"><strong
+                            id="all_jf">$user.user_point</strong>分</span></div>
+                    <div>请输入您要兑换的积分</div>
+                    <input autocomplete="off" style="ime-mode: disabled; color: rgb(155, 155, 155);" class="group_input"
+                           id="jfnum">
+                    <a class="buy_btn" id="buyjf" href="javascript:;">兑换</a>（必须是100的整数倍 100积分=1元）
+                    <div class="linkBox"><a target="_blank" href="/my/Point.jzh">积分明细</a></div>
+                #else
+                    <strong class="c_333">登陆可查积分</strong>
+                    <div>登陆后可查看积分<br/>还可以用积分兑换礼品</div>
+                    <a onclick="local.login()" href="javascript:void(0);" class="loginBtn">登 录</a>
+                #end
             </div>
-			<h3>帮助</h3>
-			<ul>
+            <h3>帮助</h3>
+            <ul>
                 <li><a target="_blank" href="/help/q/103.jsp">什么是积分？</a></li>
                 <li>怎么样查询积分</li>
                 <li>积分能用来做什么</li>
@@ -47,10 +49,12 @@
             </ul>
         </div>
     </div>
-	<div class="jfExchange clearfix">
-		<h3><span>积分活动兑换</span><em>所有礼品每天早10：00更新，积分可以无限兑换 <a href="/help/q/103.jsp" target="_blank">详细&gt;&gt;</a></em></h3>
-		<ul class="clearfix" id="jfExchangeList"><li>暂无商品</li>
-			<!-- <li class='giftImg'>
+    <div class="jfExchange clearfix">
+        <h3><span>积分活动兑换</span><em>所有礼品每天早10：00更新，积分可以无限兑换 <a href="/help/q/103.jsp" target="_blank">详细&gt;&gt;</a></em>
+        </h3>
+        <ul class="clearfix" id="jfExchangeList">
+            <li>暂无商品</li>
+            <!-- <li class='giftImg'>
                     <span><img src="http://pimg1.126.net/caipiao_info/images/headFigure/jifenleyuanImg/creditexchangegift_jifen_fan1000_0211.jpg" /></span>
                     <p class="jfNum">积分：<i>600000</i></p>
                     <p>
@@ -133,49 +137,57 @@
                     <p class="jfNum">积分：<i>10000000</i></p>
                     <p>
 <a href="javascript:;" title="" class="btnExchange" rel="13" name="x1" datax="0" datay="1" redBagMoney="10,000" useJf="10000000" >立即兑换</a></p>                </li> -->
-		</ul>
-	</div>
+        </ul>
+    </div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 <script>
-$(function(){
-	$('#jfnum').blur(function(){
-		var num = $(this).val().replace(/[^\d]/g,'');
-		var all = $('#all_jf').text().replace(/[^\d]/g,'');
-		num = Number(num);
-		all = Number(all);
-		if(num>all){
-			alert('兑换的积分不能超过'+all);$(this).val(0);
-		}else if(num%100 !=0){
-			alert('兑换积分必须是100的倍数！');$(this).val(num-(num%100));
-		}
-	});
-	$("#buyjf").click(function(){
-		var jf = $('#jfnum').val();
-		var all = $('#all_jf').text().replace(/[^\d]/g,'');
-		jf = Number(jf);
-		all = Number(all);
-		if(jf<=0){
-			alert("请输入要兑换的积分！");return;
-		}
-		if (jf%100 !=0){
-			alert('兑换积分必须是100的倍数！');$(this).val(jf-(jf%100));return;
-		}else if(jf>all){
-			alert('兑换的积分不能超过'+all);$(this).val(0);return;
-		}
-		$.post('/my/Point.jzh',{jf:jf,t:local.TimeLong()},function(data){
-				if (data=='0') {
-					alert("兑换成功",1);location.reload();
-				}else if(data=='-2'){
-					alert("积分不足。");
-				}else if(data=='-1'){
-					alert("兑换失败！");
-				}else{
-					alert("操作有误。");
-				}
-		});
-	});
-});
+    $(function () {
+        $('#jfnum').blur(function () {
+            var num = $(this).val().replace(/[^\d]/g, '');
+            var all = $('#all_jf').text().replace(/[^\d]/g, '');
+            num = Number(num);
+            all = Number(all);
+            if (num > all) {
+                alert('兑换的积分不能超过' + all);
+                $(this).val(0);
+            } else if (num % 100 != 0) {
+                alert('兑换积分必须是100的倍数！');
+                $(this).val(num - (num % 100));
+            }
+        });
+        $("#buyjf").click(function () {
+            var jf = $('#jfnum').val();
+            var all = $('#all_jf').text().replace(/[^\d]/g, '');
+            jf = Number(jf);
+            all = Number(all);
+            if (jf <= 0) {
+                alert("请输入要兑换的积分！");
+                return;
+            }
+            if (jf % 100 != 0) {
+                alert('兑换积分必须是100的倍数！');
+                $(this).val(jf - (jf % 100));
+                return;
+            } else if (jf > all) {
+                alert('兑换的积分不能超过' + all);
+                $(this).val(0);
+                return;
+            }
+            $.post('/my/Point.jzh', {jf: jf, t: local.TimeLong()}, function (data) {
+                if (data == '0') {
+                    alert("兑换成功", 1);
+                    location.reload();
+                } else if (data == '-2') {
+                    alert("积分不足。");
+                } else if (data == '-1') {
+                    alert("兑换失败！");
+                } else {
+                    alert("操作有误。");
+                }
+            });
+        });
+    });
 </script>
 </html>

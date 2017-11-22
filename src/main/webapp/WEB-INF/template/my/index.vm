@@ -1,113 +1,119 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>我的彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/userCenter/common.css"/>
-<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-</head> 
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>我的彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/userCenter/common.css"/>
+    <link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+</head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <article class="docBody clearfix">
     #set($listint=0)
-	#parse("/my/MyList.vm")
+    #parse("/my/MyList.vm")
     <div class="rightModule">
-<section  class="userInfor bigGrayBorder">
-	<div class="inner clearfix">
-    	<div class="leftBlock">
-            <a href="javascript:" class="userImg">
-                <img alt="24042***" src="/images/homepage/default.png">
-            </a>
-            <strong class="fs14">您好！$user.User_name</strong>
-            <P>余&#12288;额：<a href="/my/Detail.jzh"><strong>$user.User_money</strong> 元</a>
-            </p> 
-	      <P>今日购彩：<a href="/my/Index!Desc.jzh"><strong>$newgou</strong> 元</a>&#12288;&#12288;&#12288;&#12288;
-			今日中奖：<a href="/my/Index!Desc.jzh"><strong class="c_ba2636">$newwin</strong> 元</a>
-              </P>    	
-            <div class="btnbox clearfix">
-				#if($user.User_phonecheck==0)
-                <a target="_blank" title="当您中大奖后，会通过电话和短信联系你。" href="/my/BaseInfo!SetPhone.jzh" class="jtip btnPhone"><i></i>手机未验证</a>
-				#else
-                <a target="_blank" title="您已验证手机已验证" href="/my/BaseInfo!SetPhone.jzh" class="jtip btnOK btnPhoneOK"><i></i>手机已验证</a>
-				#end
-				#if($user.User_zipcheck==0)
-                <a target="_blank" title="身份证是您领奖重要凭证。" href="/my/BaseInfo.jzh" class="jtip btnName"><i></i>身份证未验证</a>
-				#else
-                <a target="_blank" title="身份证已验证" href="/my/BaseInfo.jzh" class="jtip btnOK btnNameOK"><i></i>身份证已验证</a>
-				#end
-				#if($user.User_emailcheck==0)
-                <a target="_blank" title="邮箱提高您账户安全" href="/my/BaseInfo!SetEmail.jzh" class="jtip btnIdcard"><i></i>邮箱未验证</a>
-				#else
-                <a target="_blank" title="邮箱已验证" href="/my/BaseInfo!SetEmail.jzh" class="jtip btnOK btnIdcardOK"><i></i>邮箱已验证</a>
-				#end
+        <section class="userInfor bigGrayBorder">
+            <div class="inner clearfix">
+                <div class="leftBlock">
+                    <a href="javascript:" class="userImg">
+                        <img alt="24042***" src="/images/homepage/default.png">
+                    </a>
+                    <strong class="fs14">您好！$user.User_name</strong>
+                    <P>余&#12288;额：<a href="/my/Detail.jzh"><strong>$user.User_money</strong> 元</a>
+                    </p>
+                    <P>今日购彩：<a href="/my/Index!Desc.jzh"><strong>$newgou</strong> 元</a>&#12288;&#12288;&#12288;&#12288;
+                        今日中奖：<a href="/my/Index!Desc.jzh"><strong class="c_ba2636">$newwin</strong> 元</a>
+                    </P>
+                    <div class="btnbox clearfix">
+                        #if($user.User_phonecheck==0)
+                            <a target="_blank" title="当您中大奖后，会通过电话和短信联系你。" href="/my/BaseInfo!SetPhone.jzh"
+                               class="jtip btnPhone"><i></i>手机未验证</a>
+                        #else
+                            <a target="_blank" title="您已验证手机已验证" href="/my/BaseInfo!SetPhone.jzh"
+                               class="jtip btnOK btnPhoneOK"><i></i>手机已验证</a>
+                        #end
+                        #if($user.User_zipcheck==0)
+                            <a target="_blank" title="身份证是您领奖重要凭证。" href="/my/BaseInfo.jzh" class="jtip btnName"><i></i>身份证未验证</a>
+                        #else
+                            <a target="_blank" title="身份证已验证" href="/my/BaseInfo.jzh"
+                               class="jtip btnOK btnNameOK"><i></i>身份证已验证</a>
+                        #end
+                        #if($user.User_emailcheck==0)
+                            <a target="_blank" title="邮箱提高您账户安全" href="/my/BaseInfo!SetEmail.jzh"
+                               class="jtip btnIdcard"><i></i>邮箱未验证</a>
+                        #else
+                            <a target="_blank" title="邮箱已验证" href="/my/BaseInfo!SetEmail.jzh"
+                               class="jtip btnOK btnIdcardOK"><i></i>邮箱已验证</a>
+                        #end
+                    </div>
+                </div>
+                <div class="promoteImg" id="adImg">
+                    <a href="/ad/indexad.html" target="_blank">
+                        <img width="260" height="115" border="0" alt="" src="/ad/img/indexad.jpg">
+                    </a>
+                </div>
             </div>
+        </section>
+        <div class="latelyOrder grayBorder mt10">
+            <h2 class="tit">最近认购</h2>
+            <table class="tableData">
+                <colgroup>
+                    <col width="18%">
+                    <col width="12%">
+                    <col width="11%">
+                    <col width="12%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="9%">
+                    <col width="10%">
+                    <col>
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th>认购时间</th>
+                    <th>彩种</th>
+                    <th>期号</th>
+                    <th>发起人</th>
+                    <th class="tr">方案金额(元)</th>
+                    <th class="tr">我购买了(元)</th>
+                    <th>状态</th>
+                    <th>我的奖金(元)</th>
+                    <th>操作</th>
+                </tr>
+                    #if($list)
+                        #foreach($str in $list)
+                        <tr>
+                            <td><a target="_blank" href="/lottery/BuyLot.jzh?spm=$str.Buy_item">$str.Buyuser_time</a>
+                            </td>
+                            <td>$str.Buy_lot</td>
+                            <td>$str.Buy_fqihao期</td>
+                            <td>$str.User_nameDis</td>
+                            <td>$str.Buy_money元</td>
+                            <td><font color="#8B2500">$str.Buyuser_money元</font></td>
+                            <td>$str.Buy_status</td>
+                            <td><font color="#ba2636">$str.Buyuser_win元</font></td>
+                            <td><a target="_blank" href="/lottery/BuyLot.jzh?spm=$str.Buy_item">详情</a></td>
+                        </tr>
+                        #end
+                    #end
+                </tbody>
+            </table>
+            #if(!$list)
+                <div class="noData">
+                    <i class="ico_book"></i><strong>没有任何订单</strong>
+                </div>
+            #end
         </div>
-        	<div class="promoteImg" id="adImg">
-				<a href="/ad/indexad.html" target="_blank">
-					<img width="260" height="115" border="0" alt="" src="/ad/img/indexad.jpg">
-				</a>
-        	</div>
+        #include("/my/MyHot.vm")
     </div>
-</section >
-<div class="latelyOrder grayBorder mt10">
-	<h2 class="tit">最近认购</h2>
-	<table class="tableData">
-        <colgroup>
-            <col width="18%">
-            <col width="12%">
-            <col width="11%">
-            <col width="12%">
-            <col width="10%">
-            <col width="10%">
-            <col width="9%">
-            <col width="10%">
-            <col>
-		</colgroup>
-        <tbody>
-			<tr>
-                <th>认购时间</th>
-                <th>彩种</th>
-                <th>期号</th>
-                <th>发起人</th>
-                <th class="tr">方案金额(元)</th>
-                <th class="tr">我购买了(元)</th>
-                <th>状态</th>
-                <th>我的奖金(元)</th>
-                <th>操作</th>
-			</tr>
-			#if($list)
-    			#foreach($str in $list)
-        		<tr>
-                    <td><a target="_blank" href="/lottery/BuyLot.jzh?spm=$str.Buy_item">$str.Buyuser_time</a></td>
-                    <td>$str.Buy_lot</td>
-                    <td>$str.Buy_fqihao期</td>
-                    <td>$str.User_nameDis</td>
-                    <td>$str.Buy_money元</td>
-                    <td><font color="#8B2500">$str.Buyuser_money元</font></td>
-                    <td>$str.Buy_status</td>
-                    <td><font color="#ba2636">$str.Buyuser_win元</font></td>
-                    <td><a target="_blank" href="/lottery/BuyLot.jzh?spm=$str.Buy_item">详情</a></td>
-        		</tr>
-    			#end
-			#end
-		</tbody>
-	</table>
-	#if(!$list)
-    <div class="noData">
-    	<i class="ico_book"></i><strong>没有任何订单</strong>
-    </div>
-	#end
-</div>
-#include("/my/MyHot.vm")
-</div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

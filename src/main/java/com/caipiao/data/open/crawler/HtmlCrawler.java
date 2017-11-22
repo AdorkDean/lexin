@@ -1,8 +1,6 @@
 package com.caipiao.data.open.crawler;
 
 import com.caipiao.utils.http.HttpSender;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -11,9 +9,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
-import java.io.ObjectInput;
-import java.util.HashMap;
-import java.util.Iterator;
 
 /**
  * Created by nicholas.liu on 2016/8/8.
@@ -22,11 +17,11 @@ public class HtmlCrawler {
 
     private static final String UA = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
 
-    public static String getHtml2(String url){
+    public static String getHtml2(String url) {
 
         HttpSender httpSender = new HttpSender(url);
         httpSender.setCharset("UTF-8");
-        httpSender.putHeader("Content-Type","application/json; charset=UTF-8");
+        httpSender.putHeader("Content-Type", "application/json; charset=UTF-8");
         httpSender.send();
         String lastResponseContent = httpSender.getLastResponseContent();
 
@@ -63,9 +58,9 @@ public class HtmlCrawler {
 
     }
 
-    public static String getWangyi163Html(String url)  {
+    public static String getWangyi163Html(String url) {
         String html = null;
-        CloseableHttpClient httpClient =HttpClients.createDefault();
+        CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet httpget = new HttpGet(url);
         httpget.setHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)");
         httpget.setHeader("Content-Type", "text/javascript; charset=UTF-8");
@@ -79,8 +74,8 @@ public class HtmlCrawler {
                     html = EntityUtils.toString(entity);
             }
 
-        }catch (Exception e) {
-            System.out.println("异常描述"+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("异常描述" + e.getMessage());
             System.out.println("访问网易彩票网站【" + url + "】出现异常!");
         } finally {
             try {
@@ -94,7 +89,7 @@ public class HtmlCrawler {
     }
 
 
-    public static String getCaipiaokongYnssc(String url)  {
+    public static String getCaipiaokongYnssc(String url) {
         try {
             Thread.sleep(1000 * 5);
             System.out.println("休息5秒，以便符合彩票控网站的规则");
@@ -102,7 +97,7 @@ public class HtmlCrawler {
             e.printStackTrace();
         }
         String html = null;
-        CloseableHttpClient httpClient =HttpClients.createDefault();
+        CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet httpget = new HttpGet(url);
         httpget.setHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)");
         httpget.setHeader("Content-Type", "text/javascript; charset=UTF-8");
@@ -116,8 +111,8 @@ public class HtmlCrawler {
                     html = EntityUtils.toString(entity);
             }
 
-        }catch (Exception e) {
-            System.out.println("异常描述"+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("异常描述" + e.getMessage());
             System.out.println("访问彩票控网站【" + url + "】出现异常!");
         } finally {
             try {
@@ -129,7 +124,6 @@ public class HtmlCrawler {
         System.out.println("访问彩票控网站【" + url + "】抓取号码成功!");
         return html;
     }
-
 
 
 }

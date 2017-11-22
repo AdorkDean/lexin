@@ -1,137 +1,166 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>乐欣彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/award.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>乐欣彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/award.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
 </head>
 <body>
-#parse("/head.vm")
+    #parse("/head.vm")
 <article class="docBody clearfix">
-	<nav class="breadCrumb"> 您的位置：<a href="/Index.jzh" target="_blank">乐欣彩票</a>&nbsp;&gt;&nbsp;<h1>彩票开奖</h1></nav>
-	<section class="main">
-		<h2 class="title"><strong>数字彩票</strong></h2>
-		<table class="awardList" id="szhtml">
-			<colgroup>
-				<col width="11%">
-				<col width="11%">
-				<col width="11%">
-				<col width="22%">
-				<col width="5%">
-				<col width="5%">
-				<col width="7%">
-				<col>
-				<col width="7%">
-			</colgroup>
-			<thead>
-			<tr>
-				<th class="first">彩种</th>
-				<th>期次</th>
-				<th>开奖时间</th>
-				<th>开奖号码</th>
-				<th>详情</th>
-				<th>走势</th>
-				<th>专家杀号</th>
-				<th>投注提示</th>
-				<th class="buy">购买</th>
-			</tr>
-			</thead>
-			<tbody></tbody>
-		</table>
-		<h2 class="title"><strong>高频彩</strong></h2>
-		<table class="awardList" id="gphtml">
-			<colgroup>
-				<col width="11%">
-				<col width="11%">
-				<col width="11%">
-				<col width="22%">
-				<col width="5%">
-				<col width="5%">
-				<col width="7%">
-				<col>
-				<col width="7%">
-			</colgroup>
-			<thead>
-			<tr>
-				<th class="first">彩种</th>
-				<th>期次</th>
-				<th>开奖时间</th>
-				<th>开奖号码</th>
-				<th>详情</th>
-				<th>走势</th>
-				<th>专家杀号</th>
-				<th>投注提示</th>
-				<th class="buy">购买</th>
-			</tr>
-			</thead>
-			<tbody></tbody>
-		</table>
-	</section>
+    <nav class="breadCrumb"> 您的位置：<a href="/Index.jzh" target="_blank">乐欣彩票</a>&nbsp;&gt;&nbsp;<h1>彩票开奖</h1></nav>
+    <section class="main">
+        <h2 class="title"><strong>数字彩票</strong></h2>
+        <table class="awardList" id="szhtml">
+            <colgroup>
+                <col width="11%">
+                <col width="11%">
+                <col width="11%">
+                <col width="22%">
+                <col width="5%">
+                <col width="5%">
+                <col width="7%">
+                <col>
+                <col width="7%">
+            </colgroup>
+            <thead>
+            <tr>
+                <th class="first">彩种</th>
+                <th>期次</th>
+                <th>开奖时间</th>
+                <th>开奖号码</th>
+                <th>详情</th>
+                <th>走势</th>
+                <th>专家杀号</th>
+                <th>投注提示</th>
+                <th class="buy">购买</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <h2 class="title"><strong>高频彩</strong></h2>
+        <table class="awardList" id="gphtml">
+            <colgroup>
+                <col width="11%">
+                <col width="11%">
+                <col width="11%">
+                <col width="22%">
+                <col width="5%">
+                <col width="5%">
+                <col width="7%">
+                <col>
+                <col width="7%">
+            </colgroup>
+            <thead>
+            <tr>
+                <th class="first">彩种</th>
+                <th>期次</th>
+                <th>开奖时间</th>
+                <th>开奖号码</th>
+                <th>详情</th>
+                <th>走势</th>
+                <th>专家杀号</th>
+                <th>投注提示</th>
+                <th class="buy">购买</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 <script type="text/javascript" language="javascript">
-$(function(){
-	var D = {
-	    name: ['重庆时时彩','江西时时彩','山东11选5','江西11选5','广东11选5','重庆11选5','排列三','福彩3D','排列五','双色球','大乐透'],
-	    burl: ['/lottery_cqssc.htm','/lottery_jxssc.htm','/lottery_sd11x5.htm','/lottery_jx11x5.htm','/lottery_gd11x5.htm','/lottery_pl3.htm','/lottery_fc3d.htm','/lottery_ssq.htm','/lottery_dlt.htm'],
-	    desc: ['每5或10分钟一期，全天<b class="red">120</b>期','每10分钟一期，共<b class="red">84</b>期','10分钟开奖，每天<b class="red">78</b>期，返奖率59%','10分钟开奖，每天<b class="red">78</b>期，返奖率59%','10分钟开奖，每天<b class="red">84</b>期，返奖率59%','10分钟开奖，每天<b class="red">85</b>期','玩法简单，每晚<b class="red">20：30</b>开奖','玩法简单，每晚 <b class="red">20：30</b>开奖','每注2元，最高奖10万， <b class="red">20：30</b>开奖','周二、周四、周日<b class="red">21:30</b>开奖','周一、周三、周六 <b class="red">20：30</b>开奖'],
-	    hott: ['热门玩法：组三（<em class="red">320</em>元）','热门玩法：组三（<em class="red">385</em>元）','热门玩法：前一（<em class="red">13</em>元）','热门玩法：任二（<em class="red">6</em>元）','热门玩法：任五（<em class="red">540</em>元）','直选：<em class="red">1000</em>元 组六：<em class="red">160</em>元','直选：<em class="red">1000</em>元','',''],
-		day:['日','一','二','三','四','五','六']
-	};
-	$.get('/lottery/Mode.jzh',{t:local.TimeLong()},function(data){
-		if(data.msg!='no'){
-			var d_i = new Date().getDay();
-			var szhtml='';
-			var gphtml='';
-			for (var i=0;i<data.msg.length;i++){
-				var temp='';
-				var lot = data.msg[i].lot_name;
-				var et = data.msg[i].lot_etime;
-				var hm = data.msg[i].lot_haoma;
-				var qh = data.msg[i].lot_qihao;
-				var lottype=0;//0高频 1数字
-				var datat=0;
-				switch(lot){
-					case 'Cqssc':datat=0;break;
-					case 'Jxssc':datat=1;break;
-					case 'Sd11x5':datat=2;break;
-					case 'Jx11x5':datat=3;break;
-					case 'Gd11x5':datat=4;break;
-					case 'Cq11x5':datat=5;break;
-					case 'Pl3':datat=6;lottype=1;break;
-					case 'Fc3d':datat=7;lottype=1;break;
-					case 'Pl5':datat=8;lottype=1;break;
-					case 'Ssq':datat=9;lottype=1;break;
-					case 'Dlt':datat=10;lottype=1;break;
-					default:break;
-				}
-				temp+='<tr><td class="first"><a href="/lottery/Buy!'+lot+'.jzh" target="_blank">'+D.name[datat]+'</a></td><td class="period">'+qh.substr(2)+'期</td>';
-				var hms = hm.split('+');
-				var hmhtml = '<td><em class="smallRedball">'+hms[0].replace(new RegExp(',',"gm"),'</em><em class="smallRedball">')+'</em>';
-				try {
-					hmhtml+='<em class="smallBlueball">'+hms[1].replace(new RegExp(',',"gm"),'</em><em class="smallBlueball">')+'</em>';
-				}catch(e){}
-				hmhtml+='<td><a href="javascript:">更多</a></td><td><a href="/Trend.jzh">走势</a></td><td><a href="javascript:">专家杀号</a></td><td>'+D.desc[datat]+'</td><td class="buy"><a class="betBtn" href="/lottery/Buy!'+lot+'.jzh" target="_blank">投注</a></td>';
-				if(lottype==0){
-					temp+='<td>'+et.substr(5,11)+'</td>';
-					gphtml+=temp+hmhtml;
-				}else{
-					temp+='<td>'+et.substr(5,5)+'(周'+D.day[d_i]+')</td>';
-					szhtml+=temp+hmhtml;
-				}
-			}
-			$('#szhtml>tbody').html(szhtml);
-			$('#gphtml>tbody').html(gphtml);
-		}
-	},'json');
-});
+    $(function () {
+        var D = {
+            name: ['重庆时时彩', '江西时时彩', '山东11选5', '江西11选5', '广东11选5', '重庆11选5', '排列三', '福彩3D', '排列五', '双色球', '大乐透'],
+            burl: ['/lottery_cqssc.htm', '/lottery_jxssc.htm', '/lottery_sd11x5.htm', '/lottery_jx11x5.htm', '/lottery_gd11x5.htm', '/lottery_pl3.htm', '/lottery_fc3d.htm', '/lottery_ssq.htm', '/lottery_dlt.htm'],
+            desc: ['每5或10分钟一期，全天<b class="red">120</b>期', '每10分钟一期，共<b class="red">84</b>期', '10分钟开奖，每天<b class="red">78</b>期，返奖率59%', '10分钟开奖，每天<b class="red">78</b>期，返奖率59%', '10分钟开奖，每天<b class="red">84</b>期，返奖率59%', '10分钟开奖，每天<b class="red">85</b>期', '玩法简单，每晚<b class="red">20：30</b>开奖', '玩法简单，每晚 <b class="red">20：30</b>开奖', '每注2元，最高奖10万， <b class="red">20：30</b>开奖', '周二、周四、周日<b class="red">21:30</b>开奖', '周一、周三、周六 <b class="red">20：30</b>开奖'],
+            hott: ['热门玩法：组三（<em class="red">320</em>元）', '热门玩法：组三（<em class="red">385</em>元）', '热门玩法：前一（<em class="red">13</em>元）', '热门玩法：任二（<em class="red">6</em>元）', '热门玩法：任五（<em class="red">540</em>元）', '直选：<em class="red">1000</em>元 组六：<em class="red">160</em>元', '直选：<em class="red">1000</em>元', '', ''],
+            day: ['日', '一', '二', '三', '四', '五', '六']
+        };
+        $.get('/lottery/Mode.jzh', {t: local.TimeLong()}, function (data) {
+            if (data.msg != 'no') {
+                var d_i = new Date().getDay();
+                var szhtml = '';
+                var gphtml = '';
+                for (var i = 0; i < data.msg.length; i++) {
+                    var temp = '';
+                    var lot = data.msg[i].lot_name;
+                    var et = data.msg[i].lot_etime;
+                    var hm = data.msg[i].lot_haoma;
+                    var qh = data.msg[i].lot_qihao;
+                    var lottype = 0;//0高频 1数字
+                    var datat = 0;
+                    switch (lot) {
+                        case 'Cqssc':
+                            datat = 0;
+                            break;
+                        case 'Jxssc':
+                            datat = 1;
+                            break;
+                        case 'Sd11x5':
+                            datat = 2;
+                            break;
+                        case 'Jx11x5':
+                            datat = 3;
+                            break;
+                        case 'Gd11x5':
+                            datat = 4;
+                            break;
+                        case 'Cq11x5':
+                            datat = 5;
+                            break;
+                        case 'Pl3':
+                            datat = 6;
+                            lottype = 1;
+                            break;
+                        case 'Fc3d':
+                            datat = 7;
+                            lottype = 1;
+                            break;
+                        case 'Pl5':
+                            datat = 8;
+                            lottype = 1;
+                            break;
+                        case 'Ssq':
+                            datat = 9;
+                            lottype = 1;
+                            break;
+                        case 'Dlt':
+                            datat = 10;
+                            lottype = 1;
+                            break;
+                        default:
+                            break;
+                    }
+                    temp += '<tr><td class="first"><a href="/lottery/Buy!' + lot + '.jzh" target="_blank">' + D.name[datat] + '</a></td><td class="period">' + qh.substr(2) + '期</td>';
+                    var hms = hm.split('+');
+                    var hmhtml = '<td><em class="smallRedball">' + hms[0].replace(new RegExp(',', "gm"), '</em><em class="smallRedball">') + '</em>';
+                    try {
+                        hmhtml += '<em class="smallBlueball">' + hms[1].replace(new RegExp(',', "gm"), '</em><em class="smallBlueball">') + '</em>';
+                    } catch (e) {
+                    }
+                    hmhtml += '<td><a href="javascript:">更多</a></td><td><a href="/Trend.jzh">走势</a></td><td><a href="javascript:">专家杀号</a></td><td>' + D.desc[datat] + '</td><td class="buy"><a class="betBtn" href="/lottery/Buy!' + lot + '.jzh" target="_blank">投注</a></td>';
+                    if (lottype == 0) {
+                        temp += '<td>' + et.substr(5, 11) + '</td>';
+                        gphtml += temp + hmhtml;
+                    } else {
+                        temp += '<td>' + et.substr(5, 5) + '(周' + D.day[d_i] + ')</td>';
+                        szhtml += temp + hmhtml;
+                    }
+                }
+                $('#szhtml>tbody').html(szhtml);
+                $('#gphtml>tbody').html(gphtml);
+            }
+        }, 'json');
+    });
 </script>
 </html>

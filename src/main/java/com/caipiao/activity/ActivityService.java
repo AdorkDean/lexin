@@ -3,23 +3,19 @@ package com.caipiao.activity;
 import java.util.List;
 
 
-public class ActivityService
-{
+public class ActivityService {
 
-	IActivity dao;
+    IActivity dao;
 
-	public ActivityService()
-	{
-		dao = new IActivityImpl();
-	} 
+    public ActivityService() {
+        dao = new IActivityImpl();
+    }
 
-	public List finds(int status)
-	{
-		return dao.finds(status);
-	}
+    public List finds(int status) {
+        return dao.finds(status);
+    }
 
-	public Activity find(String Acr_type)
-	{
-		return dao.find(Acr_type);
-	}
+    public Activity find(String Acr_type) {
+        return dao.find(Acr_type);
+    }
 }

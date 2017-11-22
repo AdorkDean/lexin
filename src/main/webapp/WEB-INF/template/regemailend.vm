@@ -1,48 +1,134 @@
- 
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="application-name" content="www.3moo.com"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>注册账号激活</title>
-<link rel="stylesheet" href="/css/global.css"/>
-<link rel="stylesheet" href="/css/skin.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/register.js"></script>
-<style type="text/css">
-.m-box .boxBd form,.m-box .boxBd .statusBox{margin:40px auto 0 200px}.m-sel,.m-ipt{margin-bottom:20px}.m-sel{*float:left;*margin-right:30px}.checkQtnList li,.setSafePhoneList li,.statusBox .u-btn2{margin-bottom:30px}.checkQtnList li h3{margin-bottom:20px;font-weight:normal;font-size:20px;color:#333}.statusBox .u-tips2,.statusBox .accountInforList{margin-bottom:30px}.statusBox .accountInforList li{margin-bottom:15px;color:#979798}.statusBox .accountInforList li span,.statusBox .accountInforList li strong{display:inline-block;*display:inline;*zoom:1;float:left}.statusBox .accountInforList li span{width:94px;font-size:12px}.statusBox .accountInforList li strong{font-size:14px}.u-tips2 i{font-size:12px;color:#949494}.noticeBox{width:100%;margin-top:40px;padding-top:40px;border-top:1px dotted #c7c8c8}.noticeBox h3,.noticeBox ol li{margin-bottom:17px;color:#949494}.noticeBox h3{font-size:14px}#leftSec{display:inline-block;*display:inline;*zoom:1;width:2em;text-align:center}
-</style>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="application-name" content="www.3moo.com"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>注册账号激活</title>
+    <link rel="stylesheet" href="/css/global.css"/>
+    <link rel="stylesheet" href="/css/skin.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/register.js"></script>
+    <style type="text/css">
+        .m-box .boxBd form, .m-box .boxBd .statusBox {
+            margin: 40px auto 0 200px
+        }
+
+        .m-sel, .m-ipt {
+            margin-bottom: 20px
+        }
+
+        .m-sel {
+            *float: left;
+            *margin-right: 30px
+        }
+
+        .checkQtnList li, .setSafePhoneList li, .statusBox .u-btn2 {
+            margin-bottom: 30px
+        }
+
+        .checkQtnList li h3 {
+            margin-bottom: 20px;
+            font-weight: normal;
+            font-size: 20px;
+            color: #333
+        }
+
+        .statusBox .u-tips2, .statusBox .accountInforList {
+            margin-bottom: 30px
+        }
+
+        .statusBox .accountInforList li {
+            margin-bottom: 15px;
+            color: #979798
+        }
+
+        .statusBox .accountInforList li span, .statusBox .accountInforList li strong {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            float: left
+        }
+
+        .statusBox .accountInforList li span {
+            width: 94px;
+            font-size: 12px
+        }
+
+        .statusBox .accountInforList li strong {
+            font-size: 14px
+        }
+
+        .u-tips2 i {
+            font-size: 12px;
+            color: #949494
+        }
+
+        .noticeBox {
+            width: 100%;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px dotted #c7c8c8
+        }
+
+        .noticeBox h3, .noticeBox ol li {
+            margin-bottom: 17px;
+            color: #949494
+        }
+
+        .noticeBox h3 {
+            font-size: 14px
+        }
+
+        #leftSec {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            width: 2em;
+            text-align: center
+        }
+    </style>
 </head>
 <body class="s-caipiao">
-<noscript><div id="noScript"><div><h2>请开启浏览器的Javascript功能</h2><p>亲，没它我们玩不转啊！求您了，开启Javascript吧！<br/>不知道怎么开启Javascript？那就请<a href="http://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80Javascript%E5%8A%9F%E8%83%BD" rel="nofollow" target="_blank">猛击这里</a>！</p></div></div></noscript>
+<noscript>
+    <div id="noScript">
+        <div><h2>请开启浏览器的Javascript功能</h2>
+            <p>亲，没它我们玩不转啊！求您了，开启Javascript吧！<br/>不知道怎么开启Javascript？那就请<a
+                    href="http://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80Javascript%E5%8A%9F%E8%83%BD"
+                    rel="nofollow" target="_blank">猛击这里</a>！</p></div>
+    </div>
+</noscript>
 <div class="g-doc">
-	<div class="g-hd"><div class="g-in">
-<div class="m-logobar">
-	<h1><a href="/" target="_blank"><em>三木彩票网</em><img src="/images/logo.png" alt="三木彩票网" title="三木彩票网" /></a></h1><i>|</i>
-	<div class="pdtLogo">新用户注册</div>
-	<span>已有帐号？马上<a href="login.html" target="_blank">登录</a></span>
-</div>
-    </div></div>
+    <div class="g-hd">
+        <div class="g-in">
+            <div class="m-logobar">
+                <h1><a href="/" target="_blank"><em>三木彩票网</em><img src="/images/logo.png" alt="三木彩票网"
+                                                                   title="三木彩票网"/></a></h1><i>|</i>
+                <div class="pdtLogo">新用户注册</div>
+                <span>已有帐号？马上<a href="login.html" target="_blank">登录</a></span>
+            </div>
+        </div>
+    </div>
     <div class="g-bd">
-    	<div class="g-in">
-        
+        <div class="g-in">
+
             <div class="m-box">
-            	<h1 class="boxHd">邮箱验证</h1>
+                <h1 class="boxHd">邮箱验证</h1>
                 <div class="boxBd">
                     <div class="statusBox">
                         <p class="u-tips2 u-tips2-okEmail">
-                            <em>&nbsp;</em><span>验证邮件已发出，请48小时内登录邮箱验证<br /><i class="f-ff0">登录邮箱 <a href="javascript:void(0);" class="z-hl">${email}</a>，并按邮件提示操作即可</i></span>
+                            <em>&nbsp;</em><span>验证邮件已发出，请48小时内登录邮箱验证<br/><i class="f-ff0">登录邮箱 <a
+                                href="javascript:void(0);" class="z-hl">${email}</a>，并按邮件提示操作即可</i></span>
                         </p>
                         <a href="http://www.hao123.com/mail" target="_blank" class="u-btn2" style="margin-left:83px;">立即登录邮箱验证</a>
                     </div>
                     <div class="noticeBox">
-                    	<h3>还没有收到验证邮件？</h3>
+                        <h3>还没有收到验证邮件？</h3>
                         <ol>
-                        	<li>1.尝试到广告邮件、垃圾邮件目录里找找看</li>
+                            <li>1.尝试到广告邮件、垃圾邮件目录里找找看</li>
                             <li>2.<a href="javascript:void(0);" onclick="Reg.ReSendEmail('${upid}');">再次发送验证邮件</a></li>
                             <li>3.如果重发注册验证邮件仍然没有收到，请更换<a href="/regemail.html" target="_self">另一个邮件地址</a></li>
                         </ol>
@@ -51,10 +137,15 @@
                 <div class="ieAlpha"></div>
             </div>
         </div>
-	</div>
-    <div class="g-ft"><div class="g-in">
-<div class="m-cp"><p><a href="javascript:">About USinfo</a>-<a href="javascript:">公司简介</a>-<a href="javascript:">联系方式</a>-<a href="javascript:">OAuth2.0认证</a>-<a href="javascript:">招聘信息</a>-<a href="javascript:">客户服务</a>-<a href="javascript:">相关法律</a>-<a href="javascript:">网络营销</a></p><p>乐欣公司版权所有 &copy;1997-2014</p></div>
-    </div></div>
+    </div>
+    <div class="g-ft">
+        <div class="g-in">
+            <div class="m-cp"><p><a href="javascript:">About USinfo</a>-<a href="javascript:">公司简介</a>-<a
+                    href="javascript:">联系方式</a>-<a href="javascript:">OAuth2.0认证</a>-<a href="javascript:">招聘信息</a>-<a
+                    href="javascript:">客户服务</a>-<a href="javascript:">相关法律</a>-<a href="javascript:">网络营销</a></p>
+                <p>乐欣公司版权所有 &copy;1997-2014</p></div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

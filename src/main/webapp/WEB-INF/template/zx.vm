@@ -1,139 +1,142 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>彩票网</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/index.css"/>
-<link rel="stylesheet" href="/css/information.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/lotterymode.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>彩票网</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="stylesheet" href="/css/information.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/lotterymode.js"></script>
 </head>
 <body>
-#set($ind=6)
-#parse("/head.vm")
+    #set($ind=6)
+    #parse("/head.vm")
 <div class="main">
-  <!--左侧主体 开始-->
-  <div class="leftbox">
-  <!--第一屏 开始-->
-    <div class="clearfix"> 
-      <!--推广图、开奖、快速投注 开始-->
-      <div class="cpmk">
-	<!--开奖号码开始-->
-<div id="awardLists">
-	<dl id="awardListTab" class="grayTitle clearfix">
-    	<dt><a target="_blank" href="/Index!Award.jzh">开奖公告</a></dt>
-    	<dd class="active">高频彩</dd>
-    	<dd class="">数字彩</dd>
-    	<dd class="end"><a href="/Index!Award.jzh">更多&gt;&gt;</a></dd>
-	</dl>
-	<ul id="awardList01" class="awardList_con" style="display:block;"></ul>
-	<ul id="awardList02" class="awardList_con" style="display:none;"></ul>
-<script>Mode.Open();</script>
-</div><!--开奖号码结束-->
-<!--彩票走势图-->
-<div id="analysisTool">
-	<h2 class="grayTitle"><a target="_blank" href="/Trend.jzh">彩票走势图</a></h2>
-	<dl class="chartList clearfix">
-		<dt><a target="_blank" href="/Trend.jzh">彩票走势图</a></dt>
-		<dd class="separator clearfix">
-			<span>数字彩：</span><br>
-			<span><a href="/Trend.jzh" target="_blank">双色球</a></span>
-			<span><a href="/Trend.jzh" target="_blank">福彩3D</a></span>
-			<span><a href="/Trend.jzh" target="_blank">大乐透</a></span>
-			<span><a href="/Trend.jzh" target="_blank">排列三</a></span>
-		</dd>
-		<dd>
-			<span>高频彩：</span><br>
-            <span><a href="/Trend.jzh" target="_blank">重庆时时彩</a></span>
-            <span><a href="/Trend.jzh" target="_blank">江西时时彩</a></span>
-            <span><a href="/Trend.jzh" target="_blank">广东11选5</a></span>
-            <span><a href="/Trend.jzh" target="_blank">江西11选5</a></span>
-            <span><a href="/Trend.jzh" target="_blank">十一运夺金</a></span>
-    	</dd>
-	</dl>
-</div><!--走势图结束-->
-</div>
-      <!--推广图、开奖、快速投注 结束-->
-      <!--新闻 开始-->
-      <div class="zxmk">
-        <!--头条新闻 开始-->
-		#if($find)
-			#set($num=0)
-				<div class="toutiao">
-				#foreach($f in $find)
-				#if($num<6)#set($num=$num+1)
-					<h3 #if($num==1)class="c_ba2636"#end><a target="_blank" href="/News!News.jzh?id=$f.News_id">$f.News_title</a></h3>
-				#end
-				#end
-        		</div>
-				<div class="tztj">
-					<h2 class="tztj_title"><strong class="texttit">最新内容</strong></h2>
-					<ul class="news_list">
-					#foreach($f in $find)
-					#if($num>=6)#set($num=$num+1)
-					<li>·<a target="_blank" href="/News!News.jzh?id=$f.News_id">$f.News_title</a></li>
-					#end
-					#end
-					</ul>
-				</div>
-		#end
-        <!--头条新闻 结束-->
-      </div>
-      <!--新闻 结束-->
+    <!--左侧主体 开始-->
+    <div class="leftbox">
+        <!--第一屏 开始-->
+        <div class="clearfix">
+            <!--推广图、开奖、快速投注 开始-->
+            <div class="cpmk">
+                <!--开奖号码开始-->
+                <div id="awardLists">
+                    <dl id="awardListTab" class="grayTitle clearfix">
+                        <dt><a target="_blank" href="/Index!Award.jzh">开奖公告</a></dt>
+                        <dd class="active">高频彩</dd>
+                        <dd class="">数字彩</dd>
+                        <dd class="end"><a href="/Index!Award.jzh">更多&gt;&gt;</a></dd>
+                    </dl>
+                    <ul id="awardList01" class="awardList_con" style="display:block;"></ul>
+                    <ul id="awardList02" class="awardList_con" style="display:none;"></ul>
+                    <script>Mode.Open();</script>
+                </div><!--开奖号码结束-->
+                <!--彩票走势图-->
+                <div id="analysisTool">
+                    <h2 class="grayTitle"><a target="_blank" href="/Trend.jzh">彩票走势图</a></h2>
+                    <dl class="chartList clearfix">
+                        <dt><a target="_blank" href="/Trend.jzh">彩票走势图</a></dt>
+                        <dd class="separator clearfix">
+                            <span>数字彩：</span><br>
+                            <span><a href="/Trend.jzh" target="_blank">双色球</a></span>
+                            <span><a href="/Trend.jzh" target="_blank">福彩3D</a></span>
+                            <span><a href="/Trend.jzh" target="_blank">大乐透</a></span>
+                            <span><a href="/Trend.jzh" target="_blank">排列三</a></span>
+                        </dd>
+                        <dd>
+                            <span>高频彩：</span><br>
+                            <span><a href="/Trend.jzh" target="_blank">重庆时时彩</a></span>
+                            <span><a href="/Trend.jzh" target="_blank">江西时时彩</a></span>
+                            <span><a href="/Trend.jzh" target="_blank">广东11选5</a></span>
+                            <span><a href="/Trend.jzh" target="_blank">江西11选5</a></span>
+                            <span><a href="/Trend.jzh" target="_blank">十一运夺金</a></span>
+                        </dd>
+                    </dl>
+                </div><!--走势图结束-->
+            </div>
+            <!--推广图、开奖、快速投注 结束-->
+            <!--新闻 开始-->
+            <div class="zxmk">
+                <!--头条新闻 开始-->
+                #if($find)
+                    #set($num=0)
+                    <div class="toutiao">
+                        #foreach($f in $find)
+                            #if($num<6)#set($num=$num+1)
+                                <h3 #if($num==1)class="c_ba2636"#end><a target="_blank"
+                                                                        href="/News!News.jzh?id=$f.News_id">$f.News_title</a>
+                                </h3>
+                            #end
+                        #end
+                    </div>
+                    <div class="tztj">
+                        <h2 class="tztj_title"><strong class="texttit">最新内容</strong></h2>
+                        <ul class="news_list">
+                            #foreach($f in $find)
+                                #if($num>=6)#set($num=$num+1)
+                                    <li>·<a target="_blank" href="/News!News.jzh?id=$f.News_id">$f.News_title</a></li>
+                                #end
+                            #end
+                        </ul>
+                    </div>
+                #end
+                <!--头条新闻 结束-->
+            </div>
+            <!--新闻 结束-->
+        </div>
+        <!--第一屏 结束-->
     </div>
-  <!--第一屏 结束-->
-</div>
-  <!--左侧主体结束-->
-  <!--右侧 开始-->
-  <div class="rightbox">
-  <!--图表开始-->
-  <div class="gray_block">
-        <h2 class="gray_title_zx"><strong class="redline"><a title="快速投注" href="/Index!BuyHome.jzh" target="_blank">快速投注</a></strong><a target="_blank" href="/Index!BuyHome.jzh" class="more">更多&gt;&gt;</a></h2>
-        <h3 class="title_bd">数字彩票</h3>
-        <ul class="chart zcrm">
-            <li><a target="_blank" href="/lottery/Buy!Ssq.jzh">双色球</a></li>
-            <li><a target="_blank" href="/lottery/Buy!Dlt.jzh">大乐透</a></li>
-            <li><a target="_blank" href="/lottery/Buy!Pl5.jzh">排列五 </a></li>
-            <li><a target="_blank" href="/lottery/Buy!Fc3d.jzh">福彩3D</a></li>
-            <li><a target="_blank" href="/lottery/Buy!Pl3.jzh">排列三</a></li>
-        </ul>
-        <h3 class="title_bd">高频彩票</h3>
-        <ul class="chart zcrm">
-            <li><a target="_blank" href="/lottery/Buy!Cqssc.jzh">重庆时时彩</a></li>
-            <li><a target="_blank" href="/lottery/Buy!Jxssc.jzh">江西时时彩</a></li>
-            <li><a target="_blank" href="/lottery/Buy!Sd11x5.jzh">山东11选5</a></li>
-            <li><a target="_blank" href="/lottery/Buy!Jx11x5.jzh">江西11选5</a></li>
-            <li><a target="_blank" href="/lottery/Buy!Gd11x5.jzh">广东11选5</a></li>
-            <li><a target="_blank" href="/lottery/Buy!Cq11x5.jzh">重庆11选5</a></li>
-        </ul>
+    <!--左侧主体结束-->
+    <!--右侧 开始-->
+    <div class="rightbox">
+        <!--图表开始-->
+        <div class="gray_block">
+            <h2 class="gray_title_zx"><strong class="redline"><a title="快速投注" href="/Index!BuyHome.jzh" target="_blank">快速投注</a></strong><a
+                    target="_blank" href="/Index!BuyHome.jzh" class="more">更多&gt;&gt;</a></h2>
+            <h3 class="title_bd">数字彩票</h3>
+            <ul class="chart zcrm">
+                <li><a target="_blank" href="/lottery/Buy!Ssq.jzh">双色球</a></li>
+                <li><a target="_blank" href="/lottery/Buy!Dlt.jzh">大乐透</a></li>
+                <li><a target="_blank" href="/lottery/Buy!Pl5.jzh">排列五 </a></li>
+                <li><a target="_blank" href="/lottery/Buy!Fc3d.jzh">福彩3D</a></li>
+                <li><a target="_blank" href="/lottery/Buy!Pl3.jzh">排列三</a></li>
+            </ul>
+            <h3 class="title_bd">高频彩票</h3>
+            <ul class="chart zcrm">
+                <li><a target="_blank" href="/lottery/Buy!Cqssc.jzh">重庆时时彩</a></li>
+                <li><a target="_blank" href="/lottery/Buy!Jxssc.jzh">江西时时彩</a></li>
+                <li><a target="_blank" href="/lottery/Buy!Sd11x5.jzh">山东11选5</a></li>
+                <li><a target="_blank" href="/lottery/Buy!Jx11x5.jzh">江西11选5</a></li>
+                <li><a target="_blank" href="/lottery/Buy!Gd11x5.jzh">广东11选5</a></li>
+                <li><a target="_blank" href="/lottery/Buy!Cq11x5.jzh">重庆11选5</a></li>
+            </ul>
+        </div>
+        <!--图表结束-->
+        <!--购彩技巧 开始-->
+        <div class="gray_block">
+            <h2 class="gray_title_zx"><strong class="redline">帮助中心</strong></h2>
+            <ul class="news_list">
+                <li>·<a href="/help/mode_questions.jsp" target="_blank">热门问题大全</a></li>
+                <li>·<a href="/help/q/102.jsp" target="_blank">我从来没买过彩票，怎么玩？</a></li>
+                <li>·<a href="/help/q/103.jsp" target="_blank">什么是彩票积分？</a></li>
+                <li>·<a href="/help/q/104.jsp" target="_blank">什么是彩票红包？</a></li>
+                <li>·<a href="/help/q/201.jsp" target="_blank">付款遇到问题怎么办？</a></li>
+                <li>·<a href="/help/q/303.jsp" target="_blank">什么是合买佣金？</a></li>
+                <li>·<a href="/help/q/203.jsp" target="_blank">中奖之后如何提现？</a></li>
+                <li>·<a href="/help/q/402.jsp" target="_blank">中奖之后奖金在哪里查收？</a></li>
+                <li>·<a href="/help/q/301.jsp" target="_blank">请问发起的合买如何撤销？</a></li>
+                <li>·<a href="/help/q/202.jsp" target="_blank">如何充值到账户认购彩票？</a></li>
+            </ul>
+        </div>
+        <!--购彩技巧 结束-->
     </div>
-    <!--图表结束-->
-  <!--购彩技巧 开始-->
-    <div class="gray_block">
-      <h2 class="gray_title_zx"><strong class="redline">帮助中心</strong></h2>
-      <ul class="news_list">
-		<li>·<a href="/help/mode_questions.jsp" target="_blank">热门问题大全</a></li>
-		<li>·<a href="/help/q/102.jsp" target="_blank">我从来没买过彩票，怎么玩？</a></li>
-		<li>·<a href="/help/q/103.jsp" target="_blank">什么是彩票积分？</a></li>
-		<li>·<a href="/help/q/104.jsp" target="_blank">什么是彩票红包？</a></li>
-		<li>·<a href="/help/q/201.jsp" target="_blank">付款遇到问题怎么办？</a></li>
-		<li>·<a href="/help/q/303.jsp" target="_blank">什么是合买佣金？</a></li>
-		<li>·<a href="/help/q/203.jsp" target="_blank">中奖之后如何提现？</a></li>
-		<li>·<a href="/help/q/402.jsp" target="_blank">中奖之后奖金在哪里查收？</a></li>
-		<li>·<a href="/help/q/301.jsp" target="_blank">请问发起的合买如何撤销？</a></li>
-		<li>·<a href="/help/q/202.jsp" target="_blank">如何充值到账户认购彩票？</a></li>
-	</ul>
-    </div>
-  <!--购彩技巧 结束-->
-  </div>
-  <!--右侧 结束-->
+    <!--右侧 结束-->
 </div>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

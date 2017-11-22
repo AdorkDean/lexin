@@ -36,12 +36,12 @@ public class BuyLotService {
             return "-1";
         }
         //验证胆拖的数据
-        if(!verifyDanTuo(code)){
+        if (!verifyDanTuo(code)) {
             return "-1";
         }
 
         //验证倍数不能为负数
-        if(verifyBeishuFushu(beishu)){
+        if (verifyBeishuFushu(beishu)) {
             return "-1";
         }
 
@@ -130,7 +130,7 @@ public class BuyLotService {
         boolean isFushu = false;
 
         for (int i : beishu) {
-            if(i < 0){
+            if (i < 0) {
                 isFushu = true;
                 break;
             }
@@ -140,7 +140,7 @@ public class BuyLotService {
 
     public static void main(String[] args) {
         BuyLotService buyLotService = new BuyLotService();
-        int[] i = {1,2,3,4,7};
+        int[] i = {1, 2, 3, 4, 7};
         boolean a = buyLotService.verifyBeishuFushu(i);
         System.out.println(a);
 
@@ -150,10 +150,10 @@ public class BuyLotService {
         String[] split = code.split("#");
         for (String str : split) {
             String type = str.split(":")[0];
-            if(ArrayUtils.contains(PlayType._11x5_DanTuo, type) ||
+            if (ArrayUtils.contains(PlayType._11x5_DanTuo, type) ||
                     ArrayUtils.contains(PlayType._Def_DanTuo, type) ||
                     ArrayUtils.contains(PlayType._Ssc_DanTuo, type)
-                    ){
+                    ) {
 
                 String[] $s = str.split("\\$");
 
@@ -163,8 +163,8 @@ public class BuyLotService {
 
                 String dan = split1[1];
                 String tuo = split2[0];
-                if(tuo.contains(dan)){
-                    System.out.println("胆拖数据有误： code = { "+code+"}");
+                if (tuo.contains(dan)) {
+                    System.out.println("胆拖数据有误： code = { " + code + "}");
                     return false;
                 }
             }

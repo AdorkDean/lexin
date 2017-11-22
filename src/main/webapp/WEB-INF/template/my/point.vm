@@ -1,110 +1,116 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>我的彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/userCenter/common.css"/>
-<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/my.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>我的彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/userCenter/common.css"/>
+    <link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/my.js"></script>
 </head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <article class="docBody clearfix">
     #set($listint=7)
-	#parse("/my/MyList.vm")
+    #parse("/my/MyList.vm")
     <div class="rightModule creditsBox">
-		<div class="creditsList">
-		<h2 class="tit">积分管理</h2>
-		<div class="creditsBox_title clearfix">
-        	<div class="jifenInfo">
-				当前积分：<em>$user.User_point分</em> <a target="_blank" href="">兑换礼品</a>|<a target="_blank" href="">积分规则</a>
-			</div>
-			<div class="selectBox clearfix">
+        <div class="creditsList">
+            <h2 class="tit">积分管理</h2>
+            <div class="creditsBox_title clearfix">
+                <div class="jifenInfo">
+                    当前积分：<em>$user.User_point分</em> <a target="_blank" href="">兑换礼品</a>|<a target="_blank"
+                                                                                           href="">积分规则</a>
+                </div>
+                <div class="selectBox clearfix">
 				<span class="mcSelectBox">
-					<a class="grayBtn25" href="javascript:;">#if($date==2)三月以前#elseif($date==1)一月以前#else一周之内#end</a><i></i>
+					<a class="grayBtn25" href="javascript:;">#if($date==2)三月以前#elseif($date==1)
+                        一月以前#else一周之内#end</a><i></i>
                 	<span class="optionList" style="display: none;">
 						<a class="active" href="/my/Point.jzh?date=0&status=$status&type=$type">一周之内</a>
 						<a href="/my/Point.jzh?date=1&status=$status&type=$type">一月以前</a>
 						<a href="/my/Point.jzh?date=2&status=$status&type=$type">三月以前</a>
                     </span>
 				</span>
-				<span class="mcSelectBox">
-                	<a class="grayBtn25" href="javascript:;">#if($type==-1)所有类型#else<script>document.write(Show.MyPointTypeOne('$type'))</script>#end</a><i></i>
+                    <span class="mcSelectBox">
+                	<a class="grayBtn25" href="javascript:;">#if($type==-1)所有类型#else
+                        <script>document.write(Show.MyPointTypeOne('$type'))</script>#end</a><i></i>
                 	<span class="optionList widthAuto" style="display:none;">
                     	<a class="active" href="/my/Point.jzh?date=$date&status=$status&type=-1">所有类型</a>
 						<a href="/my/Point.jzh?date=$date&status=$status&type=0">中奖派发</a>
 						<a href="/my/Point.jzh?date=$date&status=$status&type=1">积分兑换</a>
                     </span>
                 </span>
-				<span class="mcSelectBox">
-                	<a class="grayBtn25" href="javascript:;">#if($status==0)收入#elseif($status==1)支出#else所有状态#end</a><i></i>
+                    <span class="mcSelectBox">
+                	<a class="grayBtn25" href="javascript:;">#if($status==0)收入#elseif($status==1)
+                        支出#else所有状态#end</a><i></i>
                 	<span class="optionList widthAuto" style="display:none;">
                     	<a class="active" href="/my/Point.jzh?date=$date&status=-1&type=$type">所有状态</a>
 						<a href="/my/Point.jzh?date=$date&status=0&type=$type">收入</a>
 						<a href="/my/Point.jzh?date=$date&status=1&type=$type">支出</a>
                     </span>
                 </span>
+                </div>
             </div>
-		</div>
-		<table class="tableData">
-        <colgroup>
-            <col width="20%">
-            <col width="12%">
-            <col width="12%">
-            <col width="12%">
-            <col width="22%">
-            <col width="22%">
-        </colgroup>
-        <tbody><tr>
-            <th>交易时间</th>
-            <th class="tr">剩余积分</th>
-            <th class="tr">收支积分</th>
-            <th>类型</th>
-            <th>相关订单</th>
-            <th>备注</th>
-        </tr>
-		#if($find)
-			#foreach($list in $find)
-    		<tr>
-                <td>$list.Point_time</td>
-                <td class="tr"><font color="#1E50A2">$list.Point_have</font></td>
-                <td class="tr">
-				#if($list.Point_addsub>0)
-					<font color="#BA2636">$list.Point_addsub</font>
-				#else
-					$list.Point_addsub
-				#end
-				</td>
-				<script>document.write(Show.MyPointType('$list.Point_type','$list.Point_item'))</script>
-                <td>$list.Point_desc</td>
-    		</tr>
-			#end
-		#end
-    </tbody></table>
-	#if(!$find)
-    <div class="noData">
-    	<i class="ico_book"></i><strong>没有任何记录</strong>
+            <table class="tableData">
+                <colgroup>
+                    <col width="20%">
+                    <col width="12%">
+                    <col width="12%">
+                    <col width="12%">
+                    <col width="22%">
+                    <col width="22%">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th>交易时间</th>
+                    <th class="tr">剩余积分</th>
+                    <th class="tr">收支积分</th>
+                    <th>类型</th>
+                    <th>相关订单</th>
+                    <th>备注</th>
+                </tr>
+                    #if($find)
+                        #foreach($list in $find)
+                        <tr>
+                            <td>$list.Point_time</td>
+                            <td class="tr"><font color="#1E50A2">$list.Point_have</font></td>
+                            <td class="tr">
+                                #if($list.Point_addsub>0)
+                                    <font color="#BA2636">$list.Point_addsub</font>
+                                #else
+                                    $list.Point_addsub
+                                #end
+                            </td>
+                            <script>document.write(Show.MyPointType('$list.Point_type', '$list.Point_item'))</script>
+                            <td>$list.Point_desc</td>
+                        </tr>
+                        #end
+                    #end
+                </tbody>
+            </table>
+            #if(!$find)
+                <div class="noData">
+                    <i class="ico_book"></i><strong>没有任何记录</strong>
+                </div>
+            #end
+            $page
+        </div>
+        <div class="creditsInfo">
+            <h2 class="tit">积分使用规则</h2>
+            <div class="creditsInfo_con">
+                <p>1、使用打折红包不会赠送积分</p>
+                <p>2、每年3月31日，将对上一年度积分进行清零，查看 <a target="_blank" href="">详细积分规则</a></p>
+            </div>
+        </div>
+        #include("/my/MyHot.vm")
     </div>
-	#end
-	$page
-	</div>
-<div class="creditsInfo">	
-		<h2 class="tit">积分使用规则</h2>
-		<div class="creditsInfo_con">
-			<p>1、使用打折红包不会赠送积分</p>
-			<p>2、每年3月31日，将对上一年度积分进行清零，查看 <a target="_blank" href="">详细积分规则</a></p>
-		</div>	
-		</div>
-#include("/my/MyHot.vm")
-</div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

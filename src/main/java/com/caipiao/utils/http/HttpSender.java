@@ -115,7 +115,7 @@ public class HttpSender {
 //        if (commonsHttpClientAvailable() && useWrapper) {
 //            sendWithHttpClientWrapper(false);
 //        } else {
-            sendSinglePartRequest(false);
+        sendSinglePartRequest(false);
 //        }
         return null;
     }

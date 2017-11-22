@@ -1,10 +1,7 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 /**
@@ -38,7 +35,7 @@ public class MainTest {
             System.out.println("url=" + url);
             URL realUrl = new URL(url);
             // 打开和URL之间的连接
-            HttpURLConnection connection = (HttpURLConnection)realUrl.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) realUrl.openConnection();
             // 设置通用的请求属性
             connection.setRequestProperty("accept", "*/*");
             connection.setRequestProperty("connection", "Keep-Alive");
@@ -49,9 +46,9 @@ public class MainTest {
 
             //获取响应状态
             int responseCode = connection.getResponseCode();
-            if(200 == responseCode){
+            if (200 == responseCode) {
                 System.out.println("请求成功 responseCode=" + responseCode);
-            }else{
+            } else {
                 System.out.println("请求上分网站失败responseCode=" + responseCode);
             }
 

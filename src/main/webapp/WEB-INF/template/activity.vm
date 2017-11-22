@@ -1,41 +1,41 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>彩票定制跟单_彩票跟单</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link href="/css/lotteryHall.css" rel="stylesheet">
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/lotterymode.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>彩票定制跟单_彩票跟单</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link href="/css/lotteryHall.css" rel="stylesheet">
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/lotterymode.js"></script>
 </head>
 <body class="">
-#set($ind=5)
-#parse("/head.vm")
+    #set($ind=5)
+    #parse("/head.vm")
 <article id="docBody">
-	<div style="margin:100px;">
-	#if($act)
-		<ul class="allList qh clearfix">
-		#foreach($a in $act)
-		<li>
-        	<span><img src="$a.acr_img" style="margin-top:10px;"/></span>
-			#if($a.act_status==1)
-				<a href="$a.acr_url" target="_blank"><h3>$a.acr_name【进行中】</h3></a>
-			#else
-				<h3>$a.acr_name【已结束】</h3>
-			#end
-        </li>
-		#end
-		</ul>
-	#else
-		无相关活动内容！
-	#end
-	</div>
+    <div style="margin:100px;">
+        #if($act)
+            <ul class="allList qh clearfix">
+                #foreach($a in $act)
+                    <li>
+                        <span><img src="$a.acr_img" style="margin-top:10px;"/></span>
+                        #if($a.act_status==1)
+                            <a href="$a.acr_url" target="_blank"><h3>$a.acr_name【进行中】</h3></a>
+                        #else
+                            <h3>$a.acr_name【已结束】</h3>
+                        #end
+                    </li>
+                #end
+            </ul>
+        #else
+            无相关活动内容！
+        #end
+    </div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

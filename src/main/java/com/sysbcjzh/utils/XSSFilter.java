@@ -1,4 +1,3 @@
-
 //    XSSFilter.java
 
 package com.sysbcjzh.utils;
@@ -11,25 +10,20 @@ import java.io.IOException;
 //			XSSRequestWrapper
 
 public class XSSFilter
-	implements Filter
-{
+        implements Filter {
 
-	public XSSFilter()
-	{
-	}
+    public XSSFilter() {
+    }
 
-	public void destroy()
-	{
-	}
+    public void destroy() {
+    }
 
-	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2)
-		throws IOException, ServletException
-	{
-		arg2.doFilter(new XSSRequestWrapper((HttpServletRequest)arg0), arg1);
-	}
+    public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2)
+            throws IOException, ServletException {
+        arg2.doFilter(new XSSRequestWrapper((HttpServletRequest) arg0), arg1);
+    }
 
-	public void init(FilterConfig filterconfig)
-		throws ServletException
-	{
-	}
+    public void init(FilterConfig filterconfig)
+            throws ServletException {
+    }
 }

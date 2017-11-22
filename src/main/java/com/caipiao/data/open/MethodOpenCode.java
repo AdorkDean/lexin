@@ -1,10 +1,12 @@
 package com.caipiao.data.open;
 
-import com.caipiao.utils.*;
+import com.caipiao.utils.LotEmun;
+import com.caipiao.utils.PlayType;
+import com.caipiao.utils.SystemSet;
+import com.caipiao.utils.TryStatic;
 import com.sysbcjzh.utils.StringUtils;
 
-import java.util.HashMap;
-import java.util.Properties;
+import java.util.*;
 
 public class MethodOpenCode {
 
@@ -588,6 +590,45 @@ public class MethodOpenCode {
                         win = getTryMoney(lot, PlayType.T403);
                 }
             }
+        } else if (PlayType.T501.equals(type)) {
+            //Bjpk10
+            Set<String> codeStr = new HashSet();
+            String[] codeArr = code.split(" ");
+            codeStr.addAll(Arrays.asList(codeArr));
+            if (codeStr.contains(hms[0])) {
+                if (codeStr.size() == 1) {
+                    win = 10;
+                } else if (codeStr.size() >= 2 && codeStr.size() <= 5) {
+                    win = 2;
+                } else {
+                    win = 0;
+                }
+            } else {
+                win = 0;
+            }
+        } else if (PlayType.T502.equals(type)) {
+            String[] seat = code.split(",");
+            List<Set<String>> codeList = new ArrayList<Set<String>>();
+            for (int i = 0; i < seat.length; i++) {
+                Set<String> temp = new HashSet<String>();
+                temp.addAll(Arrays.asList(seat[0].split(" ")));
+                codeList.add(temp);
+            }
+            int match = 0;
+            for (int i = 0; i < codeList.size(); i++) {
+                if (codeList.get(i).contains(hms[i])) {
+                    match++;
+                }
+            }
+            if (match == 3) {
+                win = 160;
+            } else if (match == 2) {
+                win = 10;
+            } else if (match == 1) {
+                win = 2;
+            } else {
+                win = 0;
+            }
         }
         if (win > 0.0D)
             winPoint = win * getTryPoint(lot, type);
@@ -742,7 +783,8 @@ public class MethodOpenCode {
 
     public static void main(String[] args) {
         MethodOpenCode open = new MethodOpenCode();
-        HashMap hnssc = open.OpenOneSsc("301:5,5,7,2,6:5", "Hnssc", "5,5,7,2,6");
-        System.out.println(hnssc.get("money"));
+        HashMap map = MethodOpenCode.GetWinMoney("Bjpk10", "501:01 02 03 04 05 06 07 08 09 10:10#501:06 07 08 09 10:5#501:01 02 03 04 05:5#501:01 03 05 07 09:5#501:02 04 06 08 10:5", 1, "05,10,07,02,04,06,09,08,01,03");
+//        HashMap hnssc = open.OpenOneSsc("502:05 04 06 08 10,05 04 06 08 10,05 04 06 08 10:5", "Bjpk10", "05,04,01,03,08,07,09,06,02,10");
+        System.out.println(map);
     }
 }

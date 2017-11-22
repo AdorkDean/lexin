@@ -1,43 +1,45 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>我的彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/userCenter/common.css"/>
-<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/my.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>我的彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/userCenter/common.css"/>
+    <link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/my.js"></script>
 </head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <article class="docBody clearfix">
     #set($listint=2)
-	#parse("/my/MyList.vm")
+    #parse("/my/MyList.vm")
     <div class="rightModule">
-		<ul class="redTab">
-			<li class="active"><a href="/my/Detail.jzh" target="_self">资金明细</a></li>
+        <ul class="redTab">
+            <li class="active"><a href="/my/Detail.jzh" target="_self">资金明细</a></li>
             <li><a href="/my/Rechange!RechDesc.jzh" target="_self">充值记录</a></li>
             <li><a href="/my/Rechange!DrawDesc.jzh" target="_self">提款记录</a></li>
             <li><a href="/my/Detail!Logs.jzh" target="_self">账户日志</a></li>
-		</ul>
+        </ul>
         <div class="orderDataBox grayBorder">
-        	<div class="selectBox clearfix">
+            <div class="selectBox clearfix">
 				<span class="mcSelectBox">
-					<a class="grayBtn25" href="javascript:;">#if($date==2)三月以前#elseif($date==1)一月以前#else一周之内#end</a><i></i>
+					<a class="grayBtn25" href="javascript:;">#if($date==2)三月以前#elseif($date==1)
+                        一月以前#else一周之内#end</a><i></i>
                 	<span class="optionList" style="display: none;">
 						<a class="active" href="/my/Detail.jzh?date=0&type=$type&status=$status">一周之内</a>
 						<a href="/my/Detail.jzh?date=1&type=$type&status=$status">一月以前</a>
 						<a href="/my/Detail.jzh?date=2&type=$type&status=$status">三月以前</a>
                     </span>
 				</span>
-				<span class="mcSelectBox">
-                	<a class="grayBtn25" href="javascript:;">#if($type==-1)所有类型#else<script>document.write(Show.MyDetTypeOne('$type'))</script>#end</a><i></i>
+                <span class="mcSelectBox">
+                	<a class="grayBtn25" href="javascript:;">#if($type==-1)所有类型#else
+                        <script>document.write(Show.MyDetTypeOne('$type'))</script>#end</a><i></i>
                 	<span class="optionList widthAuto" style="display:none;">
                     	<a class="active" href="/my/Detail.jzh?date=$date&type=-1&status=$status">所有类型</a>
 						<a href="/my/Detail.jzh?date=$date&type=0&status=$status">购彩派奖</a>
@@ -52,8 +54,9 @@
 						<a href="/my/Detail.jzh?date=$date&type=9&status=$status">用户返利</a>
                     </span>
                 </span>
-				<span class="mcSelectBox">
-                	<a class="grayBtn25" href="javascript:;">#if($status==0)收入#elseif($status==1)支出#else所有状态#end</a><i></i>
+                <span class="mcSelectBox">
+                	<a class="grayBtn25" href="javascript:;">#if($status==0)收入#elseif($status==1)
+                        支出#else所有状态#end</a><i></i>
                 	<span class="optionList widthAuto" style="display:none;">
                     	<a class="active" href="/my/Detail.jzh?date=$date&type=$type&status=-1">所有状态</a>
 						<a href="/my/Detail.jzh?date=$date&type=$type&status=0">收入</a>
@@ -61,51 +64,53 @@
                     </span>
                 </span>
             </div>
-    <table class="tableData">
-        <colgroup>
-            <col width="20%">
-            <col width="11%">
-            <col width="11%">
-            <col width="13%">
-            <col width="24%">
-            <col width="21%">
-        </colgroup>
-        <tbody><tr>
-            <th>时间</th>
-            <th class="tr">余额(元)</th>
-            <th class="tr">收支金额(元)</th>
-            <th>类型</th>
-            <th>订单编号</th>
-            <th>备注</th>
-        </tr>
-		#if($find)
-			#foreach($list in $find)
-    		<tr>
-                <td>$list.Detail_time</td>
-                <td class="tr"><font color="#1E50A2">$list.Detail_balance</font></td>
-                <td class="tr">
-				#if($list.Detail_addsub>0)
-					<font color="#BA2636">$list.Detail_addsub</font>
-				#else
-					$list.Detail_addsub
-				#end
-				</td>
-				<script>document.write(Show.MyDetType('$list.Detail_type','$list.Detail_item'))</script>
-                <td>#if($list.Detail_desc.length()>0)$list.Detail_desc#else---#end</td>
-    		</tr>
-			#end
-		#end
-    </tbody></table>
-	#if(!$find)
-    <div class="noData">
-    	<i class="ico_book"></i><strong>没有任何记录</strong>
+            <table class="tableData">
+                <colgroup>
+                    <col width="20%">
+                    <col width="11%">
+                    <col width="11%">
+                    <col width="13%">
+                    <col width="24%">
+                    <col width="21%">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th>时间</th>
+                    <th class="tr">余额(元)</th>
+                    <th class="tr">收支金额(元)</th>
+                    <th>类型</th>
+                    <th>订单编号</th>
+                    <th>备注</th>
+                </tr>
+                    #if($find)
+                        #foreach($list in $find)
+                        <tr>
+                            <td>$list.Detail_time</td>
+                            <td class="tr"><font color="#1E50A2">$list.Detail_balance</font></td>
+                            <td class="tr">
+                                #if($list.Detail_addsub>0)
+                                    <font color="#BA2636">$list.Detail_addsub</font>
+                                #else
+                                    $list.Detail_addsub
+                                #end
+                            </td>
+                            <script>document.write(Show.MyDetType('$list.Detail_type', '$list.Detail_item'))</script>
+                            <td>#if($list.Detail_desc.length()>0)$list.Detail_desc#else---#end</td>
+                        </tr>
+                        #end
+                    #end
+                </tbody>
+            </table>
+            #if(!$find)
+                <div class="noData">
+                    <i class="ico_book"></i><strong>没有任何记录</strong>
+                </div>
+            #end
+            $page
+        </div>
+        #include("/my/MyHot.vm")
     </div>
-	#end
-	$page
-</div>
-#include("/my/MyHot.vm")
-</div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

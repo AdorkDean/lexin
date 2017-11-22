@@ -5,9 +5,9 @@ public class VolatileTest {
 
     public static volatile int number;
 
-    public static void doSomething(){
+    public static void doSomething() {
 
-        for (int i = 0 ; i < 10; i ++) {
+        for (int i = 0; i < 10; i++) {
 
             new Thread(new Runnable() {
                 @Override
@@ -34,7 +34,6 @@ public class VolatileTest {
         }
 
 
-
     }
 
     private static synchronized void count() {
@@ -44,13 +43,12 @@ public class VolatileTest {
             e.printStackTrace();
         }
 
-        number ++ ;
+        number++;
     }
 
     public int getNumber() {
         return number;
     }
-
 
 
     public static void main(String[] args) {
@@ -59,18 +57,18 @@ public class VolatileTest {
         VolatileTest volatileTest = new VolatileTest();
 //        int number = volatileTest.getNumber();
 
-        while (true){
+        while (true) {
 
 
             VolatileTest.doSomething();
 
 //            System.out.println(number + "number");number
 
-            if(number == 10){
+            if (number == 10) {
                 break;
             }
             number = 0;
-            count ++;
+            count++;
         }
 
 

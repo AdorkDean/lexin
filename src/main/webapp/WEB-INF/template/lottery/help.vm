@@ -1,18 +1,18 @@
 <div style="border-top:0" class="block gray_border">
-	<div class="all_title gray_title">
-		<div class="title_m f14">帮助中心</div>
-		<div class="tips_close">收起<em></em></div>
+    <div class="all_title gray_title">
+        <div class="title_m f14">帮助中心</div>
+        <div class="tips_close">收起<em></em></div>
     </div>
-	<ul class="right_list">
-		<li><a target="_blank" href="/help/mode_questions.jsp">热门问题大全</a></li>
-		<li><a target="_blank" href="/help/q/102.jsp">我从来没买过彩票，怎么玩？</a></li>
-		<li><a target="_blank" href="/help/q/103.jsp">什么是彩票积分？</a></li>
-		<li><a target="_blank" href="/help/q/104.jsp">什么是彩票红包？</a></li>
-		<li><a target="_blank" href="/help/q/201.jsp">付款遇到问题怎么办？</a></li>
-		<li><a target="_blank" href="/help/q/303.jsp">什么是合买佣金？</a></li>
-		<li><a target="_blank" href="/help/q/203.jsp">中奖之后如何提现？</a></li>
-		<li><a target="_blank" href="/help/q/402.jsp">中奖之后奖金在哪里查收？</a></li>
-		<li><a target="_blank" href="/help/q/301.jsp">请问发起的合买如何撤销？</a></li>
-		<li><a target="_blank" href="/help/q/202.jsp">如何充值到账户认购彩票？</a></li>
-	</ul>
+    <ul class="right_list">
+        <li><a target="_blank" href="/help/mode_questions.jsp">热门问题大全</a></li>
+        <li><a target="_blank" href="/help/q/102.jsp">我从来没买过彩票，怎么玩？</a></li>
+        <li><a target="_blank" href="/help/q/103.jsp">什么是彩票积分？</a></li>
+        <li><a target="_blank" href="/help/q/104.jsp">什么是彩票红包？</a></li>
+        <li><a target="_blank" href="/help/q/201.jsp">付款遇到问题怎么办？</a></li>
+        <li><a target="_blank" href="/help/q/303.jsp">什么是合买佣金？</a></li>
+        <li><a target="_blank" href="/help/q/203.jsp">中奖之后如何提现？</a></li>
+        <li><a target="_blank" href="/help/q/402.jsp">中奖之后奖金在哪里查收？</a></li>
+        <li><a target="_blank" href="/help/q/301.jsp">请问发起的合买如何撤销？</a></li>
+        <li><a target="_blank" href="/help/q/202.jsp">如何充值到账户认购彩票？</a></li>
+    </ul>
 </div>

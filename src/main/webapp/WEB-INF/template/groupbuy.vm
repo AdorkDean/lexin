@@ -1,69 +1,75 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content="彩票合买,合买大厅,彩票合买网站,合买"/>
-<meta name="description" content="乐欣彩票合买网为您提供双色球、大乐透、福彩3D、足彩、竞彩合买等彩票合买服务,还提供合买名人和合买热门方案服务。彩票合买发起、彩票合买跟单就选乐欣彩票合买网。"/>
-<title>彩票合买大厅_彩票合买平台_中国彩票合买网站-乐欣彩票网</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" type="text/css" href="/css/salleAtj.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/lotterymode.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="彩票合买,合买大厅,彩票合买网站,合买"/>
+    <meta name="description" content="乐欣彩票合买网为您提供双色球、大乐透、福彩3D、足彩、竞彩合买等彩票合买服务,还提供合买名人和合买热门方案服务。彩票合买发起、彩票合买跟单就选乐欣彩票合买网。"/>
+    <title>彩票合买大厅_彩票合买平台_中国彩票合买网站-乐欣彩票网</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/salleAtj.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/lotterymode.js"></script>
 </head>
 <body>
-#set($ind=2)
-#parse("/head.vm")
+    #set($ind=2)
+    #parse("/head.vm")
 <!-- 主体内容 -->
 <div class="index_main togetherSalle clearfix">
-	<!--左侧内容 开始-->
-	<div class="sider_area">
-		<div class="all_title"><a href="/Groupbuy.jzh" class="titLink">合买大厅首页</a></div>
-		<!-- 彩种列表 -->
-		<div class="block_con">
-			<h3>数字彩</h3>
-			<ul class="ulMode1">
-				<li#if($lot=='Ssq') class="active"#end><a href="/Groupbuy.jzh?lot=Ssq">双色球</a></li>
-				<li#if($lot=='Dlt') class="active"#end><a href="/Groupbuy.jzh?lot=Dlt">大乐透</a></li>
-				<li#if($lot=='Pl5') class="active"#end><a href="/Groupbuy.jzh?lot=Pl5">排列五<span class="iconKjToday"></span></a></li>
-				<li#if($lot=='Fc3d') class="active"#end><a href="/Groupbuy.jzh?lot=Fc3d">福彩3D<span class="iconKjToday"></span></a></li>
-				<li#if($lot=='Pl3') class="active"#end><a href="/Groupbuy.jzh?lot=Pl3">排列三<span class="iconKjToday"></span></a></li>		
-			</ul>
-			<h3>高频彩</h3>
-			<ul class="ulMode1">		
-				<li#if($lot=='Cqssc') class="active"#end><a href="/Groupbuy.jzh?lot=Cqssc">重庆时时彩<!-- span class="iconNew"></span--></a></li>
-				<li#if($lot=='Jxssc') class="active"#end><a href="/Groupbuy.jzh?lot=Jxssc">江西时时彩</a></li>
-				<li#if($lot=='Sd11x5') class="active"#end><a href="/Groupbuy.jzh?lot=Sd11x5">十一运夺金</a></li>
-				<li#if($lot=='Jx11x5') class="active"#end><a href="/Groupbuy.jzh?lot=Jx11x5">江西11选5</a></li>
-				<li#if($lot=='Gd11x5') class="active"#end><a href="/Groupbuy.jzh?lot=Gd11x5">广东11选5</a></li>
-			</ul>
-			<h3 class="leftLink"><a class="c_ba2636" href="/Groupbuy.jzh">最新合买</a></h3>
-		</div>
-		<!-- 帮助模块 -->
-		<div class="modBody">
-			<h3>合买帮助</h3>
-			<ul>
-				<li><a href="/help/q/303.jsp" style="color:red" target="_blank">什么是合买佣金？</a></li>
-				<li><a href="/help/q/301.jsp" target="_blank">请问发起的合买如何撤销？</a></li>
-				<li><a href="/help/q/402.jsp" target="_blank">中奖了奖金在哪里查？</a></li>
-				<li><a href="/help/q/203.jsp" target="_blank">中奖了怎么提现？</a></li>
-				<li><a href="/help/q/103.jsp" target="_blank">合买的积分怎么算？</a></li>
-				<li><a href="/help/q/302.jsp" style="color:red" target="_blank">合买中奖奖金怎么分？</a></li>
-				<li><a href="/help/q/101.jsp" target="_blank">如何查询我的合买记录？</a></li>
-				<li><a href="/help/all_fuc.jsp" style="color:red" target="_blank">如何注册？</a></li>
-			</ul>
-		</div> 
-		<!-- 广告位 -->		
-		<div class="ggPlace js-adContainer"><a target="_blank" href="/ad/ad_hmleft.html"><img src="/ad/img/ad_hmleft.jpg"></a></div>
-	</div><!--左侧内容 结束-->
-	<!--右侧内容 开始-->
-	<div class="main_right">
-		<!-- 热门方案 -->
-		<div class="faWrap">
-			<h3 class="toBuyMenTit"><span title="热门方案" class="hotFan">热门方案</span><span class="hDeng">合买方案进度满100%才可以出票哦！</span></h3>
-			<div class="selected clearfix">			  
-			<form method="get" action="/Groupbuy.jzh">
+    <!--左侧内容 开始-->
+    <div class="sider_area">
+        <div class="all_title"><a href="/Groupbuy.jzh" class="titLink">合买大厅首页</a></div>
+        <!-- 彩种列表 -->
+        <div class="block_con">
+            <h3>数字彩</h3>
+            <ul class="ulMode1">
+                <li#if($lot=='Ssq') class="active"#end><a href="/Groupbuy.jzh?lot=Ssq">双色球</a></li>
+                <li#if($lot=='Dlt') class="active"#end><a href="/Groupbuy.jzh?lot=Dlt">大乐透</a></li>
+                <li#if($lot=='Pl5') class="active"#end><a href="/Groupbuy.jzh?lot=Pl5">排列五<span
+                        class="iconKjToday"></span></a></li>
+                <li#if($lot=='Fc3d') class="active"#end><a href="/Groupbuy.jzh?lot=Fc3d">福彩3D<span
+                        class="iconKjToday"></span></a></li>
+                <li#if($lot=='Pl3') class="active"#end><a href="/Groupbuy.jzh?lot=Pl3">排列三<span
+                        class="iconKjToday"></span></a></li>
+            </ul>
+            <h3>高频彩</h3>
+            <ul class="ulMode1">
+                <li#if($lot=='Cqssc') class="active"#end><a href="/Groupbuy.jzh?lot=Cqssc">重庆时时彩
+                    <!-- span class="iconNew"></span--></a></li>
+                <li#if($lot=='Jxssc') class="active"#end><a href="/Groupbuy.jzh?lot=Jxssc">江西时时彩</a></li>
+                <li#if($lot=='Sd11x5') class="active"#end><a href="/Groupbuy.jzh?lot=Sd11x5">十一运夺金</a></li>
+                <li#if($lot=='Jx11x5') class="active"#end><a href="/Groupbuy.jzh?lot=Jx11x5">江西11选5</a></li>
+                <li#if($lot=='Gd11x5') class="active"#end><a href="/Groupbuy.jzh?lot=Gd11x5">广东11选5</a></li>
+            </ul>
+            <h3 class="leftLink"><a class="c_ba2636" href="/Groupbuy.jzh">最新合买</a></h3>
+        </div>
+        <!-- 帮助模块 -->
+        <div class="modBody">
+            <h3>合买帮助</h3>
+            <ul>
+                <li><a href="/help/q/303.jsp" style="color:red" target="_blank">什么是合买佣金？</a></li>
+                <li><a href="/help/q/301.jsp" target="_blank">请问发起的合买如何撤销？</a></li>
+                <li><a href="/help/q/402.jsp" target="_blank">中奖了奖金在哪里查？</a></li>
+                <li><a href="/help/q/203.jsp" target="_blank">中奖了怎么提现？</a></li>
+                <li><a href="/help/q/103.jsp" target="_blank">合买的积分怎么算？</a></li>
+                <li><a href="/help/q/302.jsp" style="color:red" target="_blank">合买中奖奖金怎么分？</a></li>
+                <li><a href="/help/q/101.jsp" target="_blank">如何查询我的合买记录？</a></li>
+                <li><a href="/help/all_fuc.jsp" style="color:red" target="_blank">如何注册？</a></li>
+            </ul>
+        </div>
+        <!-- 广告位 -->
+        <div class="ggPlace js-adContainer"><a target="_blank" href="/ad/ad_hmleft.html"><img
+                src="/ad/img/ad_hmleft.jpg"></a></div>
+    </div><!--左侧内容 结束-->
+    <!--右侧内容 开始-->
+    <div class="main_right">
+        <!-- 热门方案 -->
+        <div class="faWrap">
+            <h3 class="toBuyMenTit"><span title="热门方案" class="hotFan">热门方案</span><span
+                    class="hDeng">合买方案进度满100%才可以出票哦！</span></h3>
+            <div class="selected clearfix">
+                <form method="get" action="/Groupbuy.jzh">
 				<span class="ifShaiXuan">
 					<input type="hidden" value="$!lot" name="lot"/>
 					状态：
@@ -87,96 +93,134 @@
 					</select>&nbsp;|&nbsp;发起人：<input type="text" value="$!name" class="w80" name="name"/>
 					<input type="submit" value="搜 索" class="btnOrange mlPad"/>&nbsp;&nbsp;
 				</span>
-			</form>
-			</div>
-			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="group_buy">
-				<tbody>
-				    <tr>
-						<th width="6%" class="t_c">序号</th>
-						<th width="11%">发起人</th>
-                        <th width="15%">发起人战绩</th>
-						<th width="10%">彩种</th>
-                        <th width="12%">进度</th>
-						<th width="12%" class="t_r">方案金额 |</th>
-            			<th width="9%">剩余</th>
-						<th width="9%">认购份数</th>
-						<th width="16%" class="t_c">操作</th>
-					</tr>
-					#if($list)
-						#set($num=1)
-						#foreach($l in $list)
-							<tr #if($num%2==1)bgcolor="#f6f6f6"#end>
-							<td class="tdOne"><em>$num</em>#if($l.Buy_isopen==0)<span class="public" title="方案公开"></span>#elseif($l.Buy_isopen==1)<span class="group_buy" title="参与可见"></span>#elseif($l.Buy_isopen==2)<span class="semiovert" title="截止可见"></span>#else<span class="secrecy" title="方案保密"></span>#end</td>
-							<td>$l.User_nameDis</td>
-                            <td><script>document.write(Show.UserLevel($l.User_level))</script></td>
-							<td class="twoLine"><script>document.write(Show.LotName('$l.Buy_lot'))</script></td>
-						<td>$l.Jindu%#if($l.Buy_baodi>0)+$l.Bao%<span title="保底" class="img_baodi">保底</span>#end</td>
-						<td class="totalmoney"><em>$l.Buy_money元</em> |</td>
-						<td>$l.Buy_have元</td>
-						#if($l.Buy_status==-1&&$l.Buy_have>0)
-						<td><input type="text" maxnum="$l.Buy_have" class="group_input" placeholder="剩余$l.Buy_have元" autocomplete="off"></td>
-						<td><a class="buy_btn" lotoorder="$l.Buy_item" fqh="$l.Buy_fqihao" lot="$l.Buy_lot" href="javascript:;">购买</a> 
-						<a href="/lottery/BuyLot.jzh?spm=$l.Buy_item" class="btn_mini" target="_blank">详情</a></td>
-						#else
-						<td><script>document.write(Show.BuyStatus('$l.Buy_status'))</script></td>
-						<td><a target="_blank" class="btn_mini" href="/lottery/BuyLot.jzh?spm=$l.Buy_item">详情</a></td>
-						#end
-					  </tr>
-						#set($num=$num+1)
-						#end
-					#end
-				</tbody>
-			</table>
-		<!-- JSP版翻页 开始 -->
-     <div class="splitPages2">$page</div>
-	<!-- JSP版翻页 结束 -->	
-		</div>
-	</div>
+                </form>
+            </div>
+            <table width="100%" cellspacing="0" cellpadding="0" border="0" class="group_buy">
+                <tbody>
+                <tr>
+                    <th width="6%" class="t_c">序号</th>
+                    <th width="11%">发起人</th>
+                    <th width="15%">发起人战绩</th>
+                    <th width="10%">彩种</th>
+                    <th width="12%">进度</th>
+                    <th width="12%" class="t_r">方案金额 |</th>
+                    <th width="9%">剩余</th>
+                    <th width="9%">认购份数</th>
+                    <th width="16%" class="t_c">操作</th>
+                </tr>
+                    #if($list)
+                        #set($num=1)
+                        #foreach($l in $list)
+                        <tr #if($num%2==1)bgcolor="#f6f6f6"#end>
+                            <td class="tdOne"><em>$num</em>#if($l.Buy_isopen==0)<span class="public"
+                                                                                      title="方案公开"></span>#elseif($l.Buy_isopen==1)
+                                <span class="group_buy" title="参与可见"></span>#elseif($l.Buy_isopen==2)<span
+                                    class="semiovert" title="截止可见"></span>#else<span class="secrecy"
+                                                                                     title="方案保密"></span>#end</td>
+                            <td>$l.User_nameDis</td>
+                            <td>
+                                <script>document.write(Show.UserLevel($l.User_level))</script>
+                            </td>
+                            <td class="twoLine">
+                                <script>document.write(Show.LotName('$l.Buy_lot'))</script>
+                            </td>
+                            <td>$l.Jindu%#if($l.Buy_baodi>0)+$l.Bao%<span title="保底" class="img_baodi">保底</span>#end
+                            </td>
+                            <td class="totalmoney"><em>$l.Buy_money元</em> |</td>
+                            <td>$l.Buy_have元</td>
+                            #if($l.Buy_status==-1&&$l.Buy_have>0)
+                                <td><input type="text" maxnum="$l.Buy_have" class="group_input"
+                                           placeholder="剩余$l.Buy_have元" autocomplete="off"></td>
+                                <td><a class="buy_btn" lotoorder="$l.Buy_item" fqh="$l.Buy_fqihao" lot="$l.Buy_lot"
+                                       href="javascript:;">购买</a>
+                                    <a href="/lottery/BuyLot.jzh?spm=$l.Buy_item" class="btn_mini"
+                                       target="_blank">详情</a></td>
+                            #else
+                                <td>
+                                    <script>document.write(Show.BuyStatus('$l.Buy_status'))</script>
+                                </td>
+                                <td><a target="_blank" class="btn_mini"
+                                       href="/lottery/BuyLot.jzh?spm=$l.Buy_item">详情</a></td>
+                            #end
+                        </tr>
+                            #set($num=$num+1)
+                        #end
+                    #end
+                </tbody>
+            </table>
+            <!-- JSP版翻页 开始 -->
+            <div class="splitPages2">$page</div>
+            <!-- JSP版翻页 结束 -->
+        </div>
+    </div>
 </div>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 <script>
-$(function(){
-	$('select[name=istake]').val($istake);
-	$('select[name=status]').val($status);
-	$('select[name=isbao]').val($isbao);
-	$('input.group_input').keyup(function(){
-		$(this).val($(this).val().replace(/[^\d]/g,''));
-		var num = Number($(this).val()==0?1:$(this).val());
-		var max = Number($(this).attr('maxnum'));
-		num=num>max?max:num;
-		$(this).val(num);
-	});
-	var hmsta=false;
-	$('a.buy_btn').click(function(){
-		if (hmsta){
-			alert('正在提交数据，请稍等。');return;
-		}
-		var thiz = $(this).parent().parent().find('input.group_input');
-		var item = $(this).attr('lotoorder');
-		var lot = $(this).attr('lot');
-		var fqh = $(this).attr('fqh');
-		var mon = Number(thiz.val());
-		var max = Number(thiz.attr('maxnum'));
-		if(mon==0){
-			alert('请输入您要认购的金额。');return;
-		}else if(mon>max){
-			alert('最多只能认购'+max+'元');
-		}
-		hmsta=true;
-		$.post('/lottery/BuyLot!AddHM.jzh',{item:item,lot:lot,fqh:fqh,mon:mon,t:local.TimeLong()},function(data){
-			switch (data){//-1期号过期 0成功 1订单剩余金额不够 2用户余额不足 3订单不存在
-				case 'no':alert('您还未登录');break;
-				case '-1':alert('期号已过期。');break;
-				case '0':alert('代购成功。');location.reload();break;
-				case '1':alert('订单金额不够。');break;
-				case '2':alert('您余额不足。');break;
-				case '3':alert('订单不存在。');break;
-				default:alert('代购失败！');break;
-				hmsta=false;
-			}
-		});
-	});
-});
+    $(function () {
+        $('select[name=istake]').val($istake);
+        $('select[name=status]').val($status);
+        $('select[name=isbao]').val($isbao);
+        $('input.group_input').keyup(function () {
+            $(this).val($(this).val().replace(/[^\d]/g, ''));
+            var num = Number($(this).val() == 0 ? 1 : $(this).val());
+            var max = Number($(this).attr('maxnum'));
+            num = num > max ? max : num;
+            $(this).val(num);
+        });
+        var hmsta = false;
+        $('a.buy_btn').click(function () {
+            if (hmsta) {
+                alert('正在提交数据，请稍等。');
+                return;
+            }
+            var thiz = $(this).parent().parent().find('input.group_input');
+            var item = $(this).attr('lotoorder');
+            var lot = $(this).attr('lot');
+            var fqh = $(this).attr('fqh');
+            var mon = Number(thiz.val());
+            var max = Number(thiz.attr('maxnum'));
+            if (mon == 0) {
+                alert('请输入您要认购的金额。');
+                return;
+            } else if (mon > max) {
+                alert('最多只能认购' + max + '元');
+            }
+            hmsta = true;
+            $.post('/lottery/BuyLot!AddHM.jzh', {
+                item: item,
+                lot: lot,
+                fqh: fqh,
+                mon: mon,
+                t: local.TimeLong()
+            }, function (data) {
+                switch (data) {//-1期号过期 0成功 1订单剩余金额不够 2用户余额不足 3订单不存在
+                    case 'no':
+                        alert('您还未登录');
+                        break;
+                    case '-1':
+                        alert('期号已过期。');
+                        break;
+                    case '0':
+                        alert('代购成功。');
+                        location.reload();
+                        break;
+                    case '1':
+                        alert('订单金额不够。');
+                        break;
+                    case '2':
+                        alert('您余额不足。');
+                        break;
+                    case '3':
+                        alert('订单不存在。');
+                        break;
+                    default:
+                        alert('代购失败！');
+                        break;
+                        hmsta = false;
+                }
+            });
+        });
+    });
 </script>
 </html>

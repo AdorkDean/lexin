@@ -1,41 +1,43 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>我的彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/userCenter/common.css"/>
-<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/bcbox/jquery.bcbox.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/my.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>我的彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/userCenter/common.css"/>
+    <link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/bcbox/jquery.bcbox.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/my.js"></script>
 </head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <article class="docBody clearfix">
     #set($listint=8)
-	#parse("/my/MyList.vm")
+    #parse("/my/MyList.vm")
     <div class="rightModule">
-		<ul class="redTab">
-			<li class="active"><a href="/my/Message.jzh" target="_self">消息中心</a></li>
-		</ul>
+        <ul class="redTab">
+            <li class="active"><a href="/my/Message.jzh" target="_self">消息中心</a></li>
+        </ul>
         <div class="orderDataBox grayBorder">
-        	<div class="selectBox clearfix">
+            <div class="selectBox clearfix">
 				<span class="mcSelectBox">
-					<a class="grayBtn25" href="javascript:;">#if($date==2)三月以前#elseif($date==1)一月以前#else一周之内#end</a><i></i>
+					<a class="grayBtn25" href="javascript:;">#if($date==2)三月以前#elseif($date==1)
+                        一月以前#else一周之内#end</a><i></i>
                 	<span class="optionList" style="display: none;">
 						<a class="active" href="/my/Message.jzh?date=0&type=$type&status=$status">一周之内</a>
 						<a href="/my/Message.jzh?date=1&type=$type&status=$status">一月以前</a>
 						<a href="/my/Message.jzh?date=2&type=$type&status=$status">三月以前</a>
                     </span>
 				</span>
-				<span class="mcSelectBox">
-                	<a class="grayBtn25" href="javascript:;">#if($type==0)系统消息#elseif($type==1)活动推广#elseif($type==2)新闻消息#else所有状态#end</a><i></i>
+                <span class="mcSelectBox">
+                	<a class="grayBtn25" href="javascript:;">#if($type==0)系统消息#elseif($type==1)活动推广#elseif($type==2)
+                        新闻消息#else所有状态#end</a><i></i>
                 	<span class="optionList widthAuto" style="display:none;">
                     	<a class="active" href="/my/Message.jzh?date=$date&type=-1&status=$status">所有类型</a>
 						<a href="/my/Message.jzh?date=$date&type=0&status=$status">系统消息</a>
@@ -43,8 +45,9 @@
 						<a href="/my/Message.jzh?date=$date&type=2&status=$status">新闻消息</a>
                     </span>
                 </span>
-				<span class="mcSelectBox">
-                	<a class="grayBtn25" href="javascript:;">#if($status==0)未查看#elseif($status==1)已查看#else所有状态#end</a><i></i>
+                <span class="mcSelectBox">
+                	<a class="grayBtn25" href="javascript:;">#if($status==0)未查看#elseif($status==1)
+                        已查看#else所有状态#end</a><i></i>
                 	<span class="optionList widthAuto" style="display:none;">
                     	<a class="active" href="/my/Message.jzh?date=$date&type=$type&status=-1">所有状态</a>
 						<a href="/my/Message.jzh?date=$date&type=$type&status=0">新消息</a>
@@ -52,62 +55,71 @@
                     </span>
                 </span>
             </div>
-    <table class="tableData">
-        <colgroup>
-            <col width="20%">
-            <col width="35%">
-            <col width="15%">
-            <col width="15%">
-            <col width="15%">
-        </colgroup>
-        <tbody><tr>
-            <th>时间</th>
-            <th>消息</th>
-            <th>类型</th>
-            <th>状态</th>
-            <th>操作</th>
-        </tr>
-		#if($find)
-			#foreach($list in $find)
-    		<tr>
-                <td><a href="javascript:" onclick="show('$list.Msg_title','$list.Msg_text','$list.Msg_id')">$list.Msg_time</a></td>
-                <td><a href="javascript:" onclick="show('$list.Msg_title','$list.Msg_text','$list.Msg_id')">$list.Msg_title</a></td>
-                <td>#if($list.Msg_type==0)系统消息#elseif($list.Msg_type==1)活动推广#elseif($list.Msg_type==2)#else其他#end</td>
-                <td>#if($list.Msg_status==0)未阅读#else已阅读#end</td>
-                <td><a href="javascript:" onclick="show('$list.Msg_title','$list.Msg_text','$list.Msg_id')">查看</a> | <a href="javascript:" onclick="Del($list.Msg_id)">删除</a></td>
-    		</tr>
-			#end
-		#end
-    </tbody></table>
-	#if(!$find)
-    <div class="noData">
-    	<i class="ico_book"></i><strong>没有任何记录</strong>
+            <table class="tableData">
+                <colgroup>
+                    <col width="20%">
+                    <col width="35%">
+                    <col width="15%">
+                    <col width="15%">
+                    <col width="15%">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th>时间</th>
+                    <th>消息</th>
+                    <th>类型</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                    #if($find)
+                        #foreach($list in $find)
+                        <tr>
+                            <td><a href="javascript:"
+                                   onclick="show('$list.Msg_title','$list.Msg_text','$list.Msg_id')">$list.Msg_time</a>
+                            </td>
+                            <td><a href="javascript:"
+                                   onclick="show('$list.Msg_title','$list.Msg_text','$list.Msg_id')">$list.Msg_title</a>
+                            </td>
+                            <td>#if($list.Msg_type==0)系统消息#elseif($list.Msg_type==1)活动推广#elseif($list.Msg_type==2)
+                                #else其他#end</td>
+                            <td>#if($list.Msg_status==0)未阅读#else已阅读#end</td>
+                            <td><a href="javascript:" onclick="show('$list.Msg_title','$list.Msg_text','$list.Msg_id')">查看</a>
+                                | <a href="javascript:" onclick="Del($list.Msg_id)">删除</a></td>
+                        </tr>
+                        #end
+                    #end
+                </tbody>
+            </table>
+            #if(!$find)
+                <div class="noData">
+                    <i class="ico_book"></i><strong>没有任何记录</strong>
+                </div>
+            #end
+            $page
+        </div>
+        #include("/my/MyHot.vm")
     </div>
-	#end
-	$page
-</div>
-#include("/my/MyHot.vm")
-</div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 <script>
-function show(tit,msg,id){
-	new $.bcbox({
-		title:tit,
-		type:'alert',
-		content:msg,
-	}).show();
-	$.post('/my/Message!UpRead.jzh',{ids:id,t:local.TimeLong()},function(data){});
-}
-function Del(ids){
-	$.post('/my/Message.jzh',{ids:ids,t:local.TimeLong()},function(data){
-		if(data=='-1'){
-			new $.bcbox({type:'alert',content:'删除失败'}).show();
-		}else if(data=='0'){
-			location.reload();
-		}
-	});
-}
+    function show(tit, msg, id) {
+        new $.bcbox({
+            title: tit,
+            type: 'alert',
+            content: msg,
+        }).show();
+        $.post('/my/Message!UpRead.jzh', {ids: id, t: local.TimeLong()}, function (data) {
+        });
+    }
+    function Del(ids) {
+        $.post('/my/Message.jzh', {ids: ids, t: local.TimeLong()}, function (data) {
+            if (data == '-1') {
+                new $.bcbox({type: 'alert', content: '删除失败'}).show();
+            } else if (data == '0') {
+                location.reload();
+            }
+        });
+    }
 </script>
 </html>

@@ -1,15 +1,15 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.caipiao.pay.huichao.MD5"%>
-<%@page import="com.caipiao.service.my.MyRechangeService"%>
-<%@page import="com.caipiao.entity.Bc_rech"%>
-<%@page import="com.caipiao.utils.TryStatic"%>
-<%@page import="com.caipiao.entity.Bc_user"%>
-<%@page import="com.caipiao.service.systeminit.UserStatic"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ page import="com.caipiao.entity.Bc_rech" %>
+<%@page import="com.caipiao.entity.Bc_user" %>
+<%@page import="com.caipiao.pay.huichao.MD5" %>
+<%@page import="com.caipiao.service.my.MyRechangeService" %>
+<%@page import="com.caipiao.service.systeminit.UserStatic" %>
+<%@page import="com.caipiao.utils.TryStatic" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%
     //字符编码
     String CharacterEncoding = "UTF-8";
-	request.setCharacterEncoding(CharacterEncoding);
+    request.setCharacterEncoding(CharacterEncoding);
 
     String MD5key = "zzwfKzvS";
     String BillNo = request.getParameter("BillNo");
@@ -19,14 +19,14 @@
     String SignMD5info = request.getParameter("SignMD5info");
     String Remark = request.getParameter("Remark");
     //String MerNo = "29238";//商户ID
-    
+
     MD5 md5 = new MD5();
-    String md5src = BillNo+"&"+Amount+"&"+Succeed+"&"+MD5key;
+    String md5src = BillNo + "&" + Amount + "&" + Succeed + "&" + MD5key;
     String md5sign; //MD5加密后的字符串
     md5sign = md5.getMD5ofStr(md5src);//MD5检验结果
 
     String tradeOrder = request.getParameter("tradeOrder");
-  
+
 %>
 
 <html>
@@ -35,22 +35,24 @@
 <body>
 <!-- 请加上你们网站的框架。就是你们网站的头部top，左部left等。还有字体等你们都要做调整。 -->
 
- <%
- if (SignMD5info.equals(md5sign)){
- %>
- <!-- MD5验证成功 -->
-	<table width="728" border="0" cellspacing="0" cellpadding="0" align="center">
-  <tr>
-    <td  align="right" valign="top" width="200">您的支付订单：</td>
-    <td  align="left" valign="top"><%= BillNo%></td>
-  </tr>
+<%
+    if (SignMD5info.equals(md5sign)) {
+%>
+<!-- MD5验证成功 -->
+<table width="728" border="0" cellspacing="0" cellpadding="0" align="center">
     <tr>
-    <td  align="right" valign="top">支付的金额：</td>
-    <td  align="left" valign="top"><%= Amount%></td>
-  </tr>
+        <td align="right" valign="top" width="200">您的支付订单：</td>
+        <td align="left" valign="top"><%= BillNo%>
+        </td>
+    </tr>
     <tr>
-    <td  align="right" valign="top">Payment result：</td>
-	<%if (Succeed.equals("88")){
+        <td align="right" valign="top">支付的金额：</td>
+        <td align="left" valign="top"><%= Amount%>
+        </td>
+    </tr>
+    <tr>
+        <td align="right" valign="top">Payment result：</td>
+        <%if (Succeed.equals("88")){
 		MyRechangeService dao =new MyRechangeService();
 		Bc_rech en= dao.find(BillNo);
 		double rechmoney = TryStatic.StrToDouble(Amount);
@@ -92,31 +94,35 @@
 			}
 		}
 	%><!-- 可修改订单状态为正在付款中 -->
-	<!-- 提交支付信息成功，返回绿色的提示信息 -->
-	<td  align="left" valign="top" style="color:green;"><%= Result%></td>
-	<%
+        <!-- 提交支付信息成功，返回绿色的提示信息 -->
+        <td align="left" valign="top" style="color:green;"><%= Result%>
+        </td>
+        <%
 	}
 	else
 	{
 	%><!-- 提交支付信息失败，返回红色的提示信息 -->
-    <td  align="left" valign="top" style="color:red;"><%= Result%>&nbsp;&nbsp;&nbsp;&nbsp;<%= Succeed%></td>
-	<%
-	}%>
-  </tr>
-  
+        <td align="left" valign="top" style="color:red;"><%= Result%>&nbsp;&nbsp;&nbsp;&nbsp;<%= Succeed%>
+        </td>
+        <%
+            }%>
+    </tr>
+
 </table>
 <%
-}else{
+    }
+    else
+    {
 %>
- <!-- MD5验证失败 -->
+<!-- MD5验证失败 -->
 <table width="728" border="0" cellspacing="0" cellpadding="0" align="center">
- <tr>
-    <td  align="center" valign="top" style="color:red;">Validation failed!</td>
-	</tr>
-	</table>
-<%	
-}
- %>
+    <tr>
+        <td align="center" valign="top" style="color:red;">Validation failed!</td>
+    </tr>
+</table>
+<%
+    }
+%>
 </body>
 </html>
 

@@ -1,61 +1,70 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<meta http-equiv="refresh" content="0.1;url=/my/Rechange.jzh?pay=alipay">
-<title>我的彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/userCenter/common.css"/>
-<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
-<link rel="stylesheet" href="/css/userCenter/bankLogo.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="refresh" content="0.1;url=/my/Rechange.jzh?pay=alipay">
+    <title>我的彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/userCenter/common.css"/>
+    <link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+    <link rel="stylesheet" href="/css/userCenter/bankLogo.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
 </head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <article class="docBody clearfix">
     #set($listint=3)
-	#parse("/my/MyList.vm")
+    #parse("/my/MyList.vm")
     <div class="rightModule">
-		<ul class="redTab">
-			#if($alipay=='0')<li#if($pay=='alipay') class="active"#end><a href="/my/Rechange.jzh?pay=alipay" target="_self">支付宝充值</a></li>#end
-			#if($tenpay=='0')<li#if($pay=='tenpay') class="active"#end><a href="/my/Rechange.jzh?pay=tenpay" target="_self">在线支付</a></li>#end
-			#if($chinabank=='0')<li#if($pay=='chinabank') class="active"#end><a href="/my/Rechange.jzh?pay=chinabank" target="_self">在线快充</a></li>#end
-			#if($yeepay=='0')<li#if($pay=='yeepay') class="active"#end><a href="/my/Rechange.jzh?pay=yeepay" target="_self">在线支付</a></li>#end
-			<!--<li#if($pay!='alipay'&&$pay!='tenpay'&&$pay!='chinabank'&&$pay!='yeepay') class="active"#end><a href="/my/Rechange.jzh" target="_self">网银充值</a></li>-->
-			<li><a href="/my/Rechange!RechDesc.jzh" target="_self">充值记录</a></li>
-		</ul>
+        <ul class="redTab">
+            #if($alipay=='0')
+                <li#if($pay=='alipay') class="active"#end><a href="/my/Rechange.jzh?pay=alipay" target="_self">支付宝充值</a>
+                </li>#end
+            #if($tenpay=='0')
+                <li#if($pay=='tenpay') class="active"#end><a href="/my/Rechange.jzh?pay=tenpay" target="_self">在线支付</a>
+                </li>#end
+            #if($chinabank=='0')
+                <li#if($pay=='chinabank') class="active"#end><a href="/my/Rechange.jzh?pay=chinabank" target="_self">在线快充</a>
+                </li>#end
+            #if($yeepay=='0')
+                <li#if($pay=='yeepay') class="active"#end><a href="/my/Rechange.jzh?pay=yeepay" target="_self">在线支付</a>
+                </li>#end
+            <!--<li#if($pay!='alipay'&&$pay!='tenpay'&&$pay!='chinabank'&&$pay!=
+                'yeepay') class="active"#end><a href="/my/Rechange.jzh" target="_self">网银充值</a></li>-->
+            <li><a href="/my/Rechange!RechDesc.jzh" target="_self">充值记录</a></li>
+        </ul>
         <div class="orderDataBox grayBorder">
-				<ul style="padding-bottom:0" class="pay_form">
-				</ul>
-<script>
-$('#bankCardSelectHand').click(function(){
-	if($('#selectBankBtn').hasClass('selectBankBtnOpen')){
-		$('#selectBankBtn').attr('class','selectBankBtn');
-		$('#bankCardSelectBox').hide();
-	}else{
-		$('#selectBankBtn').attr('class','selectBankBtnOpen');
-		$('#bankCardSelectBox').show();
-	}
-});
-$('.bankCardList li').click(function(){
-	var cl = $(this).find('span').attr('class');
-	$('#bankCardSelectBank span').attr('class',cl);
-	$('#bankCardSelectHand').click();
-});
-$('#amount').change(function(){
-	var m = $(this).val();
-	
-});
-</script>
-</div>
-#include("/my/MyHot.vm")
-</div>
+            <ul style="padding-bottom:0" class="pay_form">
+            </ul>
+            <script>
+                $('#bankCardSelectHand').click(function () {
+                    if ($('#selectBankBtn').hasClass('selectBankBtnOpen')) {
+                        $('#selectBankBtn').attr('class', 'selectBankBtn');
+                        $('#bankCardSelectBox').hide();
+                    } else {
+                        $('#selectBankBtn').attr('class', 'selectBankBtnOpen');
+                        $('#bankCardSelectBox').show();
+                    }
+                });
+                $('.bankCardList li').click(function () {
+                    var cl = $(this).find('span').attr('class');
+                    $('#bankCardSelectBank span').attr('class', cl);
+                    $('#bankCardSelectHand').click();
+                });
+                $('#amount').change(function () {
+                    var m = $(this).val();
+
+                });
+            </script>
+        </div>
+        #include("/my/MyHot.vm")
+    </div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

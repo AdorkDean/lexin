@@ -40,7 +40,6 @@ public class HttpClientWrapper {
      * @param url        地址
      * @param parameters 参数
      * @param post       是否 POST
-     *
      * @return 回应结果
      */
     public static String send(String url, Map<String, List<String>> parameters, boolean post, String charset) {

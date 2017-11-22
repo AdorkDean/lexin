@@ -1,165 +1,239 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>我的彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/order/orderCore.css"/>
-<link rel="stylesheet" href="/css/order/groupDetail.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/item.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>我的彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/order/orderCore.css"/>
+    <link rel="stylesheet" href="/css/order/groupDetail.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/item.js"></script>
 </head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <div class="docBody clearfix">
-<nav id="pathNav"><i>您的位置：</i><a href="/">乐欣彩票</a> &gt; <a href="/groupbuy/">合买大厅</a> &gt; <span>合买详情</span></nav>
-<section id="mainBody">
-	<header class="game_header clearfix">
-	<div class="headerBox">
-		<div class="clearfix titleBox">
-			<script>document.write(Show.LogoName('$buy.Buy_lot'))</script>
-			<div class="abstract"><span>发起时间：$buy.Buy_time</span><span>编号：$buy.Buy_item</span><strong class="gameperiod"><strong>期号：$buy.Buy_fqihao</strong></strong></div>
-		</div>
-	</div>
-	</header>
-    <div class="topWrap clearfix">
-        <div class="userInfoBox">
-            <div class="clearfix userInfo">
-				<img style="display:inline;float:left;margin:0 15px 0 10px;border:1px solid #C2C2C2;height:60px;width:60px;" src="/images/homepage/default.png"/>
-                <div class="userName">发起人<strong>$buy.User_nameDis</strong></div>
+    <nav id="pathNav"><i>您的位置：</i><a href="/">乐欣彩票</a> &gt; <a href="/groupbuy/">合买大厅</a> &gt; <span>合买详情</span></nav>
+    <section id="mainBody">
+        <header class="game_header clearfix">
+            <div class="headerBox">
+                <div class="clearfix titleBox">
+                    <script>document.write(Show.LogoName('$buy.Buy_lot'))</script>
+                    <div class="abstract"><span>发起时间：$buy.Buy_time</span><span>编号：$buy.Buy_item</span><strong
+                            class="gameperiod"><strong>期号：$buy.Buy_fqihao</strong></strong></div>
+                </div>
             </div>
-            <ul class="list clearfix">
-                <li><span class="textL">个人战绩：</span><script>document.write(Show.UserLevel('$buy.User_level'))</script><em>&nbsp;</em></li>
-                <li><span class="textL">中奖宣言：</span><strong>$!buy.User_word</strong></li>
-            </ul>
-        </div>
-        <div class="scheme">
-            <ul class="list">
-                <li class="caseStatus">方案状态：<strong><script>document.write(Show.BuyStatus('$buy.Buy_status'))</script></strong></li> 
-                <script>document.write(Show.LotPro('$buy.Buy_baodi','$buy.Buy_have','$buy.Buy_money','$buy.Buy_status'))</script>
-                <li>中奖金额：<strong>#if($buy.Buy_winmoney>0)<font class="c_ba2636">$buy.Buy_winmoney</font>#else$buy.Buy_winmoney#end 元</strong></li>
-				#if($buy.Buy_iscont==0)<li>追号设置：<strong>中奖撤单</strong></li>#elseif($buy.Buy_iscont==1)<li>追号设置：<strong>中奖继续</strong></li>#end
-			</ul>
-            <ul class="ulTable clearfix">
-                <li><span>总金额</span><strong>$buy.Buy_money 元</strong></li>
-                <li><span>剩余金额</span><strong>$buy.Buy_have 元</strong></li>
-                <li><span>盈利佣金</span><strong>$buy.Buy_take %</strong></li>
-                <li><span>保底金额</span><strong>$buy.Buy_baodi 元</strong></li>
-                <li><span>注数</span><strong>$buy.Buy_zhushu 注</strong></li>
-            </ul>
-        </div>
-		<div id="tzot" style="padding:10px">
-			#set($shows=0)
-			#if($buyuser)
-				#foreach($uu in $buyuser)
-					#if($uu.User_id==$user.User_id)#set($shows=1)#end
-				#end
-			#end
-			#if($buy.Buy_isopen==3&&!($user.User_type==9||$buy.User_id==$user.User_id))
-				<table cellspacing="0" cellpadding="0" width="100%" border="0" id="gaopinNumberTable" class="user_table" style="height:100px">
-				<thead>
-					<tr><td width="90%">投注号码</td><td width="10%">注数</td></tr>
-				</thead>
-				<tbody><tr><td><strong>该方案选择<strong class="c_ba2636">"永久保密"</strong>（仅方案发起人可见）</strong></td><td></td></tr></tbody>
-				</table>
-            #elseif($buy.Buy_isopen==2&&$user.User_type!=9&&$buy.Buy_status==-1)
-				<table cellspacing="0" cellpadding="0" width="100%" border="0" id="gaopinNumberTable" class="user_table" style="height:100px">
-				<thead>
-					<tr><td width="90%">投注号码</td><td width="10%">注数</td></tr>
-				</thead>
-				<tbody><tr><td><strong>该方案选择<strong class="c_ba2636">"截止可见"</strong>（仅方案完成后公开）</strong></td><td></td></tr></tbody>
-				</table>
-            #elseif($buy.Buy_isopen==1&&!($user.User_type==9||$shows==1))
-				<table cellspacing="0" cellpadding="0" width="100%" border="0" id="gaopinNumberTable" class="user_table" style="height:100px">
-				<thead>
-					<tr><td width="90%">投注号码</td><td width="10%">注数</td></tr>
-				</thead>
-				<tbody><tr><td><strong>该方案选择<strong class="c_ba2636">"参与可见"</strong>（仅对加入方案人公开）</strong></td><td></td></tr></tbody>
-				</table>
-            #else
-			<table style="height:100px" width="100%" border="0" cellspacing="0" cellpadding="0" class="user_table" id="gaopinNumberTable">
-				<thead>
-					<tr><td width="90%">投注号码</td><td width="10%">注数</td></tr>
-				</thead>
-				<tbody><script>document.write(Show.LotCode('$buy.Buy_code'))</script></tbody>
-			</table>
-            #end 
-		</div>
-		<div id="paybox" class="paybox">
-				#if($buy.Buy_status==-1)
-                <p>剩余 <strong class="c_ba2636">$buy.Buy_have</strong> 元
-我要买 <input style="ime-mode: disabled;" size="5" id="rgInput" name="participantBuyPieces" max="$buy.Buy_have" placeholder="剩余$buy.Buy_have元" class="input" onpaste="return false" autocomplete="off"> 元。</p>
-                <a id="tzBtn" herf="javascript:;" rel="nofollow" class="betting_Btn" title="立即投注"></a>
-                <p class="treaty">
-                  <input type="checkbox" name="checkbox" id="agreeRule" checked="checked">
-                  <label for="agreeRule">我已经阅读并同意<a target="_blank" href="/cphelp/order_rule.jsp">《委托投注规则》</a></label>
-                </p>
-				<input type="hidden" id="fqh" value="$buy.Buy_fqihao"/>
-				<input type="hidden" id="lot" value="$buy.Buy_lot"/>
-				<input type="hidden" id="item" value="$buy.Buy_item"/>
-                #elseif($buy.Buy_status==0)
-                <a class="full_Btn" href="javascript:;" rel="nofollow" title="方案已满员"></a>
-				<a target="_blank" href="/Groupbuy.jzh">您可以选择参加其他合买>></a>
+        </header>
+        <div class="topWrap clearfix">
+            <div class="userInfoBox">
+                <div class="clearfix userInfo">
+                    <img style="display:inline;float:left;margin:0 15px 0 10px;border:1px solid #C2C2C2;height:60px;width:60px;"
+                         src="/images/homepage/default.png"/>
+                    <div class="userName">发起人<strong>$buy.User_nameDis</strong></div>
+                </div>
+                <ul class="list clearfix">
+                    <li><span class="textL">个人战绩：</span>
+                        <script>document.write(Show.UserLevel('$buy.User_level'))</script>
+                        <em>&nbsp;</em></li>
+                    <li><span class="textL">中奖宣言：</span><strong>$!buy.User_word</strong></li>
+                </ul>
+            </div>
+            <div class="scheme">
+                <ul class="list">
+                    <li class="caseStatus">方案状态：<strong>
+                        <script>document.write(Show.BuyStatus('$buy.Buy_status'))</script>
+                    </strong></li>
+                    <script>document.write(Show.LotPro('$buy.Buy_baodi', '$buy.Buy_have', '$buy.Buy_money', '$buy.Buy_status'))</script>
+                    <li>中奖金额：<strong>#if($buy.Buy_winmoney>0)<font
+                            class="c_ba2636">$buy.Buy_winmoney</font>#else$buy.Buy_winmoney#end 元</strong></li>
+                    #if($buy.Buy_iscont==0)
+                        <li>追号设置：<strong>中奖撤单</strong></li>#elseif($buy.Buy_iscont==1)
+                        <li>追号设置：<strong>中奖继续</strong></li>#end
+                </ul>
+                <ul class="ulTable clearfix">
+                    <li><span>总金额</span><strong>$buy.Buy_money 元</strong></li>
+                    <li><span>剩余金额</span><strong>$buy.Buy_have 元</strong></li>
+                    <li><span>盈利佣金</span><strong>$buy.Buy_take %</strong></li>
+                    <li><span>保底金额</span><strong>$buy.Buy_baodi 元</strong></li>
+                    <li><span>注数</span><strong>$buy.Buy_zhushu 注</strong></li>
+                </ul>
+            </div>
+            <div id="tzot" style="padding:10px">
+                #set($shows=0)
+                #if($buyuser)
+                    #foreach($uu in $buyuser)
+                        #if($uu.User_id==$user.User_id)#set($shows=1)#end
+                    #end
+                #end
+                #if($buy.Buy_isopen==3&&!($user.User_type==9||$buy.User_id==$user.User_id))
+                    <table cellspacing="0" cellpadding="0" width="100%" border="0" id="gaopinNumberTable"
+                           class="user_table" style="height:100px">
+                        <thead>
+                        <tr>
+                            <td width="90%">投注号码</td>
+                            <td width="10%">注数</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>该方案选择<strong class="c_ba2636">"永久保密"</strong>（仅方案发起人可见）</strong></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                #elseif($buy.Buy_isopen==2&&$user.User_type!=9&&$buy.Buy_status==-1)
+                    <table cellspacing="0" cellpadding="0" width="100%" border="0" id="gaopinNumberTable"
+                           class="user_table" style="height:100px">
+                        <thead>
+                        <tr>
+                            <td width="90%">投注号码</td>
+                            <td width="10%">注数</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>该方案选择<strong class="c_ba2636">"截止可见"</strong>（仅方案完成后公开）</strong></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                #elseif($buy.Buy_isopen==1&&!($user.User_type==9||$shows==1))
+                    <table cellspacing="0" cellpadding="0" width="100%" border="0" id="gaopinNumberTable"
+                           class="user_table" style="height:100px">
+                        <thead>
+                        <tr>
+                            <td width="90%">投注号码</td>
+                            <td width="10%">注数</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>该方案选择<strong class="c_ba2636">"参与可见"</strong>（仅对加入方案人公开）</strong></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 #else
-                <a class="end_Btn" href="javascript:;" rel="nofollow" title="方案已截止"></a>
-				<a target="_blank" href="/Groupbuy.jzh">您可以选择参加其他合买>></a>
-                #end 
+                    <table style="height:100px" width="100%" border="0" cellspacing="0" cellpadding="0"
+                           class="user_table" id="gaopinNumberTable">
+                        <thead>
+                        <tr>
+                            <td width="90%">投注号码</td>
+                            <td width="10%">注数</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <script>document.write(Show.LotCode('$buy.Buy_code'))</script>
+                        </tbody>
+                    </table>
+                #end
             </div>
-	</div>
-	<div class="number_user_wrap">
-		<ul class="number_user_tab clearfix" id="numberUserTab">
-			<li class="active"><a href="javascript:void(0);">期号详情</a></li>
-			<li><a href="javascript:void(0);">参与用户</a></li>
-		</ul>
-		<!--选号详情 start -->
-		<div id="numberDetail">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="user_table" id="gaopinNumberTable">
-				<thead>
-					<tr><td width="10%">期号</td><td width="10%">金额</td><td width="10%">倍数</td><td width="10%">开奖号码</td><td width="15%">开奖时间</td><td width="10%">奖金</td><td width="10%">状态</td><td width="10%">操作</td></tr>
-				</thead>
-				<tbody>
-				#if($lot)
-					#foreach($l in $lot)
-                    <tr><td>$l.Buylot_qihao</td><td>￥$l.Buylot_money</td><td>$l.Buylot_multiple倍</td><td>#if($l.Buylot_haoma)$l.Buylot_haoma#else--#end</td><td>#if($l.Buylot_opentime)$l.Buylot_opentime#else--#end</td><td>￥#if($l.Buylot_winmon>0)<font class="c_ba2636">$l.Buylot_winmon</font>#else$l.Buylot_winmon#end</td><td><script>document.write(Show.LotStatus('$l.Buylot_status'))</script></td><td>--</td></tr>
-					#end
-				#end
-				</tbody>
-			</table>
-		</div>
-		<!--选号详情 start -->
-		<!--合买参与用户 start -->
-		<div class="hide" id="userBox">
-			<p></p>
-			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="user_table" id="userTable">
-				<thead>
-					<tr>
-						<th width="15%">序号</th>
-						<th width="20%">用户名</th>
-						<th width="20%" class="align_right">认购金额（元）</th>
-						<th width="20%" class="align_right">中奖金额（元）</th>
-						<th width="25%">参与时间</th>
-					</tr>
-				</thead>
-				<tbody>
-				#if($buyuser)
-					#set($num=1)
-					#foreach($u in $buyuser)
-					<tr><td>$num</td><td>$u.User_nameDis</td><td>￥$u.Buyuser_money</td><td>￥#if($u.Buyuser_win>0)<font class="c_ba2636">$u.Buyuser_win</font>#else$u.Buyuser_win#end</td><td>$u.Buyuser_time</td></tr>
-					#set($num=$num+1)
-					#end
-				#end
-				</tbody>
-			</table>
-		</div>
-		<!--合买参与用户 end -->
-	</div>
-</section>
+            <div id="paybox" class="paybox">
+                #if($buy.Buy_status==-1)
+                    <p>剩余 <strong class="c_ba2636">$buy.Buy_have</strong> 元
+                        我要买 <input style="ime-mode: disabled;" size="5" id="rgInput" name="participantBuyPieces"
+                                   max="$buy.Buy_have" placeholder="剩余$buy.Buy_have元" class="input"
+                                   onpaste="return false" autocomplete="off"> 元。</p>
+                    <a id="tzBtn" herf="javascript:;" rel="nofollow" class="betting_Btn" title="立即投注"></a>
+                    <p class="treaty">
+                        <input type="checkbox" name="checkbox" id="agreeRule" checked="checked">
+                        <label for="agreeRule">我已经阅读并同意<a target="_blank"
+                                                          href="/cphelp/order_rule.jsp">《委托投注规则》</a></label>
+                    </p>
+                    <input type="hidden" id="fqh" value="$buy.Buy_fqihao"/>
+                    <input type="hidden" id="lot" value="$buy.Buy_lot"/>
+                    <input type="hidden" id="item" value="$buy.Buy_item"/>
+                #elseif($buy.Buy_status==0)
+                    <a class="full_Btn" href="javascript:;" rel="nofollow" title="方案已满员"></a>
+                    <a target="_blank" href="/Groupbuy.jzh">您可以选择参加其他合买>></a>
+                #else
+                    <a class="end_Btn" href="javascript:;" rel="nofollow" title="方案已截止"></a>
+                    <a target="_blank" href="/Groupbuy.jzh">您可以选择参加其他合买>></a>
+                #end
+            </div>
+        </div>
+        <div class="number_user_wrap">
+            <ul class="number_user_tab clearfix" id="numberUserTab">
+                <li class="active"><a href="javascript:void(0);">期号详情</a></li>
+                <li><a href="javascript:void(0);">参与用户</a></li>
+            </ul>
+            <!--选号详情 start -->
+            <div id="numberDetail">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="user_table"
+                       id="gaopinNumberTable">
+                    <thead>
+                    <tr>
+                        <td width="10%">期号</td>
+                        <td width="10%">金额</td>
+                        <td width="10%">倍数</td>
+                        <td width="10%">开奖号码</td>
+                        <td width="15%">开奖时间</td>
+                        <td width="10%">奖金</td>
+                        <td width="10%">状态</td>
+                        <td width="10%">操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        #if($lot)
+                            #foreach($l in $lot)
+                            <tr>
+                                <td>$l.Buylot_qihao</td>
+                                <td>￥$l.Buylot_money</td>
+                                <td>$l.Buylot_multiple倍</td>
+                                <td>#if($l.Buylot_haoma)$l.Buylot_haoma#else--#end</td>
+                                <td>#if($l.Buylot_opentime)$l.Buylot_opentime#else--#end</td>
+                                <td>￥#if($l.Buylot_winmon>0)<font
+                                        class="c_ba2636">$l.Buylot_winmon</font>#else$l.Buylot_winmon#end</td>
+                                <td>
+                                    <script>document.write(Show.LotStatus('$l.Buylot_status'))</script>
+                                </td>
+                                <td>--</td>
+                            </tr>
+                            #end
+                        #end
+                    </tbody>
+                </table>
+            </div>
+            <!--选号详情 start -->
+            <!--合买参与用户 start -->
+            <div class="hide" id="userBox">
+                <p></p>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="user_table" id="userTable">
+                    <thead>
+                    <tr>
+                        <th width="15%">序号</th>
+                        <th width="20%">用户名</th>
+                        <th width="20%" class="align_right">认购金额（元）</th>
+                        <th width="20%" class="align_right">中奖金额（元）</th>
+                        <th width="25%">参与时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        #if($buyuser)
+                            #set($num=1)
+                            #foreach($u in $buyuser)
+                            <tr>
+                                <td>$num</td>
+                                <td>$u.User_nameDis</td>
+                                <td>￥$u.Buyuser_money</td>
+                                <td>￥#if($u.Buyuser_win>0)<font
+                                        class="c_ba2636">$u.Buyuser_win</font>#else$u.Buyuser_win#end</td>
+                                <td>$u.Buyuser_time</td>
+                            </tr>
+                                #set($num=$num+1)
+                            #end
+                        #end
+                    </tbody>
+                </table>
+            </div>
+            <!--合买参与用户 end -->
+        </div>
+    </section>
 </div>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

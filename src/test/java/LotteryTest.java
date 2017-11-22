@@ -1,7 +1,6 @@
 import com.caipiao.data.service.CountMoney;
 import com.caipiao.utils.PlayType;
 import com.caipiao.utils.TryStatic;
-import com.sysbcjzh.utils.CheckUtil;
 import org.apache.commons.lang.ArrayUtils;
 
 import java.text.SimpleDateFormat;
@@ -21,7 +20,7 @@ public class LotteryTest {
         String baos = "100";
         Double bao = Double.valueOf(TryStatic.StrToDouble(baos, 0.0D));
 
-        if(money.doubleValue() < 0 || buymon.doubleValue() < 0 || bao.doubleValue() < 0){
+        if (money.doubleValue() < 0 || buymon.doubleValue() < 0 || bao.doubleValue() < 0) {
             System.out.println("数据不能小于负数");
 
         }
@@ -38,30 +37,28 @@ public class LotteryTest {
         System.out.println("结果：" + gd11x5);
 
 
+        String[] split = num.split("#");
+        for (String str : split) {
+            String type = str.split(":")[0];
+            if (ArrayUtils.contains(PlayType._11x5_DanTuo, type) ||
+                    ArrayUtils.contains(PlayType._Def_DanTuo, type) ||
+                    ArrayUtils.contains(PlayType._Ssc_DanTuo, type)
+                    ) {
 
-            String[] split = num.split("#");
-            for (String str : split) {
-                String type = str.split(":")[0];
-                if(ArrayUtils.contains(PlayType._11x5_DanTuo, type) ||
-                        ArrayUtils.contains(PlayType._Def_DanTuo, type) ||
-                        ArrayUtils.contains(PlayType._Ssc_DanTuo, type)
-                    ){
-
-                    String[] $s = str.split("\\$");
+                String[] $s = str.split("\\$");
 
 
-                    String[] split1 = $s[0].split(":");
-                    String[] split2 = $s[1].split(":");
+                String[] split1 = $s[0].split(":");
+                String[] split2 = $s[1].split(":");
 
-                    String dan = split1[1];
-                    String tuo = split2[0];
-                    if(tuo.contains(dan)){
-                        System.out.println("数据有误");
-                    }
+                String dan = split1[1];
+                String tuo = split2[0];
+                if (tuo.contains(dan)) {
+                    System.out.println("数据有误");
                 }
-
             }
 
+        }
 
 
     }

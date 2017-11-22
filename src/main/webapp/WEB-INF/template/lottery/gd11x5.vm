@@ -1,649 +1,784 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="广东11选5开奖信息,广东11选5开奖结果,广东11选5" /> 
-<meta name="description" content="提供广东11选5开奖信息、广东11选5开奖结果、广东11选5开奖时间、在线机选、投注技巧等购买服务。乐欣17年品牌保证，值得信赖。" />
-<title>【广东11选5】_广东11选5开奖结果_广东11选5开奖信息-乐欣彩票网</title>
-<link rel="stylesheet" href="/css/lotteryBet/moreOperate.css"/>
-<link rel="stylesheet" href="/css/base2.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/lottery_new.css"/>
-<script>
-var Mon=[];
-Mon[350]=18;//前一
-Mon[351]=185;//前二
-Mon[352]=80;//前二组选
-Mon[353]=1700;//前三
-Mon[354]=280;//前三组选
-Mon[355]=9;//任选二
-Mon[356]=28;//任选三
-Mon[357]=108;//任选四
-Mon[358]=790;//任选五
-Mon[359]=125;//任选六
-Mon[360]=36;//任选七
-Mon[361]=13;//任选八
-</script>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/bcbox/jquery.bcbox.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/lottery.js"></script>
-<script src="/js/lotsystem.js"></script>
-<script src="/js/lotterymode.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="广东11选5开奖信息,广东11选5开奖结果,广东11选5"/>
+    <meta name="description" content="提供广东11选5开奖信息、广东11选5开奖结果、广东11选5开奖时间、在线机选、投注技巧等购买服务。乐欣17年品牌保证，值得信赖。"/>
+    <title>【广东11选5】_广东11选5开奖结果_广东11选5开奖信息-乐欣彩票网</title>
+    <link rel="stylesheet" href="/css/lotteryBet/moreOperate.css"/>
+    <link rel="stylesheet" href="/css/base2.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/lottery_new.css"/>
+    <script>
+        var Mon = [];
+        Mon[350] = 18;//前一
+        Mon[351] = 185;//前二
+        Mon[352] = 80;//前二组选
+        Mon[353] = 1700;//前三
+        Mon[354] = 280;//前三组选
+        Mon[355] = 9;//任选二
+        Mon[356] = 28;//任选三
+        Mon[357] = 108;//任选四
+        Mon[358] = 790;//任选五
+        Mon[359] = 125;//任选六
+        Mon[360] = 36;//任选七
+        Mon[361] = 13;//任选八
+    </script>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/bcbox/jquery.bcbox.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/lottery.js"></script>
+    <script src="/js/lotsystem.js"></script>
+    <script src="/js/lotterymode.js"></script>
 </head>
 <body>
-#parse("/head.vm")
+    #parse("/head.vm")
 <!--主体 开始 -->
 <div class="main ssc clearfix">
-	<!--左侧 开始-->
-	<div class="ball_left">
-		<!--彩种头部 开始-->
-		<div class="cz_title"><div class="cz_t_imgs gdd11"></div>
-			<div class="f_left" style="margin-right:-20px">
-				<div class="cz_intro">
-					<h1><a href="/lottery/Buy!Gd11x5.jzh">广东11选5</a></h1>&nbsp;&nbsp;
-					<div class="tgTextWrap clearfix"><ul><li class="tgCss3"> 每天08:55-23:00销售</li></ul></div>
-				</div>
-				<p class="timetips">10分钟一期，返奖率59%<br/></p>
-			</div>
-			<div class="f_right">
-				<b style="font-size:20px;">第&nbsp;<span class="c_ba2636" id="bet_period">加载中</span>&nbsp;期</b><br/>
-		        <span style="margin-top:25px;display:inline-table;">离截至时间还有：<span id="end_time"><em>0</em> 分 <em>0</em> 秒</span></span>
-	   		</div>
-		</div><!--彩种头部 结束-->
-		<!--彩种meun 开始-->
-	    <ul class="all_tabs org_tabs">
-			<li class="active" id="bet_tag"><a href="javascript:void(0)">选号投注</a></li>
-	      	<li><a target="_blank" href="/Groupbuy.jzh?lot=Gd11x5">参与合买</a></li>
-	      	<li><a href="javascript:void(0)">定制跟单</a></li>
-	      	<li><a href="javascript:void(0)">专家计划</a></li>
-	      	<li><a href="javascript:void(0)">杀号定胆</a></li>
-			<li class="trend_link" >
-				<a href="/Trend.jzh" target="_blank"><span class="trend_img"></span>走势图表</a>&nbsp;&nbsp;
-		        <a href="/help/play/play_gd11x5.jsp" target="_blank"><em class="help_tip"></em>玩法说明</a>
-			</li>    
-	    </ul><!--彩种meun 结束-->
-		<div id="buy_con">
-	  		<ul class="betway_tabs clearfix">
-		    	<li>前一<i></i></li><li>前二<i></i></li><li>前三<i></i></li><li>任选二<i></i></li><li>任选三<i></i></li><li>任选四<i></i></li><li>任选五<i></i></li><li>任选六<i></i></li><li>任选七<i></i></li><li>任选八<i></i></li><li>单式上传<i></i></li>
-	  		</ul>
-			<div class="betting_box">
-				<!--各种玩法加载容器 开始-->
-				<div id="palyer_con">
-    				<div class="select_num">
-	  					<!--玩法 开始-->
-	  					<div class="way_tags clearfix">
-						    <div style="display:none" class="f_left">
-						      	<input type="radio" name="star_radio" value="350" id="p_qy"><label for="p_qy">普通</label>&nbsp;
-						    </div>
-						    <div style="display:none" class="f_left">
-						    	<input type="radio" name="star_radio" value="351" id="p_qe"><label for="p_qe">直选</label>&nbsp;
-						    	<input type="radio" name="star_radio" value="352" id="p_qez"><label for="p_qez">组选</label>&nbsp;
-						    	<input type="radio" name="star_radio" value="362" id="p_qezd"><label for="p_qezd">组选胆拖</label>&nbsp;
-						    </div>
-						    <div style="display:none" class="f_left">
-						      	<input type="radio" name="star_radio" value="353" id="p_qs"><label for="p_qs">直选</label>&nbsp;
-						      	<input type="radio" name="star_radio" value="354" id="p_qsz"><label for="p_qsz">组选</label>&nbsp;
-						      	<input type="radio" name="star_radio" value="363" id="p_qszd"><label for="p_qszd">组选胆拖</label>&nbsp;
-						    </div>
-						    <div style="display:none" class="f_left">
-						      	<input type="radio" name="star_radio" value="355" id="p_rx2"><label for="p_rx2">普通</label>&nbsp;
-						      	<input type="radio" name="star_radio" value="364" id="p_rx2d"><label for="p_rx2d">胆拖</label>&nbsp;
-						    </div>
-						    <div style="display:none" class="f_left">
-						      	<input type="radio" name="star_radio" value="356" id="p_rx3"><label for="p_rx3">普通</label>&nbsp;
-						      	<input type="radio" name="star_radio" value="365" id="p_rx3d"><label for="p_rx3d">胆拖</label>&nbsp;
-						    </div>
-						    <div style="display:none" class="f_left">
-						      	<input type="radio" name="star_radio" value="357" id="p_rx4"><label for="p_rx4">普通</label>&nbsp;
-						      	<input type="radio" name="star_radio" value="366" id="p_rx4d"><label for="p_rx4d">胆拖</label>&nbsp;
-						    </div>
-							<div style="display:none" class="f_left">
-						      	<input type="radio" name="star_radio" value="358" id="p_rx5"><label for="p_rx5">普通</label>&nbsp;
-						      	<input type="radio" name="star_radio" value="367" id="p_rx5d"><label for="p_rx5d">胆拖</label>&nbsp;
-						    </div>
-							<div style="display:none" class="f_left">
-						      	<input type="radio" name="star_radio" value="359" id="p_rx6"><label for="p_rx6">普通</label>&nbsp;
-						      	<input type="radio" name="star_radio" value="368" id="p_rx6d"><label for="p_rx6d">胆拖</label>&nbsp;
-						    </div>
-							<div style="display:none" class="f_left">
-						      	<input type="radio" name="star_radio" value="360" id="p_rx7"><label for="p_rx7">普通</label>&nbsp;
-						      	<input type="radio" name="star_radio" value="369" id="p_rx7d"><label for="p_rx7d">胆拖</label>&nbsp;
-						    </div>
-							<div style="display:none" class="f_left">
-						      	<input type="radio" name="star_radio" value="361" id="p_rx8"><label for="p_rx8">普通</label>&nbsp;
-						      	<input type="radio" name="star_radio" value="370" id="p_rx8d"><label for="p_rx8d">胆拖</label>&nbsp;
-						    </div>
-							<div style="display:none" class="f_left">
-								<input type="radio" name="star_radio" class="ds" value="351" id="ds_qe" ms="01,02或01 02"><label for="ds_qe">前二直选</label>&nbsp;
-						      	<input type="radio" name="star_radio" class="ds" value="352" id="ds_qez" ms="01,02或01 02"><label for="ds_qez">前二组选</label>&nbsp;
-						      	<input type="radio" name="star_radio" class="ds" value="353" id="ds_qs" ms="01,02,03或01 02 03"><label for="ds_qs">前三直选</label>&nbsp;
-						      	<input type="radio" name="star_radio" class="ds" value="354" id="ds_qsz" ms="01,02,03或01 02 03"><label for="ds_qsz">前三组选</label>&nbsp;
-						      	<input type="radio" name="star_radio" class="ds" value="355" id="ds_r2" ms="01,02或01 02"><label for="ds_r2">任二</label>&nbsp;
-						      	<input type="radio" name="star_radio" class="ds" value="356" id="ds_r3" ms="01,02...或01 02..."><label for="ds_r3">任三</label>&nbsp;
-						      	<input type="radio" name="star_radio" class="ds" value="357" id="ds_r4" ms="01,02...或01 02..."><label for="ds_r4">任四</label>&nbsp;
-						      	<input type="radio" name="star_radio" class="ds" value="358" id="ds_r5" ms="01,02...或01 02..."><label for="ds_r5">任五</label>&nbsp;
-						      	<input type="radio" name="star_radio" class="ds" value="359" id="ds_r6" ms="01,02...或01 02..."><label for="ds_r6">任六</label>&nbsp;
-						      	<input type="radio" name="star_radio" class="ds" value="360" id="ds_r7" ms="01,02...或01 02..."><label for="ds_r7">任七</label>&nbsp;
-						      	<input type="radio" name="star_radio" class="ds" value="361" id="ds_r8" ms="01,02...或01 02..."><label for="ds_r8">任八</label>&nbsp;
-						    </div>
-	  					</div><!--投注方式 结束-->
-  						<div id="star3_fs_con">
-  							<p class="gameIntro"><strong>玩法提示：</strong><span>从百、十、个位各选1个或多个号码，所选号码与开奖号码后三位一 一对应，即中奖<font class="c_ba2636">1000</font>元。</span></p>
-  						</div>
-						<div class="content digit_box">
-							<div id="pay_box" style="width:100%;" class="f_left">
-								<div style="display:none" id="box_wan" class="clearfix">
-									<div class="select_left_text" style="width:63px">
-										<b>万位</b>：
-										<span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300" class="jtip J_ti1">当前遗漏</span></span>
-									</div>
-									<ul class="fs_red_area bcballbox" style="width:375px">
-										<li><span>01</span><i class="yl">--</i></li>
-										<li><span>02</span><i class="yl">--</i></li>
-										<li><span>03</span><i class="yl">--</i></li>
-										<li><span>04</span><i class="yl">--</i></li>
-										<li><span>05</span><i class="yl">--</i></li>
-										<li><span>06</span><i class="yl">--</i></li>
-										<li><span>07</span><i class="yl">--</i></li>
-										<li><span>08</span><i class="yl">--</i></li>
-										<li><span>09</span><i class="yl">--</i></li>
-										<li><span>10</span><i class="yl">--</i></li>
-										<li><span>11</span><i class="yl">--</i></li>
-									</ul>
-									<ul class="fs_zx_btns J_mutBtn" val="1">
-										<li>全</li><li>大</li><li>小</li><li>奇</li><li>偶</li>
-										<li class="clear_btn">清除</li>
-									</ul>
-								</div>
-								<div style="display:none;" id="box_qian" class="clearfix">
-									<div class="select_left_text" style="width:63px">
-										<b>千位</b>：
-										<span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300" class="jtip J_ti1">当前遗漏</span></span>
-									</div>
-									<ul class="fs_red_area bcballbox" style="width:375px">
-										<li><span>01</span><i class="yl">--</i></li>
-										<li><span>02</span><i class="yl">--</i></li>
-										<li><span>03</span><i class="yl">--</i></li>
-										<li><span>04</span><i class="yl">--</i></li>
-										<li><span>05</span><i class="yl">--</i></li>
-										<li><span>06</span><i class="yl">--</i></li>
-										<li><span>07</span><i class="yl">--</i></li>
-										<li><span>08</span><i class="yl">--</i></li>
-										<li><span>09</span><i class="yl">--</i></li>
-										<li><span>10</span><i class="yl">--</i></li>
-										<li><span>11</span><i class="yl">--</i></li>
-									</ul>
-									<ul class="fs_zx_btns J_mutBtn" val="1">
-										<li>全</li><li>大</li><li>小</li><li>奇</li><li>偶</li>
-										<li class="clear_btn">清除</li>
-									</ul>
-								</div>
-								<div style="display:none;" id="box_bai" class="clearfix">
-									<div class="select_left_text" style="width:63px">
-										<b>百位</b>：
-										<span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300" class="jtip J_ti1">当前遗漏</span></span>
-									</div>
-									<ul class="fs_red_area bcballbox" style="width:375px">
-										<li><span>01</span><i class="yl">--</i></li>
-										<li><span>02</span><i class="yl">--</i></li>
-										<li><span>03</span><i class="yl">--</i></li>
-										<li><span>04</span><i class="yl">--</i></li>
-										<li><span>05</span><i class="yl">--</i></li>
-										<li><span>06</span><i class="yl">--</i></li>
-										<li><span>07</span><i class="yl">--</i></li>
-										<li><span>08</span><i class="yl">--</i></li>
-										<li><span>09</span><i class="yl">--</i></li>
-										<li><span>10</span><i class="yl">--</i></li>
-										<li><span>11</span><i class="yl">--</i></li>
-									</ul>
-									<ul class="fs_zx_btns J_mutBtn" val="1">
-										<li>全</li><li>大</li><li>小</li><li>奇</li><li>偶</li>
-										<li class="clear_btn">清除</li>
-									</ul>
-								</div>
-								<div style="display:none;" id="box_zuxuan" class="clearfix">
-									<div class="select_left_text" style="width:63px">
-										<b>选&nbsp;&nbsp;号</b>：
-										<span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300" class="jtip J_ti1">当前遗漏</span></span>
-									</div>
-									<ul class="fs_red_area bcballbox" style="width:375px">
-										<li><span>01</span><i class="yl">--</i></li>
-										<li><span>02</span><i class="yl">--</i></li>
-										<li><span>03</span><i class="yl">--</i></li>
-										<li><span>04</span><i class="yl">--</i></li>
-										<li><span>05</span><i class="yl">--</i></li>
-										<li><span>06</span><i class="yl">--</i></li>
-										<li><span>07</span><i class="yl">--</i></li>
-										<li><span>08</span><i class="yl">--</i></li>
-										<li><span>09</span><i class="yl">--</i></li>
-										<li><span>10</span><i class="yl">--</i></li>
-										<li><span>11</span><i class="yl">--</i></li>
-									</ul>
-									<ul class="fs_zx_btns J_mutBtn" val="1">
-										<li>全</li><li>大</li><li>小</li><li>奇</li><li>偶</li>
-										<li class="clear_btn">清除</li>
-									</ul>
-								</div>
-								<div style="display:none;" id="box_dt" class="clearfix dantuo">
-									<div class="dt_title"><h2><strong>胆码区</strong>你认为<em class="fwb">必出</em>的号码</h2></div>
-									<div class="select_left_text" style="width:63px">
-										<b>胆	码</b>：
-										<span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300" class="jtip J_ti1">当前遗漏</span></span>
-									</div>
-									<ul class="fs_red_area bcballboxs" val="0" style="width:375px">
-										<li><span>01</span><i class="yl">--</i></li>
-										<li><span>02</span><i class="yl">--</i></li>
-										<li><span>03</span><i class="yl">--</i></li>
-										<li><span>04</span><i class="yl">--</i></li>
-										<li><span>05</span><i class="yl">--</i></li>
-										<li><span>06</span><i class="yl">--</i></li>
-										<li><span>07</span><i class="yl">--</i></li>
-										<li><span>08</span><i class="yl">--</i></li>
-										<li><span>09</span><i class="yl">--</i></li>
-										<li><span>10</span><i class="yl">--</i></li>
-										<li><span>11</span><i class="yl">--</i></li>
-									</ul>
-									<div class="dt_title"><h2><strong>拖码区</strong>你认为<em class="fwb">可能出</em>的号码</h2></div>
-									<div class="select_left_text" style="width:63px">
-										<b>拖	码</b>：
-										<span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300" class="jtip J_ti1">当前遗漏</span></span>
-									</div>
-									<ul class="fs_red_area bcballboxs" style="width:375px">
-										<li><span>01</span><i class="yl">--</i></li>
-										<li><span>02</span><i class="yl">--</i></li>
-										<li><span>03</span><i class="yl">--</i></li>
-										<li><span>04</span><i class="yl">--</i></li>
-										<li><span>05</span><i class="yl">--</i></li>
-										<li><span>06</span><i class="yl">--</i></li>
-										<li><span>07</span><i class="yl">--</i></li>
-										<li><span>08</span><i class="yl">--</i></li>
-										<li><span>09</span><i class="yl">--</i></li>
-										<li><span>10</span><i class="yl">--</i></li>
-										<li><span>11</span><i class="yl">--</i></li>
-									</ul>
-									<ul class="fs_zx_btns must" val="1">
-										<li>全</li><li>大</li><li>小</li><li>奇</li><li>偶</li>
-										<li class="clear_btn">清除</li>
-									</ul>
-								</div>
-								<div style="display:none;" id="box_ds" class="content dxds">
-									<div class="copydiv"> 
-										<div class="pasterIntro clearfix">
-											<strong>格式说明：</strong>
-											<p>1、直接在下面框中输入或粘贴投注内容，最多输入10000注。<br>2、输入框内每行仅限1注（单式）号码，号码格式示例：<font id="dsmsg" color="red">--</font>。</p>
-										</div>
-										<textarea class="zhantie_textarea" cols="92" rows="8"></textarea>
-										<div class="zhantie_err"></div>
-									</div>
-    							</div>
-							</div>
-						</div>
-					</div>
-    			</div><!--各种玩法加载容器 结束-->
-				<!--选好了按钮 开始-->
-	    		<div style="font-size:12px;" class="select_info_text">
-					<span id="select_info">您选了&nbsp;<strong class="c_ba2636">0</strong>&nbsp;注，共&nbsp;<b class="c_ba2636">0</b>&nbsp;元&nbsp;&nbsp;&nbsp;<!-- <em class="c_949494">若中奖，奖金：&nbsp;<strong class="c_ba2636">20</strong> 至 <strong class="c_ba2636">20440</strong>&nbsp;元，您将赢利&nbsp;<strong class="c_ba2636">18</strong> 至 <strong class="c_ba2636">20438</strong>&nbsp;元</em> --></span>
-				</div>
-	    		<div class="addbtn_box">
-	      			<input type="button" id="confirm_select" value="" class="btn addbtn_disabled">
-	      			<a style="font-size:12px;position:absolute;right:220px;top:3px;" href="javascript:void(0)" id="clearall">清空选号</a>
-	    		</div><!--选好了按钮 结束-->
-    			<div class="down_arrow"></div>
-				<!--投注列表 开始-->
-				<div class="selected_box clearfix">
-	      			<!--选号列表 开始-->
-	      			<div id="select_list_box" class="selected_list">
-	        			<dl id="select_list"></dl>
-	      			</div>
-	      			<!--收藏+清空 开始-->
-	      			<div class="selected_btnbox">
-	        			<button type="button" class="btn_gray" id="random1">机选1注</button>
-	        			<button type="button" class="btn_gray" id="random5">机选5注</button>  
-				        <div class="randomBtn">
-				        	<label>
-				            	<input type="text" id="randomNN" value="10" maxlength="2">
-				            </label>
-				            <button type="button" class="btn_gray" id="randomXX">机选</button>
-				        </div>     
-	      			</div><!--收藏+清空 结束-->
-	    		</div><!--投注列表 结束-->
-				<dl class="more_tool clearfix">
-					<dt>
-			          <span id="diyBox">倍数：<input type="text" class="input30" maxlength="3" value="1" id="beitou" name="betTimes"> 倍<em style="display:none" class="c_727171">(最多<span id="maxTimes">999</span>倍)</em></span>
-			        </dt>
-			        <dd>
-			          <a style="display:none;" id="importNoBtn" href="javascript:void(0)" class="derive_btn"><span class="collect_img"></span>从收藏导入</a>
-			          <a style="display:none;" id="collect_btn" href="javascript:void(0)" class="collect_btn"><span class="collect_img"></span>保存到收藏</a>
-			          <a id="del_ball_all" class="del_btn" href="javascript:void(0)"><em class="del_img"></em>清空列表</a>
-			        </dd>
-				</dl>
-				<div class="next_con clearfix">
-			      	<ul id="touzhutype" class="more_select clearfix">
-			        	<li><strong>投注方式</strong></li>
-				        <li id="nowqi_box">
-				          	<label for="nowqi"><input type="radio" name="operate" id="nowqi" checked="checked">&nbsp;认购本期</label>
-						</li>
-				        <li id="mcut_box">
-				          <label for="mcut"><input type="radio" name="operate" id="mcut">&nbsp;常规追号</label>
-						</li>
-						<li id="hcut_box">
-				          <label for="hcut"><input type="radio" name="operate" id="hcut">&nbsp;计划倍投</label>
-						</li>
-			      	</ul>
-				    <!--投注方式容器 开始-->
-				    <div id="touzhu_con">
-						<div style="display:none;" class="zhuihaoBox gpZhBox" id="additional_con">
-							<div class="gpzhBox_beitou">
-								<p class="setRule">
-									<strong>设置条件：</strong>从
-									<select name="startPeriod"></select> 开始，连续追<input type="text" style="ime-mode:disabled;" value="10" class="zhuihaoInput" name="zhPeriods">期，起始<input type="text" style="ime-mode: disabled;" value="1" class="zhuihaoInput" name="startBeiNum" maxlength="3">倍。单倍奖金 <input class="zhuihaoInput" type="text" id="dbjj" value="0" autocomplete="off" style="ime-mode:disabled;"> 元。
-								</p>
-								<p class="setProfit clearfix">
-									<strong class="setProfit_tit">预期盈利：</strong>
-									<span class="setProfit_com">
-										<span class=""><input type="radio" name="profitMode" value="1" checked="">全程最低盈利率<input type="text" style="ime-mode: disabled;" maxlength="6" class="zhuihaoInput" autocomplete="off" value="30" name="profitPercent">% </span><br>
-										<span class="grayRow"><input type="radio" name="profitMode" value="2">前<input type="text" disabled="" style="ime-mode: disabled;" maxlength="6" class="zhuihaoInput disabled" value="5" name="threshold" autocomplete="off">期盈利率<input type="text" disabled="" style="ime-mode:disabled;" maxlength="6" class="zhuihaoInput disabled" value="50" name="profitPercent1" autocomplete="off">% ，之后盈利率<input type="text" disabled="" style="ime-mode: disabled;" maxlength="6" class="zhuihaoInput disabled" value="20" name="profitPercent2" autocomplete="off">%</span><br>
-										<span class="grayRow"><input type="radio" name="profitMode" value="3">全程最低盈利<input type="text" disabled="" style="ime-mode: disabled;" maxlength="6" class="zhuihaoInput disabled" value="30" name="profitMoney" autocomplete="off">元</span>
-									</span> 
-								</p>
-								<p class="beitou_btnBox"><span class="btn org_btn3"><input type="button" id="creatBtjhBtn" hidefocus="true" value="生成追号方案"></span></p>
-							</div>
-							<dl class="zhuihaoBox_title clearfix">
-								<dt class="serialNum"> 序号</dt>
-								<dt class="period_cg"><input type="checkbox" checked="checked" name="periodLeader"> 追<span class="mcSelectBox"><input style="ime-mode: disabled;" class="imitateSelect" value="10" autocomplete="off" name="periodNumLeader"><i></i></span>期</dt>
-								<dt class="multiple_cg"><input type="text" style="ime-mode: disabled;" class="zhuihaoInput" value="1" name="zhuihaoNumLeader" autocomplete="off"> 倍</dt>
-								<dt class="period_gj">期次</dt>
-								<dt class="multiple_gj">倍数</dt>
-								<dt class="amount">当前投入</dt>
-								<dt class="sumAmount">累计投入</dt>
-								<dt class="profit">盈利(元)</dt>
-								<dt class="profitability">盈利率</dt>
-							</dl>
-							<div style="padding:30px;text-align:center;font-size:12px;line-height:24px;background:none repeat scroll 0% 0% rgb(255, 255, 255);" id="chckHolder">Loading...</div>
-							<div class="gpZhBox_com gpZhBox_max1"></div>
-							<p class="bottomTip clearfix"><span class="collectLink">总期数：<strong class="c_ba2636" id="aqi">0</strong> 期，总金额：<strong class="c_ba2636" id="amon">0</strong> 元</span><span><input type="checkbox" checked="checked" name="stopWhenFeed"> 中奖后停止追号</span></p>
-						</div>
-				    </div><!--投注方式容器 结束-->
-				</div>
-				<div class="next_con clearfix">
-			      	<ul id="daigoutype" class="more_select clearfix">
-			        	<li><strong>代购方式</strong></li>
-				        <li id="onebuy_box"><label for="onebuy"><input type="radio" name="operate2" id="onebuy" checked="checked">&nbsp;个人代购</label></li>
-				        <li id="hemai_box"><label for="hemai"><input type="radio" name="operate2" id="hemai">&nbsp;多人合买</label></li>
-						<li id="song_box"><label for="song"><input type="radio" disabled="disabled" name="operate2" id="song">&nbsp;赠送他人</label></li>
-			      	</ul>
-				    <!--投注方式容器 开始-->
-				    <div id="other_con">
-						<div id="group_con" class="more_operate" style="display:none;">
-							<div class="fqhm_box">
-								<table class="table_noborder ">
-									<tbody>
-										<tr>
-											<th width="25%">投注总额：</th><td width="75%"><strong class="c_ba2534" id="tzallmon">0</strong>元</td>
-										</tr>
-										<tr>
-											<th valign="top">我要认购：</th>
-											<td>
-												<input name="createrBuyPieces" onpaste="return false" autocomplete="off" id="share_cnt" class="input w70">&nbsp;元&nbsp;&nbsp;
-												<span class="c_727171">最少购买<span>5</span>%，即<em id="total_fen">1</em>元</span>
-                 							</td>
-               							</tr>
-										<tr>
-											<th valign="top">保密设置：</th>
-											<td id="secretBtnBox" class="baomi_box">
-												<button v="0" class="btn_org" type="button">公开</button>
-												<button v="1" class="btn_gray" type="button">参与可见</button>
-												<button v="2" class="btn_gray" type="button">截止可见</button>
-												<button v="3" class="btn_gray" type="button">完全保密</button>
-											</td>
-										</tr>
-										<tr>
-											<th valign="top">盈利佣金：</th>
-											<td class="yongjin_box">
-												<ul id="commissionBtnBox" class="yongjin_list">
-													<li v="0" class="active">无</li>
-													<li v="1">1%</li>
-													<li v="2">2%</li>
-													<li v="3">3%</li>
-													<li v="4">4%</li>
-													<li v="5">5%</li>
-													<li v="6">6%</li>
-													<li v="7">7%</li>
-													<li v="8">8%</li>
-													<li v="9">9%</li>
-													<li style="margin-right:0" v="10">10%</li>
-												</ul>
-												<p class="group_yjtips">【盈利佣金 =（税后奖金 - 方案金额）× 佣金比例】</p>
-											</td>
-										</tr>
-										<tr>
-											<th valign="top">保底：</th>
-											<td>
-												<input name="guarantee" onpaste="return false" autocomplete="off" id="reserve_share" value="0" class="input w70">&nbsp;元&nbsp;
-												<input type="checkbox" name="qbao" id="qbao"/>&nbsp;全额保底&nbsp;&nbsp;
-												<span class="c_727171">不能大于总数， 默认0元</span>
-                 							</td>
-               							</tr>
-										<tr><td colspan="2" style="padding:0"><p class="t_c c_727171">注：方案进度+保底&gt;=100%，即可出票</p></td></tr>
-             						</tbody>
-           						</table>
-     						</div>
-    					</div>
-					</div><!--投注方式容器 结束-->
-				</div>
-				<div class="down_arrow"></div>
-    		</div>
-  		</div>
-		<div class="paybox">  
-			<div id="touzhuInfo" class="result">您选择了0注×1倍=<span class="c_ba2534">0</span>元</div>
-			<!--投注按钮 开始-->
-			<div class="pb_25">
-				<div class="btnbox">
-					<input type="submit" id="get_data" value="" class="btn submit_btn">
-					<span id="buy_btn_info"> <span class="deta_notice">请同意委托投注规则</span></span> 
-					<p class="treaty">
-						<input type="checkbox" checked="checked" id="agree_rule" name="checkbox"> 我已经阅读并同意<a href="/help/rule/buyrule.html" target="_blank">《委托投注规则》 </a><br>
-        			</p>
-      			</div>
-    		</div><!--投注按钮 结束-->
-		</div>
-		<div id="awardDetail" class="all_title buff_title">
-			<div class="title_l"></div>
-			<div style="width:690px" class="title_m">今日开奖号码</div>
-			<div class="title_r"></div>
-			<div class="tips_close" id="kjhmBtn">收起<em></em></div>
-		</div>
-		<table style="" class="table_grayborder" id="kjhmDiv">
-			<thead>
-				<tr>
-					<th><span class="period">期号</span><span class="awardNum">开奖号</span></th>
-			 	    <th><span class="period">期号</span><span class="awardNum">开奖号</span></th>
-			        <th><span class="period">期号</span><span class="awardNum">开奖号</span></th>
-			        <th><span class="period">期号</span><span class="awardNum">开奖号</span></th>
-				</tr>
-			</thead>
-			<tbody></tbody>
-		</table>
-		<div class="all_title buff_title">
-			<div class="title_l"></div>
-			<div class="title_m" style="width:690px">福利彩票发行中心温馨提示</div>
-			<div class="title_r"></div>   
-			<div id="wxtsBtn" class="tips_open">展开<em></em></div>
-		</div>
-		<div id="wxtsDiv" style="display: none;" class="syy_ts">
-					<p>1、"11选5"每天9点05分第一期开奖，全天共78期。</p>
-					<p>2、体育彩票管理中心对"11选5"每期全部投注号码的可投注数量实行动态控制，您所选择的某些投注单（包括追号）可能因限号无法投注，未成功投注单将作为失败订单处理。</p>
-					<p>3、因网络中断、系统故障、彩票机故障等不可抗力因素引起的投注下单失败，视为委托服务未成立，体育彩票管理中心将对下单失败的订单做返款处理，并在当期期次开奖前退还用户已支付的费用。除此之外，不再承担任何责任。 </p>
-					<p>4、为了保证您能投注成功，请您尽早下单。 </p>
-					<p>5、感谢您支持社会公益事业，彩市有风险，投注需谨慎。未满18岁不得购买彩票。</p>
-		</div>
-		<div class="all_title buff_title">
+    <!--左侧 开始-->
+    <div class="ball_left">
+        <!--彩种头部 开始-->
+        <div class="cz_title">
+            <div class="cz_t_imgs gdd11"></div>
+            <div class="f_left" style="margin-right:-20px">
+                <div class="cz_intro">
+                    <h1><a href="/lottery/Buy!Gd11x5.jzh">广东11选5</a></h1>&nbsp;&nbsp;
+                    <div class="tgTextWrap clearfix">
+                        <ul>
+                            <li class="tgCss3"> 每天08:55-23:00销售</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="timetips">10分钟一期，返奖率59%<br/></p>
+            </div>
+            <div class="f_right">
+                <b style="font-size:20px;">第&nbsp;<span class="c_ba2636" id="bet_period">加载中</span>&nbsp;期</b><br/>
+                <span style="margin-top:25px;display:inline-table;">离截至时间还有：<span id="end_time"><em>0</em> 分 <em>0</em> 秒</span></span>
+            </div>
+        </div><!--彩种头部 结束-->
+        <!--彩种meun 开始-->
+        <ul class="all_tabs org_tabs">
+            <li class="active" id="bet_tag"><a href="javascript:void(0)">选号投注</a></li>
+            <li><a target="_blank" href="/Groupbuy.jzh?lot=Gd11x5">参与合买</a></li>
+            <li><a href="javascript:void(0)">定制跟单</a></li>
+            <li><a href="javascript:void(0)">专家计划</a></li>
+            <li><a href="javascript:void(0)">杀号定胆</a></li>
+            <li class="trend_link">
+                <a href="/Trend.jzh" target="_blank"><span class="trend_img"></span>走势图表</a>&nbsp;&nbsp;
+                <a href="/help/play/play_gd11x5.jsp" target="_blank"><em class="help_tip"></em>玩法说明</a>
+            </li>
+        </ul><!--彩种meun 结束-->
+        <div id="buy_con">
+            <ul class="betway_tabs clearfix">
+                <li>前一<i></i></li>
+                <li>前二<i></i></li>
+                <li>前三<i></i></li>
+                <li>任选二<i></i></li>
+                <li>任选三<i></i></li>
+                <li>任选四<i></i></li>
+                <li>任选五<i></i></li>
+                <li>任选六<i></i></li>
+                <li>任选七<i></i></li>
+                <li>任选八<i></i></li>
+                <li>单式上传<i></i></li>
+            </ul>
+            <div class="betting_box">
+                <!--各种玩法加载容器 开始-->
+                <div id="palyer_con">
+                    <div class="select_num">
+                        <!--玩法 开始-->
+                        <div class="way_tags clearfix">
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" value="350" id="p_qy"><label for="p_qy">普通</label>&nbsp;
+                            </div>
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" value="351" id="p_qe"><label for="p_qe">直选</label>&nbsp;
+                                <input type="radio" name="star_radio" value="352" id="p_qez"><label
+                                    for="p_qez">组选</label>&nbsp;
+                                <input type="radio" name="star_radio" value="362" id="p_qezd"><label
+                                    for="p_qezd">组选胆拖</label>&nbsp;
+                            </div>
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" value="353" id="p_qs"><label for="p_qs">直选</label>&nbsp;
+                                <input type="radio" name="star_radio" value="354" id="p_qsz"><label
+                                    for="p_qsz">组选</label>&nbsp;
+                                <input type="radio" name="star_radio" value="363" id="p_qszd"><label
+                                    for="p_qszd">组选胆拖</label>&nbsp;
+                            </div>
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" value="355" id="p_rx2"><label
+                                    for="p_rx2">普通</label>&nbsp;
+                                <input type="radio" name="star_radio" value="364" id="p_rx2d"><label
+                                    for="p_rx2d">胆拖</label>&nbsp;
+                            </div>
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" value="356" id="p_rx3"><label
+                                    for="p_rx3">普通</label>&nbsp;
+                                <input type="radio" name="star_radio" value="365" id="p_rx3d"><label
+                                    for="p_rx3d">胆拖</label>&nbsp;
+                            </div>
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" value="357" id="p_rx4"><label
+                                    for="p_rx4">普通</label>&nbsp;
+                                <input type="radio" name="star_radio" value="366" id="p_rx4d"><label
+                                    for="p_rx4d">胆拖</label>&nbsp;
+                            </div>
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" value="358" id="p_rx5"><label
+                                    for="p_rx5">普通</label>&nbsp;
+                                <input type="radio" name="star_radio" value="367" id="p_rx5d"><label
+                                    for="p_rx5d">胆拖</label>&nbsp;
+                            </div>
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" value="359" id="p_rx6"><label
+                                    for="p_rx6">普通</label>&nbsp;
+                                <input type="radio" name="star_radio" value="368" id="p_rx6d"><label
+                                    for="p_rx6d">胆拖</label>&nbsp;
+                            </div>
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" value="360" id="p_rx7"><label
+                                    for="p_rx7">普通</label>&nbsp;
+                                <input type="radio" name="star_radio" value="369" id="p_rx7d"><label
+                                    for="p_rx7d">胆拖</label>&nbsp;
+                            </div>
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" value="361" id="p_rx8"><label
+                                    for="p_rx8">普通</label>&nbsp;
+                                <input type="radio" name="star_radio" value="370" id="p_rx8d"><label
+                                    for="p_rx8d">胆拖</label>&nbsp;
+                            </div>
+                            <div style="display:none" class="f_left">
+                                <input type="radio" name="star_radio" class="ds" value="351" id="ds_qe"
+                                       ms="01,02或01 02"><label for="ds_qe">前二直选</label>&nbsp;
+                                <input type="radio" name="star_radio" class="ds" value="352" id="ds_qez"
+                                       ms="01,02或01 02"><label for="ds_qez">前二组选</label>&nbsp;
+                                <input type="radio" name="star_radio" class="ds" value="353" id="ds_qs"
+                                       ms="01,02,03或01 02 03"><label for="ds_qs">前三直选</label>&nbsp;
+                                <input type="radio" name="star_radio" class="ds" value="354" id="ds_qsz"
+                                       ms="01,02,03或01 02 03"><label for="ds_qsz">前三组选</label>&nbsp;
+                                <input type="radio" name="star_radio" class="ds" value="355" id="ds_r2"
+                                       ms="01,02或01 02"><label for="ds_r2">任二</label>&nbsp;
+                                <input type="radio" name="star_radio" class="ds" value="356" id="ds_r3"
+                                       ms="01,02...或01 02..."><label for="ds_r3">任三</label>&nbsp;
+                                <input type="radio" name="star_radio" class="ds" value="357" id="ds_r4"
+                                       ms="01,02...或01 02..."><label for="ds_r4">任四</label>&nbsp;
+                                <input type="radio" name="star_radio" class="ds" value="358" id="ds_r5"
+                                       ms="01,02...或01 02..."><label for="ds_r5">任五</label>&nbsp;
+                                <input type="radio" name="star_radio" class="ds" value="359" id="ds_r6"
+                                       ms="01,02...或01 02..."><label for="ds_r6">任六</label>&nbsp;
+                                <input type="radio" name="star_radio" class="ds" value="360" id="ds_r7"
+                                       ms="01,02...或01 02..."><label for="ds_r7">任七</label>&nbsp;
+                                <input type="radio" name="star_radio" class="ds" value="361" id="ds_r8"
+                                       ms="01,02...或01 02..."><label for="ds_r8">任八</label>&nbsp;
+                            </div>
+                        </div><!--投注方式 结束-->
+                        <div id="star3_fs_con">
+                            <p class="gameIntro"><strong>玩法提示：</strong><span>从百、十、个位各选1个或多个号码，所选号码与开奖号码后三位一 一对应，即中奖<font
+                                    class="c_ba2636">1000</font>元。</span></p>
+                        </div>
+                        <div class="content digit_box">
+                            <div id="pay_box" style="width:100%;" class="f_left">
+                                <div style="display:none" id="box_wan" class="clearfix">
+                                    <div class="select_left_text" style="width:63px">
+                                        <b>万位</b>：
+                                        <span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300"
+                                                                       class="jtip J_ti1">当前遗漏</span></span>
+                                    </div>
+                                    <ul class="fs_red_area bcballbox" style="width:375px">
+                                        <li><span>01</span><i class="yl">--</i></li>
+                                        <li><span>02</span><i class="yl">--</i></li>
+                                        <li><span>03</span><i class="yl">--</i></li>
+                                        <li><span>04</span><i class="yl">--</i></li>
+                                        <li><span>05</span><i class="yl">--</i></li>
+                                        <li><span>06</span><i class="yl">--</i></li>
+                                        <li><span>07</span><i class="yl">--</i></li>
+                                        <li><span>08</span><i class="yl">--</i></li>
+                                        <li><span>09</span><i class="yl">--</i></li>
+                                        <li><span>10</span><i class="yl">--</i></li>
+                                        <li><span>11</span><i class="yl">--</i></li>
+                                    </ul>
+                                    <ul class="fs_zx_btns J_mutBtn" val="1">
+                                        <li>全</li>
+                                        <li>大</li>
+                                        <li>小</li>
+                                        <li>奇</li>
+                                        <li>偶</li>
+                                        <li class="clear_btn">清除</li>
+                                    </ul>
+                                </div>
+                                <div style="display:none;" id="box_qian" class="clearfix">
+                                    <div class="select_left_text" style="width:63px">
+                                        <b>千位</b>：
+                                        <span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300"
+                                                                       class="jtip J_ti1">当前遗漏</span></span>
+                                    </div>
+                                    <ul class="fs_red_area bcballbox" style="width:375px">
+                                        <li><span>01</span><i class="yl">--</i></li>
+                                        <li><span>02</span><i class="yl">--</i></li>
+                                        <li><span>03</span><i class="yl">--</i></li>
+                                        <li><span>04</span><i class="yl">--</i></li>
+                                        <li><span>05</span><i class="yl">--</i></li>
+                                        <li><span>06</span><i class="yl">--</i></li>
+                                        <li><span>07</span><i class="yl">--</i></li>
+                                        <li><span>08</span><i class="yl">--</i></li>
+                                        <li><span>09</span><i class="yl">--</i></li>
+                                        <li><span>10</span><i class="yl">--</i></li>
+                                        <li><span>11</span><i class="yl">--</i></li>
+                                    </ul>
+                                    <ul class="fs_zx_btns J_mutBtn" val="1">
+                                        <li>全</li>
+                                        <li>大</li>
+                                        <li>小</li>
+                                        <li>奇</li>
+                                        <li>偶</li>
+                                        <li class="clear_btn">清除</li>
+                                    </ul>
+                                </div>
+                                <div style="display:none;" id="box_bai" class="clearfix">
+                                    <div class="select_left_text" style="width:63px">
+                                        <b>百位</b>：
+                                        <span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300"
+                                                                       class="jtip J_ti1">当前遗漏</span></span>
+                                    </div>
+                                    <ul class="fs_red_area bcballbox" style="width:375px">
+                                        <li><span>01</span><i class="yl">--</i></li>
+                                        <li><span>02</span><i class="yl">--</i></li>
+                                        <li><span>03</span><i class="yl">--</i></li>
+                                        <li><span>04</span><i class="yl">--</i></li>
+                                        <li><span>05</span><i class="yl">--</i></li>
+                                        <li><span>06</span><i class="yl">--</i></li>
+                                        <li><span>07</span><i class="yl">--</i></li>
+                                        <li><span>08</span><i class="yl">--</i></li>
+                                        <li><span>09</span><i class="yl">--</i></li>
+                                        <li><span>10</span><i class="yl">--</i></li>
+                                        <li><span>11</span><i class="yl">--</i></li>
+                                    </ul>
+                                    <ul class="fs_zx_btns J_mutBtn" val="1">
+                                        <li>全</li>
+                                        <li>大</li>
+                                        <li>小</li>
+                                        <li>奇</li>
+                                        <li>偶</li>
+                                        <li class="clear_btn">清除</li>
+                                    </ul>
+                                </div>
+                                <div style="display:none;" id="box_zuxuan" class="clearfix">
+                                    <div class="select_left_text" style="width:63px">
+                                        <b>选&nbsp;&nbsp;号</b>：
+                                        <span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300"
+                                                                       class="jtip J_ti1">当前遗漏</span></span>
+                                    </div>
+                                    <ul class="fs_red_area bcballbox" style="width:375px">
+                                        <li><span>01</span><i class="yl">--</i></li>
+                                        <li><span>02</span><i class="yl">--</i></li>
+                                        <li><span>03</span><i class="yl">--</i></li>
+                                        <li><span>04</span><i class="yl">--</i></li>
+                                        <li><span>05</span><i class="yl">--</i></li>
+                                        <li><span>06</span><i class="yl">--</i></li>
+                                        <li><span>07</span><i class="yl">--</i></li>
+                                        <li><span>08</span><i class="yl">--</i></li>
+                                        <li><span>09</span><i class="yl">--</i></li>
+                                        <li><span>10</span><i class="yl">--</i></li>
+                                        <li><span>11</span><i class="yl">--</i></li>
+                                    </ul>
+                                    <ul class="fs_zx_btns J_mutBtn" val="1">
+                                        <li>全</li>
+                                        <li>大</li>
+                                        <li>小</li>
+                                        <li>奇</li>
+                                        <li>偶</li>
+                                        <li class="clear_btn">清除</li>
+                                    </ul>
+                                </div>
+                                <div style="display:none;" id="box_dt" class="clearfix dantuo">
+                                    <div class="dt_title"><h2><strong>胆码区</strong>你认为<em class="fwb">必出</em>的号码</h2>
+                                    </div>
+                                    <div class="select_left_text" style="width:63px">
+                                        <b>胆 码</b>：
+                                        <span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300"
+                                                                       class="jtip J_ti1">当前遗漏</span></span>
+                                    </div>
+                                    <ul class="fs_red_area bcballboxs" val="0" style="width:375px">
+                                        <li><span>01</span><i class="yl">--</i></li>
+                                        <li><span>02</span><i class="yl">--</i></li>
+                                        <li><span>03</span><i class="yl">--</i></li>
+                                        <li><span>04</span><i class="yl">--</i></li>
+                                        <li><span>05</span><i class="yl">--</i></li>
+                                        <li><span>06</span><i class="yl">--</i></li>
+                                        <li><span>07</span><i class="yl">--</i></li>
+                                        <li><span>08</span><i class="yl">--</i></li>
+                                        <li><span>09</span><i class="yl">--</i></li>
+                                        <li><span>10</span><i class="yl">--</i></li>
+                                        <li><span>11</span><i class="yl">--</i></li>
+                                    </ul>
+                                    <div class="dt_title"><h2><strong>拖码区</strong>你认为<em class="fwb">可能出</em>的号码</h2>
+                                    </div>
+                                    <div class="select_left_text" style="width:63px">
+                                        <b>拖 码</b>：
+                                        <span class="J_YiLouTit"><span style="display: inline;" tipconf="maxWidth:300"
+                                                                       class="jtip J_ti1">当前遗漏</span></span>
+                                    </div>
+                                    <ul class="fs_red_area bcballboxs" style="width:375px">
+                                        <li><span>01</span><i class="yl">--</i></li>
+                                        <li><span>02</span><i class="yl">--</i></li>
+                                        <li><span>03</span><i class="yl">--</i></li>
+                                        <li><span>04</span><i class="yl">--</i></li>
+                                        <li><span>05</span><i class="yl">--</i></li>
+                                        <li><span>06</span><i class="yl">--</i></li>
+                                        <li><span>07</span><i class="yl">--</i></li>
+                                        <li><span>08</span><i class="yl">--</i></li>
+                                        <li><span>09</span><i class="yl">--</i></li>
+                                        <li><span>10</span><i class="yl">--</i></li>
+                                        <li><span>11</span><i class="yl">--</i></li>
+                                    </ul>
+                                    <ul class="fs_zx_btns must" val="1">
+                                        <li>全</li>
+                                        <li>大</li>
+                                        <li>小</li>
+                                        <li>奇</li>
+                                        <li>偶</li>
+                                        <li class="clear_btn">清除</li>
+                                    </ul>
+                                </div>
+                                <div style="display:none;" id="box_ds" class="content dxds">
+                                    <div class="copydiv">
+                                        <div class="pasterIntro clearfix">
+                                            <strong>格式说明：</strong>
+                                            <p>1、直接在下面框中输入或粘贴投注内容，最多输入10000注。<br>2、输入框内每行仅限1注（单式）号码，号码格式示例：<font
+                                                    id="dsmsg" color="red">--</font>。</p>
+                                        </div>
+                                        <textarea class="zhantie_textarea" cols="92" rows="8"></textarea>
+                                        <div class="zhantie_err"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--各种玩法加载容器 结束-->
+                <!--选好了按钮 开始-->
+                <div style="font-size:12px;" class="select_info_text">
+                    <span id="select_info">您选了&nbsp;<strong class="c_ba2636">0</strong>&nbsp;注，共&nbsp;<b
+                            class="c_ba2636">0</b>&nbsp;元&nbsp;&nbsp;&nbsp;
+                        <!-- <em class="c_949494">若中奖，奖金：&nbsp;<strong class="c_ba2636">20</strong> 至 <strong class="c_ba2636">20440</strong>&nbsp;元，您将赢利&nbsp;<strong class="c_ba2636">18</strong> 至 <strong class="c_ba2636">20438</strong>&nbsp;元</em> --></span>
+                </div>
+                <div class="addbtn_box">
+                    <input type="button" id="confirm_select" value="" class="btn addbtn_disabled">
+                    <a style="font-size:12px;position:absolute;right:220px;top:3px;" href="javascript:void(0)"
+                       id="clearall">清空选号</a>
+                </div><!--选好了按钮 结束-->
+                <div class="down_arrow"></div>
+                <!--投注列表 开始-->
+                <div class="selected_box clearfix">
+                    <!--选号列表 开始-->
+                    <div id="select_list_box" class="selected_list">
+                        <dl id="select_list"></dl>
+                    </div>
+                    <!--收藏+清空 开始-->
+                    <div class="selected_btnbox">
+                        <button type="button" class="btn_gray" id="random1">机选1注</button>
+                        <button type="button" class="btn_gray" id="random5">机选5注</button>
+                        <div class="randomBtn">
+                            <label>
+                                <input type="text" id="randomNN" value="10" maxlength="2">
+                            </label>
+                            <button type="button" class="btn_gray" id="randomXX">机选</button>
+                        </div>
+                    </div><!--收藏+清空 结束-->
+                </div><!--投注列表 结束-->
+                <dl class="more_tool clearfix">
+                    <dt>
+                        <span id="diyBox">倍数：<input type="text" class="input30" maxlength="3" value="1" id="beitou"
+                                                    name="betTimes"> 倍<em style="display:none" class="c_727171">(最多<span
+                                id="maxTimes">999</span>倍)</em></span>
+                    </dt>
+                    <dd>
+                        <a style="display:none;" id="importNoBtn" href="javascript:void(0)" class="derive_btn"><span
+                                class="collect_img"></span>从收藏导入</a>
+                        <a style="display:none;" id="collect_btn" href="javascript:void(0)" class="collect_btn"><span
+                                class="collect_img"></span>保存到收藏</a>
+                        <a id="del_ball_all" class="del_btn" href="javascript:void(0)"><em class="del_img"></em>清空列表</a>
+                    </dd>
+                </dl>
+                <div class="next_con clearfix">
+                    <ul id="touzhutype" class="more_select clearfix">
+                        <li><strong>投注方式</strong></li>
+                        <li id="nowqi_box">
+                            <label for="nowqi"><input type="radio" name="operate" id="nowqi" checked="checked">&nbsp;认购本期</label>
+                        </li>
+                        <li id="mcut_box">
+                            <label for="mcut"><input type="radio" name="operate" id="mcut">&nbsp;常规追号</label>
+                        </li>
+                        <li id="hcut_box">
+                            <label for="hcut"><input type="radio" name="operate" id="hcut">&nbsp;计划倍投</label>
+                        </li>
+                    </ul>
+                    <!--投注方式容器 开始-->
+                    <div id="touzhu_con">
+                        <div style="display:none;" class="zhuihaoBox gpZhBox" id="additional_con">
+                            <div class="gpzhBox_beitou">
+                                <p class="setRule">
+                                    <strong>设置条件：</strong>从
+                                    <select name="startPeriod"></select> 开始，连续追<input type="text"
+                                                                                      style="ime-mode:disabled;"
+                                                                                      value="10" class="zhuihaoInput"
+                                                                                      name="zhPeriods">期，起始<input
+                                        type="text" style="ime-mode: disabled;" value="1" class="zhuihaoInput"
+                                        name="startBeiNum" maxlength="3">倍。单倍奖金 <input class="zhuihaoInput" type="text"
+                                                                                       id="dbjj" value="0"
+                                                                                       autocomplete="off"
+                                                                                       style="ime-mode:disabled;"> 元。
+                                </p>
+                                <p class="setProfit clearfix">
+                                    <strong class="setProfit_tit">预期盈利：</strong>
+                                    <span class="setProfit_com">
+										<span class=""><input type="radio" name="profitMode" value="1" checked="">全程最低盈利率<input
+                                                type="text" style="ime-mode: disabled;" maxlength="6"
+                                                class="zhuihaoInput" autocomplete="off" value="30" name="profitPercent">% </span><br>
+										<span class="grayRow"><input type="radio" name="profitMode" value="2">前<input
+                                                type="text" disabled="" style="ime-mode: disabled;" maxlength="6"
+                                                class="zhuihaoInput disabled" value="5" name="threshold"
+                                                autocomplete="off">期盈利率<input type="text" disabled=""
+                                                                              style="ime-mode:disabled;" maxlength="6"
+                                                                              class="zhuihaoInput disabled" value="50"
+                                                                              name="profitPercent1" autocomplete="off">% ，之后盈利率<input
+                                                type="text" disabled="" style="ime-mode: disabled;" maxlength="6"
+                                                class="zhuihaoInput disabled" value="20" name="profitPercent2"
+                                                autocomplete="off">%</span><br>
+										<span class="grayRow"><input type="radio" name="profitMode"
+                                                                     value="3">全程最低盈利<input type="text" disabled=""
+                                                                                            style="ime-mode: disabled;"
+                                                                                            maxlength="6"
+                                                                                            class="zhuihaoInput disabled"
+                                                                                            value="30"
+                                                                                            name="profitMoney"
+                                                                                            autocomplete="off">元</span>
+									</span>
+                                </p>
+                                <p class="beitou_btnBox"><span class="btn org_btn3"><input type="button"
+                                                                                           id="creatBtjhBtn"
+                                                                                           hidefocus="true"
+                                                                                           value="生成追号方案"></span></p>
+                            </div>
+                            <dl class="zhuihaoBox_title clearfix">
+                                <dt class="serialNum"> 序号</dt>
+                                <dt class="period_cg"><input type="checkbox" checked="checked" name="periodLeader">
+                                    追<span class="mcSelectBox"><input style="ime-mode: disabled;" class="imitateSelect"
+                                                                      value="10" autocomplete="off"
+                                                                      name="periodNumLeader"><i></i></span>期
+                                </dt>
+                                <dt class="multiple_cg"><input type="text" style="ime-mode: disabled;"
+                                                               class="zhuihaoInput" value="1" name="zhuihaoNumLeader"
+                                                               autocomplete="off"> 倍
+                                </dt>
+                                <dt class="period_gj">期次</dt>
+                                <dt class="multiple_gj">倍数</dt>
+                                <dt class="amount">当前投入</dt>
+                                <dt class="sumAmount">累计投入</dt>
+                                <dt class="profit">盈利(元)</dt>
+                                <dt class="profitability">盈利率</dt>
+                            </dl>
+                            <div style="padding:30px;text-align:center;font-size:12px;line-height:24px;background:none repeat scroll 0% 0% rgb(255, 255, 255);"
+                                 id="chckHolder">Loading...
+                            </div>
+                            <div class="gpZhBox_com gpZhBox_max1"></div>
+                            <p class="bottomTip clearfix"><span class="collectLink">总期数：<strong class="c_ba2636"
+                                                                                                id="aqi">0</strong> 期，总金额：<strong
+                                    class="c_ba2636" id="amon">0</strong> 元</span><span><input type="checkbox"
+                                                                                               checked="checked"
+                                                                                               name="stopWhenFeed"> 中奖后停止追号</span>
+                            </p>
+                        </div>
+                    </div><!--投注方式容器 结束-->
+                </div>
+                <div class="next_con clearfix">
+                    <ul id="daigoutype" class="more_select clearfix">
+                        <li><strong>代购方式</strong></li>
+                        <li id="onebuy_box"><label for="onebuy"><input type="radio" name="operate2" id="onebuy"
+                                                                       checked="checked">&nbsp;个人代购</label></li>
+                        <li id="hemai_box"><label for="hemai"><input type="radio" name="operate2" id="hemai">&nbsp;多人合买</label>
+                        </li>
+                        <li id="song_box"><label for="song"><input type="radio" disabled="disabled" name="operate2"
+                                                                   id="song">&nbsp;赠送他人</label></li>
+                    </ul>
+                    <!--投注方式容器 开始-->
+                    <div id="other_con">
+                        <div id="group_con" class="more_operate" style="display:none;">
+                            <div class="fqhm_box">
+                                <table class="table_noborder ">
+                                    <tbody>
+                                    <tr>
+                                        <th width="25%">投注总额：</th>
+                                        <td width="75%"><strong class="c_ba2534" id="tzallmon">0</strong>元</td>
+                                    </tr>
+                                    <tr>
+                                        <th valign="top">我要认购：</th>
+                                        <td>
+                                            <input name="createrBuyPieces" onpaste="return false" autocomplete="off"
+                                                   id="share_cnt" class="input w70">&nbsp;元&nbsp;&nbsp;
+                                            <span class="c_727171">最少购买<span>5</span>%，即<em
+                                                    id="total_fen">1</em>元</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th valign="top">保密设置：</th>
+                                        <td id="secretBtnBox" class="baomi_box">
+                                            <button v="0" class="btn_org" type="button">公开</button>
+                                            <button v="1" class="btn_gray" type="button">参与可见</button>
+                                            <button v="2" class="btn_gray" type="button">截止可见</button>
+                                            <button v="3" class="btn_gray" type="button">完全保密</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th valign="top">盈利佣金：</th>
+                                        <td class="yongjin_box">
+                                            <ul id="commissionBtnBox" class="yongjin_list">
+                                                <li v="0" class="active">无</li>
+                                                <li v="1">1%</li>
+                                                <li v="2">2%</li>
+                                                <li v="3">3%</li>
+                                                <li v="4">4%</li>
+                                                <li v="5">5%</li>
+                                                <li v="6">6%</li>
+                                                <li v="7">7%</li>
+                                                <li v="8">8%</li>
+                                                <li v="9">9%</li>
+                                                <li style="margin-right:0" v="10">10%</li>
+                                            </ul>
+                                            <p class="group_yjtips">【盈利佣金 =（税后奖金 - 方案金额）× 佣金比例】</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th valign="top">保底：</th>
+                                        <td>
+                                            <input name="guarantee" onpaste="return false" autocomplete="off"
+                                                   id="reserve_share" value="0" class="input w70">&nbsp;元&nbsp;
+                                            <input type="checkbox" name="qbao" id="qbao"/>&nbsp;全额保底&nbsp;&nbsp;
+                                            <span class="c_727171">不能大于总数， 默认0元</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="padding:0"><p class="t_c c_727171">注：方案进度+保底&gt;=100%，即可出票</p>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div><!--投注方式容器 结束-->
+                </div>
+                <div class="down_arrow"></div>
+            </div>
+        </div>
+        <div class="paybox">
+            <div id="touzhuInfo" class="result">您选择了0注×1倍=<span class="c_ba2534">0</span>元</div>
+            <!--投注按钮 开始-->
+            <div class="pb_25">
+                <div class="btnbox">
+                    <input type="submit" id="get_data" value="" class="btn submit_btn">
+                    <span id="buy_btn_info"> <span class="deta_notice">请同意委托投注规则</span></span>
+                    <p class="treaty">
+                        <input type="checkbox" checked="checked" id="agree_rule" name="checkbox"> 我已经阅读并同意<a
+                            href="/help/rule/buyrule.html" target="_blank">《委托投注规则》 </a><br>
+                    </p>
+                </div>
+            </div><!--投注按钮 结束-->
+        </div>
+        <div id="awardDetail" class="all_title buff_title">
+            <div class="title_l"></div>
+            <div style="width:690px" class="title_m">今日开奖号码</div>
+            <div class="title_r"></div>
+            <div class="tips_close" id="kjhmBtn">收起<em></em></div>
+        </div>
+        <table style="" class="table_grayborder" id="kjhmDiv">
+            <thead>
+            <tr>
+                <th><span class="period">期号</span><span class="awardNum">开奖号</span></th>
+                <th><span class="period">期号</span><span class="awardNum">开奖号</span></th>
+                <th><span class="period">期号</span><span class="awardNum">开奖号</span></th>
+                <th><span class="period">期号</span><span class="awardNum">开奖号</span></th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="all_title buff_title">
+            <div class="title_l"></div>
+            <div class="title_m" style="width:690px">福利彩票发行中心温馨提示</div>
+            <div class="title_r"></div>
+            <div id="wxtsBtn" class="tips_open">展开<em></em></div>
+        </div>
+        <div id="wxtsDiv" style="display: none;" class="syy_ts">
+            <p>1、"11选5"每天9点05分第一期开奖，全天共78期。</p>
+            <p>2、体育彩票管理中心对"11选5"每期全部投注号码的可投注数量实行动态控制，您所选择的某些投注单（包括追号）可能因限号无法投注，未成功投注单将作为失败订单处理。</p>
+            <p>
+                3、因网络中断、系统故障、彩票机故障等不可抗力因素引起的投注下单失败，视为委托服务未成立，体育彩票管理中心将对下单失败的订单做返款处理，并在当期期次开奖前退还用户已支付的费用。除此之外，不再承担任何责任。 </p>
+            <p>4、为了保证您能投注成功，请您尽早下单。 </p>
+            <p>5、感谢您支持社会公益事业，彩市有风险，投注需谨慎。未满18岁不得购买彩票。</p>
+        </div>
+        <div class="all_title buff_title">
             <div class="title_l"></div>
             <div class="title_m" style="width:690px">奖金计算说明</div>
             <div class="title_r"></div>
-            <div id="jjsmBtn" class="tips_close">收起<em></em></div>   
-		</div>
-		<table id="jjsmDIV" style=" " class="table_grayborder">
-			<tbody>
-							<tr>
-							  <th width="11%">玩法</th>
-							  <th width="16%">开奖号码示例</th>
-							  <th width="23%">投注号码示例</th>
-							  <th width="36%">中奖规则</th>
-							  <th>单注奖金</th>
-							</tr>
-							<tr>
-							  <td>任选二</td>
-							  <td rowspan="12">01 02 03 04 05</td>
-							  <td>01 05</td>
-							  <td>选2个号码，猜中开奖号码任意2个数字</td>
-							  <td class="fwb c_ba2636">6元</td>
-							</tr>
-							<tr>
-							  <td>任选三</td>
-							  
-							  <td>01 02 04</td>
-							  <td>选3个号码，猜中开奖号码任意3个数字</td>
-							  <td class="fwb c_ba2636">19元</td>
-							</tr>
-							<tr>
-							  <td>任选四</td>
-							  
-							  <td>01 02 04 05</td>
-							  <td>选4个号码，猜中开奖号码任意4个数字</td>
-							  <td class="fwb c_ba2636">78元</td>
-							</tr>
-							<tr>
-							  <td>任选五</td>
-							  
-							  <td>01 02 03 04 05</td>
-							  <td>选5个号码，猜中开奖号码的全部5个数字</td>
-							  <td class="fwb c_ba2636">540元</td>
-							</tr>
-							<tr>
-							  <td>任选六</td>
-							  
-							  <td>01 02 03 04 05 06</td>
-							  <td>选6个号码，猜中开奖号码的全部5个数字</td>
-							  <td class="fwb c_ba2636">90元</td>
-							</tr>
-							<tr>
-							  <td>任选七</td>
-							  
-							  <td>01 02 03 04 05 06 07</td>
-							  <td>选7个号码，猜中开奖号码的全部5个数字</td>
-							  <td class="fwb c_ba2636">26元</td>
-							</tr>
-							<tr>
-							  <td>任选八</td>
-							  
-							  <td>01 02 03 04 05 06 07 08</td>
-							  <td>选8个号码，猜中开奖号码的全部5个数字</td>
-							  <td class="fwb c_ba2636">9元</td>
-							</tr>
-							<tr>
-							  <td>前一直选</td>
-							  
-							  <td>01</td>
-							  <td>选1个号码，猜中开奖号码第1个数字</td>
-							  <td class="fwb c_ba2636">13元</td>
-							</tr>
-							<tr>
-							  <td>前二直选</td>
-							  
-							  <td>01 02</td>
-							  <td>选2个号码与开奖的前2个号码相同且顺序一致</td>
-							  <td class="fwb c_ba2636">130元</td>
-							</tr>
-							<tr>
-							  <td>前二组选</td>
-							  
-							  <td>02 01</td>
-							  <td>选2个号码与开奖的前2个号码相同</td>
-							  <td class="fwb c_ba2636">65元</td>
-							</tr>
-							<tr>
-							  <td>前三直选</td>
-							  
-							  <td>01 02 03</td>
-							  <td>选3个号码与开奖的前3个号码相同且顺序一致</td>
-							  <td class="fwb c_ba2636">1170元</td>
-							</tr>
-							<tr>
-							  <td>前三组选</td>
-							  
-							  <td>02 01 03</td>
-							  <td>选3个号码与开奖的前3个号码相同</td>
-							  <td class="fwb c_ba2636">195元</td>
-							</tr>
-						  </tbody>
-		</table>
-	</div><!--左侧结束-->
-	<!--右侧开始-->
-	<div class="ball_right">
-		<!--热门公告开始-->
-		<div id="r_news" style="border-top:0"></div><!--热门公告结束-->
-		<!--开奖号码列表开始-->
-		<div id="r_open" style="border-top:0" class="block gray_border"></div><!--开奖号码结束-->
-		<!--最新中奖开始-->
-		<div id="r_zhong" class="block gray_border" style="border-top:0"></div><!--最新中奖结束-->
-		<!--走势图-->
-		<div class="block gray_border" style="border-top:0">
-      <div class="all_title gray_title">
-        <div class="title_m f14"><a href="/Trend.jzh" target="_blank">广东11选5走势图</a></div>
-        <span class="more"><a target="_blank" href="/Trend.jzh">更多&gt;&gt;</a></span>
-      </div>
-      <div class="n_kjgg">
-        <a target="_blank" href="/Trend.jzh" class="mr20 m_L10">基本走势</a>
-        <a target="_blank" href="/Trend.jzh" class="mr20">前三直选</a>
-        <a target="_blank" href="/Trend.jzh">前三组选</a><br>
-        <a target="_blank" href="/Trend.jzh" class="mr20 m_L10">任二走势</a>
-        <a target="_blank" href="/Trend.jzh" class="mr20">前二直选</a>
-        <a target="_blank" href="/Trend.jzh">前二组选</a><br>
-        <a target="_blank" href="/Trend.jzh" class="mr20 m_L10">任选跨度</a>
-        <a target="_blank" href="/Trend.jzh" class="mr20">前二跨度</a>
-        <a target="_blank" href="/Trend.jzh">前三跨度</a>
-      </div>
-    </div>
-		<!--走势图结束-->
-		<!--购彩技巧开始
-		<div style="border-top:0" class="block gray_border">
+            <div id="jjsmBtn" class="tips_close">收起<em></em></div>
+        </div>
+        <table id="jjsmDIV" style=" " class="table_grayborder">
+            <tbody>
+            <tr>
+                <th width="11%">玩法</th>
+                <th width="16%">开奖号码示例</th>
+                <th width="23%">投注号码示例</th>
+                <th width="36%">中奖规则</th>
+                <th>单注奖金</th>
+            </tr>
+            <tr>
+                <td>任选二</td>
+                <td rowspan="12">01 02 03 04 05</td>
+                <td>01 05</td>
+                <td>选2个号码，猜中开奖号码任意2个数字</td>
+                <td class="fwb c_ba2636">6元</td>
+            </tr>
+            <tr>
+                <td>任选三</td>
+
+                <td>01 02 04</td>
+                <td>选3个号码，猜中开奖号码任意3个数字</td>
+                <td class="fwb c_ba2636">19元</td>
+            </tr>
+            <tr>
+                <td>任选四</td>
+
+                <td>01 02 04 05</td>
+                <td>选4个号码，猜中开奖号码任意4个数字</td>
+                <td class="fwb c_ba2636">78元</td>
+            </tr>
+            <tr>
+                <td>任选五</td>
+
+                <td>01 02 03 04 05</td>
+                <td>选5个号码，猜中开奖号码的全部5个数字</td>
+                <td class="fwb c_ba2636">540元</td>
+            </tr>
+            <tr>
+                <td>任选六</td>
+
+                <td>01 02 03 04 05 06</td>
+                <td>选6个号码，猜中开奖号码的全部5个数字</td>
+                <td class="fwb c_ba2636">90元</td>
+            </tr>
+            <tr>
+                <td>任选七</td>
+
+                <td>01 02 03 04 05 06 07</td>
+                <td>选7个号码，猜中开奖号码的全部5个数字</td>
+                <td class="fwb c_ba2636">26元</td>
+            </tr>
+            <tr>
+                <td>任选八</td>
+
+                <td>01 02 03 04 05 06 07 08</td>
+                <td>选8个号码，猜中开奖号码的全部5个数字</td>
+                <td class="fwb c_ba2636">9元</td>
+            </tr>
+            <tr>
+                <td>前一直选</td>
+
+                <td>01</td>
+                <td>选1个号码，猜中开奖号码第1个数字</td>
+                <td class="fwb c_ba2636">13元</td>
+            </tr>
+            <tr>
+                <td>前二直选</td>
+
+                <td>01 02</td>
+                <td>选2个号码与开奖的前2个号码相同且顺序一致</td>
+                <td class="fwb c_ba2636">130元</td>
+            </tr>
+            <tr>
+                <td>前二组选</td>
+
+                <td>02 01</td>
+                <td>选2个号码与开奖的前2个号码相同</td>
+                <td class="fwb c_ba2636">65元</td>
+            </tr>
+            <tr>
+                <td>前三直选</td>
+
+                <td>01 02 03</td>
+                <td>选3个号码与开奖的前3个号码相同且顺序一致</td>
+                <td class="fwb c_ba2636">1170元</td>
+            </tr>
+            <tr>
+                <td>前三组选</td>
+
+                <td>02 01 03</td>
+                <td>选3个号码与开奖的前3个号码相同</td>
+                <td class="fwb c_ba2636">195元</td>
+            </tr>
+            </tbody>
+        </table>
+    </div><!--左侧结束-->
+    <!--右侧开始-->
+    <div class="ball_right">
+        <!--热门公告开始-->
+        <div id="r_news" style="border-top:0"></div><!--热门公告结束-->
+        <!--开奖号码列表开始-->
+        <div id="r_open" style="border-top:0" class="block gray_border"></div><!--开奖号码结束-->
+        <!--最新中奖开始-->
+        <div id="r_zhong" class="block gray_border" style="border-top:0"></div><!--最新中奖结束-->
+        <!--走势图-->
+        <div class="block gray_border" style="border-top:0">
+            <div class="all_title gray_title">
+                <div class="title_m f14"><a href="/Trend.jzh" target="_blank">广东11选5走势图</a></div>
+                <span class="more"><a target="_blank" href="/Trend.jzh">更多&gt;&gt;</a></span>
+            </div>
+            <div class="n_kjgg">
+                <a target="_blank" href="/Trend.jzh" class="mr20 m_L10">基本走势</a>
+                <a target="_blank" href="/Trend.jzh" class="mr20">前三直选</a>
+                <a target="_blank" href="/Trend.jzh">前三组选</a><br>
+                <a target="_blank" href="/Trend.jzh" class="mr20 m_L10">任二走势</a>
+                <a target="_blank" href="/Trend.jzh" class="mr20">前二直选</a>
+                <a target="_blank" href="/Trend.jzh">前二组选</a><br>
+                <a target="_blank" href="/Trend.jzh" class="mr20 m_L10">任选跨度</a>
+                <a target="_blank" href="/Trend.jzh" class="mr20">前二跨度</a>
+                <a target="_blank" href="/Trend.jzh">前三跨度</a>
+            </div>
+        </div>
+        <!--走势图结束-->
+        <!--购彩技巧开始
+        <div style="border-top:0" class="block gray_border">
       <div ft="tab_intro" class="all_title gray_title">
         <div ft="tab_intro" class="title_m f14">购彩技巧</div>
         <div ft="tab_intro_ico" class="tips_close">收起<em></em></div>
       </div>
       <ul style="" fc="con_intro" class="right_list">
-          		<li jcid="6811"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMIBB3V000509V0.html" target="_blank">时时彩投注技巧：四胆双搭法</a></li>
-          		<li jcid="6821"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMI954T000509V0.html" target="_blank">时时彩投注技巧之观冷定胆</a></li>
-          		<li jcid="6831"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMI7MLM000509V0.html" target="_blank">时时彩投注技巧之投注误区大解析</a></li>
-          		<li jcid="6841"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMI6PDP000509V0.html" target="_blank">时时彩投注之巧选时时彩二星直选</a></li>
-          		<li jcid="6851"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMI4VP2000509V0.html" target="_blank">时时彩投注技巧之如何判断奇偶形态</a></li>
-          		<li jcid="6861"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMI1JOB000509V0.html" target="_blank">时时彩投注之大小单双稳中奖方法</a></li>
-          		<li jcid="6871"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMHV8I2000509V0.html" target="_blank">时时彩投注技巧之七码组六分解投注</a></li>
-          		<li jcid="6881"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMHQMC9000509V0.html" target="_blank">时时彩投注技巧之二星012路分析</a></li>
-          		<li jcid="6891"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMHO0AO000509V0.html" target="_blank">时时彩投注技巧：咬定大奖加倍投注</a></li>
-          		<li jcid="68A1"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMHN7SN000509V0.html" target="_blank">时时彩投注技巧：拆分选号变繁为简</a></li>
+                  <li jcid="6811"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMIBB3V000509V0.html" target="_blank">时时彩投注技巧：四胆双搭法</a></li>
+                  <li jcid="6821"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMI954T000509V0.html" target="_blank">时时彩投注技巧之观冷定胆</a></li>
+                  <li jcid="6831"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMI7MLM000509V0.html" target="_blank">时时彩投注技巧之投注误区大解析</a></li>
+                  <li jcid="6841"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMI6PDP000509V0.html" target="_blank">时时彩投注之巧选时时彩二星直选</a></li>
+                  <li jcid="6851"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMI4VP2000509V0.html" target="_blank">时时彩投注技巧之如何判断奇偶形态</a></li>
+                  <li jcid="6861"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMI1JOB000509V0.html" target="_blank">时时彩投注之大小单双稳中奖方法</a></li>
+                  <li jcid="6871"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMHV8I2000509V0.html" target="_blank">时时彩投注技巧之七码组六分解投注</a></li>
+                  <li jcid="6881"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMHQMC9000509V0.html" target="_blank">时时彩投注技巧之二星012路分析</a></li>
+                  <li jcid="6891"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMHO0AO000509V0.html" target="_blank">时时彩投注技巧：咬定大奖加倍投注</a></li>
+                  <li jcid="68A1"><a href="http://zx.caipiao.163.com/article/12/1214/13/8IMHN7SN000509V0.html" target="_blank">时时彩投注技巧：拆分选号变繁为简</a></li>
       </ul>
     </div>
-		<!--购彩技巧结束-->
-		<!--帮助中心-->
-		#include("/lottery/help.vm")
-		<!--帮助中心结束-->
-	</div><!--右侧结束-->
+        <!--购彩技巧结束-->
+        <!--帮助中心-->
+        #include("/lottery/help.vm")
+        <!--帮助中心结束-->
+    </div><!--右侧结束-->
 </div>
-#include("/foot.vm")
+    #include("/foot.vm")
 <script type="text/javascript">
-sys.getNowTime('Gd11x5');
-Right.LotNews('24');//热门公告
-Right.LotOpen4('Gd11x5',78);//最新开奖号码
-Right.LotZhong('Gd11x5');//最新中奖
-Right.DayOpen2('Gd11x5');//今日开奖
-$(function(){
-	$('ul.betway_tabs li:eq(1)').click();
-	Lot.Name='Gd11x5';
-});
+    sys.getNowTime('Gd11x5');
+    Right.LotNews('24');//热门公告
+    Right.LotOpen4('Gd11x5', 78);//最新开奖号码
+    Right.LotZhong('Gd11x5');//最新中奖
+    Right.DayOpen2('Gd11x5');//今日开奖
+    $(function () {
+        $('ul.betway_tabs li:eq(1)').click();
+        Lot.Name = 'Gd11x5';
+    });
 </script>
 </body>
 </html>

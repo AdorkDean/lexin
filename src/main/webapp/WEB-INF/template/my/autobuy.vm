@@ -1,40 +1,42 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>我的彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/userCenter/common.css"/>
-<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
-<script src="/js/my.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>我的彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/userCenter/common.css"/>
+    <link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
+    <script src="/js/my.js"></script>
 </head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <article class="docBody clearfix">
     #set($listint=5)
-	#parse("/my/MyList.vm")
+    #parse("/my/MyList.vm")
     <div class="rightModule">
-		<ul class="redTab">
-			<li class="active"><a href="/my/AutoBuy.jzh" target="_self">定制跟单</a></li>
-		</ul>
+        <ul class="redTab">
+            <li class="active"><a href="/my/AutoBuy.jzh" target="_self">定制跟单</a></li>
+        </ul>
         <div class="orderDataBox grayBorder">
-			<div class="selectBox clearfix">
+            <div class="selectBox clearfix">
 				<span class="mcSelectBox">
-					<a class="grayBtn25" href="javascript:;">#if($date==2)三月以前#elseif($date==1)一月以前#else一周之内#end</a><i></i>
+					<a class="grayBtn25" href="javascript:;">#if($date==2)三月以前#elseif($date==1)
+                        一月以前#else一周之内#end</a><i></i>
                 	<span class="optionList" style="display: none;">
 						<a class="active" href="/my/Detail.jzh?date=0&type=$type&status=$status">一周之内</a>
 						<a href="/my/Detail.jzh?date=1&type=$type&status=$status">一月以前</a>
 						<a href="/my/Detail.jzh?date=2&type=$type&status=$status">三月以前</a>
                     </span>
 				</span>
-				<span class="mcSelectBox">
-                	<a class="grayBtn25" href="javascript:;">#if($status==0)收入#elseif($status==1)支出#else所有状态#end</a><i></i>
+                <span class="mcSelectBox">
+                	<a class="grayBtn25" href="javascript:;">#if($status==0)收入#elseif($status==1)
+                        支出#else所有状态#end</a><i></i>
                 	<span class="optionList widthAuto" style="display:none;">
                     	<a class="active" href="/my/Detail.jzh?date=$date&type=$type&status=-1">所有状态</a>
 						<a href="/my/Detail.jzh?date=$date&type=$type&status=0">收入</a>
@@ -42,53 +44,55 @@
                     </span>
                 </span>
             </div>
-    <table class="tableData">
-        <colgroup>
-            <col width="18%">
-            <col width="11%">
-            <col width="11%">
-            <col width="11%">
-            <col width="11%">
-            <col width="11%">
-            <col width="20%">
-        </colgroup>
-        <tbody><tr>
-            <th>时间</th>
-            <th>彩种</th>
-            <th>发起人</th>
-            <th class="tr">金额(元)</th>
-            <th>次数</th>
-            <th>状态</th>
-            <th>操作</th>
-        </tr>
-		#if($find)
-			#foreach($list in $find)
-    		<tr>
-                <td>$list.Detail_time</td>
-                <td class="tr"><font color="#1E50A2">$list.Detail_balance</font></td>
-                <td class="tr">
-				#if($list.Detail_addsub>0)
-					<font color="#BA2636">$list.Detail_addsub</font>
-				#else
-					$list.Detail_addsub
-				#end
-				</td>
-				<script>document.write(Show.MyDetType('$list.Detail_type','$list.Detail_item'))</script>
-                <td>$list.Detail_desc</td>
-    		</tr>
-			#end
-		#end
-    </tbody></table>
-	#if(!$find)
-    <div class="noData">
-    	<i class="ico_book"></i><strong>没有任何记录</strong>
+            <table class="tableData">
+                <colgroup>
+                    <col width="18%">
+                    <col width="11%">
+                    <col width="11%">
+                    <col width="11%">
+                    <col width="11%">
+                    <col width="11%">
+                    <col width="20%">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th>时间</th>
+                    <th>彩种</th>
+                    <th>发起人</th>
+                    <th class="tr">金额(元)</th>
+                    <th>次数</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                    #if($find)
+                        #foreach($list in $find)
+                        <tr>
+                            <td>$list.Detail_time</td>
+                            <td class="tr"><font color="#1E50A2">$list.Detail_balance</font></td>
+                            <td class="tr">
+                                #if($list.Detail_addsub>0)
+                                    <font color="#BA2636">$list.Detail_addsub</font>
+                                #else
+                                    $list.Detail_addsub
+                                #end
+                            </td>
+                            <script>document.write(Show.MyDetType('$list.Detail_type', '$list.Detail_item'))</script>
+                            <td>$list.Detail_desc</td>
+                        </tr>
+                        #end
+                    #end
+                </tbody>
+            </table>
+            #if(!$find)
+                <div class="noData">
+                    <i class="ico_book"></i><strong>没有任何记录</strong>
+                </div>
+            #end
+            $page
+        </div>
+        #include("/my/MyHot.vm")
     </div>
-	#end
-	$page
-</div>
-#include("/my/MyHot.vm")
-</div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

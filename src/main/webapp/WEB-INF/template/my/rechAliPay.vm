@@ -1,45 +1,56 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<link rel="shortcut icon" href="/favicon.ico"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content=""/>
-<meta name="description" content=""/>
-<title>我的彩票</title>
-<link rel="stylesheet" href="/css/base.css"/>
-<link rel="stylesheet" href="/css/core.css"/>
-<link rel="stylesheet" href="/css/userCenter/common.css"/>
-<link rel="stylesheet" href="/css/userCenter/myLott.css"/>
-<link rel="stylesheet" href="/css/userCenter/bankLogo.css"/>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/local.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>我的彩票</title>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" href="/css/userCenter/common.css"/>
+    <link rel="stylesheet" href="/css/userCenter/myLott.css"/>
+    <link rel="stylesheet" href="/css/userCenter/bankLogo.css"/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/local.js"></script>
 </head>
 <body class="">
-#parse("/head.vm")
+    #parse("/head.vm")
 <article class="docBody clearfix">
     #set($listint=3)
-	#parse("/my/MyList.vm")
+    #parse("/my/MyList.vm")
     <div class="rightModule">
-		<ul class="redTab">
-			#if($alipay=='0')<li#if($pay=='alipay') class="active"#end><a href="/my/Rechange.jzh?pay=alipay" target="_self">支付宝充值</a></li>#end
-			#if($tenpay=='0')<li#if($pay=='tenpay') class="active"#end><a href="/my/Rechange.jzh?pay=tenpay" target="_self">在线支付</a></li>#end
-			#if($chinabank=='0')<li#if($pay=='chinabank') class="active"#end><a href="/my/Rechange.jzh?pay=chinabank" target="_self">在线快充</a></li>#end
-			#if($yeepay=='0')<li#if($pay=='yeepay') class="active"#end><a href="/my/Rechange.jzh?pay=yeepay" target="_self">在线支付</a></li>#end
-			#if($huichao=='0')<li#if($pay=='huichao') class="active"#end><a href="/my/Rechange.jzh?pay=huichao" target="_self">在线支付</a></li>#end
-			<!--<li#if($pay!='alipay'&&$pay!='tenpay'&&$pay!='chinabank'&&$pay!='yeepay') class="active"#end><a href="/my/Rechange.jzh" target="_self">网银充值</a></li>-->
-			<li><a href="/my/Rechange!RechDesc.jzh" target="_self">充值记录</a></li>
-		</ul>
+        <ul class="redTab">
+            #if($alipay=='0')
+                <li#if($pay=='alipay') class="active"#end><a href="/my/Rechange.jzh?pay=alipay" target="_self">支付宝充值</a>
+                </li>#end
+            #if($tenpay=='0')
+                <li#if($pay=='tenpay') class="active"#end><a href="/my/Rechange.jzh?pay=tenpay" target="_self">在线支付</a>
+                </li>#end
+            #if($chinabank=='0')
+                <li#if($pay=='chinabank') class="active"#end><a href="/my/Rechange.jzh?pay=chinabank" target="_self">在线快充</a>
+                </li>#end
+            #if($yeepay=='0')
+                <li#if($pay=='yeepay') class="active"#end><a href="/my/Rechange.jzh?pay=yeepay" target="_self">在线支付</a>
+                </li>#end
+            #if($huichao=='0')
+                <li#if($pay=='huichao') class="active"#end><a href="/my/Rechange.jzh?pay=huichao"
+                                                              target="_self">在线支付</a></li>#end
+            <!--<li#if($pay!='alipay'&&$pay!='tenpay'&&$pay!='chinabank'&&$pay!=
+                'yeepay') class="active"#end><a href="/my/Rechange.jzh" target="_self">网银充值</a></li>-->
+            <li><a href="/my/Rechange!RechDesc.jzh" target="_self">充值记录</a></li>
+        </ul>
         <div class="orderDataBox grayBorder">
-				<ul style="padding-bottom:0" class="pay_form">
-					<li style="margin-bottom:10px">
-						<div class="f_left">选择银行：</div>
-						<div class="f_right">
-							<div style="line-height:14px;padding-top:10px;">
-                    			<span style="display: inline;"><em class="help_tip"></em>建议使用IE浏览器继续，以便正常使用支付宝。</span>
-                    		</div>
-      					</div>
-					</li>
-					<span id="payOnlineForm1box" style="display: block;">
+            <ul style="padding-bottom:0" class="pay_form">
+                <li style="margin-bottom:10px">
+                    <div class="f_left">选择银行：</div>
+                    <div class="f_right">
+                        <div style="line-height:14px;padding-top:10px;">
+                            <span style="display: inline;"><em class="help_tip"></em>建议使用IE浏览器继续，以便正常使用支付宝。</span>
+                        </div>
+                    </div>
+                </li>
+                <span id="payOnlineForm1box" style="display: block;">
 						<li>
 							<div class="f_left">充值金额：</div>
                             <div class="f_right">
@@ -47,7 +58,9 @@
 								<form action="/pay/alipay/reqpay.jsp" method="post" id="myform" target="_blank">
 									 
 								<input type="hidden" name="pa_MP" value="$!user.user_name"/>
-								<input type="text" name="p3_Amt" id="v_money"  onpaste="return false" autocomplete="off" maxlength="6" style="width:130px" id="p3_Amt" class="inputs" onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+								<input type="text" name="p3_Amt" id="v_money" onpaste="return false" autocomplete="off"
+                                       maxlength="6" style="width:130px" id="p3_Amt" class="inputs"
+                                       onkeyup="this.value=this.value.replace(/\D/g,'')"/>
 								 
  
 								</form>
@@ -56,111 +69,117 @@
                          	</div>
 						</li>	
 					</span>
-	<!--开快捷提示信息 开始-->
-    <li style="display:block;" id="bankQuickBInfoBox">
-      <div class="f_left">&nbsp;</div>
-      <div class="f_right"><span class="quickPayOnline">即时到账，充值免收手续费，最小充值金额50元。</span></div>
-    </li>
-    <!--开快捷提示信息 结束-->
-    <li id="goPayOnlineBtnBox" class="btnLi" style="display: block;">
-      <div class="f_left">&nbsp;</div>
-      <div class="f_right"> 
+                <!--开快捷提示信息 开始-->
+                <li style="display:block;" id="bankQuickBInfoBox">
+                    <div class="f_left">&nbsp;</div>
+                    <div class="f_right"><span class="quickPayOnline">即时到账，充值免收手续费，最小充值金额50元。</span></div>
+                </li>
+                <!--开快捷提示信息 结束-->
+                <li id="goPayOnlineBtnBox" class="btnLi" style="display: block;">
+                    <div class="f_left">&nbsp;</div>
+                    <div class="f_right">
 	  
 	  	<span class="btn1Box">
         <button class="btn1" type="button" id="bankCardSumbit">确认,去支付宝页面充值</button> 
-        </span>  
-		<div class="btnInfo">
-			<input type="checkbox" checked="checked" name="" value="" id="quickPayCheckBox"> 我同意<a href="" style="color:#2579A7" target="_blank">《支付协议》</a>		
-		</div>
-	  </div>
-    </li>
-  </ul>
+        </span>
+                        <div class="btnInfo">
+                            <input type="checkbox" checked="checked" name="" value="" id="quickPayCheckBox"> 我同意<a
+                                href="" style="color:#2579A7" target="_blank">《支付协议》</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
 
-<script>
-$('#bankCardSelectHand').click(function(){
-	if($('#selectBankBtn').hasClass('selectBankBtnOpen')){
-		$('#selectBankBtn').attr('class','selectBankBtn');
-		$('#bankCardSelectBox').hide();
-	}else{
-		$('#selectBankBtn').attr('class','selectBankBtnOpen');
-		$('#bankCardSelectBox').show();
-	}
-});
-$('.bankCardList li').click(function(){
-	var cl = $(this).find('span').attr('class');
-	$('#bankCardSelectBank span').attr('class',cl);
-	$('#bankCardSelectHand').click();
-	var bankid = $(this).attr('bankid');
-	$('#v_bank').val(bankid);
-});
-$('#amount').keyup(function(){
-	var m = $(this).val().replace(/\D/g,'');
-	$(this).val(m);
-	$('#v_money').val(m);
-});
-$('#bankCardSumbit').click(function(){
-	if($('#quickPayCheckBox').is(":checked")){
-		var mon = $('#p3_Amt').val();
-		if(mon<50){
-			alert('最少需充值50元。');return;
-		}
-		$("#myform").submit();
-		//openPostWindow('/pay/alipay/alipayapi.jsp', {'WIDtotal_fee' : document.getElementById('p3_Amt').value , 'WIDbody' : encodeURIComponent(document.getElementById('pa_MP').value)}, 'xxpp');
-	}else{
-		alert('您必须同意充值协议！');
-	}
-});
+            <script>
+                $('#bankCardSelectHand').click(function () {
+                    if ($('#selectBankBtn').hasClass('selectBankBtnOpen')) {
+                        $('#selectBankBtn').attr('class', 'selectBankBtn');
+                        $('#bankCardSelectBox').hide();
+                    } else {
+                        $('#selectBankBtn').attr('class', 'selectBankBtnOpen');
+                        $('#bankCardSelectBox').show();
+                    }
+                });
+                $('.bankCardList li').click(function () {
+                    var cl = $(this).find('span').attr('class');
+                    $('#bankCardSelectBank span').attr('class', cl);
+                    $('#bankCardSelectHand').click();
+                    var bankid = $(this).attr('bankid');
+                    $('#v_bank').val(bankid);
+                });
+                $('#amount').keyup(function () {
+                    var m = $(this).val().replace(/\D/g, '');
+                    $(this).val(m);
+                    $('#v_money').val(m);
+                });
+                $('#bankCardSumbit').click(function () {
+                    if ($('#quickPayCheckBox').is(":checked")) {
+                        var mon = $('#p3_Amt').val();
+                        if (mon < 50) {
+                            alert('最少需充值50元。');
+                            return;
+                        }
+                        $("#myform").submit();
+                        //openPostWindow('/pay/alipay/alipayapi.jsp', {'WIDtotal_fee' : document.getElementById('p3_Amt').value , 'WIDbody' : encodeURIComponent(document.getElementById('pa_MP').value)}, 'xxpp');
+                    } else {
+                        alert('您必须同意充值协议！');
+                    }
+                });
 
-function openPostWindow(url, data, name)  
-{  
-    var tempForm = document.createElement("form");  
-    tempForm.id="tempForm1";  
-    tempForm.method="post";  
-    tempForm.action=url;  
-    tempForm.target=name;
-    
-    for (var key in data) {
-        var hideInput = document.createElement("input");  
-        hideInput.type="hidden";  
-        hideInput.name= key;
-        hideInput.value= data[key];
-        tempForm.appendChild(hideInput);
-    }
-        
-    addEvent(tempForm,"submit",function(){ openWindow(name); });
-    
-    document.body.appendChild(tempForm);
-    
-    if(tempForm.fireEvent){tempForm.fireEvent("onsubmit");}
-    tempForm.submit();
-    
-    document.body.removeChild(tempForm);
-}
+                function openPostWindow(url, data, name) {
+                    var tempForm = document.createElement("form");
+                    tempForm.id = "tempForm1";
+                    tempForm.method = "post";
+                    tempForm.action = url;
+                    tempForm.target = name;
 
-function addEvent(element,type,handler){
-    if(element.attachEvent){
-        element.attachEvent("on"+type,handler);
-    }else if(element.addEventListener){
-        element.addEventListener(type,handler,false);
-    }else{
-        alert("注册事件失败，浏览器不支持！");
-    }
-}
+                    for (var key in data) {
+                        var hideInput = document.createElement("input");
+                        hideInput.type = "hidden";
+                        hideInput.name = key;
+                        hideInput.value = data[key];
+                        tempForm.appendChild(hideInput);
+                    }
 
-function openWindow(name)
-{  
-    window.open('about:blank',name,'height=400, width=400, top=0, left=0, toolbar=yes, menubar=yes, scrollbars=yes, resizable=yes,location=yes, status=yes');   
-}
+                    addEvent(tempForm, "submit", function () {
+                        openWindow(name);
+                    });
 
-function delayclick(o){
-    o.disabled=true;
-    setTimeout(function(){o.disabled=false;},1000);
-}
-</script>
-</div>
-#include("/my/MyHot.vm")
-</div>
+                    document.body.appendChild(tempForm);
+
+                    if (tempForm.fireEvent) {
+                        tempForm.fireEvent("onsubmit");
+                    }
+                    tempForm.submit();
+
+                    document.body.removeChild(tempForm);
+                }
+
+                function addEvent(element, type, handler) {
+                    if (element.attachEvent) {
+                        element.attachEvent("on" + type, handler);
+                    } else if (element.addEventListener) {
+                        element.addEventListener(type, handler, false);
+                    } else {
+                        alert("注册事件失败，浏览器不支持！");
+                    }
+                }
+
+                function openWindow(name) {
+                    window.open('about:blank', name, 'height=400, width=400, top=0, left=0, toolbar=yes, menubar=yes, scrollbars=yes, resizable=yes,location=yes, status=yes');
+                }
+
+                function delayclick(o) {
+                    o.disabled = true;
+                    setTimeout(function () {
+                        o.disabled = false;
+                    }, 1000);
+                }
+            </script>
+        </div>
+        #include("/my/MyHot.vm")
+    </div>
 </article>
-#include("/foot.vm")
+    #include("/foot.vm")
 </body>
 </html>

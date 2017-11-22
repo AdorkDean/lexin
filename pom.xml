@@ -283,6 +283,11 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.7.sec01</version>
+        </dependency>
 
     </dependencies>
 
@@ -331,6 +336,8 @@
                     <webAppConfig>
                         <contextPath>/</contextPath>
                     </webAppConfig>
+                    <scanIntervalSeconds>1</scanIntervalSeconds>
+                    <!--<reload>automatic</reload>-->
                 </configuration>
             </plugin>
             <plugin>
