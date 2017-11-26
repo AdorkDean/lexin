@@ -1,17 +1,17 @@
 package com.caipiao.data.open.crawler;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 public class D_HtmlCrawler {
@@ -94,45 +94,27 @@ public class D_HtmlCrawler {
         return html;
     }
 
-    public static HashMap getCP156HTML() {
-        String url = GetOpenUrl.Bjpk10;
-        String result = null;
-        RequestConfig config = RequestConfig.custom()
-                .setConnectionRequestTimeout(10000).setConnectTimeout(10000)
-                .setSocketTimeout(10000).build();
 
-        HttpGet httpGet = new HttpGet(url);
-        CloseableHttpClient httpClient = HttpClients.custom().setDefaultRequestConfig(config).build();
-        HashMap map = null;
+    public static HashMap getPK10FromBWLC() {
+        HashMap<String,String> map = new HashMap<String, String>();
         try {
-            CloseableHttpResponse response = httpClient.execute(httpGet);
-            int resStatu = response.getStatusLine().getStatusCode();
-            if (resStatu == 200) {
-                HttpEntity entity = response.getEntity();
-                if (entity != null)
-                    result = EntityUtils.toString(entity);
-                JSONObject object = JSONObject.parseObject(result);
-                JSONArray data = object.getJSONArray("data");
-                if (data != null && data.size() > 0) {
-                    map = new HashMap();
-                    for (int i = 0; i < data.size(); i++){
-                        JSONObject o = (JSONObject) data.get(i);
-                        map.put(o.getString("expect"),o.getString("opencode"));
-                    }
+            Document document = Jsoup.connect(GetOpenUrl.Bjpk10).timeout(10000).get();
+            Element lott_cont = document.getElementsByClass("lott_cont").get(0);
+            Elements elements = lott_cont.getElementsByTag("tr");
+            for(Element element : elements){
+                Elements tds = element.getElementsByTag("td");
+                if(tds.size() > 0){
+                    map.put(tds.get(0).text(),tds.get(1).text());
                 }
-                System.out.println("访问访问CP165网站网站【" + url + "】抓取号码成功!");
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("异常描述" + e.getMessage());
-            System.out.println("访问CP165网站【" + url + "】出现异常!");
-        } finally {
-            httpClient.getConnectionManager().shutdown();
+            e.printStackTrace();
         }
         return map;
     }
 
-
     public static void main(String[] args) {
-        System.out.println(JSONObject.toJSONString(getCP156HTML()));
+        System.out.println(JSONObject.toJSONString(getPK10FromBWLC()));
     }
 }

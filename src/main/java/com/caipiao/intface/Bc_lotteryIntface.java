@@ -4,6 +4,7 @@ package com.caipiao.intface;
 
 import com.caipiao.entity.Bc_lottery;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -34,6 +35,14 @@ public interface Bc_lotteryIntface {
     public abstract List findDay(String s, String s1);
 
     public abstract List findNewOpen(String s, int i);
+
+    /**
+     * 获取已开奖数量
+     *
+     * @param lot
+     * @return
+     */
+    public int findOpenCount(String lot,Date day);
 
     public abstract List findNotOpenByTime(String s, String s1);
 

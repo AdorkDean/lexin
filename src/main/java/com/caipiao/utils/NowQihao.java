@@ -6,6 +6,7 @@ import com.caipiao.entity.Bc_lottery;
 import com.caipiao.intface.Bc_lotteryIntface;
 import com.caipiao.intfaceImpl.LotteryIntfaceImpl;
 
+import java.util.Date;
 import java.util.List;
 
 // Referenced classes of package com.caipiao.utils:
@@ -96,6 +97,10 @@ public class NowQihao {
 
     public static List findOpenByLot(String lot) {
         return dao.findNewOpen(lot, 10);
+    }
+
+    public static int findOpenCount(String lot) {
+        return dao.findOpenCount(lot, new Date());
     }
 
     public static Bc_lottery findQihaoId(Integer qihaoid) {

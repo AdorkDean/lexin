@@ -65,10 +65,13 @@ public class Mode extends IndexAction {
         JSONObject json = new JSONObject();
         if (StringUtils.isNotBlank(lot)) {
             List findOpenByLot = NowQihao.findOpenByLot(lot);
-            if (findOpenByLot != null)
+            int count = NowQihao.findOpenCount(lot);
+            if (findOpenByLot != null) {
                 json.put("msg", findOpenByLot);
-            else
+                json.put("openCount", count);
+            } else {
                 json.put("msg", "no");
+            }
         } else {
             json.put("msg", "err");
         }

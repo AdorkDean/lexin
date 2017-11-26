@@ -7,7 +7,9 @@ import com.caipiao.intface.Bc_lotteryIntface;
 import com.sysbcjzh.mysql.Mysql;
 import com.sysbcjzh.utils.StringUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -114,6 +116,11 @@ public class LotteryIntfaceImpl
         return dao.finds("select Lot_qihao,Lot_haoma,Lot_id from Bc_lottery WHERE LENGTH(Lot_haoma)>0 and Lot_name=? order by Lot_etime desc limit 0,?", Bc_lottery.class, new Object[]{
                 lot, Integer.valueOf(num)
         });
+    }
+
+    public int findOpenCount(String lot,Date day) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return dao.getCount("select count(*) from bc_lottery where Lot_btime < ? and date(Lot_btime) = ? and Lot_name = ?", new Object[]{day,sdf.format(day),lot});
     }
 
     public List finds(String lot, String qihao, int havehm, int isopen, String btime, String etime, int start,
