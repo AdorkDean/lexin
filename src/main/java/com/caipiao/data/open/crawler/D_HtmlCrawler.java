@@ -95,16 +95,22 @@ public class D_HtmlCrawler {
     }
 
 
-    public static HashMap getPK10FromBWLC() {
-        HashMap<String,String> map = new HashMap<String, String>();
+    public static HashMap getPK10FromBWLC(int i) {
+        HashMap<String, String> map = new HashMap<String, String>();
+        String url;
+        if (i % 2 == 0) {
+            url = GetOpenUrl.Bjpk10;
+        } else {
+            url = GetOpenUrl.Bjpk10_2;
+        }
         try {
-            Document document = Jsoup.connect(GetOpenUrl.Bjpk10).timeout(10000).get();
+            Document document = Jsoup.connect(url).header("Cache-Control", "no-cache").timeout(10000).get();
             Element lott_cont = document.getElementsByClass("lott_cont").get(0);
             Elements elements = lott_cont.getElementsByTag("tr");
-            for(Element element : elements){
+            for (Element element : elements) {
                 Elements tds = element.getElementsByTag("td");
-                if(tds.size() > 0){
-                    map.put(tds.get(0).text(),tds.get(1).text());
+                if (tds.size() > 0) {
+                    map.put(tds.get(0).text(), tds.get(1).text());
                 }
             }
         } catch (IOException e) {
@@ -115,6 +121,6 @@ public class D_HtmlCrawler {
     }
 
     public static void main(String[] args) {
-        System.out.println(JSONObject.toJSONString(getPK10FromBWLC()));
+        System.out.println(JSONObject.toJSONString(getPK10FromBWLC(1)));
     }
 }

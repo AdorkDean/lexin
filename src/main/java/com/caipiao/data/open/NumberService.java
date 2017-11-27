@@ -48,7 +48,7 @@ public class NumberService {
     }
 
     public void Instance() {
-        if (set.size() >= 2) {
+        if (set.size() >= 1) {
             NumberThread getOpenThread;
             for (Iterator iterator = set.iterator(); iterator.hasNext();) {
                 String s = (String) iterator.next();

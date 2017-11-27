@@ -64,6 +64,7 @@ public class GetOpenUrl {
     public static final String Hdljy = "http://www.wozhongla.com/sp2/act/data.resultTen.htm?type=004";
     public static final String Hdljy1 = "http://kaijiang.500.com/static/info/kaijiang/xml/df6j1/list.xml";
     public static final String Bjpk10 = "http://www.bwlc.net/bulletin/trax.html";
+    public static final String Bjpk10_2 = "http://www.bwlc.net/bulletin/prevtrax.html";
 
     public GetOpenUrl() {
     }

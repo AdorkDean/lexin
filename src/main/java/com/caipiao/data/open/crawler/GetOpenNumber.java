@@ -1163,7 +1163,7 @@ public class GetOpenNumber {
     }
 
     public static HashMap GetBjpk10(int i, String issue) {
-        return D_HtmlCrawler.getPK10FromBWLC();
+        return D_HtmlCrawler.getPK10FromBWLC(i);
     }
 
     public static void main(String[] args) {
